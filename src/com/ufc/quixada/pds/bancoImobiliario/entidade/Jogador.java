@@ -8,6 +8,8 @@ public class Jogador {
 	private Tabuleiro tabuleiro;
 	
 	public void atualizarPosicao(int deslocamentoPosicao){
-		
+		Logradouro logradouroBase = this.peca.buscarLocalizacao();
+		Logradouro proximoLogradouro = this.tabuleiro.obterLogradouro(logradouroBase, deslocamentoPosicao);
+		this.peca.atualizarLocalizacao(proximoLogradouro);
 	}
 }
