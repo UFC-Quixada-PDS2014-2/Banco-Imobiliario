@@ -1,4 +1,4 @@
-package com.ufc.quixada.pds.bancoImobiliario.entidade;
+package br.ufc.quixada.pds.bancoImobiliario.model;
 
 public class Peca {
 
@@ -9,7 +9,7 @@ public class Peca {
 		}
 		
 		// Quebra de encapsulamento - Rever
-		public Logradouro buscarLocalizacao(){
+		public Logradouro pegarLocalizacao(){
 			return this.localizacao;
 		}
 }

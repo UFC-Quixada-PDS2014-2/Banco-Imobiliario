@@ -1,4 +1,4 @@
-package com.ufc.quixada.pds.bancoImobiliario.entidade;
+package br.ufc.quixada.pds.bancoImobiliario.model;
 
 public class Jogador {
 
@@ -8,7 +8,7 @@ public class Jogador {
 	private Tabuleiro tabuleiro;
 	
 	public void atualizarPosicao(int deslocamentoPosicao){
-		Logradouro logradouroBase = this.peca.buscarLocalizacao();
+		Logradouro logradouroBase = this.peca.pegarLocalizacao();
 		Logradouro proximoLogradouro = this.tabuleiro.obterLogradouro(logradouroBase, deslocamentoPosicao);
 		this.peca.atualizarLocalizacao(proximoLogradouro);
 	}

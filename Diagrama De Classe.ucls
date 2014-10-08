@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.6" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" language="java" name="br.ufc.quixada.pds.bancoImobiliario.model.Peca" project="BancoImobiliario" 
+    file="/BancoImobiliario/src/br/ufc/quixada/pds/bancoImobiliario/model/Peca.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="115" width="207" x="299" y="234"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="br.ufc.quixada.pds.bancoImobiliario.model.LugarEspecialModificaPosicao" 
+    project="BancoImobiliario" 
+    file="/BancoImobiliario/src/br/ufc/quixada/pds/bancoImobiliario/model/LugarEspecialModificaPosicao.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="200" x="409" y="681"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="br.ufc.quixada.pds.bancoImobiliario.model.Empresa" project="BancoImobiliario" 
+    file="/BancoImobiliario/src/br/ufc/quixada/pds/bancoImobiliario/model/Empresa.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="79" width="184" x="81" y="562"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="br.ufc.quixada.pds.bancoImobiliario.model.LugarEspecialModificarSaldo" 
+    project="BancoImobiliario" 
+    file="/BancoImobiliario/src/br/ufc/quixada/pds/bancoImobiliario/model/LugarEspecialModificarSaldo.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="191" x="649" y="681"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="br.ufc.quixada.pds.bancoImobiliario.model.Logradouro" project="BancoImobiliario" 
+    file="/BancoImobiliario/src/br/ufc/quixada/pds/bancoImobiliario/model/Logradouro.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="133" width="184" x="419" y="389"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="br.ufc.quixada.pds.bancoImobiliario.model.BancoImobiliario" 
+    project="BancoImobiliario" 
+    file="/BancoImobiliario/src/br/ufc/quixada/pds/bancoImobiliario/model/BancoImobiliario.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="115" width="198" x="388" y="-94"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="br.ufc.quixada.pds.bancoImobiliario.model.Imovel" project="BancoImobiliario" 
+    file="/BancoImobiliario/src/br/ufc/quixada/pds/bancoImobiliario/model/Imovel.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="79" width="184" x="305" y="562"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="br.ufc.quixada.pds.bancoImobiliario.model.Tabuleiro" project="BancoImobiliario" 
+    file="/BancoImobiliario/src/br/ufc/quixada/pds/bancoImobiliario/model/Tabuleiro.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="97" width="244" x="546" y="234"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="br.ufc.quixada.pds.bancoImobiliario.model.LugarEspecial" 
+    project="BancoImobiliario" file="/BancoImobiliario/src/br/ufc/quixada/pds/bancoImobiliario/model/LugarEspecial.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="184" x="529" y="562"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="br.ufc.quixada.pds.bancoImobiliario.model.PontoDePartida" 
+    project="BancoImobiliario" 
+    file="/BancoImobiliario/src/br/ufc/quixada/pds/bancoImobiliario/model/PontoDePartida.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="79" width="184" x="753" y="562"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="br.ufc.quixada.pds.bancoImobiliario.model.Jogador" project="BancoImobiliario" 
+    file="/BancoImobiliario/src/br/ufc/quixada/pds/bancoImobiliario/model/Jogador.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="133" width="184" x="341" y="61"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="br.ufc.quixada.pds.bancoImobiliario.model.Copo" project="BancoImobiliario" 
+    file="/BancoImobiliario/src/br/ufc/quixada/pds/bancoImobiliario/model/Copo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="133" width="184" x="117" y="61"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="13">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="14" name="localizacao"/>      
+      <multiplicity id="15" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="16">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <generalization id="17">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <association id="18">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="19" name="jogadores"/>      
+      <multiplicity id="20" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="21">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <association id="22">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="23" name="copo"/>      
+      <multiplicity id="24" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="25">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <association id="26">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="27" name="logradouros"/>      
+      <multiplicity id="28" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="29">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="30" name="peca"/>      
+      <multiplicity id="31" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="32">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="33" name="tabuleiro"/>      
+      <multiplicity id="34" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="35">    
+    <bendpoint x="555" y="61"/>    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="36" name="tabuleiro"/>      
+      <multiplicity id="37" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="38">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <generalization id="39">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

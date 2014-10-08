@@ -1,7 +1,8 @@
-package com.ufc.quixada.pds.bancoImobiliario.entidade;
+package br.ufc.quixada.pds.bancoImobiliario.model;
 
 public class Copo {
-
+	// TODO : Validar o valor dos dados
+	
 	private int valorDosDados;
 	
 	public void lancarDados(int valorDosDados){
