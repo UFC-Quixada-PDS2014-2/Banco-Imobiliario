@@ -1,4 +1,4 @@
-package br.ufc.quixada.pds.bancoImobiliario.model;
+package br.ufc.quixada.pds.bancoimobiliario.model;
 
 import java.util.LinkedList;
 import java.util.List;

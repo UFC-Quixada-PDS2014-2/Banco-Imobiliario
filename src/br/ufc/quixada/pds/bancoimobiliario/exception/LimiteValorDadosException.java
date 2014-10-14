@@ -1,4 +1,4 @@
-package br.ufc.quixada.pds.bancoImobiliario.exception;
+package br.ufc.quixada.pds.bancoimobiliario.exception;
 
 public class LimiteValorDadosException extends Exception {
 
