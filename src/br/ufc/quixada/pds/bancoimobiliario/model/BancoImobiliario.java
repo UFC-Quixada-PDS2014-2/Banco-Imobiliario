@@ -10,6 +10,13 @@ public class BancoImobiliario {
 	private Tabuleiro tabuleiro;
 	private Copo copo;
 	
+	public void realizarRodada(){
+		Iterator<Jogador> jogadores = this.obterJogadores();
+		while(jogadores.hasNext()){
+			realizarTurnoJogador(jogadores.next());
+		}
+	}
+	
 	public void realizarTurnoJogador(Jogador jogador){
 		int valorDados = copo.obterValorDosDados();
 		jogador.atualizarPosicao(valorDados);

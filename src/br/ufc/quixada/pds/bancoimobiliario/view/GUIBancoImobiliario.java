@@ -31,7 +31,7 @@ public class GUIBancoImobiliario {
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
-				}
+				}													
 			}
 		});
 	}
@@ -56,8 +56,15 @@ public class GUIBancoImobiliario {
 		JPanel panelPortfolioJogador1 = new JPanel();
 		frame.getContentPane().add(panelPortfolioJogador1, BorderLayout.WEST);
 		
+		JLabel labelJogador1Nome = new JLabel("Jogador 1");
+		panelPortfolioJogador1.add(labelJogador1Nome);
+		
+		
 		JPanel panelPortfolioJogador2 = new JPanel();
 		frame.getContentPane().add(panelPortfolioJogador2, BorderLayout.EAST);
+		
+		JLabel labelJogador2Nome = new JLabel("Jogador 2");
+		panelPortfolioJogador2.add(labelJogador2Nome);
 		
 		JPanel panelTabuleiro = new JPanel();
 		frame.getContentPane().add(panelTabuleiro, BorderLayout.CENTER);
