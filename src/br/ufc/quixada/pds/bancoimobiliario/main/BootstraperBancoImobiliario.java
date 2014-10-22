@@ -12,6 +12,7 @@ import br.ufc.quixada.pds.bancoimobiliario.exception.MontadorTabuleiroException;
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 import br.ufc.quixada.pds.bancoimobiliario.model.Copo;
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
+import br.ufc.quixada.pds.bancoimobiliario.model.Peca;
 import br.ufc.quixada.pds.bancoimobiliario.model.Tabuleiro;
 import br.ufc.quixada.pds.bancoimobiliario.model.TabuleiroDirector;
 import br.ufc.quixada.pds.bancoimobiliario.view.GUIBancoImobiliario;
@@ -34,7 +35,13 @@ public class BootstraperBancoImobiliario {
 			
 			List<Jogador> jogadores = new ArrayList<>();
 			for (int i = 0; i < ConfiguracoesEnum.NUMERO_JOGADORES.getValor(); i++) {
-				jogadores.add(new Jogador());
+				Jogador jogador = new Jogador();
+				jogador.setNome("Jogador " + (i + 1));
+				jogador.setSaldo(ConfiguracoesEnum.SALDO_INICIAL.getValor());
+				jogador.setTabuleiro(tabuleiro);
+				Peca peca = new Peca();
+				jogador.setPeca(peca);
+				jogadores.add(jogador);
 			}
 			
 			BancoImobiliario bancoImobiliario = new BancoImobiliario(jogadores, tabuleiro, copo);

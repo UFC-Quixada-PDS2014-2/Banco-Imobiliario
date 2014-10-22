@@ -21,6 +21,10 @@ public class Tabuleiro {
 		return Collections.unmodifiableList(this.logradouros);
 	}
 	
+	public Logradouro pegarPontoDePartida(){
+		return this.logradouros.get(0);
+	}
+	
 	public Logradouro obterLogradouro(Logradouro logradouroBase, int deslocamento){
 		int posicaoLogradouroBase = logradouros.indexOf(logradouroBase);
 		return logradouros.get(posicaoLogradouroBase + deslocamento);
