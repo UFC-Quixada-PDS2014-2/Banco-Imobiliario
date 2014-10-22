@@ -8,7 +8,6 @@ public class Peca {
 			this.localizacao = logradouro;
 		}
 		
-		// Quebra de encapsulamento - Rever
 		public Logradouro pegarLocalizacao(){
 			return this.localizacao;
 		}
