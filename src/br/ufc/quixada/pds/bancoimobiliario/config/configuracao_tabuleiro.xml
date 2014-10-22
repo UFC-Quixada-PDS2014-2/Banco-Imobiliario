@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 
-	<ArrayList>
+	<List>
 		
 		<PontoDePartida>
 			<nome>Ponto de Partida</nome>
@@ -95,7 +95,7 @@
 		</Imovel>
 		
 		<Empresa>
-			<nome>Imovel04</nome>
+			<nome>Empresa04</nome>
 			<posicao>18</posicao>
 		</Empresa>
 		
@@ -204,4 +204,4 @@
 			<posicao>39</posicao>
 		</Imovel>
 		
-	</ArrayList> 
+	</List> 

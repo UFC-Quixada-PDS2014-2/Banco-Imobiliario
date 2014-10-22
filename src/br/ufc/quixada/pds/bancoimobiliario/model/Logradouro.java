@@ -8,4 +8,8 @@ public abstract class Logradouro {
 	public int obterPosicao(){
 		return this.posicao;
 	}
+	
+	public String obterNome(){
+		return this.nome;
+	}
 }
