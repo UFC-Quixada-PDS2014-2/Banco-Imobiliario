@@ -5,15 +5,15 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.xml.DomDriver;
-
 import br.ufc.quixada.pds.bancoimobiliario.model.Empresa;
 import br.ufc.quixada.pds.bancoimobiliario.model.Imovel;
 import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
 import br.ufc.quixada.pds.bancoimobiliario.model.LugarEspecialModificaPosicao;
 import br.ufc.quixada.pds.bancoimobiliario.model.LugarEspecialModificarSaldo;
 import br.ufc.quixada.pds.bancoimobiliario.model.PontoDePartida;
+
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
 
 public class ConfiguracaoCasasTabuleiroComXStream implements ReaderLogradouros{
 	private XStream stream;

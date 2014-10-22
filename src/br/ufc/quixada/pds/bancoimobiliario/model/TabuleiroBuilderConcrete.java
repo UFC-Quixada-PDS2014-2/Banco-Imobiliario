@@ -20,7 +20,7 @@ public class TabuleiroBuilderConcrete implements TabuleiroBuilder{
 	
 	@Override
 	public void montarPontoPartida(PontoDePartida pontoDePartida) throws MontadorTabuleiroException {
-		if(first = false){
+		if(first == false){
 			tabuleiro.getLogradouros().add(pontoDePartida);
 			first = true;
 			this.qtdCasas++;
@@ -49,12 +49,12 @@ public class TabuleiroBuilderConcrete implements TabuleiroBuilder{
 	@Override
 	public void montarUltimaCasa(Logradouro logradouro) throws MontadorTabuleiroException {
 		int casasRestantes = ConfiguracoesEnum.NUMERO_CASAS.getValor() - qtdCasas;
-		if(casasRestantes > 1){
+		if(casasRestantes == 1){
 			tabuleiro.getLogradouros().add(logradouro);
 			this.qtdCasas++;
 			last = true;
 		}else{
-			throw new MontadorTabuleiroException("Faltam adicionar " + casasRestantes +" casas");
+			throw new MontadorTabuleiroException("Faltam adicionar " + casasRestantes +" casa(s)");
 		}
 		
 	}

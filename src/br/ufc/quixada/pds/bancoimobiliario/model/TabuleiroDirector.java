@@ -3,6 +3,8 @@ package br.ufc.quixada.pds.bancoimobiliario.model;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import br.ufc.quixada.pds.bancoimobiliario.config.ReaderLogradouros;
 import br.ufc.quixada.pds.bancoimobiliario.exception.ErroArquivoConfiguracoesException;
 import br.ufc.quixada.pds.bancoimobiliario.exception.MontadorTabuleiroException;
@@ -11,6 +13,12 @@ public class TabuleiroDirector {
 
 	private TabuleiroBuilder builderTabuleiro;
 	private ReaderLogradouros readerLogradouros;
+	
+	@Inject
+	public TabuleiroDirector(TabuleiroBuilder builderTabuleiro, ReaderLogradouros readerLogradouros){
+		this.builderTabuleiro = builderTabuleiro;
+		this.readerLogradouros = readerLogradouros;
+	}
 	
 	public void construirTabuleiro() throws ErroArquivoConfiguracoesException{
 		
