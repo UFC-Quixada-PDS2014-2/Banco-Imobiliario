@@ -5,7 +5,7 @@ import java.util.List;
 
 public class BancoImobiliario {
 
-	// TODO :
+	// TODO : adicionar injeção de dependências
 	private List<Jogador> jogadores;
 	private Tabuleiro tabuleiro;
 	private Copo copo;

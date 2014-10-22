@@ -1,14 +1,19 @@
 package br.ufc.quixada.pds.bancoimobiliario.model;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Tabuleiro {
 	
-	List<Logradouro> logradouros;
+	private List<Logradouro> logradouros;
 	
 	public Tabuleiro(){
-		logradouros = new LinkedList<Logradouro>();
+		logradouros = new ArrayList<Logradouro>();
+	}
+
+	List<Logradouro> getLogradouros(){
+		return this.logradouros;
 	}
 	
 	public Logradouro obterLogradouro(Logradouro logradouroBase, int deslocamento){
