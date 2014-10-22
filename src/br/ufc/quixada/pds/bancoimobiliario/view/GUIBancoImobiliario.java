@@ -14,6 +14,7 @@ import br.ufc.quixada.pds.bancoimobiliario.controller.BancoImobiliarioControlado
 import br.ufc.quixada.pds.bancoimobiliario.controller.Controlador;
 
 import java.awt.GridBagConstraints;
+import java.awt.Window.Type;
 
 public class GUIBancoImobiliario {
 
@@ -50,6 +51,7 @@ public class GUIBancoImobiliario {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setResizable(false);
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		

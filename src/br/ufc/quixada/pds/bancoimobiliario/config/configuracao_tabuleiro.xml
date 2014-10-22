@@ -19,223 +19,186 @@
 			<posicao>2</posicao>
 		</Empresa>
 		
-		//Lable 3
 		<Imovel>
 			<nome>Imovel02</nome>
 			<posicao>3</posicao>
 		</Imovel>
 		
-		//Lable 4
 		<Imovel>
 			<nome>Imovel03</nome>
 			<posicao>4</posicao>
 		</Imovel>
 		
-		//Lable 5
 		<Empresa>
 			<nome>Empresa 02</nome>
 			<posicao>5</posicao>
-		</Imovel>
+		</Empresa>
 		
-		//Lable 6
 		<Imovel>
 			<nome>Imovel04</nome>
 			<posicao>6</posicao>
 		</Imovel>
 		
-		//Lable 7
 		<LugarEspecialModificaPosicao>
 			<nome>LugarEspecialModificaPosicao 01</nome>
 			<posicao>7</posicao>
 		</LugarEspecialModificaPosicao>
 		
-		//Lable 8
 		<Imovel>
 			<nome>Imovel05</nome>
 			<posicao>8</posicao>
 		</Imovel>
 		
-		//Lable 9
 		<Imovel>
 			<nome>Imovel06</nome>
 			<posicao>9</posicao>
 		</Imovel>
 		
-		//Lable 10
 		<LugarEspecialModificaSaldo>
 			<nome>LugarEspecialModificaSaldo 01</nome>
 			<posicao>10</posicao>
 		</LugarEspecialModificaSaldo>
 		
-		//Lable 11
 		<Imovel>
 			<nome>Imovel07</nome>
 			<posicao>11</posicao>
 		</Imovel>
 		
-		//Lable 12
 		<LugarEspecialModificaPosicao>
 			<nome>LugarEspecialModificaPosicao 02</nome>
 			<posicao>12</posicao>
 		</LugarEspecialModificaPosicao>
 		
-		//Lable 13
 		<Imovel>
 			<nome>Imovel08</nome>
 			<posicao>13</posicao>
 		</Imovel>
 		
-		//Lable 14
 		<Imovel>
 			<nome>Imovel09</nome>
 			<posicao>14</posicao>
 		</Imovel>
 		
-		//Lable 15
-		<Empresal>
+		<Empresa>
 			<nome>Empresa03</nome>
 			<posicao>15</posicao>
 		</Empresa>
 		
-		//Lable 16
 		<Imovel>
 			<nome>Imovel10</nome>
 			<posicao>16</posicao>
 		</Imovel>
 		
-		//Lable 17
 		<Imovel>
 			<nome>Imovel11</nome>
 			<posicao>17</posicao>
 		</Imovel>
 		
-		//Lable 18
 		<Empresa>
 			<nome>Imovel04</nome>
 			<posicao>18</posicao>
 		</Empresa>
 		
-		//Lable 19
 		<Imovel>
 			<nome>Imovel12</nome>
 			<posicao>19</posicao>
 		</Imovel>
 		
-		//Lable 20
 		<LugarEspecialModificaSaldo>
 			<nome>LugarEspecialModificaSaldo02</nome>
 			<posicao>20</posicao>
 		</LugarEspecialModificaSaldo>
 		
-		//Lable 21
 		<Imovel>
 			<nome>Imovel13</nome>
 			<posicao>21</posicao>
 		</Imovel>
 		
-		//Lable 22
 		<Imovel>
 			<nome>Imovel14</nome>
 			<posicao>22</posicao>
 		</Imovel>
 		
-		// Label 23
 		<LugarEspecialModificaPosicao>
 			<nome>LugarEspecialModificaPosicao03</nome>
 			<posicao>23</posicao>
 		</LugarEspecialModificaPosicao>
 		
-		//Lable 24
 		<Imovel>
 			<nome>Imovel15</nome>
 			<posicao>24</posicao>
 		</Imovel>
 		
-		//Lable 25
 		<Empresa>
 			<nome>Empresa05</nome>
 			<posicao>25</posicao>
 		</Empresa>
 		
-		//Lable 26
 		<Empresa>
 			<nome>Empresa06</nome>
 			<posicao>26</posicao>
 		</Empresa>
 		
-		//Lable 27
 		<Imovel>
 			<nome>Imovel16</nome>
 			<posicao>27</posicao>
 		</Imovel>
 		
-		//Label 28
 		<Empresa>
 			<nome>Empresa07</nome>
 			<posicao>28</posicao>
 		</Empresa>
 		
-		//Lable 29
 		<Imovel>
 			<nome>Imovel17</nome>
 			<posicao>29</posicao>
 		</Imovel>
 		
-		//Lable 30
 		<LugarEspecialModificaSaldo>
 			<nome>LugarEspecialModificaSaldo03</nome>
 			<posicao>30</posicao>
 		</LugarEspecialModificaSaldo>
 		
-		//Lable 31
 		<Imovel>
 			<nome>Imovel18</nome>
 			<posicao>31</posicao>
 		</Imovel>
 		
-		//Label 32
 		<Empresa>
 			<nome>Empresa08</nome>
 			<posicao>32</posicao>
 		</Empresa>
 		
-		//Lable 33
 		<Imovel>
 			<nome>Imovel19</nome>
 			<posicao>33</posicao>
 		</Imovel>
 		
-		// Label 34
 		<LugarEspecialModificaPosicao>
 			<nome>LugarEspecialModificaPosicao04</nome>
 			<posicao>34</posicao>
 		</LugarEspecialModificaPosicao>
 		
-		// Label 35
 		<LugarEspecialModificaPosicao>
 			<nome>LugarEspecialModificaPosicao05</nome>
 			<posicao>35</posicao>
 		</LugarEspecialModificaPosicao>
 		
-		//Lable 36
 		<Imovel>
 			<nome>Imovel20</nome>
 			<posicao>36</posicao>
 		</Imovel>
 		
-		//Label 37
 		<Empresa>
 			<nome>Empresa09</nome>
 			<posicao>37</posicao>
 		</Empresa>
 		
-		//Lable 38
 		<Imovel>
 			<nome>Imovel21</nome>
 			<posicao>38</posicao>
 		</Imovel>
 		
-		//Lable 39
 		<Imovel>
 			<nome>Imovel22</nome>
 			<posicao>39</posicao>
