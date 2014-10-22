@@ -1,20 +1,17 @@
 package br.ufc.quixada.pds.bancoimobiliario.view;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
 import java.awt.BorderLayout;
+import java.awt.EventQueue;
 import java.awt.GridBagLayout;
 
+import javax.inject.Inject;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
-import br.ufc.quixada.pds.bancoimobiliario.controller.BancoImobiliarioControlador;
 import br.ufc.quixada.pds.bancoimobiliario.controller.Controlador;
-
-import java.awt.GridBagConstraints;
-import java.awt.Window.Type;
+import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorBancoImobiliario;
+import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 
 public class GUIBancoImobiliario {
 
@@ -23,7 +20,7 @@ public class GUIBancoImobiliario {
 	
 	/**
 	 * Launch the application.
-	 */
+	 *
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -36,22 +33,33 @@ public class GUIBancoImobiliario {
 			}
 		});
 	}
+	*/
 
 	/**
 	 * Create the application.
 	 */
-	public GUIBancoImobiliario() {
-		// TODO Usar injeção de dependências
-		this.controlador = new BancoImobiliarioControlador(); 
-		initialize();
+	public GUIBancoImobiliario(Controlador controlador) {
+		this.controlador = controlador;
+	}
+	
+	public void initialize(){
+		initializeComponents();
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					GUIBancoImobiliario.this.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}													
+			}
+		});
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initializeComponents() {
 		frame = new JFrame();
-		frame.setResizable(false);
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		

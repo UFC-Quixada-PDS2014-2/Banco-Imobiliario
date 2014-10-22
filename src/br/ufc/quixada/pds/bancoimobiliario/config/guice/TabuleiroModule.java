@@ -14,7 +14,7 @@ public class TabuleiroModule extends AbstractModule{
 		
 		bind(TabuleiroBuilder.class).to(TabuleiroBuilderConcrete.class);
 		bind(ReaderLogradouros.class).to(ConfiguracaoCasasTabuleiroComXStream.class);
-		
+
 	}
 
 }

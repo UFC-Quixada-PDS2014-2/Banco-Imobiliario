@@ -9,6 +9,12 @@ public class BancoImobiliario {
 	private List<Jogador> jogadores;
 	private Tabuleiro tabuleiro;
 	private Copo copo;
+
+	public BancoImobiliario(List<Jogador> jogadores, Tabuleiro tabuleiro, Copo copo){
+		this.jogadores = jogadores;
+		this.tabuleiro = tabuleiro;
+		this.copo = copo;
+	}
 	
 	public void realizarRodada(){
 		Iterator<Jogador> jogadores = this.obterJogadores();
@@ -25,5 +31,9 @@ public class BancoImobiliario {
 	
 	public Iterator<Jogador> obterJogadores(){
 		return jogadores.iterator();
+	}
+	
+	public List<Logradouro> getCasasDoTabuleiro(){
+		return this.tabuleiro.getCasasDoTabuleiro();
 	}
 }

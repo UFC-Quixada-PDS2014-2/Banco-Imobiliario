@@ -43,7 +43,10 @@ public class TabuleiroDirector {
 			throw new ErroArquivoConfiguracoesException("Arquivo de configuração inválido");
 		}
 		
-		
+	}
+	
+	public Tabuleiro getTabuleiro() throws MontadorTabuleiroException{
+		return builderTabuleiro.getTabuleiro();
 	}
 	
 }

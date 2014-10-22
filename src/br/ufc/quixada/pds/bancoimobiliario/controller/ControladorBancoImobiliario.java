@@ -8,15 +8,25 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import br.ufc.quixada.pds.bancoimobiliario.enumeration.ConfiguracoesEnum;
+import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
+import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
 
-public class BancoImobiliarioControlador implements Controlador{
+public class ControladorBancoImobiliario implements Controlador{
 
+	private BancoImobiliario bancoImobiliario;
+	
+	public ControladorBancoImobiliario(BancoImobiliario bancoImobiliario){
+		this.bancoImobiliario = bancoImobiliario;
+	}
+	
 	public void configurar(JPanel panel){
 		//TODO adicionar todos os tratadores de eventos aqui
 		
 		List<JLabel> iLogradouros = new ArrayList<>();
+	    List<Logradouro> logradouros = this.bancoImobiliario.getCasasDoTabuleiro();
+		
 		for (int i = 0; i < ConfiguracoesEnum.NUMERO_CASAS.getValor(); i++) {
-			iLogradouros.add(new JLabel("Label " + i));
+			iLogradouros.add(new JLabel(logradouros.get(i).obterNome()));
 		}
 		// Piso da divisão do número de casas por 4 mais 1
 		int tamanhoLadoTabuleiro = (ConfiguracoesEnum.NUMERO_CASAS.getValor() / 4) + 1; 
