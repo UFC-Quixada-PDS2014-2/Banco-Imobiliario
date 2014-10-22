@@ -27,6 +27,12 @@ public class Tabuleiro {
 	
 	public Logradouro obterLogradouro(Logradouro logradouroBase, int deslocamento){
 		int posicaoLogradouroBase = logradouros.indexOf(logradouroBase);
-		return logradouros.get(posicaoLogradouroBase + deslocamento);
+		int novaPosicao;
+		if(posicaoLogradouroBase + deslocamento >= logradouros.size()){
+			novaPosicao = posicaoLogradouroBase + deslocamento - logradouros.size();	
+		} else{
+			novaPosicao = posicaoLogradouroBase + deslocamento;
+		}
+		return logradouros.get(novaPosicao);
 	}
 }

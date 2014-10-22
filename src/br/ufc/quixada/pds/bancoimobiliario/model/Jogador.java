@@ -14,6 +14,17 @@ public class Jogador {
 		this.peca.atualizarLocalizacao(proximoLogradouro);
 	}
 
+	
+	public void adicionarSaldo(double  valor){
+		// TODO : Criar validacao pra valores negativos
+		saldo += valor;
+	}
+	
+	public void removerSaldo(double valor){
+		// TODO : Criar validacao pra valores negativos
+		saldo -= valor;
+	}
+	
 	public String getNome() {
 		return nome;
 	}
