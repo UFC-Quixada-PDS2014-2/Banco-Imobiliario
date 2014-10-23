@@ -21,18 +21,7 @@ public class ConfiguracaoCasasTabuleiroComXStream implements ReaderLogradouros{
 	private List<Logradouro> listaDeLogradouros; 
 	
 	public ConfiguracaoCasasTabuleiroComXStream(){
-		
 		this.stream = new XStream(new DomDriver());
-		
-		configurarClassesParaAlias();
-		
-		try {
-			carregarElementosXMLLista(); 
-			//TODO Não pode colocar throws no Construtor por causa do google guice - revisar solução
-		} catch (ErroNaLeituraDoXML e) {
-			e.printStackTrace();
-		}
-		
 	}
 	
 	private void configurarClassesParaAlias(){
@@ -71,4 +60,11 @@ public class ConfiguracaoCasasTabuleiroComXStream implements ReaderLogradouros{
 		return sublistaDeLogradouros;
 	}
 
+	@Override
+	public void carregarReader() throws ErroNaLeituraDoXML {
+		configurarClassesParaAlias();
+		carregarElementosXMLLista();
+	}
+
+	
 }

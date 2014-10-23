@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import br.ufc.quixada.pds.bancoimobiliario.config.ReaderLogradouros;
 import br.ufc.quixada.pds.bancoimobiliario.exception.ErroArquivoConfiguracoesException;
+import br.ufc.quixada.pds.bancoimobiliario.exception.ErroNaLeituraDoXML;
 import br.ufc.quixada.pds.bancoimobiliario.exception.MontadorTabuleiroException;
 
 public class TabuleiroDirector {
@@ -21,11 +22,13 @@ public class TabuleiroDirector {
 	}
 	
 	public void construirTabuleiro() throws ErroArquivoConfiguracoesException{
-		
-		PontoDePartida pontoDePartida = readerLogradouros.pegarPontoDePartida();
-		List<Logradouro> listaLogradouros = readerLogradouros.lerLogradouros();
-		
 		try {
+			this.readerLogradouros.carregarReader();
+			
+			PontoDePartida pontoDePartida = readerLogradouros.pegarPontoDePartida();
+			List<Logradouro> listaLogradouros = readerLogradouros.lerLogradouros();
+		
+		
 			builderTabuleiro.montarPontoPartida(pontoDePartida);
 			
 			Iterator<Logradouro> iteratorLogradouros = listaLogradouros.iterator();
@@ -40,7 +43,10 @@ public class TabuleiroDirector {
 			
 		} catch (MontadorTabuleiroException e) {
 			e.printStackTrace();
-			throw new ErroArquivoConfiguracoesException("Arquivo de configuração inválido");
+			throw new ErroArquivoConfiguracoesException();
+		} catch (ErroNaLeituraDoXML e) {
+			e.printStackTrace();
+			throw new ErroArquivoConfiguracoesException();
 		}
 		
 	}
