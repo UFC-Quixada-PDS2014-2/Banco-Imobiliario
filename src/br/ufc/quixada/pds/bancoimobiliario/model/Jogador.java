@@ -10,5 +10,4 @@ public interface Jogador {
 	public int getPosicao();
 	public List<Logradouro> getLogradourosAdquiridos();
 	
-	
 }
