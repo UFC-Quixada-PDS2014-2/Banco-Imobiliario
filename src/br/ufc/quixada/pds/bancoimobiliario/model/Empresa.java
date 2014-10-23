@@ -1,6 +1,6 @@
 package br.ufc.quixada.pds.bancoimobiliario.model;
 
-public class Empresa extends Logradouro {
+public class Empresa extends Propriedade {
 
 	@Override
 	public void acaoLogradouro() {

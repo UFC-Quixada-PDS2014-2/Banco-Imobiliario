@@ -5,7 +5,7 @@ public abstract class Propriedade extends Logradouro{
 	private double valorDeVenda;
 	private boolean adquirida;
 	
-	//TODO métodos de propriedade
+	//TODO mÃ©todos de propriedade
 	
 	
 }

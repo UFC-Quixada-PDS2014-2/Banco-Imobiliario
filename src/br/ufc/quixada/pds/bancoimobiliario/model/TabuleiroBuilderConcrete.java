@@ -25,7 +25,7 @@ public class TabuleiroBuilderConcrete implements TabuleiroBuilder{
 			first = true;
 			this.qtdCasas++;
 		}else{
-			throw new MontadorTabuleiroException("Ponto de partida j· adicionado");
+			throw new MontadorTabuleiroException("Ponto de partida j√° adicionado");
 		}
 	}
 
@@ -38,9 +38,9 @@ public class TabuleiroBuilderConcrete implements TabuleiroBuilder{
 		}else{
 			String mensagem = "";
 			if(first == false){
-				mensagem = "Necess·rio adicionar ponto inicial";
+				mensagem = "Necess√°rio adicionar ponto inicial";
 			}else{
-				mensagem = "J· foram adicionadas muitas casas, adicione a ˙ltima";
+				mensagem = "J√° foram adicionadas muitas casas, adicione a √∫ltima";
 			}
 			throw new MontadorTabuleiroException(mensagem);
 		}
@@ -64,7 +64,7 @@ public class TabuleiroBuilderConcrete implements TabuleiroBuilder{
 		if(first && last){
 			return this.tabuleiroImpl;
 		}else{
-			throw new MontadorTabuleiroException("Tabuleiro n„o montado");
+			throw new MontadorTabuleiroException("Tabuleiro n√£o montado");
 		}
 	}
 
