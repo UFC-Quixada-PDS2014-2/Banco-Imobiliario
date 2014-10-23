@@ -4,204 +4,164 @@
 		
 		<PontoDePartida>
 			<nome>Ponto de Partida</nome>
-			<posicao>0</posicao>
 		</PontoDePartida>
 		
 		
 		<Imovel>
 			<nome>Imovel 01</nome>
-			<posicao>1</posicao>
 		</Imovel>
 		
 		
 		<Empresa>
 			<nome>Empresa 01</nome>
-			<posicao>2</posicao>
 		</Empresa>
 		
 		<Imovel>
 			<nome>Imovel02</nome>
-			<posicao>3</posicao>
 		</Imovel>
 		
 		<Imovel>
 			<nome>Imovel03</nome>
-			<posicao>4</posicao>
 		</Imovel>
 		
 		<Empresa>
 			<nome>Empresa 02</nome>
-			<posicao>5</posicao>
 		</Empresa>
 		
 		<Imovel>
 			<nome>Imovel04</nome>
-			<posicao>6</posicao>
 		</Imovel>
 		
 		<LugarEspecialModificaPosicao>
 			<nome>LugarEspecialModificaPosicao 01</nome>
-			<posicao>7</posicao>
 		</LugarEspecialModificaPosicao>
 		
 		<Imovel>
 			<nome>Imovel05</nome>
-			<posicao>8</posicao>
 		</Imovel>
 		
 		<Imovel>
 			<nome>Imovel06</nome>
-			<posicao>9</posicao>
 		</Imovel>
 		
 		<LugarEspecialModificaSaldo>
 			<nome>LugarEspecialModificaSaldo 01</nome>
-			<posicao>10</posicao>
 		</LugarEspecialModificaSaldo>
 		
 		<Imovel>
 			<nome>Imovel07</nome>
-			<posicao>11</posicao>
 		</Imovel>
 		
 		<LugarEspecialModificaPosicao>
 			<nome>LugarEspecialModificaPosicao 02</nome>
-			<posicao>12</posicao>
 		</LugarEspecialModificaPosicao>
 		
 		<Imovel>
 			<nome>Imovel08</nome>
-			<posicao>13</posicao>
 		</Imovel>
 		
 		<Imovel>
 			<nome>Imovel09</nome>
-			<posicao>14</posicao>
 		</Imovel>
 		
 		<Empresa>
 			<nome>Empresa03</nome>
-			<posicao>15</posicao>
 		</Empresa>
 		
 		<Imovel>
 			<nome>Imovel10</nome>
-			<posicao>16</posicao>
 		</Imovel>
 		
 		<Imovel>
 			<nome>Imovel11</nome>
-			<posicao>17</posicao>
 		</Imovel>
 		
 		<Empresa>
 			<nome>Empresa04</nome>
-			<posicao>18</posicao>
 		</Empresa>
 		
 		<Imovel>
 			<nome>Imovel12</nome>
-			<posicao>19</posicao>
 		</Imovel>
 		
 		<LugarEspecialModificaSaldo>
 			<nome>LugarEspecialModificaSaldo02</nome>
-			<posicao>20</posicao>
 		</LugarEspecialModificaSaldo>
 		
 		<Imovel>
 			<nome>Imovel13</nome>
-			<posicao>21</posicao>
 		</Imovel>
 		
 		<Imovel>
 			<nome>Imovel14</nome>
-			<posicao>22</posicao>
 		</Imovel>
 		
 		<LugarEspecialModificaPosicao>
 			<nome>LugarEspecialModificaPosicao03</nome>
-			<posicao>23</posicao>
 		</LugarEspecialModificaPosicao>
 		
 		<Imovel>
 			<nome>Imovel15</nome>
-			<posicao>24</posicao>
 		</Imovel>
 		
 		<Empresa>
 			<nome>Empresa05</nome>
-			<posicao>25</posicao>
 		</Empresa>
 		
 		<Empresa>
 			<nome>Empresa06</nome>
-			<posicao>26</posicao>
 		</Empresa>
 		
 		<Imovel>
 			<nome>Imovel16</nome>
-			<posicao>27</posicao>
 		</Imovel>
 		
 		<Empresa>
 			<nome>Empresa07</nome>
-			<posicao>28</posicao>
 		</Empresa>
 		
 		<Imovel>
 			<nome>Imovel17</nome>
-			<posicao>29</posicao>
 		</Imovel>
 		
 		<LugarEspecialModificaSaldo>
 			<nome>LugarEspecialModificaSaldo03</nome>
-			<posicao>30</posicao>
 		</LugarEspecialModificaSaldo>
 		
 		<Imovel>
 			<nome>Imovel18</nome>
-			<posicao>31</posicao>
 		</Imovel>
 		
 		<Empresa>
 			<nome>Empresa08</nome>
-			<posicao>32</posicao>
 		</Empresa>
 		
 		<Imovel>
 			<nome>Imovel19</nome>
-			<posicao>33</posicao>
 		</Imovel>
 		
 		<LugarEspecialModificaPosicao>
 			<nome>LugarEspecialModificaPosicao04</nome>
-			<posicao>34</posicao>
 		</LugarEspecialModificaPosicao>
 		
 		<LugarEspecialModificaPosicao>
 			<nome>LugarEspecialModificaPosicao05</nome>
-			<posicao>35</posicao>
 		</LugarEspecialModificaPosicao>
 		
 		<Imovel>
 			<nome>Imovel20</nome>
-			<posicao>36</posicao>
 		</Imovel>
 		
 		<Empresa>
 			<nome>Empresa09</nome>
-			<posicao>37</posicao>
 		</Empresa>
 		
 		<Imovel>
 			<nome>Imovel21</nome>
-			<posicao>38</posicao>
 		</Imovel>
 		
 		<Imovel>
 			<nome>Imovel22</nome>
-			<posicao>39</posicao>
 		</Imovel>
 		
 	</List> 

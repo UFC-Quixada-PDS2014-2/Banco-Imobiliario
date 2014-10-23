@@ -6,13 +6,13 @@ import br.ufc.quixada.pds.bancoimobiliario.exception.MontadorTabuleiroException;
 
 public class TabuleiroBuilderConcrete implements TabuleiroBuilder{
 
-	private Tabuleiro tabuleiro;
+	private TabuleiroImpl tabuleiroImpl;
 	private boolean first,last;
 	private int qtdCasas;
 	
 	
 	public TabuleiroBuilderConcrete(){
-		this.tabuleiro = new Tabuleiro();
+		this.tabuleiroImpl = new TabuleiroImpl();
 		this.first = false;
 		this.last = false;
 		this.qtdCasas = 0;
@@ -21,7 +21,7 @@ public class TabuleiroBuilderConcrete implements TabuleiroBuilder{
 	@Override
 	public void montarPontoPartida(PontoDePartida pontoDePartida) throws MontadorTabuleiroException {
 		if(first == false){
-			tabuleiro.getLogradouros().add(pontoDePartida);
+			tabuleiroImpl.getLogradouros().add(pontoDePartida);
 			first = true;
 			this.qtdCasas++;
 		}else{
@@ -33,7 +33,7 @@ public class TabuleiroBuilderConcrete implements TabuleiroBuilder{
 	public void montarCasaIntermediaria(Logradouro logradouro) throws MontadorTabuleiroException {
 		int casasRestantes = ConfiguracoesEnum.NUMERO_CASAS.getValor() - qtdCasas;
 		if(first && (casasRestantes > 1)){
-			tabuleiro.getLogradouros().add(logradouro);
+			tabuleiroImpl.getLogradouros().add(logradouro);
 			this.qtdCasas++;
 		}else{
 			String mensagem = "";
@@ -50,7 +50,7 @@ public class TabuleiroBuilderConcrete implements TabuleiroBuilder{
 	public void montarUltimaCasa(Logradouro logradouro) throws MontadorTabuleiroException {
 		int casasRestantes = ConfiguracoesEnum.NUMERO_CASAS.getValor() - qtdCasas;
 		if(casasRestantes == 1){
-			tabuleiro.getLogradouros().add(logradouro);
+			tabuleiroImpl.getLogradouros().add(logradouro);
 			this.qtdCasas++;
 			last = true;
 		}else{
@@ -62,7 +62,7 @@ public class TabuleiroBuilderConcrete implements TabuleiroBuilder{
 	@Override
 	public Tabuleiro getTabuleiro() throws MontadorTabuleiroException{
 		if(first && last){
-			return this.tabuleiro;
+			return this.tabuleiroImpl;
 		}else{
 			throw new MontadorTabuleiroException("Tabuleiro não montado");
 		}

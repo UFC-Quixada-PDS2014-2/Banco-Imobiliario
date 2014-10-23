@@ -4,15 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufc.quixada.pds.bancoimobiliario.config.guice.TabuleiroModule;
-import br.ufc.quixada.pds.bancoimobiliario.controller.Controlador;
-import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorBancoImobiliario;
 import br.ufc.quixada.pds.bancoimobiliario.enumeration.ConfiguracoesEnum;
 import br.ufc.quixada.pds.bancoimobiliario.exception.ErroArquivoConfiguracoesException;
 import br.ufc.quixada.pds.bancoimobiliario.exception.MontadorTabuleiroException;
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
-import br.ufc.quixada.pds.bancoimobiliario.model.Copo;
+import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliarioImpl;
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
-import br.ufc.quixada.pds.bancoimobiliario.model.Peca;
+import br.ufc.quixada.pds.bancoimobiliario.model.JogadorImpl;
 import br.ufc.quixada.pds.bancoimobiliario.model.Tabuleiro;
 import br.ufc.quixada.pds.bancoimobiliario.model.TabuleiroDirector;
 import br.ufc.quixada.pds.bancoimobiliario.view.GUIBancoImobiliario;
@@ -20,7 +18,7 @@ import br.ufc.quixada.pds.bancoimobiliario.view.GUIBancoImobiliario;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
-public class BootstraperBancoImobiliario {
+public class Main {
 
 	public static void main(String[] args) {
 		try {
@@ -31,38 +29,27 @@ public class BootstraperBancoImobiliario {
 			tabuleiroDirector.construirTabuleiro();
 			Tabuleiro tabuleiro = tabuleiroDirector.getTabuleiro();	
 			
-			Copo copo = new Copo();
 			
 			List<Jogador> jogadores = new ArrayList<>();
 			for (int i = 0; i < ConfiguracoesEnum.NUMERO_JOGADORES.getValor(); i++) {
-				Jogador jogador = new Jogador();
-				jogador.setNome("Jogador " + (i + 1));
-				jogador.setSaldo(ConfiguracoesEnum.SALDO_INICIAL.getValor());
-				jogador.setTabuleiro(tabuleiro);
-				Peca peca = new Peca();
-				jogador.setPeca(peca);
-				jogadores.add(jogador);
+				JogadorImpl jogadorImpl = new JogadorImpl("Jogador 1 ", ConfiguracoesEnum.SALDO_INICIAL.getValor());
+				jogadores.add(jogadorImpl);
 			}
 			
-			BancoImobiliario bancoImobiliario = new BancoImobiliario(jogadores, tabuleiro, copo);
+			BancoImobiliario bancoImobiliario = new BancoImobiliarioImpl(jogadores, tabuleiro);
 			
-			Controlador controlador = new ControladorBancoImobiliario(bancoImobiliario);
 			
-			GUIBancoImobiliario gui = new GUIBancoImobiliario(controlador);
+			GUIBancoImobiliario gui = new GUIBancoImobiliario(bancoImobiliario);
 			gui.initialize();
 			
 		
 		} catch (ErroArquivoConfiguracoesException e) {
-			mensagemErro(e.getMessage());
+			//TODO
 			e.printStackTrace();
 		} catch (MontadorTabuleiroException e2) {
-			
+			//TODO
 			e2.printStackTrace();
 		}
-		
-	}
-	
-	public static void mensagemErro(String mensagem){
 		
 	}
 	

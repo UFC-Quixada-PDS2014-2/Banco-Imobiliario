@@ -1,32 +1,12 @@
 package br.ufc.quixada.pds.bancoimobiliario.model;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
-public class Tabuleiro {
-	
-	private List<Logradouro> logradouros;
-	
-	public Tabuleiro(){
-		logradouros = new ArrayList<Logradouro>();
-	}
+public interface Tabuleiro {
 
-	List<Logradouro> getLogradouros(){
-		return this.logradouros;
-	}
+	public List<Logradouro> getCasasDoTabuleiro();
+	public Logradouro pegarPontoDePartida();
+	public Logradouro percorrerTabuleiro(int posicaoBase, int deslocamento);
 	
-	public List<Logradouro> getCasasDoTabuleiro(){
-		return Collections.unmodifiableList(this.logradouros);
-	}
 	
-	public Logradouro pegarPontoDePartida(){
-		return this.logradouros.get(0);
-	}
-	
-	public Logradouro obterLogradouro(Logradouro logradouroBase, int deslocamento){
-		int posicaoLogradouroBase = logradouros.indexOf(logradouroBase);
-		return logradouros.get(posicaoLogradouroBase + deslocamento);
-	}
 }
