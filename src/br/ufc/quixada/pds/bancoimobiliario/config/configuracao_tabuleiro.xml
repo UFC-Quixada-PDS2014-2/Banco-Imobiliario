@@ -9,27 +9,39 @@
 		
 		<Imovel>
 			<nome>Imovel 01</nome>
+			<valorDaPropriedade>200</valorDaPropriedade>
+			<valorDoAluguel>20</valorDoAluguel>
 		</Imovel>
 		
 		
 		<Empresa>
 			<nome>Empresa 01</nome>
+			<valorDaPropriedade>350</valorDaPropriedade>
+			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
 		
 		<Imovel>
-			<nome>Imovel02</nome>
+			<nome>Imovel 02</nome>
+			<valorDaPropriedade>120</valorDaPropriedade>
+			<valorDoAluguel>12</valorDoAluguel>
 		</Imovel>
 		
 		<Imovel>
-			<nome>Imovel03</nome>
+			<nome>Imovel 03</nome>
+			<valorDaPropriedade>120</valorDaPropriedade>
+			<valorDoAluguel>12</valorDoAluguel>
 		</Imovel>
 		
 		<Empresa>
 			<nome>Empresa 02</nome>
+			<valorDaPropriedade>350</valorDaPropriedade>
+			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
 		
 		<Imovel>
-			<nome>Imovel04</nome>
+			<nome>Imovel 04</nome>
+			<valorDaPropriedade>480</valorDaPropriedade>
+			<valorDoAluguel>48</valorDoAluguel>
 		</Imovel>
 		
 		<LugarEspecialModificaPosicao>
@@ -37,11 +49,15 @@
 		</LugarEspecialModificaPosicao>
 		
 		<Imovel>
-			<nome>Imovel05</nome>
+			<nome>Imovel 05</nome>
+			<valorDaPropriedade>440</valorDaPropriedade>
+			<valorDoAluguel>44</valorDoAluguel>
 		</Imovel>
 		
 		<Imovel>
-			<nome>Imovel06</nome>
+			<nome>Imovel 06</nome>
+			<valorDaPropriedade>440</valorDaPropriedade>
+			<valorDoAluguel>44</valorDoAluguel>
 		</Imovel>
 		
 		<LugarEspecialModificaSaldo>
@@ -50,6 +66,8 @@
 		
 		<Imovel>
 			<nome>Imovel07</nome>
+			<valorDaPropriedade>400</valorDaPropriedade>
+			<valorDoAluguel>40</valorDoAluguel>
 		</Imovel>
 		
 		<LugarEspecialModificaPosicao>
@@ -57,111 +75,155 @@
 		</LugarEspecialModificaPosicao>
 		
 		<Imovel>
-			<nome>Imovel08</nome>
+			<nome>Imovel 08</nome>
+			<valorDaPropriedade>360</valorDaPropriedade>
+			<valorDoAluguel>36</valorDoAluguel>
 		</Imovel>
 		
 		<Imovel>
-			<nome>Imovel09</nome>
+			<nome>Imovel 09</nome>
+			<valorDaPropriedade>360</valorDaPropriedade>
+			<valorDoAluguel>36</valorDoAluguel>
 		</Imovel>
 		
 		<Empresa>
 			<nome>Empresa03</nome>
+			<valorDaPropriedade>350</valorDaPropriedade>
+			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
 		
 		<Imovel>
-			<nome>Imovel10</nome>
+			<nome>Imovel 10</nome>
+			<valorDaPropriedade>700</valorDaPropriedade>
+			<valorDoAluguel>70</valorDoAluguel>
 		</Imovel>
 		
 		<Imovel>
-			<nome>Imovel11</nome>
+			<nome>Imovel 11</nome>
+			<valorDaPropriedade>800</valorDaPropriedade>
+			<valorDoAluguel>80</valorDoAluguel>
 		</Imovel>
 		
 		<Empresa>
-			<nome>Empresa04</nome>
+			<nome>Empresa 04</nome>
+			<valorDaPropriedade>350</valorDaPropriedade>
+			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
 		
 		<Imovel>
-			<nome>Imovel12</nome>
+			<nome>Imovel 12</nome>
+			<valorDaPropriedade>240</valorDaPropriedade>
+			<valorDoAluguel>24</valorDoAluguel>
 		</Imovel>
 		
 		<LugarEspecialModificaSaldo>
-			<nome>LugarEspecialModificaSaldo02</nome>
+			<nome>LugarEspecialModificaSaldo 02</nome>
 		</LugarEspecialModificaSaldo>
 		
 		<Imovel>
-			<nome>Imovel13</nome>
+			<nome>Imovel 13</nome>
+			<valorDaPropriedade>200</valorDaPropriedade>
+			<valorDoAluguel>20</valorDoAluguel>
 		</Imovel>
 		
 		<Imovel>
-			<nome>Imovel14</nome>
+			<nome>Imovel 14</nome>
+			<valorDaPropriedade>320</valorDaPropriedade>
+			<valorDoAluguel>36</valorDoAluguel>
 		</Imovel>
 		
 		<LugarEspecialModificaPosicao>
-			<nome>LugarEspecialModificaPosicao03</nome>
+			<nome>LugarEspecialModificaPosicao 03</nome>
 		</LugarEspecialModificaPosicao>
 		
 		<Imovel>
-			<nome>Imovel15</nome>
+			<nome>Imovel 15</nome>
+			<valorDaPropriedade>280</valorDaPropriedade>
+			<valorDoAluguel>28</valorDoAluguel>
 		</Imovel>
 		
 		<Empresa>
-			<nome>Empresa05</nome>
+			<nome>Empresa 05</nome>
+			<valorDaPropriedade>350</valorDaPropriedade>
+			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
 		
 		<Empresa>
-			<nome>Empresa06</nome>
+			<nome>Empresa 06</nome>
+			<valorDaPropriedade>350</valorDaPropriedade>
+			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
 		
 		<Imovel>
-			<nome>Imovel16</nome>
+			<nome>Imovel 16</nome>
+			<valorDaPropriedade>280</valorDaPropriedade>
+			<valorDoAluguel>28</valorDoAluguel>
 		</Imovel>
 		
 		<Empresa>
-			<nome>Empresa07</nome>
+			<nome>Empresa 07</nome>
+			<valorDaPropriedade>350</valorDaPropriedade>
+			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
 		
 		<Imovel>
-			<nome>Imovel17</nome>
+			<nome>Imovel 17</nome>
+			<valorDaPropriedade>520</valorDaPropriedade>
+			<valorDoAluguel>52</valorDoAluguel>
 		</Imovel>
 		
 		<LugarEspecialModificaSaldo>
-			<nome>LugarEspecialModificaSaldo03</nome>
+			<nome>LugarEspecialModificaSaldo 03</nome>
 		</LugarEspecialModificaSaldo>
 		
 		<Imovel>
-			<nome>Imovel18</nome>
+			<nome>Imovel 18</nome>
+			<valorDaPropriedade>640</valorDaPropriedade>
+			<valorDoAluguel>64</valorDoAluguel>
 		</Imovel>
 		
 		<Empresa>
-			<nome>Empresa08</nome>
+			<nome>Empresa 08</nome>
+			<valorDaPropriedade>350</valorDaPropriedade>
+			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
 		
 		<Imovel>
-			<nome>Imovel19</nome>
+			<nome>Imovel 19</nome>
+			<valorDaPropriedade>300</valorDaPropriedade>
+			<valorDoAluguel>30</valorDoAluguel>
 		</Imovel>
 		
 		<LugarEspecialModificaPosicao>
-			<nome>LugarEspecialModificaPosicao04</nome>
+			<nome>LugarEspecialModificaPosicao 04</nome>
 		</LugarEspecialModificaPosicao>
 		
 		<LugarEspecialModificaPosicao>
-			<nome>LugarEspecialModificaPosicao05</nome>
+			<nome>LugarEspecialModificaPosicao 05</nome>
 		</LugarEspecialModificaPosicao>
 		
 		<Imovel>
-			<nome>Imovel20</nome>
+			<nome>Imovel 20</nome>
+			<valorDaPropriedade>300</valorDaPropriedade>
+			<valorDoAluguel>30</valorDoAluguel>
 		</Imovel>
 		
 		<Empresa>
-			<nome>Empresa09</nome>
+			<nome>Empresa 09</nome>
+			<valorDaPropriedade>350</valorDaPropriedade>
+			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
 		
 		<Imovel>
-			<nome>Imovel21</nome>
+			<nome>Imovel 21</nome>
+			<valorDaPropriedade>560</valorDaPropriedade>
+			<valorDoAluguel>56</valorDoAluguel>
 		</Imovel>
 		
 		<Imovel>
-			<nome>Imovel22</nome>
+			<nome>Imovel 22</nome>
+			<valorDaPropriedade>520</valorDaPropriedade>
+			<valorDoAluguel>52</valorDoAluguel>
 		</Imovel>
 		
 	</List> 
