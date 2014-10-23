@@ -5,7 +5,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.ufc.quixada.pds.bancoimobiliario.exception.ErroNaLeituraDoXML;
+import br.ufc.quixada.pds.bancoimobiliario.exception.ErroNaLeituraDoXMLException;
 import br.ufc.quixada.pds.bancoimobiliario.model.Empresa;
 import br.ufc.quixada.pds.bancoimobiliario.model.Imovel;
 import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
@@ -33,17 +33,17 @@ public class ConfiguracaoCasasTabuleiroComXStream implements ReaderLogradouros{
 		stream.alias("List", List.class);
 	}
 	
-	private void carregarElementosXMLLista() throws ErroNaLeituraDoXML{
+	private void carregarElementosXMLLista() throws ErroNaLeituraDoXMLException{
 		File file = new File("src/br/ufc/quixada/pds/bancoimobiliario/config/configuracao_tabuleiro.xml");
 		
 		if(!file.canExecute()){
-			throw new ErroNaLeituraDoXML();
+			throw new ErroNaLeituraDoXMLException();
 		}
 		
 		try{
 			this.listaDeLogradouros =  (ArrayList) stream.fromXML(file);
 		}catch(Exception e){
-			throw new ErroNaLeituraDoXML();
+			throw new ErroNaLeituraDoXMLException();
 		}
 	}
 	
@@ -61,7 +61,7 @@ public class ConfiguracaoCasasTabuleiroComXStream implements ReaderLogradouros{
 	}
 
 	@Override
-	public void carregarReader() throws ErroNaLeituraDoXML {
+	public void carregarReader() throws ErroNaLeituraDoXMLException {
 		configurarClassesParaAlias();
 		carregarElementosXMLLista();
 	}

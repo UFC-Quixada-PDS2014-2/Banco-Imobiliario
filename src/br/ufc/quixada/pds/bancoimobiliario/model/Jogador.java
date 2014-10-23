@@ -6,9 +6,11 @@ public interface Jogador {
 
 
 	public void atualizarPosicao(int deslocamentoPosicao);
+	public void acrescentarSaldo(double saldo);
+	public void decrementarSaldo(double saldo);
 	public String getNome();
 	public double getSaldo();
 	public int getPosicao();
-	public List<Logradouro> getLogradourosAdquiridos();
+	public List<Propriedade> getPropriedadesAdquiridas();
 	
 }

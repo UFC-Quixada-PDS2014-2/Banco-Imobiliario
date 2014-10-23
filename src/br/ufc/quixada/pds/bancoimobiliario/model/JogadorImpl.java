@@ -10,13 +10,13 @@ public class JogadorImpl implements Jogador{
 	private String nome;
 	private double saldo;
 	private int posicao;
-	private List<Logradouro> logradourosAdquiridos;
+	private List<Propriedade> propriedadesAdquiridas;
 
 	public JogadorImpl(String nome, double saldo){
 		this.nome = nome;
 		this.saldo = saldo;
 		this.posicao = ConfiguracoesEnum.POSICAO_INICIAL.getValor();
-		this.logradourosAdquiridos = new ArrayList<>();
+		this.propriedadesAdquiridas = new ArrayList<>();
 	}
 
 	@Override
@@ -40,8 +40,18 @@ public class JogadorImpl implements Jogador{
 	}
 
 	@Override
-	public List<Logradouro> getLogradourosAdquiridos() {
-		return this.logradourosAdquiridos;
+	public List<Propriedade> getPropriedadesAdquiridas() {
+		return this.propriedadesAdquiridas;
+	}
+
+	@Override
+	public void acrescentarSaldo(double saldo) {
+		this.saldo += saldo;
+	}
+
+	@Override
+	public void decrementarSaldo(double saldo) {
+		this.saldo -= saldo;		
 	}
 
 }
