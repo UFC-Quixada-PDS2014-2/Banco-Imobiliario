@@ -8,8 +8,8 @@ public abstract class Logradouro {
 		return this.nome;
 	}
 	
-	public abstract void acaoLogradouro();
+	public abstract void acaoLogradouro(Jogador jogador);
 	
-	public abstract void passeiPorAqui();
+	public abstract void passeiPorAqui(Jogador jogador);
 	
 }

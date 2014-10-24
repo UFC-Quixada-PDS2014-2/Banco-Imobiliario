@@ -20,8 +20,8 @@ public class JogadorImpl implements Jogador{
 	}
 
 	@Override
-	public void atualizarPosicao(int deslocamentoPosicao) {
-		this.posicao += deslocamentoPosicao;
+	public void atualizarPosicao(int posicaoAtual) {
+		this.posicao = posicaoAtual;
 	}
 
 	@Override

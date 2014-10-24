@@ -17,11 +17,9 @@ public class BancoImobiliarioImpl implements BancoImobiliario{
 	
 	@Override
 	public void realizarTurnoJogador(int valorDados){
-		Logradouro logradouro = this.tabuleiro.percorrerTabuleiro(this.jogadorDaVez.getPosicao(), valorDados);
+		Logradouro logradouro = this.tabuleiro.percorrerTabuleiro(this.jogadorDaVez, valorDados);
 		
-		logradouro.acaoLogradouro();
-
-		this.jogadorDaVez.atualizarPosicao(valorDados);
+		logradouro.acaoLogradouro(jogadorDaVez);
 		//TODO Mudar jogadorDaVez
 	}
 	

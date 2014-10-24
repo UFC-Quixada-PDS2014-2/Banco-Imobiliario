@@ -5,8 +5,8 @@ import java.util.List;
 public interface Tabuleiro {
 
 	public List<Logradouro> getCasasDoTabuleiro();
-	public Logradouro pegarPontoDePartida();
-	public Logradouro percorrerTabuleiro(int posicaoBase, int deslocamento);
+	public Logradouro getPontoDePartida();
+	public Logradouro percorrerTabuleiro(Jogador jogador, int deslocamento);
 	
 	
 }

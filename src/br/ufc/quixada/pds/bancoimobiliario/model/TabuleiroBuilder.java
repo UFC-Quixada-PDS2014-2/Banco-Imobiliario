@@ -1,6 +1,5 @@
 package br.ufc.quixada.pds.bancoimobiliario.model;
 
-import br.ufc.quixada.pds.bancoimobiliario.exception.MontadorTabuleiroException;
 
 public interface TabuleiroBuilder {
 

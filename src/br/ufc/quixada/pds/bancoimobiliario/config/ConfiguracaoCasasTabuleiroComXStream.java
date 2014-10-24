@@ -5,12 +5,13 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.ufc.quixada.pds.bancoimobiliario.exception.ErroNaLeituraDoXMLException;
+import br.ufc.quixada.pds.bancoimobiliario.model.AcaoModificarPosicao;
+import br.ufc.quixada.pds.bancoimobiliario.model.AcaoModificarSaldo;
 import br.ufc.quixada.pds.bancoimobiliario.model.Empresa;
 import br.ufc.quixada.pds.bancoimobiliario.model.Imovel;
+import br.ufc.quixada.pds.bancoimobiliario.model.JogadorImpl;
 import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
-import br.ufc.quixada.pds.bancoimobiliario.model.LugarEspecialModificaPosicao;
-import br.ufc.quixada.pds.bancoimobiliario.model.LugarEspecialModificarSaldo;
+import br.ufc.quixada.pds.bancoimobiliario.model.LugarEspecial;
 import br.ufc.quixada.pds.bancoimobiliario.model.PontoDePartida;
 
 import com.thoughtworks.xstream.XStream;
@@ -28,15 +29,17 @@ public class ConfiguracaoCasasTabuleiroComXStream implements ReaderLogradouros{
 		stream.alias("PontoDePartida", PontoDePartida.class);
 		stream.alias("Imovel", Imovel.class);
 		stream.alias("Empresa", Empresa.class);
-		stream.alias("LugarEspecialModificaPosicao", LugarEspecialModificaPosicao.class);
-		stream.alias("LugarEspecialModificaSaldo", LugarEspecialModificarSaldo.class);
+		stream.alias("LugarEspecial", LugarEspecial.class);
+		stream.alias("AcaoModificarSaldo", AcaoModificarSaldo.class);
+		stream.alias("AcaoModificarPosicao", AcaoModificarPosicao.class);
 		stream.alias("List", List.class);
+		stream.alias("Jogador", JogadorImpl.class);
 	}
 	
 	private void carregarElementosXMLLista() throws ErroNaLeituraDoXMLException{
-		File file = new File("src/br/ufc/quixada/pds/bancoimobiliario/config/configuracao_tabuleiro.xml");
+		File file = new File(ConfiguracaoCasasTabuleiroComXStream.class.getResource("configuracao_tabuleiro.xml").getPath());
 		
-		if(!file.canExecute()){
+		if(!file.exists()){
 			throw new ErroNaLeituraDoXMLException();
 		}
 		

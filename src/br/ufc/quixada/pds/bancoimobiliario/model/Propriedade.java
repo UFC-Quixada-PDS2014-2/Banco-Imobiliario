@@ -1,7 +1,5 @@
 package br.ufc.quixada.pds.bancoimobiliario.model;
 
-import br.ufc.quixada.pds.bancoimobiliario.exception.PropriedadeJaVendidaException;
-import br.ufc.quixada.pds.bancoimobiliario.exception.SaldoJogadorInsuficienteException;
 
 public abstract class Propriedade extends Logradouro{
 

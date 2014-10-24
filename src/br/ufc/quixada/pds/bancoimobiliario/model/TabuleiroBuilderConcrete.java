@@ -1,7 +1,6 @@
 package br.ufc.quixada.pds.bancoimobiliario.model;
 
 import br.ufc.quixada.pds.bancoimobiliario.enumeration.ConfiguracoesEnum;
-import br.ufc.quixada.pds.bancoimobiliario.exception.MontadorTabuleiroException;
 
 
 public class TabuleiroBuilderConcrete implements TabuleiroBuilder{

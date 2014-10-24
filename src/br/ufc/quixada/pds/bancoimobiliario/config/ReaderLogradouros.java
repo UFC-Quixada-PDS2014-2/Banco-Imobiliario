@@ -2,7 +2,6 @@ package br.ufc.quixada.pds.bancoimobiliario.config;
 
 import java.util.List;
 
-import br.ufc.quixada.pds.bancoimobiliario.exception.ErroNaLeituraDoXMLException;
 import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
 import br.ufc.quixada.pds.bancoimobiliario.model.PontoDePartida;
 

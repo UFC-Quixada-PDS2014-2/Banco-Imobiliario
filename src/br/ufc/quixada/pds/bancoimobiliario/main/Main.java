@@ -6,12 +6,12 @@ import java.util.Scanner;
 
 import br.ufc.quixada.pds.bancoimobiliario.config.guice.TabuleiroModule;
 import br.ufc.quixada.pds.bancoimobiliario.enumeration.ConfiguracoesEnum;
-import br.ufc.quixada.pds.bancoimobiliario.exception.ErroArquivoConfiguracoesException;
-import br.ufc.quixada.pds.bancoimobiliario.exception.MontadorTabuleiroException;
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliarioImpl;
+import br.ufc.quixada.pds.bancoimobiliario.model.ErroArquivoConfiguracoesException;
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
 import br.ufc.quixada.pds.bancoimobiliario.model.JogadorImpl;
+import br.ufc.quixada.pds.bancoimobiliario.model.MontadorTabuleiroException;
 import br.ufc.quixada.pds.bancoimobiliario.model.Tabuleiro;
 import br.ufc.quixada.pds.bancoimobiliario.model.TabuleiroDirector;
 import br.ufc.quixada.pds.bancoimobiliario.view.GUIBancoImobiliario;
@@ -41,7 +41,7 @@ public class Main {
 			
 			
 			GUIBancoImobiliario gui = new GUIBancoImobiliario(bancoImobiliario);
-			//gui.initialize();
+			gui.initialize();
 			
 			while(true){
 				

@@ -1,4 +1,4 @@
-package br.ufc.quixada.pds.bancoimobiliario.exception;
+package br.ufc.quixada.pds.bancoimobiliario.model;
 
 public class ErroArquivoConfiguracoesException extends Exception{
 

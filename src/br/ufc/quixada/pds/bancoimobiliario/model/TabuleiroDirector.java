@@ -5,10 +5,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import br.ufc.quixada.pds.bancoimobiliario.config.ErroNaLeituraDoXMLException;
 import br.ufc.quixada.pds.bancoimobiliario.config.ReaderLogradouros;
-import br.ufc.quixada.pds.bancoimobiliario.exception.ErroArquivoConfiguracoesException;
-import br.ufc.quixada.pds.bancoimobiliario.exception.ErroNaLeituraDoXMLException;
-import br.ufc.quixada.pds.bancoimobiliario.exception.MontadorTabuleiroException;
 
 public class TabuleiroDirector {
 

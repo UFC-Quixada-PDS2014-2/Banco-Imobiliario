@@ -1,4 +1,4 @@
-package br.ufc.quixada.pds.bancoimobiliario.exception;
+package br.ufc.quixada.pds.bancoimobiliario.config;
 
 public class ErroNaLeituraDoXMLException extends Exception{
 	public ErroNaLeituraDoXMLException(){

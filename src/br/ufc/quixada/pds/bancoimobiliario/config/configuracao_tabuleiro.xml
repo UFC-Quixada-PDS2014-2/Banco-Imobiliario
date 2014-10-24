@@ -44,9 +44,9 @@
 			<valorDoAluguel>48</valorDoAluguel>
 		</Imovel>
 		
-		<LugarEspecialModificaPosicao>
-			<nome>LugarEspecialModificaPosicao 01</nome>
-		</LugarEspecialModificaPosicao>
+		<LugarEspecial>
+			<nome>LugarEspecialAcrescentaSaldo 01</nome>
+		</LugarEspecial>
 		
 		<Imovel>
 			<nome>Imovel 05</nome>
@@ -60,9 +60,9 @@
 			<valorDoAluguel>44</valorDoAluguel>
 		</Imovel>
 		
-		<LugarEspecialModificaSaldo>
-			<nome>LugarEspecialModificaSaldo 01</nome>
-		</LugarEspecialModificaSaldo>
+		<LugarEspecial>
+			<nome>LugarEspecialVoltaPosicao 01</nome>
+		</LugarEspecial>
 		
 		<Imovel>
 			<nome>Imovel07</nome>
@@ -70,9 +70,9 @@
 			<valorDoAluguel>40</valorDoAluguel>
 		</Imovel>
 		
-		<LugarEspecialModificaPosicao>
-			<nome>LugarEspecialModificaPosicao 02</nome>
-		</LugarEspecialModificaPosicao>
+		<LugarEspecial>
+			<nome>LugarEspecialSubtraiSaldo 01</nome>
+		</LugarEspecial>
 		
 		<Imovel>
 			<nome>Imovel 08</nome>
@@ -116,9 +116,9 @@
 			<valorDoAluguel>24</valorDoAluguel>
 		</Imovel>
 		
-		<LugarEspecialModificaSaldo>
-			<nome>LugarEspecialModificaSaldo 02</nome>
-		</LugarEspecialModificaSaldo>
+		<LugarEspecial>
+			<nome>LugarEspecialAvancaPosicao 01</nome>
+		</LugarEspecial>
 		
 		<Imovel>
 			<nome>Imovel 13</nome>
@@ -132,9 +132,9 @@
 			<valorDoAluguel>36</valorDoAluguel>
 		</Imovel>
 		
-		<LugarEspecialModificaPosicao>
-			<nome>LugarEspecialModificaPosicao 03</nome>
-		</LugarEspecialModificaPosicao>
+		<LugarEspecial>
+			<nome>LugarEspecialAcrescentaSaldo 02</nome>
+		</LugarEspecial>
 		
 		<Imovel>
 			<nome>Imovel 15</nome>
@@ -172,9 +172,9 @@
 			<valorDoAluguel>52</valorDoAluguel>
 		</Imovel>
 		
-		<LugarEspecialModificaSaldo>
-			<nome>LugarEspecialModificaSaldo 03</nome>
-		</LugarEspecialModificaSaldo>
+		<LugarEspecial>
+			<nome>LugarEspecialVoltaPosicao 02</nome>
+		</LugarEspecial>
 		
 		<Imovel>
 			<nome>Imovel 18</nome>
@@ -194,13 +194,13 @@
 			<valorDoAluguel>30</valorDoAluguel>
 		</Imovel>
 		
-		<LugarEspecialModificaPosicao>
-			<nome>LugarEspecialModificaPosicao 04</nome>
-		</LugarEspecialModificaPosicao>
+		<LugarEspecial>
+			<nome>LugarEspecialSubtraiSaldo 02</nome>
+		</LugarEspecial>
 		
-		<LugarEspecialModificaPosicao>
-			<nome>LugarEspecialModificaPosicao 05</nome>
-		</LugarEspecialModificaPosicao>
+		<LugarEspecial>
+			<nome>LugarEspecialAvancaPosicao 02</nome>
+		</LugarEspecial>
 		
 		<Imovel>
 			<nome>Imovel 20</nome>

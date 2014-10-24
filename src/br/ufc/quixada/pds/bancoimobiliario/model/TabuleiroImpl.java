@@ -24,14 +24,14 @@ public class TabuleiroImpl implements Tabuleiro{
 	}
 	
 	@Override
-	public Logradouro pegarPontoDePartida(){
+	public Logradouro getPontoDePartida(){
 		return this.logradouros.get(0);
 	}
 	
 	@Override
-	public Logradouro percorrerTabuleiro(int posicaoBase, int deslocamento){
+	public Logradouro percorrerTabuleiro(Jogador jogador, int deslocamento){
 		
-		int posicaoJogador = posicaoBase;
+		int posicaoJogador = jogador.getPosicao();
 		int deslocamentoJogador = deslocamento;
 		
 		while(deslocamentoJogador > 0){
@@ -41,11 +41,12 @@ public class TabuleiroImpl implements Tabuleiro{
 			}
 
 			Logradouro logradouro = getLogradouroPorPosicao(posicaoJogador);
-			logradouro.passeiPorAqui();
+			logradouro.passeiPorAqui(jogador);
 			
 			deslocamentoJogador--;
 		}
-
+		jogador.atualizarPosicao(posicaoJogador);
+		
 		return logradouros.get(posicaoJogador);
 	}
 
