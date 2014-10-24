@@ -2,10 +2,14 @@ package br.ufc.quixada.pds.bancoimobiliario.config.guice;
 
 import br.ufc.quixada.pds.bancoimobiliario.config.ConfiguracaoCasasTabuleiroComXStream;
 import br.ufc.quixada.pds.bancoimobiliario.config.ReaderLogradouros;
+import br.ufc.quixada.pds.bancoimobiliario.model.Tabuleiro;
 import br.ufc.quixada.pds.bancoimobiliario.model.TabuleiroBuilder;
 import br.ufc.quixada.pds.bancoimobiliario.model.TabuleiroBuilderConcrete;
+import br.ufc.quixada.pds.bancoimobiliario.model.TabuleiroDirector;
+import br.ufc.quixada.pds.bancoimobiliario.model.TabuleiroImpl;
 
 import com.google.inject.AbstractModule;
+import com.google.inject.assistedinject.FactoryModuleBuilder;
 
 public class TabuleiroModule extends AbstractModule{
 	
@@ -15,6 +19,9 @@ public class TabuleiroModule extends AbstractModule{
 		bind(TabuleiroBuilder.class).to(TabuleiroBuilderConcrete.class);
 		bind(ReaderLogradouros.class).to(ConfiguracaoCasasTabuleiroComXStream.class);
 
+		//TODO Assisted Inject
+		//install(new FactoryModuleBuilder().implement(Tabuleiro.class, TabuleiroImpl.class).build(TabuleiroDirector.class));
+		
 	}
 
 }
