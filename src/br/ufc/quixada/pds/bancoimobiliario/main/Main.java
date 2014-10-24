@@ -2,6 +2,7 @@ package br.ufc.quixada.pds.bancoimobiliario.main;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import br.ufc.quixada.pds.bancoimobiliario.config.guice.TabuleiroModule;
 import br.ufc.quixada.pds.bancoimobiliario.enumeration.ConfiguracoesEnum;
@@ -23,7 +24,7 @@ public class Main {
 	public static void main(String[] args) {
 		try {
 
-			/*Iniciando objetos de domínio*/
+			/*Iniciando objetos de domï¿½nio*/
 			Injector injectorBI = Guice.createInjector(new TabuleiroModule());
 			TabuleiroDirector tabuleiroDirector = injectorBI.getInstance(TabuleiroDirector.class);
 			tabuleiroDirector.construirTabuleiro();
@@ -40,7 +41,18 @@ public class Main {
 			
 			
 			GUIBancoImobiliario gui = new GUIBancoImobiliario(bancoImobiliario);
-			gui.initialize();
+			//gui.initialize();
+			
+			while(true){
+				
+				Scanner scan = new Scanner(System.in);
+				int dados = scan.nextInt();
+				
+				bancoImobiliario.realizarTurnoJogador(dados);
+				System.out.println("Turno Realizado");
+				System.out.println(bancoImobiliario.pegarJogadorDaVez().getPosicao());
+				
+			}
 			
 		
 		} catch (ErroArquivoConfiguracoesException e) {
