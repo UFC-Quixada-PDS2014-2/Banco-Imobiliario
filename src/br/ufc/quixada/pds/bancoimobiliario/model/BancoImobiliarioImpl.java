@@ -5,7 +5,6 @@ import java.util.List;
 
 public class BancoImobiliarioImpl implements BancoImobiliario{
 
-	// TODO : adicionar injeção de dependências
 	private List<Jogador> jogadores;
 	private Jogador jogadorDaVez;
 	private Tabuleiro tabuleiro;
@@ -23,6 +22,7 @@ public class BancoImobiliarioImpl implements BancoImobiliario{
 		logradouro.acaoLogradouro();
 
 		this.jogadorDaVez.atualizarPosicao(valorDados);
+		//TODO Mudar jogadorDaVez
 	}
 	
 	@Override
