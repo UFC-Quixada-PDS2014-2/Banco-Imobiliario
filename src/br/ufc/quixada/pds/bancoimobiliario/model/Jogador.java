@@ -6,11 +6,12 @@ public interface Jogador {
 
 
 	public void atualizarPosicao(int deslocamentoPosicao);
-	public void acrescentarSaldo(double saldo);
-	public void decrementarSaldo(double saldo);
+	public void acrescentarSaldo(double valor) throws ValorInvalidoException;
+	public void decrementarSaldo(double valor) throws JogadorComSaldoNegativoException, ValorInvalidoException;
 	public String getNome();
 	public double getSaldo();
 	public int getPosicao();
 	public List<Propriedade> getPropriedadesAdquiridas();
+	public void adicionarPropriedadeAdquirida(Propriedade propriedade);
 	
 }

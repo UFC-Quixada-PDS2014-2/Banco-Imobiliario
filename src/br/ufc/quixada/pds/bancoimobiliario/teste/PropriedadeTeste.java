@@ -7,10 +7,13 @@ import org.junit.Test;
 import br.ufc.quixada.pds.bancoimobiliario.model.Empresa;
 import br.ufc.quixada.pds.bancoimobiliario.model.Imovel;
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
+import br.ufc.quixada.pds.bancoimobiliario.model.JogadorComSaldoNegativoException;
 import br.ufc.quixada.pds.bancoimobiliario.model.JogadorImpl;
+import br.ufc.quixada.pds.bancoimobiliario.model.JogadorInvalidoException;
 import br.ufc.quixada.pds.bancoimobiliario.model.Propriedade;
 import br.ufc.quixada.pds.bancoimobiliario.model.PropriedadeJaVendidaException;
 import br.ufc.quixada.pds.bancoimobiliario.model.SaldoJogadorInsuficienteException;
+import br.ufc.quixada.pds.bancoimobiliario.model.ValorInvalidoException;
 
 public class PropriedadeTeste {
 
@@ -20,13 +23,15 @@ public class PropriedadeTeste {
 		Propriedade imovel = new Imovel();
 		
 		Jogador jogador = null;
-		 //TODO : Implementar validaçao para q nao ocorra nullponiterexception
-		/*try {
+		 
+		try {
 			imovel.comprarPropriedade(jogador);
-		} catch (SaldoJogadorInsuficienteException
-				| PropriedadeJaVendidaException e) {
+			fail();
+		} catch (Exception e) {
 			
-		}*/
+			final String mensagemEsperada = "Jogador usando é inválido ou não existe.";
+			assertEquals(mensagemEsperada,e.getMessage());
+		}
 	}
 	
 	@Test
@@ -35,16 +40,16 @@ public class PropriedadeTeste {
 		double saldo = 200.00;
 		
 		Jogador jogador1 = new JogadorImpl("Jogador1", saldo);
-		Jogador jogador2 = new JogadorImpl("Cayk", saldo);
+		Jogador jogador2 = new JogadorImpl("Teste", saldo);
 		
 		Propriedade imovel = new Imovel();
+		imovel.setValorDaPropriedade(2.00);
 		
 		try {
 			imovel.comprarPropriedade(jogador1);
 			imovel.comprarPropriedade(jogador2);
 			fail();
-		} catch (SaldoJogadorInsuficienteException
-				| PropriedadeJaVendidaException e) {
+		} catch (Exception e) {
 			
 			final String mensagemEsperada = "Propriedade já adquirida";
 			assertEquals(mensagemEsperada, e.getMessage());
@@ -64,12 +69,12 @@ public class PropriedadeTeste {
 	public void verificarSeEstaVendidaEmPropriedadeJaAdquirida(){
 		
 			Propriedade imovel = new Imovel();
+			imovel.setValorDaPropriedade(2.00);
 			Jogador jogador = new JogadorImpl("Teste",200.00);
 			
 			try {
 				imovel.comprarPropriedade(jogador);
-			} catch (SaldoJogadorInsuficienteException
-					| PropriedadeJaVendidaException e) {
+			} catch (Exception e) {
 				fail();
 			}
 			
@@ -78,7 +83,35 @@ public class PropriedadeTeste {
 	
 	@Test
 	public void comprarPropriedadeSemTerSaldoSuficiente(){
-		//TODO: 
+	
+		Jogador jogador = new JogadorImpl("Teste", 500.00);
+		
+		Propriedade imovel = new Imovel();
+		imovel.setValorDaPropriedade(500.01);
+		
+		try {
+			imovel.comprarPropriedade(jogador);
+			fail();
+		} catch (Exception e) {
+			
+			final String mensagemEsperada = "O Jogador não possui saldo suficiente para comprar essa propriedade.";
+			assertEquals(mensagemEsperada, e.getMessage());
+		}
+	}
+	
+	@Test
+	public void comprarPropriedadeComSaldoSuficiente(){
+		
+		Jogador jogador = new JogadorImpl("Teste", 500.00);
+		
+		Propriedade imovel = new Imovel();
+		imovel.setValorDaPropriedade(350.00);
+		
+		try {
+			imovel.comprarPropriedade(jogador);
+		} catch (Exception e) {
+			fail();
+		}
 	}
 
 }

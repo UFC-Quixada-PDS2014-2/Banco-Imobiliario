@@ -19,7 +19,12 @@ public class BancoImobiliarioImpl implements BancoImobiliario{
 	public void realizarTurnoJogador(int valorDados){
 		Logradouro logradouro = this.tabuleiro.percorrerTabuleiro(this.jogadorDaVez, valorDados);
 		
-		logradouro.acaoLogradouro(jogadorDaVez);
+		try {
+			logradouro.acaoLogradouro(jogadorDaVez);
+		} catch (JogadorComSaldoNegativoException | ValorInvalidoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		//TODO Mudar jogadorDaVez
 	}
 	

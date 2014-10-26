@@ -6,7 +6,6 @@ public class Empresa extends Propriedade {
 
 	@Override
 	public void acaoLogradouro(Jogador jogador) {
-		// TODO Auto-generated method stub
 		
 	}
 

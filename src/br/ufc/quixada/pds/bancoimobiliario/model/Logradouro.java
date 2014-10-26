@@ -8,7 +8,7 @@ public abstract class Logradouro {
 		return this.nome;
 	}
 	
-	public abstract void acaoLogradouro(Jogador jogador);
+	public abstract void acaoLogradouro(Jogador jogador) throws JogadorComSaldoNegativoException, ValorInvalidoException;
 	
 	public abstract void passeiPorAqui(Jogador jogador);
 	

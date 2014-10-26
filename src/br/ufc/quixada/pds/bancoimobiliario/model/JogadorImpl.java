@@ -45,13 +45,32 @@ public class JogadorImpl implements Jogador{
 	}
 
 	@Override
-	public void acrescentarSaldo(double saldo) {
-		this.saldo += saldo;
+	public void acrescentarSaldo(double valor) throws ValorInvalidoException {
+		if(valor <= 0.00){
+			throw new ValorInvalidoException();
+		} 
+			
+		this.saldo += valor;
 	}
 
 	@Override
-	public void decrementarSaldo(double saldo) {
-		this.saldo -= saldo;		
+	public void decrementarSaldo(double valor) throws JogadorComSaldoNegativoException, ValorInvalidoException {
+		
+		if(valor <= 0.00){
+			throw new ValorInvalidoException();
+		}
+		
+		this.saldo -= valor;
+		
+		if(this.saldo < 0.00){
+			throw new JogadorComSaldoNegativoException();
+		}
+	}
+
+	@Override
+	public void adicionarPropriedadeAdquirida(Propriedade propriedade) {
+		this.propriedadesAdquiridas.add(propriedade);
+		
 	}
 
 }
