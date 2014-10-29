@@ -10,6 +10,7 @@ public class JogadorImpl implements Jogador{
 	private String nome;
 	private double saldo;
 	private int posicao;
+	private int ultimoDeslocamento;
 	private List<Propriedade> propriedadesAdquiridas;
 
 	public JogadorImpl(String nome, double saldo){
@@ -72,5 +73,17 @@ public class JogadorImpl implements Jogador{
 		this.propriedadesAdquiridas.add(propriedade);
 		
 	}
+
+	@Override
+	public int pegarValorDoUltimoDeslocamento() {
+		return this.ultimoDeslocamento;
+	}
+
+	@Override
+	public void atualizarValorDoUltimoDeslocamento(int novoDeslocamento) {	
+		this.ultimoDeslocamento = novoDeslocamento;
+	}
+	
+	
 
 }

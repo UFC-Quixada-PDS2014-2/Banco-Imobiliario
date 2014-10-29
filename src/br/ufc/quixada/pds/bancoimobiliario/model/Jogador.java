@@ -13,5 +13,7 @@ public interface Jogador {
 	public int getPosicao();
 	public List<Propriedade> getPropriedadesAdquiridas();
 	public void adicionarPropriedadeAdquirida(Propriedade propriedade);
+	public int pegarValorDoUltimoDeslocamento();
+	public void atualizarValorDoUltimoDeslocamento(int novoDeslocamento);
 	
 }

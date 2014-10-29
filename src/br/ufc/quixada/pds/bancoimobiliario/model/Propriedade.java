@@ -15,7 +15,7 @@ public abstract class Propriedade extends Logradouro{
 		this.valorDaPropriedade = valor;
 	}
 	
-	public Jogador getDonoDaPropriedade(){
+	public Jogador pegarDonoDaPropriedade(){
 		return this.donoDaPropriedade;
 	}
 	//TODO métodos de propriedade

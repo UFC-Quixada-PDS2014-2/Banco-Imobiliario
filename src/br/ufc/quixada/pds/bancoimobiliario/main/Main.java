@@ -9,6 +9,7 @@ import br.ufc.quixada.pds.bancoimobiliario.enumeration.ConfiguracoesEnum;
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliarioImpl;
 import br.ufc.quixada.pds.bancoimobiliario.model.ErroArquivoConfiguracoesException;
+import br.ufc.quixada.pds.bancoimobiliario.model.FimDeJogoException;
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
 import br.ufc.quixada.pds.bancoimobiliario.model.JogadorImpl;
 import br.ufc.quixada.pds.bancoimobiliario.model.MontadorTabuleiroException;
@@ -61,6 +62,8 @@ public class Main {
 		} catch (MontadorTabuleiroException e2) {
 			//TODO
 			e2.printStackTrace();
+		} catch (FimDeJogoException e){
+			//TODO
 		}
 		
 	}

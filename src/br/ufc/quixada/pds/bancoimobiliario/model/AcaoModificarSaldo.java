@@ -1,11 +1,18 @@
 package br.ufc.quixada.pds.bancoimobiliario.model;
 
-public class AcaoModificarSaldo implements AcaoLugarEspecial{
+import br.ufc.quixada.pds.bancoimobiliario.enumeration.ConfiguracoesEnum;
 
+public abstract class AcaoModificarSaldo implements AcaoLugarEspecial{
+
+	private int valorASerModificado;
+	
 	@Override
-	public void executar(Jogador jogador) {
-		
-		
+	abstract public void executar(Jogador jogador) throws JogadorComSaldoNegativoException;
+	
+	
+	protected int getValorASerModificado(){
+		return this.valorASerModificado;
 	}
+	
 
 }

@@ -16,16 +16,26 @@ public class BancoImobiliarioImpl implements BancoImobiliario{
 	}
 	
 	@Override
-	public void realizarTurnoJogador(int valorDados){
+	public void realizarTurnoJogador(int valorDados) throws FimDeJogoException{
+		
 		Logradouro logradouro = this.tabuleiro.percorrerTabuleiro(this.jogadorDaVez, valorDados);
+		
+		jogadorDaVez.atualizarValorDoUltimoDeslocamento(valorDados);
 		
 		try {
 			logradouro.acaoLogradouro(jogadorDaVez);
-		} catch (JogadorComSaldoNegativoException | ValorInvalidoException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (JogadorComSaldoNegativoException e) {
+			
+				throw new FimDeJogoException();
+		
+		} catch(ValorInvalidoException e){
+			
 		}
-		//TODO Mudar jogadorDaVez
+
+		//TODO : Melhorar 
+		jogadores.remove(jogadorDaVez);
+		jogadores.add(jogadorDaVez);
+		jogadorDaVez = jogadores.get(0);
 	}
 	
 	@Override

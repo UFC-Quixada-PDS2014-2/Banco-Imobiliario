@@ -9,7 +9,7 @@ public class Imovel extends Propriedade {
 		
 		if(this.propriedadeEstaVendida()){
 			
-			Jogador donoDaPropriedade = this.getDonoDaPropriedade();
+			Jogador donoDaPropriedade = this.pegarDonoDaPropriedade();
 			
 			jogador.decrementarSaldo(valorDoAluguel);
 			donoDaPropriedade.acrescentarSaldo(valorDoAluguel);
