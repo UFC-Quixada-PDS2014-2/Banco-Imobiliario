@@ -3,125 +3,161 @@
 	<List>
 		
 		<PontoDePartida>
-			<nome>Ponto de Partida</nome>
+			<nome>The Shire</nome>
 		</PontoDePartida>
 		
 		
 		<Imovel>
-			<nome>Imovel 01</nome>
+			<nome>Slynt</nome>
 			<valorDaPropriedade>200</valorDaPropriedade>
 			<valorDoAluguel>20</valorDoAluguel>
 		</Imovel>
 		
 		
 		<Empresa>
-			<nome>Empresa 01</nome>
+			<nome>Empresa 1</nome>
 			<valorDaPropriedade>350</valorDaPropriedade>
 			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
 		
 		<Imovel>
-			<nome>Imovel 02</nome>
+			<nome>Mormont</nome>
 			<valorDaPropriedade>120</valorDaPropriedade>
 			<valorDoAluguel>12</valorDoAluguel>
 		</Imovel>
 		
 		<Imovel>
-			<nome>Imovel 03</nome>
+			<nome>Mallister</nome>
 			<valorDaPropriedade>120</valorDaPropriedade>
 			<valorDoAluguel>12</valorDoAluguel>
 		</Imovel>
 		
 		<Empresa>
-			<nome>Empresa 02</nome>
+			<nome>Empresa 2</nome>
 			<valorDaPropriedade>350</valorDaPropriedade>
 			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
 		
 		<Imovel>
-			<nome>Imovel 04</nome>
+			<nome>Clegane</nome>
 			<valorDaPropriedade>480</valorDaPropriedade>
 			<valorDoAluguel>48</valorDoAluguel>
 		</Imovel>
 		
 		<LugarEspecial>
-			<nome>LugarEspecialAcrescentaSaldo 01</nome>
+			<nome>Lugar Especial Incrementa Saldo 1</nome>
+			<listaDeAcoes>
+				<List>
+					<AcaoIncrementaSaldo>
+						<valorASerModificado>
+							100
+						</valorASerModificado>
+					</AcaoIncrementaSaldo>
+				</List>
+			</listaDeAcoes>
 		</LugarEspecial>
 		
 		<Imovel>
-			<nome>Imovel 05</nome>
+			<nome>Seaworth</nome>
 			<valorDaPropriedade>440</valorDaPropriedade>
 			<valorDoAluguel>44</valorDoAluguel>
 		</Imovel>
 		
 		<Imovel>
-			<nome>Imovel 06</nome>
+			<nome>Dayne</nome>
 			<valorDaPropriedade>440</valorDaPropriedade>
 			<valorDoAluguel>44</valorDoAluguel>
 		</Imovel>
 		
 		<LugarEspecial>
-			<nome>LugarEspecialVoltaPosicao 01</nome>
+			<nome>Lugar Especial Volta Posicao 1</nome>
+			<listaDeAcoes>
+				<List>
+					<AcaoVoltaPosicao>
+						<quantidadeDePosicoes>
+							3
+						</quantidadeDePosicoes>
+					</AcaoVoltaPosicao>
+				</List>
+			</listaDeAcoes>
 		</LugarEspecial>
 		
 		<Imovel>
-			<nome>Imovel07</nome>
+			<nome>Hightower</nome>
 			<valorDaPropriedade>400</valorDaPropriedade>
 			<valorDoAluguel>40</valorDoAluguel>
 		</Imovel>
 		
 		<LugarEspecial>
-			<nome>LugarEspecialSubtraiSaldo 01</nome>
+			<nome>Lugar Especial Subtrai Saldo 1</nome>
+			<listaDeAcoes>
+				<List>
+					<AcaoDecrementaSaldo>
+						<valorASerModificado>
+							300
+						</valorASerModificado>
+					</AcaoDecrementaSaldo>
+				</List>
+			</listaDeAcoes>
 		</LugarEspecial>
 		
 		<Imovel>
-			<nome>Imovel 08</nome>
+			<nome>Arryn</nome>
 			<valorDaPropriedade>360</valorDaPropriedade>
 			<valorDoAluguel>36</valorDoAluguel>
 		</Imovel>
 		
 		<Imovel>
-			<nome>Imovel 09</nome>
+			<nome>Blackfyre</nome>
 			<valorDaPropriedade>360</valorDaPropriedade>
 			<valorDoAluguel>36</valorDoAluguel>
 		</Imovel>
 		
 		<Empresa>
-			<nome>Empresa03</nome>
+			<nome>Empresa 3</nome>
 			<valorDaPropriedade>350</valorDaPropriedade>
 			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
 		
 		<Imovel>
-			<nome>Imovel 10</nome>
+			<nome>Baratheon</nome>
 			<valorDaPropriedade>700</valorDaPropriedade>
 			<valorDoAluguel>70</valorDoAluguel>
 		</Imovel>
 		
 		<Imovel>
-			<nome>Imovel 11</nome>
+			<nome>Stark</nome>
 			<valorDaPropriedade>800</valorDaPropriedade>
 			<valorDoAluguel>80</valorDoAluguel>
 		</Imovel>
 		
 		<Empresa>
-			<nome>Empresa 04</nome>
+			<nome>Empresa 4</nome>
 			<valorDaPropriedade>350</valorDaPropriedade>
 			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
 		
 		<Imovel>
-			<nome>Imovel 12</nome>
+			<nome>Tully</nome>
 			<valorDaPropriedade>240</valorDaPropriedade>
 			<valorDoAluguel>24</valorDoAluguel>
 		</Imovel>
 		
 		<LugarEspecial>
-			<nome>LugarEspecialAvancaPosicao 01</nome>
+			<nome>Lugar Especial Avanca Posicao 1</nome>
+			<listaDeAcoes>
+				<List>
+					<AcaoDecrementaSaldo>
+						<quantidadeDePosicoes>
+							4
+						</quantidadeDePosicoes>
+					</AcaoDecrementaSaldo>
+				</List>
+			</listaDeAcoes>
 		</LugarEspecial>
 		
 		<Imovel>
-			<nome>Imovel 13</nome>
+			<nome>Tyrell</nome>
 			<valorDaPropriedade>200</valorDaPropriedade>
 			<valorDoAluguel>20</valorDoAluguel>
 		</Imovel>
@@ -133,95 +169,131 @@
 		</Imovel>
 		
 		<LugarEspecial>
-			<nome>LugarEspecialAcrescentaSaldo 02</nome>
+			<nome>Lugar Especial Incrementa Saldo 2</nome>
+			<listaDeAcoes>
+				<List>
+					<AcaoIncrementaSaldo>
+						<valorASerModificado>
+							50
+						</valorASerModificado>
+					</AcaoIncrementaSaldo>
+				</List>
+			</listaDeAcoes>
 		</LugarEspecial>
 		
 		<Imovel>
-			<nome>Imovel 15</nome>
+			<nome>Bolton</nome>
 			<valorDaPropriedade>280</valorDaPropriedade>
 			<valorDoAluguel>28</valorDoAluguel>
 		</Imovel>
 		
 		<Empresa>
-			<nome>Empresa 05</nome>
+			<nome>Empresa 5</nome>
 			<valorDaPropriedade>350</valorDaPropriedade>
 			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
 		
 		<Empresa>
-			<nome>Empresa 06</nome>
+			<nome>Empresa 6</nome>
 			<valorDaPropriedade>350</valorDaPropriedade>
 			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
 		
 		<Imovel>
-			<nome>Imovel 16</nome>
+			<nome>Frey</nome>
 			<valorDaPropriedade>280</valorDaPropriedade>
 			<valorDoAluguel>28</valorDoAluguel>
 		</Imovel>
 		
 		<Empresa>
-			<nome>Empresa 07</nome>
+			<nome>Empresa 7</nome>
 			<valorDaPropriedade>350</valorDaPropriedade>
 			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
 		
 		<Imovel>
-			<nome>Imovel 17</nome>
+			<nome>Lannister</nome>
 			<valorDaPropriedade>520</valorDaPropriedade>
 			<valorDoAluguel>52</valorDoAluguel>
 		</Imovel>
 		
 		<LugarEspecial>
-			<nome>LugarEspecialVoltaPosicao 02</nome>
+			<nome>Lugar Especial Volta Posicao 2</nome>
+			<listaDeAcoes>
+				<List>
+					<AcaoVoltaPosicao>
+						<quantidadeDePosicoes>
+							2
+						</quantidadeDePosicoes>
+					</AcaoVoltaPosicao>
+				</List>
+			</listaDeAcoes>
 		</LugarEspecial>
 		
 		<Imovel>
-			<nome>Imovel 18</nome>
+			<nome>Targaryen</nome>
 			<valorDaPropriedade>640</valorDaPropriedade>
 			<valorDoAluguel>64</valorDoAluguel>
 		</Imovel>
 		
 		<Empresa>
-			<nome>Empresa 08</nome>
+			<nome>Empresa 8</nome>
 			<valorDaPropriedade>350</valorDaPropriedade>
 			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
 		
 		<Imovel>
-			<nome>Imovel 19</nome>
+			<nome>Tarly</nome>
 			<valorDaPropriedade>300</valorDaPropriedade>
 			<valorDoAluguel>30</valorDoAluguel>
 		</Imovel>
 		
 		<LugarEspecial>
-			<nome>LugarEspecialSubtraiSaldo 02</nome>
+			<nome>Lugar Especial Subtrai Saldo 2</nome>
+			<listaDeAcoes>
+				<List>
+					<AcaoDecrementaSaldo>
+						<valorASerModificado>
+							400
+						</valorASerModificado>
+					</AcaoDecrementaSaldo>
+				</List>
+			</listaDeAcoes>
 		</LugarEspecial>
 		
 		<LugarEspecial>
-			<nome>LugarEspecialAvancaPosicao 02</nome>
+			<nome>Lugar Especial Avanca Posicao 2</nome>
+			<listaDeAcoes>
+				<List>
+					<AcaoDecrementaSaldo>
+						<quantidadeDePosicoes>
+							4
+						</quantidadeDePosicoes>
+					</AcaoDecrementaSaldo>
+				</List>
+			</listaDeAcoes>
 		</LugarEspecial>
 		
 		<Imovel>
-			<nome>Imovel 20</nome>
+			<nome>Oakheart</nome>
 			<valorDaPropriedade>300</valorDaPropriedade>
 			<valorDoAluguel>30</valorDoAluguel>
 		</Imovel>
 		
 		<Empresa>
-			<nome>Empresa 09</nome>
+			<nome>Empresa 9</nome>
 			<valorDaPropriedade>350</valorDaPropriedade>
 			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
 		
 		<Imovel>
-			<nome>Imovel 21</nome>
+			<nome>Martell</nome>
 			<valorDaPropriedade>560</valorDaPropriedade>
 			<valorDoAluguel>56</valorDoAluguel>
 		</Imovel>
 		
 		<Imovel>
-			<nome>Imovel 22</nome>
+			<nome>Umber</nome>
 			<valorDaPropriedade>520</valorDaPropriedade>
 			<valorDoAluguel>52</valorDoAluguel>
 		</Imovel>

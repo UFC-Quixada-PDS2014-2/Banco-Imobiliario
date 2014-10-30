@@ -2,10 +2,14 @@ package br.ufc.quixada.pds.bancoimobiliario.config;
 
 
 import java.io.File;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import br.ufc.quixada.pds.bancoimobiliario.model.AcaoModificarPosicao;
+import br.ufc.quixada.pds.bancoimobiliario.model.AcaoAvancaPosicao;
+import br.ufc.quixada.pds.bancoimobiliario.model.AcaoDecrementaSaldo;
+import br.ufc.quixada.pds.bancoimobiliario.model.AcaoIncrementaSaldo;
+import br.ufc.quixada.pds.bancoimobiliario.model.AcaoVoltaPosicao;
 import br.ufc.quixada.pds.bancoimobiliario.model.Empresa;
 import br.ufc.quixada.pds.bancoimobiliario.model.Imovel;
 import br.ufc.quixada.pds.bancoimobiliario.model.JogadorImpl;
@@ -29,8 +33,10 @@ public class ConfiguracaoCasasTabuleiroComXStream implements ReaderLogradouros{
 		stream.alias("Imovel", Imovel.class);
 		stream.alias("Empresa", Empresa.class);
 		stream.alias("LugarEspecial", LugarEspecial.class);
-		stream.alias("AcaoModificarSaldo", AcaoModificarSaldo.class);
-		stream.alias("AcaoModificarPosicao", AcaoModificarPosicao.class);
+		stream.alias("AcaoIncrementaSaldo", AcaoIncrementaSaldo.class);
+		stream.alias("AcaoDecrementaSaldo", AcaoDecrementaSaldo.class);
+		stream.alias("AcaoAvancaPosicao", AcaoAvancaPosicao.class);
+		stream.alias("AcaoVoltaPosicao", AcaoVoltaPosicao.class);
 		stream.alias("List", List.class);
 		stream.alias("Jogador", JogadorImpl.class);
 	}
