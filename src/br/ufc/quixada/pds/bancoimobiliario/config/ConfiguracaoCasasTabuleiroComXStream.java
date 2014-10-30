@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.AcaoModificarPosicao;
-import br.ufc.quixada.pds.bancoimobiliario.model.AcaoModificarSaldo;
 import br.ufc.quixada.pds.bancoimobiliario.model.Empresa;
 import br.ufc.quixada.pds.bancoimobiliario.model.Imovel;
 import br.ufc.quixada.pds.bancoimobiliario.model.JogadorImpl;

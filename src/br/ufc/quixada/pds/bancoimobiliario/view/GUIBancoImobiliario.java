@@ -2,19 +2,26 @@ package br.ufc.quixada.pds.bancoimobiliario.view;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Image;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.RepaintManager;
 
 import br.ufc.quixada.pds.bancoimobiliario.enumeration.ConfiguracoesEnum;
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
+
+import java.awt.Color;
+import java.awt.Toolkit;
 
 public class GUIBancoImobiliario {
 
@@ -51,21 +58,9 @@ public class GUIBancoImobiliario {
 	 */
 	private void initializeComponents() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("/home/sandro/git/Banco-Imobiliario/img/background.png"));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		JPanel panelPortfolioJogador1 = new JPanel();
-		frame.getContentPane().add(panelPortfolioJogador1, BorderLayout.WEST);
-		
-		JLabel labelJogador1Nome = new JLabel("Jogador 1");
-		panelPortfolioJogador1.add(labelJogador1Nome);
-		
-		
-		JPanel panelPortfolioJogador2 = new JPanel();
-		frame.getContentPane().add(panelPortfolioJogador2, BorderLayout.EAST);
-		
-		JLabel labelJogador2Nome = new JLabel("Jogador 2");
-		panelPortfolioJogador2.add(labelJogador2Nome);
 		
 		panelTabuleiro = new JPanel();
 		frame.getContentPane().add(panelTabuleiro, BorderLayout.CENTER);
@@ -78,8 +73,9 @@ public class GUIBancoImobiliario {
 		panelTabuleiro.setLayout(gbl_panelTabuleiro);
 		
 		//TODO refatorar
-		configurarTabuleiro();
+		//configurarTabuleiro();
 
+		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 	}
 
 	public void configurarTabuleiro(){
@@ -93,6 +89,7 @@ public class GUIBancoImobiliario {
 		int tamanhoLadoTabuleiro = (ConfiguracoesEnum.NUMERO_CASAS.getValor() / 4) + 1; 
 		
 		GridBagConstraints posicaoLogradouroLayout = new GridBagConstraints();
+		posicaoLogradouroLayout.fill = GridBagConstraints.BOTH;
 		posicaoLogradouroLayout.weightx = 1;
 		posicaoLogradouroLayout.weighty = 1;
 		int indexLogradouro = 0;
@@ -132,10 +129,19 @@ public class GUIBancoImobiliario {
 			indexLogradouro++;
 		}
 		
-		posicaoLogradouroLayout.gridx = 0;
-		posicaoLogradouroLayout.gridy = 0;
-		panelTabuleiro.add(new JLabel("Teste"), posicaoLogradouroLayout);
+		posicaoLogradouroLayout.weightx = 1;
+		posicaoLogradouroLayout.weighty = 1;
+		
+		posicaoLogradouroLayout.gridwidth = tamanhoLadoTabuleiro -2;
+		posicaoLogradouroLayout.gridheight = tamanhoLadoTabuleiro -2;
+		posicaoLogradouroLayout.gridx = 1;
+		posicaoLogradouroLayout.gridy = 1;
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(Color.GRAY);
+		panelTabuleiro.add(panel,posicaoLogradouroLayout);
 		
 	}
+	
 	
 }
