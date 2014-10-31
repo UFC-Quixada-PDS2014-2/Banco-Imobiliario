@@ -15,7 +15,7 @@
 		
 		
 		<Empresa>
-			<nome>Empresa 1</nome>
+			<nome>Tavern</nome>
 			<valorDaPropriedade>350</valorDaPropriedade>
 			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
@@ -33,7 +33,7 @@
 		</Imovel>
 		
 		<Empresa>
-			<nome>Empresa 2</nome>
+			<nome>Whorehouse</nome>
 			<valorDaPropriedade>350</valorDaPropriedade>
 			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
@@ -114,7 +114,7 @@
 		</Imovel>
 		
 		<Empresa>
-			<nome>Empresa 3</nome>
+			<nome>Blacksmith</nome>
 			<valorDaPropriedade>350</valorDaPropriedade>
 			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
@@ -132,7 +132,7 @@
 		</Imovel>
 		
 		<Empresa>
-			<nome>Empresa 4</nome>
+			<nome>Hostel</nome>
 			<valorDaPropriedade>350</valorDaPropriedade>
 			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
@@ -188,13 +188,13 @@
 		</Imovel>
 		
 		<Empresa>
-			<nome>Empresa 5</nome>
+			<nome>Golden Mines</nome>
 			<valorDaPropriedade>350</valorDaPropriedade>
 			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
 		
 		<Empresa>
-			<nome>Empresa 6</nome>
+			<nome>Stable</nome>
 			<valorDaPropriedade>350</valorDaPropriedade>
 			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
@@ -206,7 +206,7 @@
 		</Imovel>
 		
 		<Empresa>
-			<nome>Empresa 7</nome>
+			<nome>King's landing</nome>
 			<valorDaPropriedade>350</valorDaPropriedade>
 			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
@@ -237,7 +237,7 @@
 		</Imovel>
 		
 		<Empresa>
-			<nome>Empresa 8</nome>
+			<nome>Fairs</nome>
 			<valorDaPropriedade>350</valorDaPropriedade>
 			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
@@ -281,7 +281,7 @@
 		</Imovel>
 		
 		<Empresa>
-			<nome>Empresa 9</nome>
+			<nome>Plantation</nome>
 			<valorDaPropriedade>350</valorDaPropriedade>
 			<valorDaTaxa>50</valorDaTaxa>
 		</Empresa>
