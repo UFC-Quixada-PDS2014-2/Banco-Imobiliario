@@ -45,7 +45,7 @@
 		</Imovel>
 		
 		<LugarEspecial>
-			<nome>Lugar Especial Incrementa Saldo 1</nome>
+			<nome>The Hand's tourney</nome>
 			<listaDeAcoes>
 				<List>
 					<AcaoIncrementaSaldo>
@@ -70,7 +70,7 @@
 		</Imovel>
 		
 		<LugarEspecial>
-			<nome>Lugar Especial Volta Posicao 1</nome>
+			<nome>The Wall</nome>
 			<listaDeAcoes>
 				<List>
 					<AcaoVoltaPosicao>
@@ -89,7 +89,7 @@
 		</Imovel>
 		
 		<LugarEspecial>
-			<nome>Lugar Especial Subtrai Saldo 1</nome>
+			<nome>Royal taxes</nome>
 			<listaDeAcoes>
 				<List>
 					<AcaoDecrementaSaldo>
@@ -169,7 +169,7 @@
 		</Imovel>
 		
 		<LugarEspecial>
-			<nome>Lugar Especial Incrementa Saldo 2</nome>
+			<nome> The Great Harrenhal tourney</nome>
 			<listaDeAcoes>
 				<List>
 					<AcaoIncrementaSaldo>
@@ -218,7 +218,7 @@
 		</Imovel>
 		
 		<LugarEspecial>
-			<nome>Lugar Especial Volta Posicao 2</nome>
+			<nome>The dungeons</nome>
 			<listaDeAcoes>
 				<List>
 					<AcaoVoltaPosicao>
@@ -249,7 +249,7 @@
 		</Imovel>
 		
 		<LugarEspecial>
-			<nome>Lugar Especial Subtrai Saldo 2</nome>
+			<nome>Taxes of crossing</nome>
 			<listaDeAcoes>
 				<List>
 					<AcaoDecrementaSaldo>
