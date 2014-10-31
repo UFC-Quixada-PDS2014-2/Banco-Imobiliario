@@ -1,5 +1,7 @@
 package br.ufc.quixada.pds.bancoimobiliario.model;
 
+import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.AcaoLogradouroEnum;
+
 public abstract class Logradouro {
 
 	private String nome;
@@ -8,8 +10,8 @@ public abstract class Logradouro {
 		return this.nome;
 	}
 	
-	public abstract void acaoLogradouro(Jogador jogador) throws JogadorComSaldoNegativoException, ValorInvalidoException;
+	public abstract AcaoLogradouroEnum acaoLogradouro(Jogador jogador) throws JogadorComSaldoNegativoException, ValorInvalidoException;
 	
-	public abstract void passeiPorAqui(Jogador jogador);
+	public abstract void passeiPorAqui(Jogador jogador) throws JogadorComSaldoNegativoException,ValorInvalidoException;
 	
 }

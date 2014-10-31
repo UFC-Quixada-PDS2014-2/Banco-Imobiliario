@@ -3,7 +3,7 @@ package br.ufc.quixada.pds.bancoimobiliario.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.ufc.quixada.pds.bancoimobiliario.enumeration.ConfiguracoesEnum;
+import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.ConfiguracoesEnum;
 
 public class JogadorImpl implements Jogador{
 
@@ -82,6 +82,37 @@ public class JogadorImpl implements Jogador{
 	@Override
 	public void atualizarValorDoUltimoDeslocamento(int novoDeslocamento) {	
 		this.ultimoDeslocamento = novoDeslocamento;
+	}
+
+	@Override
+	public void avancarPosicaoJogar(int quantidadeDePosicoes) {
+		//TODO impedir que quantidade seja maior que o tamanho da lista
+		
+		this.posicao = (this.posicao + quantidadeDePosicoes) % ConfiguracoesEnum.NUMERO_CASAS.getValor();
+		
+	}
+
+	@Override
+	public void voltarPosicaoJogador(int quantidadeDePosicoes) {
+		
+		//TODO impedir que quantidade seja negativa
+		
+		//TODO refazer logica 
+		
+		int novaPosicao = this.posicao - quantidadeDePosicoes;
+		
+		if(novaPosicao < 0){
+			novaPosicao += ConfiguracoesEnum.NUMERO_CASAS.getValor();
+		}
+		
+		this.posicao = novaPosicao;
+		
+	}
+
+	@Override
+	public boolean isDonoDaPropriedade(Propriedade propriedade) {
+		
+		return this.propriedadesAdquiridas.contains(propriedade);
 	}
 	
 	

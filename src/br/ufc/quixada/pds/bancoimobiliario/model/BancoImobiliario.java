@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface BancoImobiliario {
 
-	public void realizarTurnoJogador(int valorDados) throws FimDeJogoException;
+	public void realizarTurnoJogador(int valorDados) throws FimDeJogoException, ErroArquivoConfiguracoesException;
 	public Iterator<Jogador> obterJogadores();
 	public List<Logradouro> getCasasDoTabuleiro();
 	public Jogador pegarJogadorDaVez();

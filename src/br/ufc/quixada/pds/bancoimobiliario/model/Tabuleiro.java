@@ -6,7 +6,8 @@ public interface Tabuleiro {
 
 	public List<Logradouro> getCasasDoTabuleiro();
 	public Logradouro getPontoDePartida();
-	public Logradouro percorrerTabuleiro(Jogador jogador, int deslocamento);
+	public Logradouro percorrerTabuleiro(Jogador jogador, int deslocamento) throws JogadorComSaldoNegativoException, ValorInvalidoException;
+	public Logradouro pularPosicao(Jogador jogador, int posicaoAntiga) throws ValorInvalidoException, JogadorComSaldoNegativoException;
 	
 	
 }

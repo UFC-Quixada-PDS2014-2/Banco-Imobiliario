@@ -5,15 +5,8 @@ public class AcaoIncrementaSaldo implements AcaoLugarEspecial{
 	private int valorASerModificado;
 	
 	@Override
-	public void executar(Jogador jogador) throws JogadorComSaldoNegativoException {
+	public void executar(Jogador jogador) throws JogadorComSaldoNegativoException, ValorInvalidoException {
 		
-		try {
 			jogador.acrescentarSaldo(this.valorASerModificado);
-		
-		} catch (ValorInvalidoException e) {
-			//TODO : 
-		}
 	}
-	
-
 }

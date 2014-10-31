@@ -6,6 +6,8 @@ public interface Jogador {
 
 
 	public void atualizarPosicao(int novaPosicao);
+	public void avancarPosicaoJogar(int quantidadeDePosicoes);
+	public void voltarPosicaoJogador(int quantidadeDePosicoes);
 	public void acrescentarSaldo(double valor) throws ValorInvalidoException;
 	public void decrementarSaldo(double valor) throws JogadorComSaldoNegativoException, ValorInvalidoException;
 	public String getNome();
@@ -15,5 +17,6 @@ public interface Jogador {
 	public void adicionarPropriedadeAdquirida(Propriedade propriedade);
 	public int pegarValorDoUltimoDeslocamento();
 	public void atualizarValorDoUltimoDeslocamento(int novoDeslocamento);
+	public boolean isDonoDaPropriedade(Propriedade propriedade);
 	
 }

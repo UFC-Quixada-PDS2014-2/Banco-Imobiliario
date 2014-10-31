@@ -6,9 +6,6 @@ public class AcaoAvancaPosicao implements AcaoLugarEspecial{
 	
 	@Override
 	public void executar(Jogador jogador){
-		
-		
-		
+		jogador.avancarPosicaoJogar(quantidadeDePosicoes);
 	}
-
 }

@@ -7,13 +7,7 @@ public class AcaoVoltaPosicao implements AcaoLugarEspecial{
 	@Override
 	public void executar(Jogador jogador){
 		
-		final int posicaoAtual =  jogador.getPosicao();
-		final int novaPosicao;
-		
-		
-		//TODO :  
-		//jogador.atualizarPosicao(deslocamentoPosicao);
-		
+		jogador.voltarPosicaoJogador(quantidadeDePosicoes);
 	}
 
 }

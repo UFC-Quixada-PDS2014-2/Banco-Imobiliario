@@ -1,4 +1,4 @@
-package br.ufc.quixada.pds.bancoimobiliario.enumeration;
+package br.ufc.quixada.pds.bancoimobiliario.model.enumeration;
 
 public enum ConfiguracoesEnum {
 	

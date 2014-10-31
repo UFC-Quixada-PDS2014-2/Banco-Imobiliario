@@ -1,10 +1,11 @@
 package br.ufc.quixada.pds.bancoimobiliario.model;
 
+import java.nio.file.attribute.PosixFilePermissions;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import br.ufc.quixada.pds.bancoimobiliario.enumeration.ConfiguracoesEnum;
+import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.ConfiguracoesEnum;
 
 public class TabuleiroImpl implements Tabuleiro{
 	
@@ -29,29 +30,42 @@ public class TabuleiroImpl implements Tabuleiro{
 	}
 	
 	@Override
-	public Logradouro percorrerTabuleiro(Jogador jogador, int deslocamento){
+	public Logradouro percorrerTabuleiro(Jogador jogador, int deslocamento) throws JogadorComSaldoNegativoException, ValorInvalidoException{
 		
-		int posicaoJogador = jogador.getPosicao();
 		int deslocamentoJogador = deslocamento;
 		
 		while(deslocamentoJogador > 0){
-			posicaoJogador++;
-			if(posicaoJogador >= ConfiguracoesEnum.NUMERO_CASAS.getValor()){
-				posicaoJogador -= ConfiguracoesEnum.NUMERO_CASAS.getValor();
-			}
+			jogador.avancarPosicaoJogar(1);
 
-			Logradouro logradouro = getLogradouroPorPosicao(posicaoJogador);
+			Logradouro logradouro = getLogradouroPorPosicao(jogador.getPosicao());
 			logradouro.passeiPorAqui(jogador);
 			
 			deslocamentoJogador--;
 		}
-		jogador.atualizarPosicao(posicaoJogador);
 		
-		return logradouros.get(posicaoJogador);
+		return logradouros.get(jogador.getPosicao());
 	}
+	
+	
 
 	private  Logradouro getLogradouroPorPosicao(int posicao){
 		return this.logradouros.get(posicao);
+	}
+
+	@Override
+	public Logradouro pularPosicao(Jogador jogador, int posicaoAntiga) throws ValorInvalidoException, JogadorComSaldoNegativoException {
+
+		int posicaoCursor = posicaoAntiga;
+		
+		while(posicaoCursor != jogador.getPosicao()){
+			posicaoCursor = (posicaoCursor + 1) % ConfiguracoesEnum.NUMERO_CASAS.getValor();
+			
+			Logradouro logradouro = logradouros.get(posicaoCursor);
+			logradouro.passeiPorAqui(jogador);
+			
+		}
+		
+		return logradouros.get(jogador.getPosicao());
 	}
 
 }

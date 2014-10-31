@@ -1,6 +1,6 @@
 package br.ufc.quixada.pds.bancoimobiliario.model;
 
-import br.ufc.quixada.pds.bancoimobiliario.enumeration.ConfiguracoesEnum;
+import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.ConfiguracoesEnum;
 
 
 public class TabuleiroBuilderConcrete implements TabuleiroBuilder{

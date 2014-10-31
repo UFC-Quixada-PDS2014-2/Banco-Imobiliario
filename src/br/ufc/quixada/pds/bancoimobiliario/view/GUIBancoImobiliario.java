@@ -16,9 +16,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.RepaintManager;
 
-import br.ufc.quixada.pds.bancoimobiliario.enumeration.ConfiguracoesEnum;
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
+import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.ConfiguracoesEnum;
 
 import java.awt.Color;
 import java.awt.Toolkit;
