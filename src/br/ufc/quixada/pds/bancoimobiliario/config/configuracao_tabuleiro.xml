@@ -144,7 +144,7 @@
 		</Imovel>
 		
 		<LugarEspecial>
-			<nome>Lugar Especial Avanca Posicao 1</nome>
+			<nome>Dragon riders</nome>
 			<listaDeAcoes>
 				<List>
 					<AcaoDecrementaSaldo>
@@ -262,7 +262,7 @@
 		</LugarEspecial>
 		
 		<LugarEspecial>
-			<nome>Lugar Especial Avanca Posicao 2</nome>
+			<nome>Wargs</nome>
 			<listaDeAcoes>
 				<List>
 					<AcaoDecrementaSaldo>
