@@ -49,9 +49,7 @@
 			<listaDeAcoes>
 				<List>
 					<AcaoIncrementaSaldo>
-						<valorASerModificado>
-							100
-						</valorASerModificado>
+						<valorASerModificado>100</valorASerModificado>
 					</AcaoIncrementaSaldo>
 				</List>
 			</listaDeAcoes>
@@ -73,11 +71,9 @@
 			<nome>The Wall</nome>
 			<listaDeAcoes>
 				<List>
-					<AcaoVoltaPosicao>
-						<quantidadeDePosicoes>
-							3
-						</quantidadeDePosicoes>
-					</AcaoVoltaPosicao>
+					<AcaoAvancaPosicao>
+						<quantidadeDePosicoes>3</quantidadeDePosicoes>
+					</AcaoAvancaPosicao>
 				</List>
 			</listaDeAcoes>
 		</LugarEspecial>
@@ -93,9 +89,7 @@
 			<listaDeAcoes>
 				<List>
 					<AcaoDecrementaSaldo>
-						<valorASerModificado>
-							300
-						</valorASerModificado>
+						<valorASerModificado>300</valorASerModificado>
 					</AcaoDecrementaSaldo>
 				</List>
 			</listaDeAcoes>
@@ -147,11 +141,9 @@
 			<nome>Dragon riders</nome>
 			<listaDeAcoes>
 				<List>
-					<AcaoDecrementaSaldo>
-						<quantidadeDePosicoes>
-							4
-						</quantidadeDePosicoes>
-					</AcaoDecrementaSaldo>
+					<AcaoVoltaPosicao>
+						<quantidadeDePosicoes>3</quantidadeDePosicoes>
+					</AcaoVoltaPosicao>
 				</List>
 			</listaDeAcoes>
 		</LugarEspecial>
@@ -173,9 +165,7 @@
 			<listaDeAcoes>
 				<List>
 					<AcaoIncrementaSaldo>
-						<valorASerModificado>
-							50
-						</valorASerModificado>
+						<valorASerModificado>50</valorASerModificado>
 					</AcaoIncrementaSaldo>
 				</List>
 			</listaDeAcoes>
@@ -222,9 +212,7 @@
 			<listaDeAcoes>
 				<List>
 					<AcaoVoltaPosicao>
-						<quantidadeDePosicoes>
-							2
-						</quantidadeDePosicoes>
+						<quantidadeDePosicoes>2</quantidadeDePosicoes>
 					</AcaoVoltaPosicao>
 				</List>
 			</listaDeAcoes>
@@ -253,9 +241,7 @@
 			<listaDeAcoes>
 				<List>
 					<AcaoDecrementaSaldo>
-						<valorASerModificado>
-							400
-						</valorASerModificado>
+						<valorASerModificado>400</valorASerModificado>
 					</AcaoDecrementaSaldo>
 				</List>
 			</listaDeAcoes>
@@ -265,11 +251,9 @@
 			<nome>Wargs</nome>
 			<listaDeAcoes>
 				<List>
-					<AcaoDecrementaSaldo>
-						<quantidadeDePosicoes>
-							4
-						</quantidadeDePosicoes>
-					</AcaoDecrementaSaldo>
+					<AcaoAvancaPosicao>
+						<quantidadeDePosicoes>4</quantidadeDePosicoes>
+					</AcaoAvancaPosicao>
 				</List>
 			</listaDeAcoes>
 		</LugarEspecial>
