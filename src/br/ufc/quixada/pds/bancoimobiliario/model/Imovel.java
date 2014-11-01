@@ -4,8 +4,12 @@ import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.AcaoLogradouroEnum;
 
 public class Imovel extends Propriedade {
 
-	private double valorDoAluguel;
+	final private double valorDoAluguel;
 
+	public Imovel(double valorDoAluguel) {
+		this.valorDoAluguel = valorDoAluguel;
+	}
+	
 	@Override
 	public AcaoLogradouroEnum acaoLogradouro(Jogador jogador) throws JogadorComSaldoNegativoException, ValorInvalidoException {
 		
@@ -21,10 +25,7 @@ public class Imovel extends Propriedade {
 		
 			return AcaoLogradouroEnum.POSICAO_INALTERADA;
 		}
-		
-		
 		return AcaoLogradouroEnum.DISPONIVEL_PARA_COMPRA;
-		
 	}
 
 	@Override
@@ -32,12 +33,4 @@ public class Imovel extends Propriedade {
 		// TODO Auto-generated method stub
 		
 	}
-	
-	public void setValorAluguel(double valor){
-		//TODO : Remover apos testes
-		this.valorDoAluguel = valor;
-	}
-	
-	
-	
 }

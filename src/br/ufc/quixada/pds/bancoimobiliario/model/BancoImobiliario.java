@@ -7,7 +7,8 @@ public interface BancoImobiliario {
 
 	public void realizarTurnoJogador(int valorDados) throws FimDeJogoException, ErroArquivoConfiguracoesException;
 	public Iterator<Jogador> obterJogadores();
-	public List<Logradouro> getCasasDoTabuleiro();
+	public Iterator<Logradouro> getCasasDoTabuleiro();
 	public Jogador pegarJogadorDaVez();
+	public void mudarJogadorDaVez();
 	
 }

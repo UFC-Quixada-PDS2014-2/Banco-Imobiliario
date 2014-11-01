@@ -71,8 +71,8 @@ public class BancoImobiliarioImpl implements BancoImobiliario {
 	}
 
 	@Override
-	public List<Logradouro> getCasasDoTabuleiro() {
-		return this.tabuleiro.getCasasDoTabuleiro();
+	public Iterator<Logradouro> getCasasDoTabuleiro() {
+		return this.tabuleiro.getCasasDoTabuleiro().iterator();
 	}
 
 	@Override

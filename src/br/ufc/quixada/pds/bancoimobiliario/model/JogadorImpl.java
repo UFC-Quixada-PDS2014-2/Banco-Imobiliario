@@ -66,7 +66,6 @@ public class JogadorImpl implements Jogador{
 	@Override
 	public void adicionarPropriedadeAdquirida(Propriedade propriedade) {
 		this.propriedadesAdquiridas.add(propriedade);
-		
 	}
 
 	@Override
@@ -104,17 +103,11 @@ public class JogadorImpl implements Jogador{
 		if(novaPosicao < 0){
 			novaPosicao = (ConfiguracoesEnum.NUMERO_CASAS.getValor() + novaPosicao) % ConfiguracoesEnum.NUMERO_CASAS.getValor();
 		}
-		
 		this.posicao = novaPosicao;
-		
 	}
 
 	@Override
 	public boolean isDonoDaPropriedade(Propriedade propriedade) {
-		
 		return this.propriedadesAdquiridas.contains(propriedade);
 	}
-	
-	
-
 }

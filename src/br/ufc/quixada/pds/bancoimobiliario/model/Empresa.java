@@ -4,8 +4,12 @@ import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.AcaoLogradouroEnum;
 
 public class Empresa extends Propriedade {
 
-	private double valorDaTaxa;
+	final private double valorDaTaxa;
 
+	public Empresa(double valorDaTaxa) {
+		this.valorDaTaxa = valorDaTaxa;
+	}
+	
 	@Override
 	public AcaoLogradouroEnum acaoLogradouro(Jogador jogador) throws JogadorComSaldoNegativoException, ValorInvalidoException {
 		
@@ -24,9 +28,7 @@ public class Empresa extends Propriedade {
 			
 			return AcaoLogradouroEnum.POSICAO_INALTERADA;
 		}
-		
 		return AcaoLogradouroEnum.DISPONIVEL_PARA_COMPRA;
-		
 	}
 
 	@Override
@@ -35,11 +37,4 @@ public class Empresa extends Propriedade {
 		
 	}
 	
-	public void setValorDaTaxa(double valor){
-		//TODO : Remover apos testes
-		this.valorDaTaxa = valor;
-	}
-	
-	
-
 }
