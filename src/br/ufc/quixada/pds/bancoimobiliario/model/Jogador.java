@@ -5,9 +5,8 @@ import java.util.List;
 public interface Jogador {
 
 
-	public void atualizarPosicao(int novaPosicao);
-	public void avancarPosicaoJogar(int quantidadeDePosicoes);
-	public void voltarPosicaoJogador(int quantidadeDePosicoes);
+	public void avancarPosicaoJogar(int quantidadeDePosicoes) throws ValorInvalidoException;
+	public void voltarPosicaoJogador(int quantidadeDePosicoes) throws ValorInvalidoException;
 	public void acrescentarSaldo(double valor) throws ValorInvalidoException;
 	public void decrementarSaldo(double valor) throws JogadorComSaldoNegativoException, ValorInvalidoException;
 	public String getNome();

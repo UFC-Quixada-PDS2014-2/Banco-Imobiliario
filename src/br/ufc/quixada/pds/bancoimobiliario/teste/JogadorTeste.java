@@ -48,7 +48,7 @@ public class JogadorTeste {
 		Jogador jogador  = new JogadorImpl("Teste", 500.00);
 		try {
 			jogador.decrementarSaldo(100.00);
-		} catch (JogadorComSaldoNegativoException | ValorInvalidoException e) {
+		} catch (Exception  e) {
 			fail();
 			e.printStackTrace();
 		}
@@ -186,9 +186,7 @@ public class JogadorTeste {
 			empresa.comprarPropriedade(jogador);
 			propriedades.add(empresa);
 			
-		} catch (SaldoJogadorInsuficienteException
-				| PropriedadeJaVendidaException | JogadorInvalidoException 
-				| JogadorComSaldoNegativoException | ValorInvalidoException e) {
+		} catch (Exception e) {
 			
 			fail();
 		}
@@ -201,5 +199,27 @@ public class JogadorTeste {
 		while(propriedadesEsperadas.hasNext() && propriedadesAtuais.hasNext()){
 			assertEquals(propriedadesEsperadas.next(), propriedadesAtuais.next());
 		}
+	}
+	
+	@Test
+	public void testaSeJogadorEhDonoDaPropriedadeComprada(){
+		
+		Jogador jogador = new JogadorImpl("Teste", 1000000);
+		
+		Propriedade imovel = new Imovel();
+		imovel.setValorDaPropriedade(100);
+		
+		Propriedade empresa  = new Empresa();
+		empresa.setValorDaPropriedade(100);
+		
+		try {
+			empresa.comprarPropriedade(jogador);
+		} catch (Exception e) {
+			fail();
+			e.printStackTrace();
+		}
+		
+		assertFalse(jogador.isDonoDaPropriedade(imovel));
+		assertTrue(jogador.isDonoDaPropriedade(empresa));	
 	}
 }

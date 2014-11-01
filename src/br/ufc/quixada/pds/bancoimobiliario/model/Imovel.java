@@ -23,7 +23,7 @@ public class Imovel extends Propriedade {
 		}
 		
 		
-		return AcaoLogradouroEnum.DISPONIVEL_PARA_VENDA;
+		return AcaoLogradouroEnum.DISPONIVEL_PARA_COMPRA;
 		
 	}
 
@@ -31,6 +31,11 @@ public class Imovel extends Propriedade {
 	public void passeiPorAqui(Jogador jogador) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public void setValorAluguel(double valor){
+		//TODO : Remover apos testes
+		this.valorDoAluguel = valor;
 	}
 	
 	

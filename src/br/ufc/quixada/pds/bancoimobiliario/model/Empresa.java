@@ -25,7 +25,7 @@ public class Empresa extends Propriedade {
 			return AcaoLogradouroEnum.POSICAO_INALTERADA;
 		}
 		
-		return AcaoLogradouroEnum.DISPONIVEL_PARA_VENDA;
+		return AcaoLogradouroEnum.DISPONIVEL_PARA_COMPRA;
 		
 	}
 
@@ -33,6 +33,11 @@ public class Empresa extends Propriedade {
 	public void passeiPorAqui(Jogador jogador) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public void setValorDaTaxa(double valor){
+		//TODO : Remover apos testes
+		this.valorDaTaxa = valor;
 	}
 	
 	

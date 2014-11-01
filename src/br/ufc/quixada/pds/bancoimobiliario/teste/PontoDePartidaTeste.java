@@ -32,7 +32,7 @@ public class PontoDePartidaTeste {
 	public void testaValorIncrementadoAoPassar(){
 		
 		Jogador jogador = new JogadorImpl("Teste", 500.00);
-		double valorEsperado = 500.00 + ConfiguracoesEnum.VALOR_INCREMENTO_PONTODEPARTIDA.getValor();
+		final double valorEsperado = 500.00 + ConfiguracoesEnum.VALOR_INCREMENTO_PONTODEPARTIDA.getValor();
 		
 		PontoDePartida pontoDePartida = new PontoDePartida();
 		try {

@@ -35,7 +35,7 @@ public class BancoImobiliarioImpl implements BancoImobiliario {
 			
 			if (tipoDeAcao.equals(AcaoLogradouroEnum.AVANCA_POSICAO)) {
 				realizarPulo(jogadorDaVez, posicaoAntiga);
-			} else if(tipoDeAcao.equals(AcaoLogradouroEnum.DISPONIVEL_PARA_VENDA)){
+			} else if(tipoDeAcao.equals(AcaoLogradouroEnum.DISPONIVEL_PARA_COMPRA)){
 				
 				//TODO : Detectar POSSIvel Venda
 			}

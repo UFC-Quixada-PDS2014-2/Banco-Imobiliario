@@ -21,11 +21,6 @@ public class JogadorImpl implements Jogador{
 	}
 
 	@Override
-	public void atualizarPosicao(int novaPosicao) {
-		this.posicao = novaPosicao;
-	}
-
-	@Override
 	public String getNome() {
 		return nome;
 	}
@@ -85,24 +80,29 @@ public class JogadorImpl implements Jogador{
 	}
 
 	@Override
-	public void avancarPosicaoJogar(int quantidadeDePosicoes) {
-		//TODO impedir que quantidade seja maior que o tamanho da lista
+	public void avancarPosicaoJogar(int quantidadeDePosicoes) throws ValorInvalidoException {
+		
+		if(quantidadeDePosicoes <= 0)
+			throw new ValorInvalidoException();
 		
 		this.posicao = (this.posicao + quantidadeDePosicoes) % ConfiguracoesEnum.NUMERO_CASAS.getValor();
 		
 	}
 
 	@Override
-	public void voltarPosicaoJogador(int quantidadeDePosicoes) {
+	public void voltarPosicaoJogador(int quantidadeDePosicoes) throws ValorInvalidoException {
 		
-		//TODO impedir que quantidade seja negativa
+		if(quantidadeDePosicoes <= 0)
+			throw new ValorInvalidoException();
 		
-		//TODO refazer logica 
+		//TODO rever logica 
+		
+		quantidadeDePosicoes = quantidadeDePosicoes % ConfiguracoesEnum.NUMERO_CASAS.getValor();
 		
 		int novaPosicao = this.posicao - quantidadeDePosicoes;
 		
 		if(novaPosicao < 0){
-			novaPosicao += ConfiguracoesEnum.NUMERO_CASAS.getValor();
+			novaPosicao = (ConfiguracoesEnum.NUMERO_CASAS.getValor() + novaPosicao) % ConfiguracoesEnum.NUMERO_CASAS.getValor();
 		}
 		
 		this.posicao = novaPosicao;
