@@ -51,7 +51,7 @@ public class EmpresaTeste {
 		Jogador jogador1 = new JogadorImpl("Teste", saldoInicial);
 		Jogador jogador2 = new JogadorImpl("Teste2", saldoInicial);
 		
-		jogador2.atualizarValorDoUltimoDeslocamento(valorDosDados);
+		jogador2.setValorDoUltimoDeslocamento(valorDosDados);
 		
 		try {
 			
@@ -79,7 +79,7 @@ public class EmpresaTeste {
 		Jogador jogador1 = new JogadorImpl("Teste", saldoInicial);
 		Jogador jogador2 = new JogadorImpl("Teste2", saldoInicial);
 		
-		jogador2.atualizarValorDoUltimoDeslocamento(valorDosDados);
+		jogador2.setValorDoUltimoDeslocamento(valorDosDados);
 		
 		try {
 			
@@ -137,7 +137,7 @@ public class EmpresaTeste {
 		Jogador jogador1 = new JogadorImpl("Teste", saldoInicialJogador1);
 		Jogador jogador2 = new JogadorImpl("Teste2", saldoInicialJogador2);
 		
-		jogador2.atualizarValorDoUltimoDeslocamento(valorDosDados);
+		jogador2.setValorDoUltimoDeslocamento(valorDosDados);
 		
 		try {
 			
