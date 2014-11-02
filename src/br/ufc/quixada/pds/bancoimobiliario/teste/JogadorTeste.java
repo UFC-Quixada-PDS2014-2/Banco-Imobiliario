@@ -31,29 +31,36 @@ public class JogadorTeste {
 	@Test
 	public void testeIncrementarSaldo(){
 		
-		Jogador jogador  = new JogadorImpl("Teste", 0.00);
+		final double saldoInisical = 0.00;
+		final double incremento = 2.51;
+		
+		Jogador jogador  = new JogadorImpl("Teste", saldoInisical);
+		
 		try {
-			jogador.acrescentarSaldo(2.51);
+			jogador.acrescentarSaldo(incremento);
+			
 		} catch (ValorInvalidoException e) {
-			fail();
-			e.printStackTrace();
+			fail(e.getMessage());
 		}
 		
-		assertEquals(2.51, jogador.getSaldo(), 0.001);
+		assertEquals(saldoInisical + incremento, jogador.getSaldo(), 0.00);
 	}
 	
 	@Test
 	public void testeDecrementarSaldo(){
 		
-		Jogador jogador  = new JogadorImpl("Teste", 500.00);
+		final double saldoInicial = 500;
+		final double decremento = 100;
+		
+		Jogador jogador  = new JogadorImpl("Teste", saldoInicial);
+		
 		try {
-			jogador.decrementarSaldo(100.00);
+			jogador.decrementarSaldo(decremento);
 		} catch (Exception  e) {
-			fail();
-			e.printStackTrace();
+			fail(e.getMessage());
 		}
 		
-		assertEquals(400.00, jogador.getSaldo(), 0.001);
+		assertEquals(saldoInicial - decremento, jogador.getSaldo(), 0.00);
 	}
 	
 	@Test
@@ -114,42 +121,39 @@ public class JogadorTeste {
 	@Test
 	public void verificarSaldoAposCompraDePropriedade(){
 		
-		Jogador jogador = new JogadorImpl("Teste", 1000.00);
+		final double valorDaPropriedade = 600;
+		final double valorDoAluguel = 60;
+		final double saldoInicial = 1000;
 		
-		Propriedade imovel = new Imovel();
-		imovel.setValorDaPropriedade(600.00);
+		Jogador jogador = new JogadorImpl("Teste", saldoInicial);
+		
+		Propriedade imovel = new Imovel(valorDaPropriedade,valorDoAluguel);
 		
 		try {
 			imovel.comprarPropriedade(jogador);
-			
-			assertEquals(400.00, jogador.getSaldo(), 0.001);
-		} catch (SaldoJogadorInsuficienteException
-				| PropriedadeJaVendidaException | JogadorInvalidoException
-				| JogadorComSaldoNegativoException | ValorInvalidoException e) {
-			
-			fail();
-			e.printStackTrace();
+		} catch (Exception e) {
+			fail(e.getMessage());
 		}
+		assertEquals(saldoInicial - valorDaPropriedade, jogador.getSaldo(), 0.00);
 	}
 	
 	@Test
 	public void verificaPropriedadesDoJogadorAposComprarUmaPropriedade(){
+
+			final double saldoInicial = 2000;
+			final double valorDaPropriedade = 200;
+			final double valorDaTaxa = 60;
+			
+			Jogador jogador = new JogadorImpl("Teste", saldoInicial);
 		
-			Jogador jogador = new JogadorImpl("Teste", 2000.00);
-		
-			Propriedade empresa = new Empresa();
-			empresa.setValorDaPropriedade(500.00);
+			Propriedade empresa = new Empresa(valorDaPropriedade,valorDaTaxa);
 				
 			try {
 				empresa.comprarPropriedade(jogador);
-			} catch (SaldoJogadorInsuficienteException
-					| PropriedadeJaVendidaException | JogadorInvalidoException 
-					| JogadorComSaldoNegativoException | ValorInvalidoException e) {
+			} catch (Exception e) {
 			
-				fail();
-				e.printStackTrace();
+				fail(e.getMessage());
 			}
-			
 			assertEquals(1, jogador.getPropriedadesAdquiridas().size());
 			
 			Iterator<Propriedade> it = jogador.getPropriedadesAdquiridas().iterator(); 
@@ -161,34 +165,31 @@ public class JogadorTeste {
 	
 	@Test
 	public void verificaPropriedadesDoJogadorAposACompraDeTresPropriedades(){
+
+		final double saldoInicial = 2000;
+		final double valorDaPropriedade = 100;
+		final double valorDaTaxa = 20;
 		
-		Jogador jogador = new JogadorImpl("Teste", 2000.00);
+		Jogador jogador = new JogadorImpl("Teste", saldoInicial);
 		
 		List<Propriedade> propriedades = new ArrayList<>();
 		
-		
-		
 		try {
 			
-			Propriedade imovel = new Imovel();	
-			imovel.setValorDaPropriedade(200.00);	
+			Propriedade imovel = new Imovel(valorDaPropriedade,valorDaTaxa);	
 			imovel.comprarPropriedade(jogador);
 			propriedades.add(imovel);
 			
-			
-			imovel = new Imovel();		
-			imovel.setValorDaPropriedade(150.00);
+			imovel = new Imovel(valorDaPropriedade,valorDaTaxa);		
 			imovel.comprarPropriedade(jogador);
 			propriedades.add(imovel);
 			
-			Propriedade empresa = new Empresa();
-			empresa.setValorDaPropriedade(100.00);
+			Propriedade empresa = new Empresa(valorDaPropriedade,valorDaTaxa);
 			empresa.comprarPropriedade(jogador);
 			propriedades.add(empresa);
 			
 		} catch (Exception e) {
-			
-			fail();
+			fail(e.getMessage());
 		}
 		
 		assertEquals(propriedades.size(),jogador.getPropriedadesAdquiridas().size());
@@ -204,19 +205,19 @@ public class JogadorTeste {
 	@Test
 	public void testaSeJogadorEhDonoDaPropriedadeComprada(){
 		
-		Jogador jogador = new JogadorImpl("Teste", 1000000);
+		final double saldoInicial = 10000;
+		final double valorDaPropriedade = 200;
+		final double valorDaTaxa = 20;
 		
-		Propriedade imovel = new Imovel();
-		imovel.setValorDaPropriedade(100);
+		Jogador jogador = new JogadorImpl("Teste", saldoInicial);
 		
-		Propriedade empresa  = new Empresa();
-		empresa.setValorDaPropriedade(100);
+		Propriedade imovel = new Imovel(valorDaPropriedade,valorDaTaxa);
+		Propriedade empresa  = new Empresa(valorDaPropriedade,valorDaTaxa);
 		
 		try {
 			empresa.comprarPropriedade(jogador);
 		} catch (Exception e) {
-			fail();
-			e.printStackTrace();
+			fail(e.getMessage());
 		}
 		
 		assertFalse(jogador.isDonoDaPropriedade(imovel));

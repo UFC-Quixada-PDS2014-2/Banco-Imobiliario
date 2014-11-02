@@ -20,7 +20,10 @@ public class PropriedadeTeste {
 	@Test
 	public void testeComprarPropiedadePassandoJogadorNull(){
 		
-		Propriedade imovel = new Imovel();
+		final double valorDaPropriedade = 500;
+		final double valorDoAluguel = 20;
+		
+		Propriedade imovel = new Imovel(valorDaPropriedade,valorDoAluguel);
 		
 		Jogador jogador = null;
 		 
@@ -37,14 +40,15 @@ public class PropriedadeTeste {
 	@Test
 	public void comprarPropriedadeJaAdquirida() {
 		
-		double saldo = 200.00;
+		final double saldo = 200.00;
+		final double valorDaPropriedade = 50;
+		final double valorDoAluguel = 2;
 		
 		Jogador jogador1 = new JogadorImpl("Jogador1", saldo);
 		Jogador jogador2 = new JogadorImpl("Teste", saldo);
 		
-		Propriedade imovel = new Imovel();
-		imovel.setValorDaPropriedade(2.00);
-		
+		Propriedade imovel = new Imovel(valorDaPropriedade,valorDoAluguel);
+
 		try {
 			imovel.comprarPropriedade(jogador1);
 			imovel.comprarPropriedade(jogador2);
@@ -61,15 +65,21 @@ public class PropriedadeTeste {
 	@Test
 	public void verificarSeEstaVendidaEmPropriedadeNaoAdquirida(){
 		
-			Propriedade imovel = new Imovel();
+			final double valorDaPropriedade = 200;
+			final double valorDoAluguel = 20;
+		
+			Propriedade imovel = new Imovel(valorDaPropriedade,valorDoAluguel);
 			assertTrue(imovel.propriedadeEstaVendida() == false);
 	}
 	
 	@Test
 	public void verificarSeEstaVendidaEmPropriedadeJaAdquirida(){
 		
-			Propriedade imovel = new Imovel();
-			imovel.setValorDaPropriedade(2.00);
+			final double valorDaPropriedade = 200;
+			final double valorDoAluguel = 20;
+		
+			Propriedade imovel = new Imovel(valorDaPropriedade,valorDoAluguel);
+			
 			Jogador jogador = new JogadorImpl("Teste",200.00);
 			
 			try {
@@ -83,11 +93,14 @@ public class PropriedadeTeste {
 	
 	@Test
 	public void comprarPropriedadeSemTerSaldoSuficiente(){
-	
-		Jogador jogador = new JogadorImpl("Teste", 500.00);
+
+		final double saldoInicial = 500;
+		final double valorDaPropriedade = 600;
+		final double valorDoAluguel = 50;
 		
-		Propriedade imovel = new Imovel();
-		imovel.setValorDaPropriedade(500.01);
+		Jogador jogador = new JogadorImpl("Teste", saldoInicial);
+		
+		Propriedade imovel = new Imovel(valorDaPropriedade,valorDoAluguel);
 		
 		try {
 			imovel.comprarPropriedade(jogador);
@@ -102,13 +115,16 @@ public class PropriedadeTeste {
 	@Test
 	public void comprarPropriedadeComSaldoSuficiente(){
 		
-		Jogador jogador = new JogadorImpl("Teste", 500.00);
+		final double saldoInicial = 500;
+		final double valorDaPropriedade = 350;
+		final double valorDoAluguel = 25;
 		
-		Propriedade imovel = new Imovel();
-		imovel.setValorDaPropriedade(350.00);
+		Jogador jogador = new JogadorImpl("Teste", saldoInicial);
+		Propriedade imovel = new Imovel(valorDaPropriedade,valorDoAluguel);
 		
 		try {
 			imovel.comprarPropriedade(jogador);
+			assertTrue(jogador.isDonoDaPropriedade(imovel));
 		} catch (Exception e) {
 			fail();
 		}

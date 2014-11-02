@@ -19,8 +19,7 @@ public class AcaoAvancaPosicaoTeste {
 		final int posicaoAtual = jogador.getPosicao();
 		final int quantidadeDePosicoes = 10;
 		
-		AcaoAvancaPosicao acao = new AcaoAvancaPosicao();
-		acao.setQuantidadeDePosicoes(quantidadeDePosicoes);
+		AcaoAvancaPosicao acao = new AcaoAvancaPosicao(quantidadeDePosicoes);
 		
 		try {
 			acao.executar(jogador);
@@ -41,8 +40,7 @@ public class AcaoAvancaPosicaoTeste {
 		final int posicaoAtual = jogador.getPosicao();
 		final int quantidadeDePosicoes = 40;
 		
-		AcaoAvancaPosicao acao = new AcaoAvancaPosicao();
-		acao.setQuantidadeDePosicoes(quantidadeDePosicoes);
+		AcaoAvancaPosicao acao = new AcaoAvancaPosicao(quantidadeDePosicoes);
 		
 		try {
 			acao.executar(jogador);
@@ -63,8 +61,7 @@ public class AcaoAvancaPosicaoTeste {
 		final int posicaoAtual = jogador.getPosicao();
 		final int quantidadeDePosicoes = -10;
 		
-		AcaoAvancaPosicao acao = new AcaoAvancaPosicao();
-		acao.setQuantidadeDePosicoes(quantidadeDePosicoes);
+		AcaoAvancaPosicao acao = new AcaoAvancaPosicao(quantidadeDePosicoes);
 		
 		try {
 			acao.executar(jogador);
@@ -84,8 +81,7 @@ public class AcaoAvancaPosicaoTeste {
 		final int posicaoAtual = jogador.getPosicao();
 		final int quantidadeDePosicoes = 0;
 		
-		AcaoAvancaPosicao acao = new AcaoAvancaPosicao();
-		acao.setQuantidadeDePosicoes(quantidadeDePosicoes);
+		AcaoAvancaPosicao acao = new AcaoAvancaPosicao(quantidadeDePosicoes);
 		
 		try {
 			acao.executar(jogador);

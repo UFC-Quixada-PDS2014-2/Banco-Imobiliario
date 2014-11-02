@@ -19,8 +19,7 @@ public class AcaoVoltaPosicaoTeste {
 		final int posicaoInicial = jogador.getPosicao();
 		final int qtdDeslocamento = 2;
 		
-		AcaoVoltaPosicao acao = new AcaoVoltaPosicao();
-		acao.setQuantidadeDePosicoes(qtdDeslocamento);
+		AcaoVoltaPosicao acao = new AcaoVoltaPosicao(qtdDeslocamento);
 		
 		try {
 			acao.executar(jogador);
@@ -41,8 +40,7 @@ public class AcaoVoltaPosicaoTeste {
 		final int posicaoInicial = jogador.getPosicao();
 		final int qtdDeslocamento = 40;
 		
-		AcaoVoltaPosicao acao = new AcaoVoltaPosicao();
-		acao.setQuantidadeDePosicoes(qtdDeslocamento);
+		AcaoVoltaPosicao acao = new AcaoVoltaPosicao(qtdDeslocamento);
 		
 		try {
 			acao.executar(jogador);
@@ -63,8 +61,7 @@ public class AcaoVoltaPosicaoTeste {
 		final int posicaoInicial = jogador.getPosicao();
 		final int qtdDeslocamento = -2;
 		
-		AcaoVoltaPosicao acao = new AcaoVoltaPosicao();
-		acao.setQuantidadeDePosicoes(qtdDeslocamento);
+		AcaoVoltaPosicao acao = new AcaoVoltaPosicao(qtdDeslocamento);
 		
 		try {
 			acao.executar(jogador);
@@ -86,8 +83,7 @@ public class AcaoVoltaPosicaoTeste {
 		final int posicaoInicial = jogador.getPosicao();
 		final int qtdDeslocamento = 0;
 		
-		AcaoVoltaPosicao acao = new AcaoVoltaPosicao();
-		acao.setQuantidadeDePosicoes(qtdDeslocamento);
+		AcaoVoltaPosicao acao = new AcaoVoltaPosicao(qtdDeslocamento);
 		
 		try {
 			acao.executar(jogador);

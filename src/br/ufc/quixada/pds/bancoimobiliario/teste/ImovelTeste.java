@@ -19,8 +19,11 @@ public class ImovelTeste {
 	@Test
 	public void verifiaAcaoExecutadaEmImovelSemDono() {
 		
+		final double valorDaPropriedade = 500;
+		final double valorDoAluguel = 50;
+		
 		Jogador jogador = new JogadorImpl("Teste", 500);
-		Imovel imovel = new Imovel();
+		Imovel imovel = new Imovel(valorDaPropriedade,valorDoAluguel);
 		
 		try {
 			AcaoLogradouroEnum acao = imovel.acaoLogradouro(jogador);
@@ -35,12 +38,12 @@ public class ImovelTeste {
 	public void JogadorSemSaldoTentaComprarImovel(){
 		
 		final double saldoInicial = 500;
-		final double valorImovel = 600;
+		final double valorDaPropriedade = 600;
+		final double valorDoAluguel = 60;
 		
 		Jogador jogador = new JogadorImpl("Teste", saldoInicial);
 		
-		Imovel imovel = new Imovel();
-		imovel.setValorDaPropriedade(valorImovel);
+		Imovel imovel = new Imovel(valorDaPropriedade,valorDoAluguel);
 		
 		try {
 			imovel.comprarPropriedade(jogador);
@@ -56,22 +59,20 @@ public class ImovelTeste {
 	public void testaSaldoDosJogadoresAposPararEmUmImovelComDono(){
 		
 		final double saldoInicial = 1000.00;
-		final double valorImovel = 500.00;
-		final double valorAluguel = 60.00;
+		final double valorDaPropriedade = 500.00;
+		final double valorDoAluguel = 60.00;
 		
 		Jogador jogador1 = new JogadorImpl("Teste", saldoInicial);
 		Jogador jogador2 = new JogadorImpl("Teste2", saldoInicial);
 		
-		Imovel imovel = new Imovel();
-		imovel.setValorDaPropriedade(valorImovel);
-		imovel.setValorAluguel(valorAluguel);
+		Imovel imovel = new Imovel(valorDaPropriedade,valorDoAluguel);
 		
 		try {
 			imovel.comprarPropriedade(jogador1);
 			imovel.acaoLogradouro(jogador2);
 			
-			final double valorFinalEsperadoJogador1 = (saldoInicial - valorImovel) + valorAluguel;
-			final double valorFinalEsperadoJogador2 = saldoInicial - valorAluguel;
+			final double valorFinalEsperadoJogador1 = (saldoInicial - valorDaPropriedade) + valorDoAluguel;
+			final double valorFinalEsperadoJogador2 = saldoInicial - valorDoAluguel;
 			
 			assertEquals(valorFinalEsperadoJogador1, jogador1.getSaldo(), 0.00);
 			assertEquals(valorFinalEsperadoJogador2, jogador2.getSaldo(), 0.00);
@@ -86,15 +87,13 @@ public class ImovelTeste {
 		
 		final double saldoInicialJogador1 = 2000.00;
 		final double saldoInicialJogador2 = 200.00;
-		final double valorDoImovel = 1000.00;
+		final double valorDaPropriedade = 1000.00;
 		final double valorDoAluguel = 300.00;
 		
 		Jogador jogador1 = new JogadorImpl("Teste", saldoInicialJogador1);
 		Jogador jogador2 = new JogadorImpl("Teste2", saldoInicialJogador2);
 		
-		Imovel imovel = new Imovel();
-		imovel.setValorAluguel(valorDoAluguel);
-		imovel.setValorDaPropriedade(valorDoImovel);
+		Imovel imovel = new Imovel(valorDaPropriedade,valorDoAluguel);
 		
 		try {
 			imovel.comprarPropriedade(jogador1);
@@ -108,5 +107,4 @@ public class ImovelTeste {
 			assertEquals(mensagemEsperada, e.getMessage());
 		}
 	}
-
 }

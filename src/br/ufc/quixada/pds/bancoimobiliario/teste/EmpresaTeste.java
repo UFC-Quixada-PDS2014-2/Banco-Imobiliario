@@ -19,10 +19,11 @@ public class EmpresaTeste {
 	@Test
 	public void verificaEmpresaRecemCriadaSeEstaDisponivelParaCompra() {
 		
-		Empresa empresa = new Empresa();
-		empresa.setValorDaPropriedade(500);
-		
+		final double valorDaPropriedade = 500;
+		final double valorDaTaxa = 20;
 		final double saldoInicial = 1000;
+		
+		Empresa empresa = new Empresa(valorDaPropriedade,valorDaTaxa);
 		
 		Jogador jogador = new JogadorImpl("Teste", saldoInicial);
 		
@@ -45,9 +46,7 @@ public class EmpresaTeste {
 		final double valorDaTaxa = 50;
 		final int valorDosDados = 5;
 		
-		Empresa empresa = new Empresa();
-		empresa.setValorDaPropriedade(valorPropriedade);
-		empresa.setValorDaTaxa(valorDaTaxa);
+		Empresa empresa = new Empresa(valorPropriedade, valorDaTaxa);
 		
 		Jogador jogador1 = new JogadorImpl("Teste", saldoInicial);
 		Jogador jogador2 = new JogadorImpl("Teste2", saldoInicial);
@@ -71,15 +70,11 @@ public class EmpresaTeste {
 	public void verificaSaldoDosJogadoresAposPararEmPropriedadeComDono(){
 	
 		final double saldoInicial = 1000;
-		final double valorPropriedade = 500;
+		final double valorDaPropriedade = 500;
 		final double valorDaTaxa = 50;
 		final int valorDosDados = 5;
 		
-		Empresa empresa = new Empresa();
-		empresa.setValorDaPropriedade(valorPropriedade);
-		empresa.setValorDaTaxa(valorDaTaxa);
-		
-		
+		Empresa empresa = new Empresa(valorDaPropriedade,valorDaTaxa);
 		
 		Jogador jogador1 = new JogadorImpl("Teste", saldoInicial);
 		Jogador jogador2 = new JogadorImpl("Teste2", saldoInicial);
@@ -92,7 +87,7 @@ public class EmpresaTeste {
 			
 			empresa.acaoLogradouro(jogador2);
 			
-			final double saldoFinalEsperadoJogador1 = (saldoInicial - valorPropriedade) + valorDaTaxa * valorDosDados;
+			final double saldoFinalEsperadoJogador1 = (saldoInicial - valorDaPropriedade) + valorDaTaxa * valorDosDados;
 			final double saldoFinalEsperadoJogador2 = (saldoInicial) - (valorDaTaxa * valorDosDados);
 			
 			
@@ -108,10 +103,10 @@ public class EmpresaTeste {
 	public void verificaAcaoExecutadaComDonoDaPropriedade(){
 	
 		final double saldoInicial = 1000;
-		final double valorPropriedade = 500;
+		final double valorDaPropriedade = 500;
+		final double valorDaTaxa = 20;
 		
-		Empresa empresa = new Empresa();
-		empresa.setValorDaPropriedade(valorPropriedade);
+		Empresa empresa = new Empresa(valorDaPropriedade, valorDaTaxa);
 		
 		Jogador jogador1 = new JogadorImpl("Teste", saldoInicial);
 		
@@ -137,11 +132,7 @@ public class EmpresaTeste {
 		final double valorDaTaxa = 50;
 		final int valorDosDados = 5;
 		
-		Empresa empresa = new Empresa();
-		empresa.setValorDaPropriedade(valorPropriedade);
-		empresa.setValorDaTaxa(valorDaTaxa);
-		
-		
+		Empresa empresa = new Empresa(valorPropriedade,valorDaTaxa);
 		
 		Jogador jogador1 = new JogadorImpl("Teste", saldoInicialJogador1);
 		Jogador jogador2 = new JogadorImpl("Teste2", saldoInicialJogador2);
@@ -151,15 +142,12 @@ public class EmpresaTeste {
 		try {
 			
 			empresa.comprarPropriedade(jogador1);
-			
 			empresa.acaoLogradouro(jogador2);
-			
 			fail();
 			
 		} catch (Exception e) {
 			
 			final String mensagemEsperada = "Jogador com saldo negativo.";
-			
 			assertEquals(mensagemEsperada, e.getMessage());
 		}
 	}
@@ -168,24 +156,20 @@ public class EmpresaTeste {
 	public void jogadorTentaComprarPropriedadeSemTerSaldoSuficiente(){
 	
 		final double saldoInicialJogador1 = 500;
-		final double valorPropriedade = 1000;
-		
-		Empresa empresa = new Empresa();
-		empresa.setValorDaPropriedade(valorPropriedade);
+		final double valorDaPropriedade = 1000;
+		final double valorDaTaxa = 20;
+		Empresa empresa = new Empresa(valorDaPropriedade,valorDaTaxa);
 		
 		Jogador jogador1 = new JogadorImpl("Teste", saldoInicialJogador1);
 		
 		try {
-			
 			empresa.comprarPropriedade(jogador1);
 			fail();
 			
 		} catch (Exception e) {
 			
 			final String mensagemEsperada = "O Jogador não possui saldo suficiente para comprar essa propriedade.";
-			
 			assertEquals(mensagemEsperada, e.getMessage());
 		}
 	}
-
 }

@@ -3,22 +3,18 @@ package br.ufc.quixada.pds.bancoimobiliario.model;
 
 public abstract class Propriedade extends Logradouro{
 
-	private double valorDaPropriedade;
+	final private double valorDaPropriedade;
 	private boolean adquirida;
 	private Jogador donoDaPropriedade;
 	
-	public Propriedade(){
+	public Propriedade(double valorDaPropriedade){
+		this.valorDaPropriedade = valorDaPropriedade;
 		this.adquirida = false;
-	}
-	
-	public void setValorDaPropriedade(double valor){
-		this.valorDaPropriedade = valor;
 	}
 	
 	public Jogador pegarDonoDaPropriedade(){
 		return this.donoDaPropriedade;
 	}
-	//TODO métodos de propriedade
 	
 	public void comprarPropriedade(Jogador compradorDaPropriedade) throws SaldoJogadorInsuficienteException, PropriedadeJaVendidaException, JogadorInvalidoException, JogadorComSaldoNegativoException, ValorInvalidoException{
 		
@@ -43,5 +39,4 @@ public abstract class Propriedade extends Logradouro{
 	public boolean propriedadeEstaVendida(){
 		return this.adquirida;
 	}
-	
 }

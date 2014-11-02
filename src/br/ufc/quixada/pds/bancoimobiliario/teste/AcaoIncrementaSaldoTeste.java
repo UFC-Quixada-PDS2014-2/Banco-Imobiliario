@@ -20,8 +20,7 @@ public class AcaoIncrementaSaldoTeste {
 		
 		Jogador jogador = new JogadorImpl("Teste", saldoInicial);
 		
-		AcaoIncrementaSaldo acao = new AcaoIncrementaSaldo();
-		acao.setValorASerModificado(incremento);
+		AcaoIncrementaSaldo acao = new AcaoIncrementaSaldo(incremento);
 		
 		try {
 			acao.executar(jogador);
@@ -40,8 +39,7 @@ public class AcaoIncrementaSaldoTeste {
 		
 		Jogador jogador = new JogadorImpl("Teste", saldoInicial);
 		
-		AcaoIncrementaSaldo acao = new AcaoIncrementaSaldo();
-		acao.setValorASerModificado(incremento);
+		AcaoIncrementaSaldo acao = new AcaoIncrementaSaldo(incremento);
 		
 		try {
 			acao.executar(jogador);
@@ -62,8 +60,7 @@ public class AcaoIncrementaSaldoTeste {
 		
 		Jogador jogador = new JogadorImpl("Teste", saldoInicial);
 		
-		AcaoIncrementaSaldo acao = new AcaoIncrementaSaldo();
-		acao.setValorASerModificado(incremento);
+		AcaoIncrementaSaldo acao = new AcaoIncrementaSaldo(incremento);
 		
 		try {
 			acao.executar(jogador);

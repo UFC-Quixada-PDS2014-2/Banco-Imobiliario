@@ -6,7 +6,8 @@ public class Empresa extends Propriedade {
 
 	final private double valorDaTaxa;
 
-	public Empresa(double valorDaTaxa) {
+	public Empresa(double valorDaPropriedade, double valorDaTaxa) {
+		super(valorDaPropriedade);
 		this.valorDaTaxa = valorDaTaxa;
 	}
 	

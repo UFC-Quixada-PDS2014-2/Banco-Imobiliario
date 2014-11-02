@@ -6,7 +6,8 @@ public class Imovel extends Propriedade {
 
 	final private double valorDoAluguel;
 
-	public Imovel(double valorDoAluguel) {
+	public Imovel(double valorDaPropriedade, double valorDoAluguel) {
+		super(valorDaPropriedade);
 		this.valorDoAluguel = valorDoAluguel;
 	}
 	
