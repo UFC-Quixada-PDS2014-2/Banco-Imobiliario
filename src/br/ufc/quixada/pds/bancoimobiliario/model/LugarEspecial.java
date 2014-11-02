@@ -13,15 +13,11 @@ public class LugarEspecial extends Logradouro {
 		for (AcaoLugarEspecial acaoLugarEspecial : listaDeAcoes) {
 			acaoLugarEspecial.executar(jogador);
 		}
-		
 		return AcaoLogradouroEnum.valueOf(tipoDeAcao);
 	}
 
 	@Override
 	public void passeiPorAqui(Jogador jogador) {
 		// TODO Auto-generated method stub
-		
 	}
-	
-	
 }

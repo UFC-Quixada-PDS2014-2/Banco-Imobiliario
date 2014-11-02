@@ -7,7 +7,6 @@ public class PontoDePartida extends Logradouro {
 
 	@Override
 	public AcaoLogradouroEnum acaoLogradouro(Jogador jogador) {
-		
 		return AcaoLogradouroEnum.POSICAO_INALTERADA; 
 	}
 

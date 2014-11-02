@@ -35,7 +35,7 @@ public class TabuleiroImpl implements Tabuleiro{
 		int deslocamentoJogador = deslocamento;
 		
 		while(deslocamentoJogador > 0){
-			jogador.avancarPosicaoJogar(1);
+			jogador.avancarPosicaoJogador(1);
 
 			Logradouro logradouro = getLogradouroPorPosicao(jogador.getPosicao());
 			logradouro.passeiPorAqui(jogador);
@@ -46,8 +46,6 @@ public class TabuleiroImpl implements Tabuleiro{
 		return logradouros.get(jogador.getPosicao());
 	}
 	
-	
-
 	private  Logradouro getLogradouroPorPosicao(int posicao){
 		return this.logradouros.get(posicao);
 	}
@@ -62,9 +60,7 @@ public class TabuleiroImpl implements Tabuleiro{
 			
 			Logradouro logradouro = logradouros.get(posicaoCursor);
 			logradouro.passeiPorAqui(jogador);
-			
 		}
-		
 		return logradouros.get(jogador.getPosicao());
 	}
 

@@ -69,17 +69,17 @@ public class JogadorImpl implements Jogador{
 	}
 
 	@Override
-	public int pegarValorDoUltimoDeslocamento() {
+	public int getValorDoUltimoDeslocamento() {
 		return this.ultimoDeslocamento;
 	}
 
 	@Override
-	public void atualizarValorDoUltimoDeslocamento(int novoDeslocamento) {	
+	public void setValorDoUltimoDeslocamento(int novoDeslocamento) {	
 		this.ultimoDeslocamento = novoDeslocamento;
 	}
 
 	@Override
-	public void avancarPosicaoJogar(int quantidadeDePosicoes) throws ValorInvalidoException {
+	public void avancarPosicaoJogador(int quantidadeDePosicoes) throws ValorInvalidoException {
 		
 		if(quantidadeDePosicoes <= 0)
 			throw new ValorInvalidoException();

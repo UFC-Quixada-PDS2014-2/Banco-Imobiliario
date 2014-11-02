@@ -5,10 +5,10 @@ import java.util.List;
 
 public interface BancoImobiliario {
 
-	public void realizarTurnoJogador(int valorDados) throws FimDeJogoException, ErroArquivoConfiguracoesException;
-	public Iterator<Jogador> obterJogadores();
+	public void realizarTurnoJogador(int valorDosDados) throws FimDeJogoException, ErroArquivoConfiguracoesException;
+	public Iterator<Jogador> getJogadores();
 	public Iterator<Logradouro> getCasasDoTabuleiro();
-	public Jogador pegarJogadorDaVez();
+	public Jogador getJogadorDaVez();
 	public void mudarJogadorDaVez();
 	
 }

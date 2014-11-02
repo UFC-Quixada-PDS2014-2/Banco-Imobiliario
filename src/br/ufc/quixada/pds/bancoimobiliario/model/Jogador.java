@@ -5,7 +5,7 @@ import java.util.List;
 public interface Jogador {
 
 
-	public void avancarPosicaoJogar(int quantidadeDePosicoes) throws ValorInvalidoException;
+	public void avancarPosicaoJogador(int quantidadeDePosicoes) throws ValorInvalidoException;
 	public void voltarPosicaoJogador(int quantidadeDePosicoes) throws ValorInvalidoException;
 	public void acrescentarSaldo(double valor) throws ValorInvalidoException;
 	public void decrementarSaldo(double valor) throws JogadorComSaldoNegativoException, ValorInvalidoException;
@@ -14,8 +14,8 @@ public interface Jogador {
 	public int getPosicao();
 	public List<Propriedade> getPropriedadesAdquiridas();
 	public void adicionarPropriedadeAdquirida(Propriedade propriedade);
-	public int pegarValorDoUltimoDeslocamento();
-	public void atualizarValorDoUltimoDeslocamento(int novoDeslocamento);
+	public int getValorDoUltimoDeslocamento();
+	public void setValorDoUltimoDeslocamento(int novoDeslocamento);
 	public boolean isDonoDaPropriedade(Propriedade propriedade);
 	
 }

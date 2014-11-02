@@ -9,6 +9,6 @@ public class AcaoAvancaPosicao implements AcaoLugarEspecial{
 	}
 	@Override
 	public void executar(Jogador jogador) throws ValorInvalidoException{
-		jogador.avancarPosicaoJogar(quantidadeDePosicoes);
+		jogador.avancarPosicaoJogador(quantidadeDePosicoes);
 	}
 }

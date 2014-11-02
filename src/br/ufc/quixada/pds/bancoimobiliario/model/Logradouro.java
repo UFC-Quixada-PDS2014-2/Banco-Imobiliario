@@ -6,7 +6,7 @@ public abstract class Logradouro {
 
 	private String nome;
 	
-	public String obterNome(){
+	public String getNome(){
 		return this.nome;
 	}
 	

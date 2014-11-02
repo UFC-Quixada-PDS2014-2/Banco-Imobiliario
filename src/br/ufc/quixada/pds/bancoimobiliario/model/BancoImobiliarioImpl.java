@@ -18,15 +18,15 @@ public class BancoImobiliarioImpl implements BancoImobiliario {
 	}
 
 	@Override
-	public void realizarTurnoJogador(int valorDados) throws FimDeJogoException,
+	public void realizarTurnoJogador(int valorDosDados) throws FimDeJogoException,
 			ErroArquivoConfiguracoesException {
 
-		jogadorDaVez.atualizarValorDoUltimoDeslocamento(valorDados);
+		jogadorDaVez.setValorDoUltimoDeslocamento(valorDosDados);
 
 		try {
 
 			Logradouro logradouro = this.tabuleiro.percorrerTabuleiro(
-					this.jogadorDaVez, valorDados);
+					this.jogadorDaVez, valorDosDados);
 			
 			int posicaoAntiga = jogadorDaVez.getPosicao();
 			
@@ -66,7 +66,7 @@ public class BancoImobiliarioImpl implements BancoImobiliario {
 	}
 
 	@Override
-	public Iterator<Jogador> obterJogadores() {
+	public Iterator<Jogador> getJogadores() {
 		return jogadores.iterator();
 	}
 
@@ -76,7 +76,7 @@ public class BancoImobiliarioImpl implements BancoImobiliario {
 	}
 
 	@Override
-	public Jogador pegarJogadorDaVez() {
+	public Jogador getJogadorDaVez() {
 		return this.jogadorDaVez;
 	}
 	

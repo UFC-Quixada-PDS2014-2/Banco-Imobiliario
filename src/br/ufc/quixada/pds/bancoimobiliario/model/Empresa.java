@@ -20,7 +20,7 @@ public class Empresa extends Propriedade {
 		
 		} else if(this.propriedadeEstaVendida()){
 			
-			final double valorTotal = this.valorDaTaxa * jogador.pegarValorDoUltimoDeslocamento();
+			final double valorTotal = this.valorDaTaxa * jogador.getValorDoUltimoDeslocamento();
 			
 			Jogador donoDaPropriedade = this.pegarDonoDaPropriedade();
 			
