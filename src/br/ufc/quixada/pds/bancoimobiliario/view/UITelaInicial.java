@@ -1,15 +1,12 @@
 package br.ufc.quixada.pds.bancoimobiliario.view;
 
 import java.awt.Font;
-import java.awt.Image;
 import java.awt.Rectangle;
 
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class UITelaInicial extends JFrame {
