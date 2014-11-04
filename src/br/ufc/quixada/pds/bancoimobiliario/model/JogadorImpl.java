@@ -105,9 +105,4 @@ public class JogadorImpl implements Jogador{
 		}
 		this.posicao = novaPosicao;
 	}
-
-	@Override
-	public boolean isDonoDaPropriedade(Propriedade propriedade) {
-		return this.propriedadesAdquiridas.contains(propriedade);
-	}
 }

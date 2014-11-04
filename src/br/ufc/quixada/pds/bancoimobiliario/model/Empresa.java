@@ -4,7 +4,7 @@ import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.AcaoLogradouroEnum;
 
 public class Empresa extends Propriedade {
 
-	final private double valorDaTaxa;
+	private double valorDaTaxa;
 
 	public Empresa(double valorDaPropriedade, double valorDaTaxa) {
 		super(valorDaPropriedade);
@@ -14,7 +14,7 @@ public class Empresa extends Propriedade {
 	@Override
 	public AcaoLogradouroEnum acaoLogradouro(Jogador jogador) throws JogadorComSaldoNegativoException, ValorInvalidoException {
 		
-		if(jogador.isDonoDaPropriedade(this)){
+		if(jogador.equals(this.getDonoDaPropriedade())){
 			
 			return AcaoLogradouroEnum.PERTENCE_AO_JOGADOR;
 		
@@ -22,7 +22,7 @@ public class Empresa extends Propriedade {
 			
 			final double valorTotal = this.valorDaTaxa * jogador.getValorDoUltimoDeslocamento();
 			
-			Jogador donoDaPropriedade = this.pegarDonoDaPropriedade();
+			Jogador donoDaPropriedade = this.getDonoDaPropriedade();
 			
 			jogador.decrementarSaldo(valorTotal);
 			donoDaPropriedade.acrescentarSaldo(valorTotal);

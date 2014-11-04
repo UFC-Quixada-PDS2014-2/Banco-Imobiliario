@@ -2,7 +2,7 @@ package br.ufc.quixada.pds.bancoimobiliario.model;
 
 public class AcaoDecrementaSaldo implements AcaoLugarEspecial{
 	
-	final private double valorASerModificado;
+	private double valorASerModificado;
 	
 	public AcaoDecrementaSaldo(double valorAserModificado) {
 		this.valorASerModificado = valorAserModificado;

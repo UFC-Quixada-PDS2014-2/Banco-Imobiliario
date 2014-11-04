@@ -220,7 +220,7 @@ public class JogadorTeste {
 			fail(e.getMessage());
 		}
 		
-		assertFalse(jogador.isDonoDaPropriedade(imovel));
-		assertTrue(jogador.isDonoDaPropriedade(empresa));	
+		assertFalse(jogador.equals(imovel.getDonoDaPropriedade()));
+		assertTrue(jogador.equals(empresa.getDonoDaPropriedade()));	
 	}
 }

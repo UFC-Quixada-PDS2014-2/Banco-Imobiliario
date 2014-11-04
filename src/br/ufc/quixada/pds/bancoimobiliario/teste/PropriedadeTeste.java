@@ -124,7 +124,8 @@ public class PropriedadeTeste {
 		
 		try {
 			imovel.comprarPropriedade(jogador);
-			assertTrue(jogador.isDonoDaPropriedade(imovel));
+			assertTrue(jogador.equals(imovel.getDonoDaPropriedade()));
+		
 		} catch (Exception e) {
 			fail();
 		}

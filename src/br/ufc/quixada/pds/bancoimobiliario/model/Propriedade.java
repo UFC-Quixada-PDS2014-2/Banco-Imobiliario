@@ -12,7 +12,7 @@ public abstract class Propriedade extends Logradouro{
 		this.adquirida = false;
 	}
 	
-	public Jogador pegarDonoDaPropriedade(){
+	public Jogador getDonoDaPropriedade(){
 		return this.donoDaPropriedade;
 	}
 	
