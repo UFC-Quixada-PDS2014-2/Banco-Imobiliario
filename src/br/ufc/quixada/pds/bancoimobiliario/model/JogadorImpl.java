@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.ConfiguracoesEnum;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorComSaldoNegativoException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
 
 public class JogadorImpl implements Jogador{
 

@@ -6,13 +6,13 @@ import org.junit.Test;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.Imovel;
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
-import br.ufc.quixada.pds.bancoimobiliario.model.JogadorComSaldoNegativoException;
 import br.ufc.quixada.pds.bancoimobiliario.model.JogadorImpl;
-import br.ufc.quixada.pds.bancoimobiliario.model.JogadorInvalidoException;
-import br.ufc.quixada.pds.bancoimobiliario.model.PropriedadeJaVendidaException;
-import br.ufc.quixada.pds.bancoimobiliario.model.SaldoJogadorInsuficienteException;
-import br.ufc.quixada.pds.bancoimobiliario.model.ValorInvalidoException;
 import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.AcaoLogradouroEnum;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorComSaldoNegativoException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorInvalidoException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.PropriedadeJaVendidaException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.SaldoJogadorInsuficienteException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
 
 public class ImovelTeste {
 

@@ -1,4 +1,4 @@
-package br.ufc.quixada.pds.bancoimobiliario.model;
+package br.ufc.quixada.pds.bancoimobiliario.builder;
 
 import java.util.Iterator;
 import java.util.List;
@@ -7,6 +7,11 @@ import javax.inject.Inject;
 
 import br.ufc.quixada.pds.bancoimobiliario.config.ErroNaLeituraDoXMLException;
 import br.ufc.quixada.pds.bancoimobiliario.config.ReaderLogradouros;
+import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
+import br.ufc.quixada.pds.bancoimobiliario.model.PontoDePartida;
+import br.ufc.quixada.pds.bancoimobiliario.model.Tabuleiro;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.ErroArquivoConfiguracoesException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.MontadorTabuleiroException;
 
 public class TabuleiroDirector {
 

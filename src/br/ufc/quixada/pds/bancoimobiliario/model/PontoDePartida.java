@@ -2,6 +2,7 @@ package br.ufc.quixada.pds.bancoimobiliario.model;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.AcaoLogradouroEnum;
 import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.ConfiguracoesEnum;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
 
 public class PontoDePartida extends Logradouro {
 

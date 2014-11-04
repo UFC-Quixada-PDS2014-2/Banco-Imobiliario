@@ -1,4 +1,9 @@
-package br.ufc.quixada.pds.bancoimobiliario.model;
+package br.ufc.quixada.pds.bancoimobiliario.builder;
+
+import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
+import br.ufc.quixada.pds.bancoimobiliario.model.PontoDePartida;
+import br.ufc.quixada.pds.bancoimobiliario.model.Tabuleiro;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.MontadorTabuleiroException;
 
 
 public interface TabuleiroBuilder {

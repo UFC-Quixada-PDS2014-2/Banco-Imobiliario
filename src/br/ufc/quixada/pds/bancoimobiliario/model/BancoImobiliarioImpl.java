@@ -4,6 +4,10 @@ import java.util.Iterator;
 import java.util.List;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.AcaoLogradouroEnum;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.ErroArquivoConfiguracoesException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.FimDeJogoException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorComSaldoNegativoException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
 
 public class BancoImobiliarioImpl implements BancoImobiliario {
 

@@ -3,6 +3,9 @@ package br.ufc.quixada.pds.bancoimobiliario.model;
 import java.util.Iterator;
 import java.util.List;
 
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.ErroArquivoConfiguracoesException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.FimDeJogoException;
+
 public interface BancoImobiliario {
 
 	public void realizarTurnoJogador(int valorDosDados) throws FimDeJogoException, ErroArquivoConfiguracoesException;

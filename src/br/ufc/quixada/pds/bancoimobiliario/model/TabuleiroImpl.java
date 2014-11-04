@@ -1,11 +1,12 @@
 package br.ufc.quixada.pds.bancoimobiliario.model;
 
-import java.nio.file.attribute.PosixFilePermissions;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.ConfiguracoesEnum;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorComSaldoNegativoException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
 
 public class TabuleiroImpl implements Tabuleiro{
 	
@@ -15,8 +16,8 @@ public class TabuleiroImpl implements Tabuleiro{
 		logradouros = new ArrayList<Logradouro>();
 	}
 
-	List<Logradouro> getLogradouros(){
-		return this.logradouros;
+	public void addLogradouro(Logradouro logradouro){
+		this.logradouros.add(logradouro);
 	}
 
 	@Override

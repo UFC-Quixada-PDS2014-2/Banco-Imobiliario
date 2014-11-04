@@ -7,8 +7,8 @@ import org.junit.Test;
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
 import br.ufc.quixada.pds.bancoimobiliario.model.JogadorImpl;
 import br.ufc.quixada.pds.bancoimobiliario.model.PontoDePartida;
-import br.ufc.quixada.pds.bancoimobiliario.model.ValorInvalidoException;
 import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.ConfiguracoesEnum;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
 
 public class PontoDePartidaTeste {
 

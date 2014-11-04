@@ -2,20 +2,19 @@ package br.ufc.quixada.pds.bancoimobiliario.config;
 
 
 import java.io.File;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import br.ufc.quixada.pds.bancoimobiliario.model.AcaoAvancaPosicao;
-import br.ufc.quixada.pds.bancoimobiliario.model.AcaoDecrementaSaldo;
-import br.ufc.quixada.pds.bancoimobiliario.model.AcaoIncrementaSaldo;
-import br.ufc.quixada.pds.bancoimobiliario.model.AcaoVoltaPosicao;
 import br.ufc.quixada.pds.bancoimobiliario.model.Empresa;
 import br.ufc.quixada.pds.bancoimobiliario.model.Imovel;
 import br.ufc.quixada.pds.bancoimobiliario.model.JogadorImpl;
 import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
-import br.ufc.quixada.pds.bancoimobiliario.model.LugarEspecial;
 import br.ufc.quixada.pds.bancoimobiliario.model.PontoDePartida;
+import br.ufc.quixada.pds.bancoimobiliario.model.lugarespecial.AcaoAvancaPosicao;
+import br.ufc.quixada.pds.bancoimobiliario.model.lugarespecial.AcaoDecrementaSaldo;
+import br.ufc.quixada.pds.bancoimobiliario.model.lugarespecial.AcaoIncrementaSaldo;
+import br.ufc.quixada.pds.bancoimobiliario.model.lugarespecial.AcaoVoltaPosicao;
+import br.ufc.quixada.pds.bancoimobiliario.model.lugarespecial.LugarEspecial;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;

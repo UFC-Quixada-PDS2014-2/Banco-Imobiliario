@@ -4,10 +4,10 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import br.ufc.quixada.pds.bancoimobiliario.model.AcaoAvancaPosicao;
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
 import br.ufc.quixada.pds.bancoimobiliario.model.JogadorImpl;
-import br.ufc.quixada.pds.bancoimobiliario.model.ValorInvalidoException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
+import br.ufc.quixada.pds.bancoimobiliario.model.lugarespecial.AcaoAvancaPosicao;
 
 public class AcaoAvancaPosicaoTeste {
 

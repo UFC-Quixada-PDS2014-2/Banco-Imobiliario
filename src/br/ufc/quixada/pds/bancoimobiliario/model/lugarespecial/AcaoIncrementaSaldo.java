@@ -1,4 +1,8 @@
-package br.ufc.quixada.pds.bancoimobiliario.model;
+package br.ufc.quixada.pds.bancoimobiliario.model.lugarespecial;
+
+import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorComSaldoNegativoException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
 
 public class AcaoIncrementaSaldo implements AcaoLugarEspecial{
 

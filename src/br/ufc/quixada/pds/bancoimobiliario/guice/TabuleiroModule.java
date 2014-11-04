@@ -1,11 +1,11 @@
-package br.ufc.quixada.pds.bancoimobiliario.config.guice;
+package br.ufc.quixada.pds.bancoimobiliario.guice;
 
+import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroBuilder;
+import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroBuilderConcrete;
+import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroDirector;
 import br.ufc.quixada.pds.bancoimobiliario.config.ConfiguracaoCasasTabuleiroComXStream;
 import br.ufc.quixada.pds.bancoimobiliario.config.ReaderLogradouros;
 import br.ufc.quixada.pds.bancoimobiliario.model.Tabuleiro;
-import br.ufc.quixada.pds.bancoimobiliario.model.TabuleiroBuilder;
-import br.ufc.quixada.pds.bancoimobiliario.model.TabuleiroBuilderConcrete;
-import br.ufc.quixada.pds.bancoimobiliario.model.TabuleiroDirector;
 import br.ufc.quixada.pds.bancoimobiliario.model.TabuleiroImpl;
 
 import com.google.inject.AbstractModule;

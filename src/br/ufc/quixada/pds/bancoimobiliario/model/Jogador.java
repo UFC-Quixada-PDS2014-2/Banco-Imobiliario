@@ -2,6 +2,9 @@ package br.ufc.quixada.pds.bancoimobiliario.model;
 
 import java.util.List;
 
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorComSaldoNegativoException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
+
 public interface Jogador {
 
 

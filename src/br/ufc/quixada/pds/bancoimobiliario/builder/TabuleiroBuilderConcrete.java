@@ -1,6 +1,11 @@
-package br.ufc.quixada.pds.bancoimobiliario.model;
+package br.ufc.quixada.pds.bancoimobiliario.builder;
 
+import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
+import br.ufc.quixada.pds.bancoimobiliario.model.PontoDePartida;
+import br.ufc.quixada.pds.bancoimobiliario.model.Tabuleiro;
+import br.ufc.quixada.pds.bancoimobiliario.model.TabuleiroImpl;
 import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.ConfiguracoesEnum;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.MontadorTabuleiroException;
 
 
 public class TabuleiroBuilderConcrete implements TabuleiroBuilder{
@@ -20,7 +25,7 @@ public class TabuleiroBuilderConcrete implements TabuleiroBuilder{
 	@Override
 	public void montarPontoPartida(PontoDePartida pontoDePartida) throws MontadorTabuleiroException {
 		if(first == false){
-			tabuleiroImpl.getLogradouros().add(pontoDePartida);
+			tabuleiroImpl.addLogradouro(pontoDePartida);
 			first = true;
 			this.qtdCasas++;
 		}else{
@@ -32,7 +37,7 @@ public class TabuleiroBuilderConcrete implements TabuleiroBuilder{
 	public void montarCasaIntermediaria(Logradouro logradouro) throws MontadorTabuleiroException {
 		int casasRestantes = ConfiguracoesEnum.NUMERO_CASAS.getValor() - qtdCasas;
 		if(first && (casasRestantes > 1)){
-			tabuleiroImpl.getLogradouros().add(logradouro);
+			tabuleiroImpl.addLogradouro(logradouro);
 			this.qtdCasas++;
 		}else{
 			String mensagem = "";
@@ -49,7 +54,7 @@ public class TabuleiroBuilderConcrete implements TabuleiroBuilder{
 	public void montarUltimaCasa(Logradouro logradouro) throws MontadorTabuleiroException {
 		int casasRestantes = ConfiguracoesEnum.NUMERO_CASAS.getValor() - qtdCasas;
 		if(casasRestantes == 1){
-			tabuleiroImpl.getLogradouros().add(logradouro);
+			tabuleiroImpl.addLogradouro(logradouro);
 			this.qtdCasas++;
 			last = true;
 		}else{
