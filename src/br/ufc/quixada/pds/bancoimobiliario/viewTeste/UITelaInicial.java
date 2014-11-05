@@ -1,4 +1,4 @@
-package br.ufc.quixada.pds.bancoimobiliario.view;
+package br.ufc.quixada.pds.bancoimobiliario.viewTeste;
 
 import java.awt.Font;
 import java.awt.Rectangle;
@@ -23,7 +23,7 @@ public class UITelaInicial extends JFrame {
 	
 	public void initComponents(){
 		
-		JLabel titulo = new JLabel("BANCO IMOBILI√ÅRIO");
+		JLabel titulo = new JLabel("BANCO IMOBILI√?RIO");
 		Font fontTitulo = new Font("Stencil", Font.CENTER_BASELINE, 32);
 		titulo.setBounds(100, 50, 400, 60);
 		titulo.setFont(fontTitulo);

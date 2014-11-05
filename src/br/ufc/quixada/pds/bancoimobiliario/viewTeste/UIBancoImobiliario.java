@@ -3,20 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.ufc.quixada.pds.bancoimobiliario.view;
+package br.ufc.quixada.pds.bancoimobiliario.viewTeste;
 
-import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.Insets;
-import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
@@ -29,10 +25,11 @@ import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.ConfiguracoesEnum;
 public class UIBancoImobiliario extends javax.swing.JFrame {
 
 	private BancoImobiliario bancoImobiliario;
-	private List<JLabel> labelsCasas;
 	private List<ILogradouro> iLogradouros;
-	private PanelInformacoes panelInformacoes;
-
+	private static final int largura_tela = 701;
+	private static final int altura_tela = 730;
+	
+	
 	/**
 	 * Creates new form UIBancoImobiliario
 	 */
@@ -43,15 +40,20 @@ public class UIBancoImobiliario extends javax.swing.JFrame {
 	}
 
 	private void initialize() {
-		configurarTabuleiro();
-		labelsCasas = new ArrayList<JLabel>();
-		setExtendedState(getExtendedState() | JFrame.MAXIMIZED_BOTH); 
 		setVisible(true);
-		setResizable(false);
+		//setResizable(false);
+		setSize(largura_tela,altura_tela);
+		configurarTabuleiro();
 	}
 
 	private void configurarTabuleiro() {
 
+		final double weightx = 3;
+		final double weighty = 3;		
+
+		final double weightxDefault = 1;
+		final double weightyDefault = 1;
+		
 		iLogradouros = new ArrayList<ILogradouro>();
 		Iterator<Logradouro> logradouros = this.bancoImobiliario
 				.getCasasDoTabuleiro();
@@ -64,42 +66,45 @@ public class UIBancoImobiliario extends javax.swing.JFrame {
 		// Piso da divisão do número de casas por 4 mais 1
 		int tamanhoLadoTabuleiro = (ConfiguracoesEnum.NUMERO_CASAS.getValor() / 4) + 1;
 
-		GridBagConstraints posicaoLogradouroLayout = new GridBagConstraints();
-		posicaoLogradouroLayout.fill = GridBagConstraints.BOTH;
-		posicaoLogradouroLayout.weightx = 1;
-		posicaoLogradouroLayout.weighty = 1;
-		int indexListaLogradouro = 0;
 
 		int gridx, gridy;
 
-		boolean testeImagem = true;
+		int indexListaLogradouro = 0;
 
 		gridy = 0;
 		for (gridx = 0; gridx < (tamanhoLadoTabuleiro); gridx++) {
+			GridBagConstraints posicaoLogradouroLayout = new GridBagConstraints();
+			posicaoLogradouroLayout.fill = GridBagConstraints.BOTH;
+
+			if((gridx == 0)){
+				posicaoLogradouroLayout.weightx = weightx;
+				posicaoLogradouroLayout.weighty = weighty;
+			}else{
+				posicaoLogradouroLayout.weightx = weightxDefault;
+				posicaoLogradouroLayout.weighty = weightyDefault;
+				
+			}
 			posicaoLogradouroLayout.gridx = gridx;
 			posicaoLogradouroLayout.gridy = gridy;
 
 			ILogradouro iLogradouro = iLogradouros.get(indexListaLogradouro);
 			iLogradouro.setX(gridx);
 			iLogradouro.setY(gridy);
-
-			ImageIcon icon = null;
-			if (testeImagem) {
-				icon = new ImageIcon("img/teste1.jpeg");
-				testeImagem = !testeImagem;
-			} else {
-				icon = new ImageIcon("img/teste2.jpeg");
-				testeImagem = !testeImagem;
-			}
-			JLabel casa = new JLabel(icon);
-
-			panelTabuleiro.add(casa, posicaoLogradouroLayout);
-
+			
+			panelTabuleiro.add(iLogradouro.getCasa(),posicaoLogradouroLayout);
+			iLogradouro.addObjetoDireita(new JLabel(gridx + " " + gridy));
+			
 			indexListaLogradouro++;
 		}
 
 		gridx = tamanhoLadoTabuleiro - 1;
 		for (gridy = 1; gridy < (tamanhoLadoTabuleiro - 1); gridy++) {
+			GridBagConstraints posicaoLogradouroLayout = new GridBagConstraints();
+			posicaoLogradouroLayout.fill = GridBagConstraints.BOTH;
+
+			posicaoLogradouroLayout.weightx = weightxDefault;
+			posicaoLogradouroLayout.weighty = weightyDefault;
+			
 			posicaoLogradouroLayout.gridx = gridx;
 			posicaoLogradouroLayout.gridy = gridy;
 
@@ -107,41 +112,37 @@ public class UIBancoImobiliario extends javax.swing.JFrame {
 			iLogradouro.setX(gridx);
 			iLogradouro.setY(gridy);
 
-			ImageIcon icon = null;
-			if (testeImagem) {
-				icon = new ImageIcon("img/teste1.jpeg");
-				testeImagem = !testeImagem;
-			} else {
-				icon = new ImageIcon("img/teste2.jpeg");
-				testeImagem = !testeImagem;
-			}
-			JLabel casa = new JLabel(icon);
 
-			panelTabuleiro.add(casa, posicaoLogradouroLayout);
+			panelTabuleiro.add(iLogradouro.getCasa(),posicaoLogradouroLayout);
+			iLogradouro.addObjetoDireita(new JLabel(gridx + " " + gridy));
+			
 
 			indexListaLogradouro++;
 		}
 
 		gridy = tamanhoLadoTabuleiro - 1;
 		for (gridx = (tamanhoLadoTabuleiro - 1); gridx >= 0; gridx--) {
+
+			GridBagConstraints posicaoLogradouroLayout = new GridBagConstraints();
+			posicaoLogradouroLayout.fill = GridBagConstraints.BOTH;
 			posicaoLogradouroLayout.gridx = gridx;
 			posicaoLogradouroLayout.gridy = gridy;
-
+			if(gridx == 0){
+				posicaoLogradouroLayout.weightx = weightx;
+				posicaoLogradouroLayout.weighty = weighty;
+			}else{
+				posicaoLogradouroLayout.weightx = weightxDefault;
+				posicaoLogradouroLayout.weighty = weightyDefault;
+			}
+			
+			
 			ILogradouro iLogradouro = iLogradouros.get(indexListaLogradouro);
 			iLogradouro.setX(gridx);
 			iLogradouro.setY(gridy);
 
-			ImageIcon icon = null;
-			if (testeImagem) {
-				icon = new ImageIcon("img/teste1.jpeg");
-				testeImagem = !testeImagem;
-			} else {
-				icon = new ImageIcon("img/teste2.jpeg");
-				testeImagem = !testeImagem;
-			}
-			JLabel casa = new JLabel(icon);
 
-			panelTabuleiro.add(casa, posicaoLogradouroLayout);
+			panelTabuleiro.add(iLogradouro.getCasa(),posicaoLogradouroLayout);
+			iLogradouro.addObjetoDireita(new JLabel(gridx + " " + gridy));
 
 			indexListaLogradouro++;
 
@@ -149,42 +150,44 @@ public class UIBancoImobiliario extends javax.swing.JFrame {
 
 		gridx = 0;
 		for (gridy = (tamanhoLadoTabuleiro - 2); gridy >= 1; gridy--) {
+
+			GridBagConstraints posicaoLogradouroLayout = new GridBagConstraints();
+			posicaoLogradouroLayout.fill = GridBagConstraints.BOTH;
+			posicaoLogradouroLayout.weightx = weightxDefault;
+			posicaoLogradouroLayout.weighty = weightyDefault;
+			
 			posicaoLogradouroLayout.gridx = gridx;
 			posicaoLogradouroLayout.gridy = gridy;
 
 			ILogradouro iLogradouro = iLogradouros.get(indexListaLogradouro);
 			iLogradouro.setX(gridx);
 			iLogradouro.setY(gridy);
+			
 
-			ImageIcon icon = null;
-			if (testeImagem) {
-				icon = new ImageIcon("img/teste1.jpeg");
-				testeImagem = !testeImagem;
-			} else {
-				icon = new ImageIcon("img/teste2.jpeg");
-				testeImagem = !testeImagem;
-			}
-			JLabel casa = new JLabel(icon);
-
-			panelTabuleiro.add(casa, posicaoLogradouroLayout);
+			panelTabuleiro.add(iLogradouro.getCasa(), posicaoLogradouroLayout);
+			iLogradouro.addObjetoDireita(new JLabel(gridx + " " + gridy));
 
 			indexListaLogradouro++;
 
 		}
 
+		GridBagConstraints posicaoLogradouroLayout = new GridBagConstraints();
+		posicaoLogradouroLayout.fill = GridBagConstraints.BOTH;
 		posicaoLogradouroLayout.weightx = 1;
 		posicaoLogradouroLayout.weighty = 1;
+		
+		posicaoLogradouroLayout.gridwidth = tamanhoLadoTabuleiro - 4;
+		posicaoLogradouroLayout.gridheight = tamanhoLadoTabuleiro - 4;
+		posicaoLogradouroLayout.gridx = 2;
+		posicaoLogradouroLayout.gridy = 2;
 
-		posicaoLogradouroLayout.gridwidth = tamanhoLadoTabuleiro - 2;
-		posicaoLogradouroLayout.gridheight = tamanhoLadoTabuleiro - 2;
-		posicaoLogradouroLayout.gridx = 1;
-		posicaoLogradouroLayout.gridy = 1;
-
-		panelInformacoes = new PanelInformacoes(bancoImobiliario);
-		panelTabuleiro.add(panelInformacoes, posicaoLogradouroLayout);
-
+		//panelInformacoes = new PanelInformacoes(bancoImobiliario);
+		JPanel panel = new JPanel();
+		panelTabuleiro.add(panel, posicaoLogradouroLayout);
+		panel.setOpaque(false);
+		
 	}
-
+	
 	/**
 	 * This method is called from within the constructor to initialize the form.
 	 * WARNING: Do NOT modify this code. The content of this method is always
@@ -195,7 +198,7 @@ public class UIBancoImobiliario extends javax.swing.JFrame {
 	// desc="Generated Code">//GEN-BEGIN:initComponents
 	private void initComponents() {
 
-		panelTabuleiro = new javax.swing.JPanel();
+		panelTabuleiro = new PanelTabuleiro();
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -207,11 +210,11 @@ public class UIBancoImobiliario extends javax.swing.JFrame {
 		panelTabuleiro.setLayout(gbl_panelTabuleiro);
 
 		getContentPane().add(panelTabuleiro, java.awt.BorderLayout.CENTER);
-
+		
 		pack();
 	}// </editor-fold>//GEN-END:initComponents
 
 	// Variables declaration - do not modify//GEN-BEGIN:variables
-	private javax.swing.JPanel panelTabuleiro;
+	private PanelTabuleiro panelTabuleiro;
 	// End of variables declaration//GEN-END:variables
 }

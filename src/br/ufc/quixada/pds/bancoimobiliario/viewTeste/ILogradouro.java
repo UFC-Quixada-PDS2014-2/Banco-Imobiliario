@@ -3,22 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.ufc.quixada.pds.bancoimobiliario.view;
+package br.ufc.quixada.pds.bancoimobiliario.viewTeste;
+
+import java.awt.BorderLayout;
+import java.awt.Component;
+
+import javax.swing.JPanel;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
 
 /**
- *
+ * 
  * @author sandro
  */
 public class ILogradouro {
 
 	private Logradouro logradouro;
+	private JPanel casa;
 	private int x;
 	private int y;
 
 	public ILogradouro(Logradouro logradouro) {
 		this.logradouro = logradouro;
+		casa = new JPanel();
+		casa.setLayout(new BorderLayout());
+		casa.setOpaque(false);
 	}
 
 	/**
@@ -52,10 +61,22 @@ public class ILogradouro {
 
 	/**
 	 * @param y
-	 * the y to set
+	 *            the y to set
 	 */
 	public void setY(int y) {
 		this.y = y;
+	}
+
+	public void addObjetoDireita(Component component) {
+		casa.add(component, BorderLayout.EAST);
+	}
+
+	public void addObjetoEsquerda(Component component) {
+		casa.add(component, BorderLayout.WEST);
+	}
+
+	public JPanel getCasa() {
+		return casa;
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-package br.ufc.quixada.pds.bancoimobiliario.view;
+package br.ufc.quixada.pds.bancoimobiliario.viewTeste;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
 

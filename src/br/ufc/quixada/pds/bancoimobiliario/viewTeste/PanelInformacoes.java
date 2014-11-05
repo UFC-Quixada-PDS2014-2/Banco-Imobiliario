@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.ufc.quixada.pds.bancoimobiliario.view;
+package br.ufc.quixada.pds.bancoimobiliario.viewTeste;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 
@@ -59,7 +59,7 @@ public class PanelInformacoes extends javax.swing.JPanel {
         });
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/dados.png"))); // NOI18N
-        jButton1.setToolTipText("LanÃ§ar Dados ");
+        jButton1.setToolTipText("Lançar Dados ");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/escudo_jogador.png"))); // NOI18N
 

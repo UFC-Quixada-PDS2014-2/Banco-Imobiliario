@@ -15,7 +15,7 @@ import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.ConfiguracoesEnum;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ErroArquivoConfiguracoesException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.FimDeJogoException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.MontadorTabuleiroException;
-import br.ufc.quixada.pds.bancoimobiliario.view.UIBancoImobiliario;
+import br.ufc.quixada.pds.bancoimobiliario.viewTeste.UIBancoImobiliario;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -25,7 +25,7 @@ public class Main {
 	public static void main(String[] args) {
 		try {
 
-			/* Iniciando objetos de domÃ­nio */
+			/* Iniciando objetos de domínio */
 			Injector injectorBI = Guice.createInjector(new TabuleiroModule());
 			TabuleiroDirector tabuleiroDirector = injectorBI
 					.getInstance(TabuleiroDirector.class);
