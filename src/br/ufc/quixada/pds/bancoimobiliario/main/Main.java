@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroDirector;
+import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorTabuleiro;
 import br.ufc.quixada.pds.bancoimobiliario.guice.TabuleiroModule;
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliarioImpl;
@@ -16,6 +17,7 @@ import br.ufc.quixada.pds.bancoimobiliario.model.exception.ErroArquivoConfigurac
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.FimDeJogoException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.MontadorTabuleiroException;
 import br.ufc.quixada.pds.bancoimobiliario.view.GUITabuleiro;
+import br.ufc.quixada.pds.bancoimobiliario.view.IJogador;
 import br.ufc.quixada.pds.bancoimobiliario.viewTeste.UIBancoImobiliario;
 
 import com.google.inject.Guice;
@@ -33,12 +35,14 @@ public class Main {
 			tabuleiroDirector.construirTabuleiro();
 			Tabuleiro tabuleiro = tabuleiroDirector.getTabuleiro();
 
+			Jogador jogador1 = new JogadorImpl("Jogador 1 ",
+					ConfiguracoesEnum.SALDO_INICIAL.getValor());	
+			Jogador jogador2 = new JogadorImpl("Jogador 2 ",
+					ConfiguracoesEnum.SALDO_INICIAL.getValor());
+			
 			List<Jogador> jogadores = new ArrayList<>();
-			for (int i = 0; i < ConfiguracoesEnum.NUMERO_JOGADORES.getValor(); i++) {
-				JogadorImpl jogadorImpl = new JogadorImpl("Jogador 1 ",
-						ConfiguracoesEnum.SALDO_INICIAL.getValor());
-				jogadores.add(jogadorImpl);
-			}
+			jogadores.add(jogador1);
+			jogadores.add(jogador2);
 
 			BancoImobiliario bancoImobiliario = new BancoImobiliarioImpl(
 					jogadores, tabuleiro);
@@ -72,7 +76,12 @@ public class Main {
 			}
 
 			//UIBancoImobiliario gui = new UIBancoImobiliario(bancoImobiliario);
-			GUITabuleiro gui = new GUITabuleiro();
+			IJogador iJogador1 = new IJogador(jogador1);
+			iJogador1.setImagemPersonagem("/br/ufc/quixada/pds/bancoimobiliario/view/img/luxemburgo.jpg");
+			IJogador iJogador2 = new IJogador(jogador2);
+			iJogador2.setImagemPersonagem("/br/ufc/quixada/pds/bancoimobiliario/view/img/luxemburgo.jpg");
+			GUITabuleiro gui = new GUITabuleiro(bancoImobiliario, iJogador1, iJogador2);
+			new ControladorTabuleiro(gui);
 			/*while (true) {
 
 				Scanner scan = new Scanner(System.in);
