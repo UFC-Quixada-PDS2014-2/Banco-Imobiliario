@@ -4,6 +4,7 @@
 		
 		<PontoDePartida>
 			<nome>Apito Inicial</nome>
+			<valorASerIncrementado>200</valorASerIncrementado>
 		</PontoDePartida>
 		
 		<Imovel>

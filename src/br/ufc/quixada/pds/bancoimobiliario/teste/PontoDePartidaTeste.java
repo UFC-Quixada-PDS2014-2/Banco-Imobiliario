@@ -28,22 +28,5 @@ public class PontoDePartidaTeste {
 		assertTrue(jogador.getSaldo() > 500.00);
 	}
 	
-	@Test
-	public void testaValorIncrementadoAoPassar(){
-		
-		Jogador jogador = new JogadorImpl("Teste", 500.00);
-		final double valorEsperado = 500.00 + ConfiguracoesEnum.VALOR_INCREMENTO_PONTODEPARTIDA.getValor();
-		
-		PontoDePartida pontoDePartida = new PontoDePartida();
-		try {
-			pontoDePartida.passeiPorAqui(jogador);
-		} catch (ValorInvalidoException e) {
-			fail();
-			e.printStackTrace();
-		}
-		
-		
-		assertEquals(valorEsperado, jogador.getSaldo(), 0.00);
-	}
 
 }
