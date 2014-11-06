@@ -2,7 +2,7 @@ package br.ufc.quixada.pds.bancoimobiliario.model.enumeration;
 
 public enum ConfiguracoesEnum {
 	
-	NUMERO_CASAS(40), NUMERO_JOGADORES(2), SALDO_INICIAL(1000)
+	NUMERO_CASAS(28), NUMERO_JOGADORES(2), SALDO_INICIAL(1000)
 	, POSICAO_INICIAL(0);
 	
 	

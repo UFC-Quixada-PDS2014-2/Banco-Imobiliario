@@ -58,7 +58,7 @@ public class TabuleiroBuilderConcrete implements TabuleiroBuilder{
 			this.qtdCasas++;
 			last = true;
 		}else{
-			throw new MontadorTabuleiroException("Faltam adicionar " + casasRestantes +" casa(s)");
+			throw new MontadorTabuleiroException("Faltam adicionar " + (casasRestantes - 1) +" casa(s)");
 		}
 		
 	}
