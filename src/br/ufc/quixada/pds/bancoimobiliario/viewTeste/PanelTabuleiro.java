@@ -12,14 +12,14 @@ import javax.swing.JPanel;
 public class PanelTabuleiro extends JPanel {
 
 	private Image background;
-	private static final String imagem = "img/Tabuleiro.png";
+	private static final String imagem = "";
 
 	public PanelTabuleiro() {
-		URL res = getClass().getResource(imagem);
+		/*URL res = getClass().getResource(imagem);
 		if (res == null) {
 			throw new IllegalArgumentException("resource not found: " + imagem);
 		}
-		background = Toolkit.getDefaultToolkit().createImage(res);
+		background = Toolkit.getDefaultToolkit().createImage(res);*/
 	}
 
 	@Override

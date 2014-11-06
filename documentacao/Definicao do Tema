@@ -1,15 +1,44 @@
+---------------------------------------New----------------------------------
+00 - Apito Inicial
+01 - Shakhtar Donetsk
+02 - Adidas
+03 - Porto
+04 - Chelsea
+05 - Patrocinador //Acrescenta saldo
+06 - Juventus
+07 - Torcida // Avança Posição
+08 - Bayern Munchen
+09 - Nike
+10 - Liverpool
+11 - Milan
+12 - Puma
+13 - Barcelona
+14 - Comitê de Disciplina - UEFA // Decrementa Saldo
+15 - Real Madrid
+16 - Umbro
+17 - Ajax
+18 - Arsenal
+19 - Manchester City
+20 - Paris Saint-Germain
+21 - Escalação Irregular // Volta posição
+22 - Penalty
+23 - Borussia Dortmund
+24 - Manchester United
+25 - Roma
+26 - Olympikus
+27 - Atlético de Madrid
 
----------------------------------New-------------------------------
-00 - The Shire (Lord of the Rings)
+---------------------------------Old 1.0-------------------------------
+00 - Ponto inicial (apito)
 01 - Slynt
 02 - Tavern
 03 - Mormont
 04 - Mallister
-05 - Whorehouse 
+05 - Whorehouse //out empresa
 06 - Clegane
-07 - The Hand's tourney
+07 - The Hand's tourney//out lugar especial adiciona saldo
 08 - Seaworth
-09 - Dayne
+09 - Dayne//out imovel
 10 - The Wall
 11 - Hightower
 12 - Royal taxes
@@ -17,29 +46,29 @@
 14 - Blackfyre
 15 - Blacksmith
 16 - Baratheon
-17 - Stark
+17 - Stark//out imovel
 18 - Hostel
 19 - Tully
-20 - Dragon riders
+20 - Dragon riders//out lugar especial avança posição
 21 - Tyrell
 22 - Reed
 23 - The Great Harrenhal tourney
 24 - Bolton
-25 - Golden Mines
+25 - Golden Mines//out empresa
 26 - Stable
-27 - Frey
+27 - Frey//out imovel
 28 - King's landing 
 29 - Lannister
-30 - The dungeons
-31 - Targaryen
+30 - The dungeons // out lugar especial volta posição
+31 - Targaryen//out imovel
 32 - Fairs
 33 - Tarly
-34 - Taxes of crossing
+34 - Taxes of crossing // out lugar especial decrementa saldo
 35 - Wargs
 36 - Oakheart
-37 - Plantation
+37 - Plantation// out empresa
 38 - Martell
-39 - Umber
+39 - Umber//out imovel
 
 
 ------------------------------------------OLD---------------------------------------

@@ -39,7 +39,7 @@ public class GUITabuleiro extends JFrame {
 	 * Create the frame.
 	 */
 	public GUITabuleiro() {
-		setResizable(true);
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 10, 900,552);
 		contentPane = new JPanel();
@@ -169,6 +169,6 @@ public class GUITabuleiro extends JFrame {
 		labelBackground.setBounds(0,0, 900,520);
 		
 		contentPane.add(labelBackground);
-		
+		this.setVisible(true);
 	}
 }

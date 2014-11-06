@@ -15,6 +15,7 @@ import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.ConfiguracoesEnum;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ErroArquivoConfiguracoesException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.FimDeJogoException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.MontadorTabuleiroException;
+import br.ufc.quixada.pds.bancoimobiliario.view.GUITabuleiro;
 import br.ufc.quixada.pds.bancoimobiliario.viewTeste.UIBancoImobiliario;
 
 import com.google.inject.Guice;
@@ -70,8 +71,8 @@ public class Main {
 						java.util.logging.Level.SEVERE, null, ex);
 			}
 
-			UIBancoImobiliario gui = new UIBancoImobiliario(bancoImobiliario); 
-			
+			//UIBancoImobiliario gui = new UIBancoImobiliario(bancoImobiliario);
+			GUITabuleiro gui = new GUITabuleiro();
 			/*while (true) {
 
 				Scanner scan = new Scanner(System.in);
