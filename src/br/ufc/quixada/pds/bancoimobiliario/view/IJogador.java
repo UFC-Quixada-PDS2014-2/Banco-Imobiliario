@@ -1,5 +1,6 @@
 package br.ufc.quixada.pds.bancoimobiliario.view;
 
+import java.util.Iterator;
 import java.util.List;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
@@ -22,7 +23,7 @@ public class IJogador {
 		return this.jogador.getSaldo();
 	}
 	
-	public List<Propriedade> getPropriedades(){
+	public Iterator<Propriedade> getPropriedades(){
 		return this.jogador.getPropriedadesAdquiridas();
 	}
 	

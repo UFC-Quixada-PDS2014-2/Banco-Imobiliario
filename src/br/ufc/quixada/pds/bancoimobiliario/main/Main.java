@@ -80,8 +80,10 @@ public class Main {
 			iJogador1.setImagemPersonagem("/br/ufc/quixada/pds/bancoimobiliario/view/img/luxemburgo.jpg");
 			IJogador iJogador2 = new IJogador(jogador2);
 			iJogador2.setImagemPersonagem("/br/ufc/quixada/pds/bancoimobiliario/view/img/luxemburgo.jpg");
-			GUITabuleiro gui = new GUITabuleiro(bancoImobiliario, iJogador1, iJogador2);
-			new ControladorTabuleiro(gui);
+			
+			ControladorTabuleiro controladorTabuleiro = new ControladorTabuleiro(bancoImobiliario, iJogador1, iJogador2);
+			
+			
 			/*while (true) {
 
 				Scanner scan = new Scanner(System.in);

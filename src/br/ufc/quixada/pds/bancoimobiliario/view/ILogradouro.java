@@ -59,6 +59,10 @@ public class ILogradouro {
 	public JButton getCasa() {
 		return casa;
 	}
+	
+	public String getNome(){
+		return this.logradouro.getNome();
+	}
 
 	@Override
 	public boolean equals(Object obj) {

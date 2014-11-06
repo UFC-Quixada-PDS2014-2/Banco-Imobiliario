@@ -2,6 +2,7 @@ package br.ufc.quixada.pds.bancoimobiliario.model;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.ConfiguracoesEnum;
@@ -21,8 +22,8 @@ public class TabuleiroImpl implements Tabuleiro{
 	}
 
 	@Override
-	public List<Logradouro> getCasasDoTabuleiro(){
-		return Collections.unmodifiableList(this.logradouros);
+	public Iterator<Logradouro> getCasasDoTabuleiro(){
+		return this.logradouros.iterator();
 	}
 	
 	@Override

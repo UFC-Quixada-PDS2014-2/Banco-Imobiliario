@@ -1,6 +1,7 @@
 package br.ufc.quixada.pds.bancoimobiliario.model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.ConfiguracoesEnum;
@@ -38,8 +39,8 @@ public class JogadorImpl implements Jogador{
 	}
 
 	@Override
-	public List<Propriedade> getPropriedadesAdquiridas() {
-		return this.propriedadesAdquiridas;
+	public Iterator<Propriedade> getPropriedadesAdquiridas() {
+		return this.propriedadesAdquiridas.iterator();
 	}
 
 	@Override
