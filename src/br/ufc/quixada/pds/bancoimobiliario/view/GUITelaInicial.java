@@ -1,5 +1,6 @@
 package br.ufc.quixada.pds.bancoimobiliario.view;
 
+import java.awt.Font;
 import java.awt.Rectangle;
 
 import javax.swing.JButton;
@@ -54,8 +55,9 @@ public class GUITelaInicial extends JFrame {
 	    background.add(jogador1Selecionado);
 	    
 	    JLabel nomeJogador1Label = new JLabel("Nome jogador 1:");
+	    nomeJogador1Label.setFont(new Font("Tahoma", Font.BOLD, 14));
 	    nomeJogador1Label.setForeground(Color.WHITE);
-	    nomeJogador1Label.setBounds(40, 413, 119, 20);
+	    nomeJogador1Label.setBounds(40, 413, 150, 20);
 	    background.add(nomeJogador1Label);
 	    
 	    JButton jogador2Selecionado = new JButton("");
@@ -69,8 +71,9 @@ public class GUITelaInicial extends JFrame {
 	    background.add(nomeJogador2TxtArea);
 	    
 	    JLabel nomeJogador2Label = new JLabel("Nome jogador 2:");
+	    nomeJogador2Label.setFont(new Font("Tahoma", Font.BOLD, 14));
 	    nomeJogador2Label.setForeground(Color.WHITE);
-	    nomeJogador2Label.setBounds(991, 413, 119, 20);
+	    nomeJogador2Label.setBounds(978, 413, 150, 20);
 	    background.add(nomeJogador2Label);
 	    
 	    JButton alterarJogador1 = new JButton("Alterar");
@@ -82,7 +85,8 @@ public class GUITelaInicial extends JFrame {
 	    background.add(alterarJogador2);
 	    
 	    JLabel iniciarOJogoLabel = new JLabel("Iniciar o Jogo");
-	    iniciarOJogoLabel.setBounds(540, 405, 150, 15);
+	    iniciarOJogoLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+	    iniciarOJogoLabel.setBounds(530, 500, 150, 15);
 	    background.add(iniciarOJogoLabel);
 	    
 	    bola = new JButton();

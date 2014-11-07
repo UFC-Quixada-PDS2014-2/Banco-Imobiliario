@@ -1,7 +1,11 @@
 package br.ufc.quixada.pds.bancoimobiliario.controller;
 
+import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -31,7 +35,7 @@ public class ControladorTelaInicial {
 	
 	private void adicionarEventoDeIniciarPartida(){
 		JButton botaoInicial = this.guiTelaInicial.getBotaoInicial();
-		botaoInicial.addActionListener(new ActionIniciarJogo(botaoInicial));
+		botaoInicial.addMouseListener(new ActionIniciarJogo(botaoInicial));
 	}
 	
 	private class ActionSelecionarTecnico implements ActionListener{
@@ -49,18 +53,42 @@ public class ControladorTelaInicial {
 	
 	
 	
-	private class ActionIniciarJogo implements ActionListener{
+	private class ActionIniciarJogo implements MouseListener{
 		private JButton botaoInicial;
 		
 		public ActionIniciarJogo(JButton botaoInicial){
 			this.botaoInicial = botaoInicial;
-			
-			System.out.println("asdsad");
 		}
-		
+
 		@Override
-		public void actionPerformed(ActionEvent e) {
-			//TODO:
+		public void mouseClicked(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			Cursor cursor = new Cursor(Cursor.HAND_CURSOR);
+			botaoInicial.setCursor(cursor);
+			botaoInicial.setToolTipText("Clique para iniciar");
+		}
+
+		@Override
+		public void mouseExited(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mousePressed(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
 		}
 	}
 }
