@@ -32,4 +32,15 @@ public class LugarEspecial extends Logradouro {
 		mensagemFinal += "Tipo de Ação: " + this.tipoDeAcao + "\n";
 		return mensagemFinal;
 	}
+
+	@Override
+	public boolean isDisponivelParaCompra() {
+		return false;
+	}
+
+	@Override
+	public void comprarLogradouro(Jogador compradorDoLogradouro) {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -2,6 +2,9 @@ package br.ufc.quixada.pds.bancoimobiliario.model;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.AcaoLogradouroEnum;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorComSaldoNegativoException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorInvalidoException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.PropriedadeJaVendidaException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.SaldoJogadorInsuficienteException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
 
 public class Empresa extends Propriedade {
@@ -58,6 +61,25 @@ public class Empresa extends Propriedade {
 		mensagemFinal += nome + valorDaPropriedade + valorDaTaxa + dono;
 		
 		return mensagemFinal;
+	}
+
+	@Override
+	public boolean isDisponivelParaCompra() {
+		if(super.propriedadeEstaVendida()){
+			return false;
+		} else{
+			return true;
+		}
+	}
+
+	@Override
+	public void comprarLogradouro(Jogador compradorDoLogradouro)
+			throws SaldoJogadorInsuficienteException,
+			PropriedadeJaVendidaException, JogadorInvalidoException,
+			JogadorComSaldoNegativoException, ValorInvalidoException {
+		
+		super.comprarPropriedade(compradorDoLogradouro);
+		
 	}
 	
 }
