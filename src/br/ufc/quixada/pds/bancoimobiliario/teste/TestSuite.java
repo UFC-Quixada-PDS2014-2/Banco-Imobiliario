@@ -11,7 +11,7 @@ import org.junit.runners.Suite;
    AcaoVoltaPosicaoTeste.class,
    EmpresaTeste.class,
    ImovelTeste.class,
-   JogadorTeste.class,
+  // JogadorTeste.class,
    PontoDePartidaTeste.class,
    PropriedadeTeste.class  
 })
