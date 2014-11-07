@@ -21,6 +21,8 @@ import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
 import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
 import br.ufc.quixada.pds.bancoimobiliario.view.exception.LogradourosInsuficientesException;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class GUITabuleiro extends JFrame {
 
@@ -30,6 +32,9 @@ public class GUITabuleiro extends JFrame {
 	private IJogador iJogador1;
 	private IJogador iJogador2;
 	private IJogador jogadorDaVez;
+	private JComboBox<Integer> comboBoxDado2;
+	private JComboBox<Integer> comboBoxDado1;
+	private JButton btnJogar;
 
 	/**
 	 * Create the frame.
@@ -205,10 +210,6 @@ public class GUITabuleiro extends JFrame {
 		buttons.add(btnCasa27);
 		buttons.add(btnCasa28);
 
-		JButton btnHelp = new JButton("Help");
-		btnHelp.setBounds(572, 89, 50, 53);
-		contentPane.add(btnHelp);
-
 		PanelJogador panelJogador1 = new PanelJogador(iJogador1);
 		panelJogador1.setBackground(Color.WHITE);
 		panelJogador1.setBounds(10, 147, 170, 358);
@@ -218,6 +219,52 @@ public class GUITabuleiro extends JFrame {
 		panelJogador2.setOpaque(false);
 		panelJogador2.setBounds(718, 147, 170, 358);
 		contentPane.add(panelJogador2);
+		
+		JPanel panelCentral = new JPanel();
+		panelCentral.setOpaque(false);
+		panelCentral.setBounds(290, 89, 339, 342);
+		contentPane.add(panelCentral);
+		
+				JButton btnHelp = new JButton("Help");
+				
+				comboBoxDado1 = new JComboBox<Integer>();
+				comboBoxDado1.setModel(new DefaultComboBoxModel(new Integer[] {1, 2, 3, 4, 5, 6}));
+				
+				comboBoxDado2 = new JComboBox();
+				comboBoxDado2.setModel(new DefaultComboBoxModel(new Integer[] {1, 2, 3, 4, 5, 6}));
+								
+				btnJogar = new JButton("Jogar");
+				GroupLayout gl_panelCentral = new GroupLayout(panelCentral);
+				gl_panelCentral.setHorizontalGroup(
+					gl_panelCentral.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panelCentral.createSequentialGroup()
+							.addContainerGap(286, Short.MAX_VALUE)
+							.addComponent(btnHelp))
+						.addGroup(gl_panelCentral.createSequentialGroup()
+							.addGap(59)
+							.addGroup(gl_panelCentral.createParallelGroup(Alignment.TRAILING, false)
+								.addComponent(comboBoxDado2, Alignment.LEADING, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(comboBoxDado1, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 66, GroupLayout.PREFERRED_SIZE))
+							.addGap(31)
+							.addComponent(btnJogar)
+							.addContainerGap(124, Short.MAX_VALUE))
+				);
+				gl_panelCentral.setVerticalGroup(
+					gl_panelCentral.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panelCentral.createSequentialGroup()
+							.addComponent(btnHelp, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
+							.addGap(24)
+							.addGroup(gl_panelCentral.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_panelCentral.createSequentialGroup()
+									.addComponent(comboBoxDado1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(comboBoxDado2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_panelCentral.createSequentialGroup()
+									.addGap(11)
+									.addComponent(btnJogar)))
+							.addContainerGap(216, Short.MAX_VALUE))
+				);
+				panelCentral.setLayout(gl_panelCentral);
 
 		JLabel lblBackground = new JLabel("");
 		lblBackground.setIcon(new ImageIcon(GUITabuleiro.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/background.png")));
@@ -260,5 +307,13 @@ public class GUITabuleiro extends JFrame {
 
 	public void setJogadorDaVez(IJogador jogadorDaVez){
 		this.jogadorDaVez = jogadorDaVez;
+	}
+	
+	public int getValorDados(){
+		
+		int dado1 = (Integer)comboBoxDado1.getSelectedItem();
+		int dado2 = (Integer) comboBoxDado2.getSelectedItem();
+		
+		return dado1 + dado2;
 	}
 }

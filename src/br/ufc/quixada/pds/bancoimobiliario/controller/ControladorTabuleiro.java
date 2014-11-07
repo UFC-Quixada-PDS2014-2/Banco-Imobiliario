@@ -11,6 +11,8 @@ import org.w3c.dom.views.AbstractView;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.ErroArquivoConfiguracoesException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.FimDeJogoException;
 import br.ufc.quixada.pds.bancoimobiliario.view.GUITabuleiro;
 import br.ufc.quixada.pds.bancoimobiliario.view.IJogador;
 import br.ufc.quixada.pds.bancoimobiliario.view.ILogradouro;
@@ -65,6 +67,20 @@ public class ControladorTabuleiro{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+
+			int valorDados = guiTabuleiro.getValorDados();
+
+			try {
+				bancoImobiliario.realizarTurnoJogador(valorDados);
+			} catch (FimDeJogoException e1) {
+				e1.printStackTrace();
+				JOptionPane.showMessageDialog(guiTabuleiro, bancoImobiliario.getJogadorDaVez().getNome() + " perdeu!");
+			} catch (ErroArquivoConfiguracoesException e1) {
+				e1.printStackTrace();
+				JOptionPane.showMessageDialog(guiTabuleiro, "Erro no arquivo de configuração do jogo!");
+				System.exit(1);
+			}
+			
 			
 		}
 		
