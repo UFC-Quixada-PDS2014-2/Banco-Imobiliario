@@ -50,12 +50,11 @@
 		<LugarEspecial>
 			<nome>Torcida</nome>
 			<listaDeAcoes>
-				<List>
 					<AcaoAvancaPosicao>
 						<quantidadeDePosicoes>3</quantidadeDePosicoes>
 					</AcaoAvancaPosicao>
-				</List>
 			</listaDeAcoes>
+			<tipoDeAcao>AVANCA_POSICAO</tipoDeAcao>
 		</LugarEspecial>
 		
 		<Imovel>
@@ -97,12 +96,11 @@
 		<LugarEspecial>
 			<nome>Comitê Disciplinar</nome>
 			<listaDeAcoes>
-				<List>
 					<AcaoDecrementaSaldo>
 						<valorASerModificado>400</valorASerModificado>
 					</AcaoDecrementaSaldo>
-				</List>
 			</listaDeAcoes>
+			<tipoDeAcao>DECREMENTA_SALDO</tipoDeAcao>
 		</LugarEspecial>
 		
 		<Imovel>
@@ -144,12 +142,11 @@
 		<LugarEspecial>
 			<nome>Escalação Irregular</nome>
 			<listaDeAcoes>
-				<List>
 					<AcaoVoltaPosicao>
 						<quantidadeDePosicoes>2</quantidadeDePosicoes>
 					</AcaoVoltaPosicao>
-				</List>
 			</listaDeAcoes>
+			<tipoDeAcao>VOLTA_POSICAO</tipoDeAcao>
 		</LugarEspecial>
 		
 		<Empresa>

@@ -2,7 +2,6 @@ package br.ufc.quixada.pds.bancoimobiliario.main;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroDirector;
 import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorTabuleiro;
@@ -14,11 +13,9 @@ import br.ufc.quixada.pds.bancoimobiliario.model.JogadorImpl;
 import br.ufc.quixada.pds.bancoimobiliario.model.Tabuleiro;
 import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.ConfiguracoesEnum;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ErroArquivoConfiguracoesException;
-import br.ufc.quixada.pds.bancoimobiliario.model.exception.FimDeJogoException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.MontadorTabuleiroException;
-import br.ufc.quixada.pds.bancoimobiliario.view.GUITabuleiro;
+import br.ufc.quixada.pds.bancoimobiliario.view.GUITelaInicial;
 import br.ufc.quixada.pds.bancoimobiliario.view.IJogador;
-import br.ufc.quixada.pds.bancoimobiliario.viewTeste.UIBancoImobiliario;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -59,19 +56,19 @@ public class Main {
 				}
 			} catch (ClassNotFoundException ex) {
 				java.util.logging.Logger.getLogger(
-						UIBancoImobiliario.class.getName()).log(
+						GUITelaInicial.class.getName()).log(
 						java.util.logging.Level.SEVERE, null, ex);
 			} catch (InstantiationException ex) {
 				java.util.logging.Logger.getLogger(
-						UIBancoImobiliario.class.getName()).log(
+						GUITelaInicial.class.getName()).log(
 						java.util.logging.Level.SEVERE, null, ex);
 			} catch (IllegalAccessException ex) {
 				java.util.logging.Logger.getLogger(
-						UIBancoImobiliario.class.getName()).log(
+						GUITelaInicial.class.getName()).log(
 						java.util.logging.Level.SEVERE, null, ex);
 			} catch (javax.swing.UnsupportedLookAndFeelException ex) {
 				java.util.logging.Logger.getLogger(
-						UIBancoImobiliario.class.getName()).log(
+						GUITelaInicial.class.getName()).log(
 						java.util.logging.Level.SEVERE, null, ex);
 			}
 
