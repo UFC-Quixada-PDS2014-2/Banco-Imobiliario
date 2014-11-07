@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
+import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.AcaoLogradouroEnum;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ErroArquivoConfiguracoesException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.FimDeJogoException;
 import br.ufc.quixada.pds.bancoimobiliario.view.GUITabuleiro;
@@ -27,6 +28,7 @@ public class ControladorTabuleiro{
 	private BancoImobiliario bancoImobiliario;
 	private IJogador iJogador1;
 	private IJogador iJogador2;
+	private IJogador jogadorDaVez;
 	
 	public ControladorTabuleiro(BancoImobiliario bancoImobiliario, IJogador iJogador1, IJogador iJogador2){
 		this.bancoImobiliario = bancoImobiliario;
@@ -38,8 +40,13 @@ public class ControladorTabuleiro{
 	
 	public void inicializar(){
 		this.guiTabuleiro.setVisible(true);
-		this.guiTabuleiro.setJogadorDaVez(detectarJogadorDaVez());
+		this.jogadorDaVez = detectarJogadorDaVez();
+		this.guiTabuleiro.setJogadorDaVez(jogadorDaVez);
 		adicionarEventosBotoesCasas();
+		
+		JButton btnJogador = this.guiTabuleiro.getBtnJogar();
+		btnJogador.addActionListener(new ActionRealizarRodada());
+		
 	}
 	
 	private IJogador detectarJogadorDaVez(){
@@ -123,7 +130,13 @@ public class ControladorTabuleiro{
 			int valorDados = guiTabuleiro.getValorDados();
 
 			try {
-				bancoImobiliario.realizarTurnoJogador(valorDados);
+				AcaoLogradouroEnum acaoLogradouro = bancoImobiliario.realizarTurnoJogador(valorDados);
+
+				JOptionPane.showMessageDialog(guiTabuleiro, jogadorDaVez.getJogador().getPosicao() + 1);
+				JOptionPane.showMessageDialog(guiTabuleiro, jogadorDaVez.getJogador().getSaldo());
+				jogadorDaVez = detectarJogadorDaVez();
+				guiTabuleiro.setJogadorDaVez(jogadorDaVez);
+				
 			} catch (FimDeJogoException e1) {
 				e1.printStackTrace();
 				JOptionPane.showMessageDialog(guiTabuleiro, bancoImobiliario.getJogadorDaVez().getNome() + " perdeu!");
@@ -132,7 +145,6 @@ public class ControladorTabuleiro{
 				JOptionPane.showMessageDialog(guiTabuleiro, "Erro no arquivo de configuração do jogo!");
 				System.exit(1);
 			}
-			
 			
 		}
 		

@@ -34,12 +34,11 @@
 		<LugarEspecial>
 			<nome>Patrocinador</nome>
 			<listaDeAcoes>
-				<List>
 					<AcaoIncrementaSaldo>
 						<valorASerModificado>100</valorASerModificado>
 					</AcaoIncrementaSaldo>
-				</List>
 			</listaDeAcoes>
+			<tipoDeAcao>AUMENTA_SALDO</tipoDeAcao>
 		</LugarEspecial>
 		
 		<Imovel>

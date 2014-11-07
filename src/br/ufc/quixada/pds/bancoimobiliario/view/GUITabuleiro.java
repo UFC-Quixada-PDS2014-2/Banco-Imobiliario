@@ -306,6 +306,7 @@ public class GUITabuleiro extends JFrame {
 	}
 
 	public void setJogadorDaVez(IJogador jogadorDaVez){
+		//TODO mudar panel de informações do jogador da vez
 		this.jogadorDaVez = jogadorDaVez;
 	}
 	
@@ -316,4 +317,9 @@ public class GUITabuleiro extends JFrame {
 		
 		return dado1 + dado2;
 	}
+	
+	public JButton getBtnJogar(){
+		return this.btnJogar;
+	}
+	
 }
