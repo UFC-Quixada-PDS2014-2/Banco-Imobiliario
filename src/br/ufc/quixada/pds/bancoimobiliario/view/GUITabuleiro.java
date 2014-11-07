@@ -57,7 +57,7 @@ public class GUITabuleiro extends JFrame {
 	}
 
 	public void initialize() throws LogradourosInsuficientesException {
-		setResizable(true);
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 10, 910, 570);
 		contentPane = new JPanel();

@@ -2,12 +2,16 @@ package br.ufc.quixada.pds.bancoimobiliario.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.geom.PathIterator;
+import java.net.URL;
+import java.text.Normalizer;
 import java.util.List;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
-
-import org.w3c.dom.views.AbstractView;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
@@ -48,6 +52,8 @@ public class ControladorTabuleiro{
 		}
 	}
 	
+	private static final String caminhoImagens = "/br/ufc/quixada/pds/bancoimobiliario/view/img/";
+	
 	private void adicionarEventosBotoesCasas(){
 		
 		List<ILogradouro> iLogradouros = guiTabuleiro.getiLogradouros();
@@ -57,8 +63,54 @@ public class ControladorTabuleiro{
 			JButton casa = iLogradouro.getCasa();
 			casa.setToolTipText(iLogradouro.getNome());
 			casa.setText(iLogradouro.getNome());
-			casa.addActionListener(new ActionListenerCasa(iLogradouro.getLogradouro().getNome()));
 			
+			String nomeImagem = iLogradouro.getNome().replaceAll("\\s","").toLowerCase();
+			nomeImagem = Normalizer.normalize(nomeImagem, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
+			
+			URL pathImagem = ControladorTabuleiro.class.getResource(caminhoImagens  + "casas/" + nomeImagem  +".png");
+			System.out.println(caminhoImagens  + "casas_opacas/" + nomeImagem  +"_opaca.png");
+			System.out.println(pathImagem);
+			
+			ImageIcon imageIcon = new ImageIcon(pathImagem);
+			casa.setIcon(imageIcon);
+			
+			casa.addActionListener(new ActionListenerCasa(iLogradouro.getLogradouro().getNome()));
+			casa.addMouseListener(new ActionHoverListener(iLogradouro));
+			
+		}
+		
+	}
+	
+	private class ActionHoverListener extends MouseAdapter{
+		
+		private ILogradouro iLogradouro;
+		
+		public ActionHoverListener(ILogradouro iLogradouro){
+			this.iLogradouro = iLogradouro;
+		}
+	
+		@Override
+		public void mouseEntered(MouseEvent evt) {
+			super.mouseEntered(evt);
+			String nomeImagem = iLogradouro.getNome().replaceAll("\\s","").toLowerCase();
+			nomeImagem = Normalizer.normalize(nomeImagem, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
+			
+			URL pathImagem = ControladorTabuleiro.class.getResource(caminhoImagens  + "casas_opacas/" + nomeImagem  +"-opaca.png");
+			ImageIcon imageIcon = new ImageIcon(pathImagem);
+			iLogradouro.getCasa().setIcon(imageIcon);
+			
+		}
+		
+		@Override
+		public void mouseExited(MouseEvent e) {
+			super.mouseExited(e);
+			String nomeImagem = iLogradouro.getNome().replaceAll("\\s","").toLowerCase();
+			nomeImagem = Normalizer.normalize(nomeImagem, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
+			
+			URL pathImagem = ControladorTabuleiro.class.getResource(caminhoImagens  + "casas/" + nomeImagem  +".png");
+			
+			ImageIcon imageIcon = new ImageIcon(pathImagem);
+			iLogradouro.getCasa().setIcon(imageIcon);
 		}
 		
 	}
