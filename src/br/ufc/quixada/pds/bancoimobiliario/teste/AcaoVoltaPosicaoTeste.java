@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
 import br.ufc.quixada.pds.bancoimobiliario.model.JogadorImpl;
+import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.ConfiguracoesEnum;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
 import br.ufc.quixada.pds.bancoimobiliario.model.lugarespecial.AcaoVoltaPosicao;
 
@@ -24,7 +25,7 @@ public class AcaoVoltaPosicaoTeste {
 		try {
 			acao.executar(jogador);
 			
-			assertEquals(38, jogador.getPosicao());
+			assertEquals((ConfiguracoesEnum.NUMERO_CASAS.getValor()) - 2, jogador.getPosicao());
 		} catch (ValorInvalidoException e) {
 			fail();
 			e.printStackTrace();
@@ -38,7 +39,7 @@ public class AcaoVoltaPosicaoTeste {
 		Jogador jogador = new JogadorImpl("Teste", 2000);
 		
 		final int posicaoInicial = jogador.getPosicao();
-		final int qtdDeslocamento = 40;
+		final int qtdDeslocamento = ConfiguracoesEnum.NUMERO_CASAS.getValor();
 		
 		AcaoVoltaPosicao acao = new AcaoVoltaPosicao(qtdDeslocamento);
 		

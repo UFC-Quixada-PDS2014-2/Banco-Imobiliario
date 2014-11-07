@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
 import br.ufc.quixada.pds.bancoimobiliario.model.JogadorImpl;
+import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.ConfiguracoesEnum;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
 import br.ufc.quixada.pds.bancoimobiliario.model.lugarespecial.AcaoAvancaPosicao;
 
@@ -38,7 +39,7 @@ public class AcaoAvancaPosicaoTeste {
 		Jogador jogador = new JogadorImpl("teste", 2000);
 		
 		final int posicaoAtual = jogador.getPosicao();
-		final int quantidadeDePosicoes = 40;
+		final int quantidadeDePosicoes = ConfiguracoesEnum.NUMERO_CASAS.getValor();
 		
 		AcaoAvancaPosicao acao = new AcaoAvancaPosicao(quantidadeDePosicoes);
 		

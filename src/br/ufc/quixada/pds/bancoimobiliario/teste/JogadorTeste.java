@@ -21,12 +21,6 @@ import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoExceptio
 
 public class JogadorTeste {
 
-	@Test
-	public void verificaSeJogadorIniciaSemPropriedades() {
-		
-		Jogador jogador = new JogadorImpl("Teste", 200.00);
-		assertEquals(0, jogador.getPropriedadesAdquiridas().size());
-	}
 	
 	@Test
 	public void testeIncrementarSaldo(){
@@ -154,9 +148,8 @@ public class JogadorTeste {
 			
 				fail(e.getMessage());
 			}
-			assertEquals(1, jogador.getPropriedadesAdquiridas().size());
 			
-			Iterator<Propriedade> it = jogador.getPropriedadesAdquiridas().iterator(); 
+			Iterator<Propriedade> it = jogador.getPropriedadesAdquiridas(); 
 			
 			while(it.hasNext()){
 				assertEquals(empresa, it.next());
@@ -192,10 +185,9 @@ public class JogadorTeste {
 			fail(e.getMessage());
 		}
 		
-		assertEquals(propriedades.size(),jogador.getPropriedadesAdquiridas().size());
 		
 		Iterator<Propriedade> propriedadesEsperadas = propriedades.iterator();
-		Iterator<Propriedade> propriedadesAtuais = jogador.getPropriedadesAdquiridas().iterator();
+		Iterator<Propriedade> propriedadesAtuais = jogador.getPropriedadesAdquiridas();
 				
 		while(propriedadesEsperadas.hasNext() && propriedadesAtuais.hasNext()){
 			assertEquals(propriedadesEsperadas.next(), propriedadesAtuais.next());

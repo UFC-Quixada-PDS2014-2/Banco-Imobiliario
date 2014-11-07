@@ -7,6 +7,9 @@ import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.AcaoLogradouroEnum;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ErroArquivoConfiguracoesException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.FimDeJogoException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorComSaldoNegativoException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorInvalidoException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.PropriedadeJaVendidaException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.SaldoJogadorInsuficienteException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
 
 public class BancoImobiliarioImpl implements BancoImobiliario {
@@ -22,8 +25,10 @@ public class BancoImobiliarioImpl implements BancoImobiliario {
 	}
 
 	@Override
-	public void realizarTurnoJogador(int valorDosDados) throws FimDeJogoException,
+	public AcaoLogradouroEnum realizarTurnoJogador(int valorDosDados) throws FimDeJogoException,
 			ErroArquivoConfiguracoesException {
+		
+		AcaoLogradouroEnum tipoDeAcao;
 
 		jogadorDaVez.setValorDoUltimoDeslocamento(valorDosDados);
 
@@ -34,11 +39,10 @@ public class BancoImobiliarioImpl implements BancoImobiliario {
 			
 			int posicaoAntiga = jogadorDaVez.getPosicao();
 			
-			AcaoLogradouroEnum tipoDeAcao = logradouro
-					.acaoLogradouro(jogadorDaVez);
+			tipoDeAcao = logradouro.acaoLogradouro(jogadorDaVez);
 			
 			if (tipoDeAcao.equals(AcaoLogradouroEnum.AVANCA_POSICAO)) {
-				realizarPulo(jogadorDaVez, posicaoAntiga);
+				tipoDeAcao = realizarPulo(jogadorDaVez, posicaoAntiga);
 			} else if(tipoDeAcao.equals(AcaoLogradouroEnum.DISPONIVEL_PARA_COMPRA)){
 				
 				//TODO : Detectar POSSIvel Venda
@@ -54,9 +58,11 @@ public class BancoImobiliarioImpl implements BancoImobiliario {
 		}
 
 		this.mudarJogadorDaVez();
+		
+		return tipoDeAcao;
 	}
 
-	private void realizarPulo(Jogador jogador, int posicaoAntiga)
+	private AcaoLogradouroEnum realizarPulo(Jogador jogador, int posicaoAntiga)
 			throws JogadorComSaldoNegativoException, ValorInvalidoException {
 		Logradouro logradouroParada = this.tabuleiro.pularPosicao(jogador,
 				posicaoAntiga);
@@ -64,7 +70,9 @@ public class BancoImobiliarioImpl implements BancoImobiliario {
 		AcaoLogradouroEnum tipoDeAcao = logradouroParada
 				.acaoLogradouro(jogador);
 		if (tipoDeAcao.equals(AcaoLogradouroEnum.AVANCA_POSICAO)) {
-			realizarPulo(jogador, posicaoAntiga);
+			return realizarPulo(jogador, posicaoAntiga);
+		} else {
+			return tipoDeAcao;
 		}
 
 	}
@@ -84,11 +92,25 @@ public class BancoImobiliarioImpl implements BancoImobiliario {
 		return this.jogadorDaVez;
 	}
 	
-	public void mudarJogadorDaVez(){
+	private void mudarJogadorDaVez(){
 		// TODO : Melhorar
 				jogadores.remove(jogadorDaVez);
 				jogadores.add(jogadorDaVez);
 				jogadorDaVez = jogadores.get(0);
 	}
+
+	@Override
+	public void comprarPropriedade(Propriedade propriedade) throws SaldoJogadorInsuficienteException, PropriedadeJaVendidaException, JogadorInvalidoException, FimDeJogoException, ErroArquivoConfiguracoesException {
+		
+		try{
+			propriedade.comprarPropriedade(this.jogadorDaVez);
+		} catch(JogadorComSaldoNegativoException e){
+			throw new FimDeJogoException();
+		} catch(ValorInvalidoException e){
+			throw new ErroArquivoConfiguracoesException();
+		}
+		
+	}
+	
 
 }

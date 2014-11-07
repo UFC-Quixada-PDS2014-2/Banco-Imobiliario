@@ -17,12 +17,12 @@ public class PontoDePartidaTeste {
 		
 		Jogador jogador = new JogadorImpl("Teste", 500.00);
 		
-		PontoDePartida pontoDePartida = new PontoDePartida();
+		PontoDePartida pontoDePartida = new PontoDePartida(20);
+		
 		try {
 			pontoDePartida.passeiPorAqui(jogador);
 		} catch (ValorInvalidoException e) {
-			fail();
-			e.printStackTrace();
+			fail(e.getMessage());
 		}
 		
 		assertTrue(jogador.getSaldo() > 500.00);

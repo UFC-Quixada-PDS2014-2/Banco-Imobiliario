@@ -6,8 +6,12 @@ import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoExceptio
 public class PontoDePartida extends Logradouro {
 
 	private double valorASerIncrementado;
+	
+	public PontoDePartida(double valorASerIncrementado) {
+		this.valorASerIncrementado = valorASerIncrementado;
+	}
 	@Override
-	public AcaoLogradouroEnum acaoLogradouro(Jogador jogador) {
+	public AcaoLogradouroEnum acaoLogradouro(Jogador jogador) throws ValorInvalidoException {
 		return AcaoLogradouroEnum.POSICAO_INALTERADA; 
 	}
 
