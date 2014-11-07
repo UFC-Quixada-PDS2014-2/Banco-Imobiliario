@@ -12,7 +12,7 @@ import br.ufc.quixada.pds.bancoimobiliario.model.exception.PropriedadeJaVendidaE
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.SaldoJogadorInsuficienteException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
 
-public class BancoImobiliarioImpl implements BancoImobiliario {
+public class BancoImobiliarioImpl extends BancoImobiliario {
 
 	private List<Jogador> jogadores;
 	private Jogador jogadorDaVez;
@@ -38,6 +38,10 @@ public class BancoImobiliarioImpl implements BancoImobiliario {
 					this.jogadorDaVez, valorDosDados);
 			
 			int posicaoAntiga = jogadorDaVez.getPosicao();
+			
+			//Notificar observadores
+			setChanged();
+			notifyObservers(logradouro);
 			
 			tipoDeAcao = logradouro.acaoLogradouro(jogadorDaVez);
 			

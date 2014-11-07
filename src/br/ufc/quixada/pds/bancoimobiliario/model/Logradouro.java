@@ -16,9 +16,13 @@ public abstract class Logradouro {
 	}
 	
 	public abstract AcaoLogradouroEnum acaoLogradouro(Jogador jogador) throws JogadorComSaldoNegativoException, ValorInvalidoException;
-	
 	public abstract void passeiPorAqui(Jogador jogador) throws JogadorComSaldoNegativoException,ValorInvalidoException;
 	public abstract boolean isDisponivelParaCompra();
 	public abstract void comprarLogradouro(Jogador compradorDoLogradouro) throws SaldoJogadorInsuficienteException, PropriedadeJaVendidaException, JogadorInvalidoException, JogadorComSaldoNegativoException, ValorInvalidoException;
+	
+	@Override
+	public String toString() {
+		return this.nome;
+	}
 	
 }

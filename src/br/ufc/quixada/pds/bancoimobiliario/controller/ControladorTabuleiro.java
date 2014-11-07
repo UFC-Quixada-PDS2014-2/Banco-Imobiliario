@@ -8,6 +8,8 @@ import java.awt.geom.PathIterator;
 import java.net.URL;
 import java.text.Normalizer;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -22,7 +24,7 @@ import br.ufc.quixada.pds.bancoimobiliario.view.GUITabuleiro;
 import br.ufc.quixada.pds.bancoimobiliario.view.IJogador;
 import br.ufc.quixada.pds.bancoimobiliario.view.ILogradouro;
 
-public class ControladorTabuleiro{
+public class ControladorTabuleiro implements Observer{
 	
 	private GUITabuleiro guiTabuleiro;
 	private BancoImobiliario bancoImobiliario;
@@ -32,6 +34,7 @@ public class ControladorTabuleiro{
 	
 	public ControladorTabuleiro(BancoImobiliario bancoImobiliario, IJogador iJogador1, IJogador iJogador2){
 		this.bancoImobiliario = bancoImobiliario;
+		this.bancoImobiliario.addObserver(this);
 		this.iJogador1 = iJogador1;
 		this.iJogador2 = iJogador2;
 		this.guiTabuleiro = new GUITabuleiro(bancoImobiliario, iJogador1, iJogador2);
@@ -122,6 +125,21 @@ public class ControladorTabuleiro{
 		
 	}
 	
+	private class ActionListenerCasa implements ActionListener{
+		
+		private String mensagem;
+		
+		public ActionListenerCasa(String mensagem){
+			this.mensagem = mensagem;
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			JOptionPane.showMessageDialog(ControladorTabuleiro.this.guiTabuleiro, mensagem);
+		}
+		
+	}
+
 	private class ActionRealizarRodada implements ActionListener{
 
 		@Override
@@ -151,19 +169,10 @@ public class ControladorTabuleiro{
 		
 	}
 	
-	private class ActionListenerCasa implements ActionListener{
 
-		private String mensagem;
-		
-		public ActionListenerCasa(String mensagem){
-			this.mensagem = mensagem;
-		}
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			JOptionPane.showMessageDialog(ControladorTabuleiro.this.guiTabuleiro, mensagem);
-		}
-		
+	@Override
+	public void update(Observable o, Object arg) {
+		JOptionPane.showMessageDialog(guiTabuleiro, arg);
 	}
 	
 	
