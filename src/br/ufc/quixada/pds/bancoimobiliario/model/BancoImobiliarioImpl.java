@@ -111,6 +111,10 @@ public class BancoImobiliarioImpl implements BancoImobiliario {
 		}
 		
 	}
-	
 
+	@Override
+	public Logradouro getLogradouroPelaPosicao(int posicao) throws ValorInvalidoException{
+		return this.tabuleiro.getLogradouroPelaPosicao(posicao);
+	}
+	
 }

@@ -40,4 +40,24 @@ public class Empresa extends Propriedade {
 		
 	}
 	
+	@Override
+	public String toString() {
+		String mensagemFinal ="Empresa\n";
+		
+		String nome = "Nome: " + this.getNome() + "\n";
+		String valorDaPropriedade = "Preço: R$" + String.format("%.2f", this.getValorDaPropriedade()) + "\n";
+		String valorDaTaxa = "Taxa de Uso: R$" + String.format("%.2f", this.valorDaTaxa) + "\n";
+		String dono = "Dono: ";
+		
+		if(this.propriedadeEstaVendida()){
+			dono +=  this.getDonoDaPropriedade().getNome() + "\n";
+		} else{
+			dono += "Esta está não possui dono!\n"; 
+		}
+		
+		mensagemFinal += nome + valorDaPropriedade + valorDaTaxa + dono;
+		
+		return mensagemFinal;
+	}
+	
 }

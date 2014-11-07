@@ -36,4 +36,24 @@ public class Imovel extends Propriedade {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@Override
+	public String toString() {
+		String mensagemFinal = "Imóvel\n";
+		
+		String nome = "Nome: " + this.getNome() + "\n";
+		String valorDaPropriedade = "Preço: R$" + String.format("%.2f", this.getValorDaPropriedade()) + "\n";
+		String valorDoAluguel = "Aluguel: R$" + String.format("%.2f", this.valorDoAluguel) + "\n";
+		String dono = "Dono: ";
+		
+		if(this.propriedadeEstaVendida()){
+			dono +=  this.getDonoDaPropriedade().getNome() + "\n";
+		} else{
+			dono += "Esta está não possui dono!\n"; 
+		}
+		
+		mensagemFinal += nome + valorDaPropriedade + valorDoAluguel + dono;
+		
+		return mensagemFinal;
+	}
 }

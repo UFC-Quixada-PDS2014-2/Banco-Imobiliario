@@ -12,6 +12,7 @@ public class LugarEspecial extends Logradouro {
 	private List<AcaoLugarEspecial> listaDeAcoes;
 	private String tipoDeAcao;
 	
+	
 	@Override
 	public AcaoLogradouroEnum acaoLogradouro(Jogador jogador) throws JogadorComSaldoNegativoException, ValorInvalidoException {
 		for (AcaoLugarEspecial acaoLugarEspecial : listaDeAcoes) {
@@ -23,5 +24,12 @@ public class LugarEspecial extends Logradouro {
 	@Override
 	public void passeiPorAqui(Jogador jogador) {
 		// TODO Auto-generated method stub
+	}
+	
+	@Override
+	public String toString() {
+		String mensagemFinal = "Lugar Especial\n";
+		mensagemFinal += "Tipo de Ação: " + this.tipoDeAcao + "\n";
+		return mensagemFinal;
 	}
 }

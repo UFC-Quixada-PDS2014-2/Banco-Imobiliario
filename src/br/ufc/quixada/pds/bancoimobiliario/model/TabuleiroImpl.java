@@ -66,4 +66,14 @@ public class TabuleiroImpl implements Tabuleiro{
 		return logradouros.get(jogador.getPosicao());
 	}
 
+	@Override
+	public Logradouro getLogradouroPelaPosicao(int posicao) throws ValorInvalidoException {
+		
+		if(posicao < 0 || posicao > this.logradouros.size() - 1){
+			throw new ValorInvalidoException();
+		}
+		
+		return this.logradouros.get(posicao);
+	}
+
 }
