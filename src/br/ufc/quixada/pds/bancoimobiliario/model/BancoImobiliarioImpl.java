@@ -14,19 +14,21 @@ import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoExceptio
 
 public class BancoImobiliarioImpl extends BancoImobiliario {
 
-	private List<Jogador> jogadores;
+	private List<Jogador> jogadoresAtivos;
+	private List<Jogador> jogadoresInativos;
+	
 	private Jogador jogadorDaVez;
 	private Tabuleiro tabuleiro;
 
 	public BancoImobiliarioImpl(List<Jogador> jogadores, Tabuleiro tabuleiro) {
-		this.jogadores = jogadores;
+		this.jogadoresAtivos = jogadores;
 		this.tabuleiro = tabuleiro;
-		this.jogadorDaVez = this.jogadores.get(0);
+		this.jogadorDaVez = this.jogadoresAtivos.get(0);
 	}
 
 	@Override
 	public AcaoLogradouroEnum realizarTurnoJogador(int valorDosDados) throws FimDeJogoException,
-			ErroArquivoConfiguracoesException {
+			ErroArquivoConfiguracoesException, GameOverJogadorException {
 		
 		AcaoLogradouroEnum tipoDeAcao;
 
@@ -54,8 +56,14 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 			
 		} catch (JogadorComSaldoNegativoException e) {
 
-			throw new FimDeJogoException();
-
+			jogadoresAtivos.remove(jogadorDaVez);
+			jogadoresInativos.add(jogadorDaVez);
+			
+			if(jogadoresAtivos.size() == 1)
+				throw new FimDeJogoException();
+			
+			else throw new GameOverJogadorException();
+			
 		} catch (ValorInvalidoException e) {
 
 			throw new ErroArquivoConfiguracoesException();
@@ -83,7 +91,7 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 
 	@Override
 	public Iterator<Jogador> getJogadores() {
-		return jogadores.iterator();
+		return jogadoresAtivos.iterator();
 	}
 
 	@Override
@@ -98,9 +106,9 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 	
 	private void mudarJogadorDaVez(){
 		// TODO : Melhorar
-				jogadores.remove(jogadorDaVez);
-				jogadores.add(jogadorDaVez);
-				jogadorDaVez = jogadores.get(0);
+				jogadoresAtivos.remove(jogadorDaVez);
+				jogadoresAtivos.add(jogadorDaVez);
+				jogadorDaVez = jogadoresAtivos.get(0);
 	}
 
 	@Override

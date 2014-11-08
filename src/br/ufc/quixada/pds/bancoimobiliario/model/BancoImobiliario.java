@@ -14,7 +14,7 @@ import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoExceptio
 
 public abstract class BancoImobiliario extends Observable{
 
-	public abstract AcaoLogradouroEnum realizarTurnoJogador(int valorDosDados) throws FimDeJogoException, ErroArquivoConfiguracoesException;
+	public abstract AcaoLogradouroEnum realizarTurnoJogador(int valorDosDados) throws FimDeJogoException, ErroArquivoConfiguracoesException, GameOverJogadorException;
 	public abstract Iterator<Jogador> getJogadores();
 	public abstract Iterator<Logradouro> getCasasDoTabuleiro();
 	public abstract Jogador getJogadorDaVez();

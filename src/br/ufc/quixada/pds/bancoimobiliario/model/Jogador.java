@@ -20,4 +20,5 @@ public interface Jogador {
 	public int getValorDoUltimoDeslocamento();
 	public void setValorDoUltimoDeslocamento(int novoDeslocamento);
 	
+	
 }
