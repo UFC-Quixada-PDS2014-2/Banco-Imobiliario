@@ -18,5 +18,8 @@
 	<classpathentry kind="lib" path="lib/guice-throwingproviders-3.0.jar"/>
 	<classpathentry kind="lib" path="lib/javax.inject.jar"/>
 	<classpathentry kind="lib" path="miglayout15-swing.jar" sourcepath="miglayout-src.zip"/>
+	<classpathentry kind="lib" path="/home/felipe/git/Banco-Imobiliario/lib/jmf.jar"/>
+	<classpathentry kind="lib" path="/home/felipe/git/Banco-Imobiliario/lib/mediaplayer.jar"/>
+	<classpathentry kind="lib" path="/home/felipe/git/Banco-Imobiliario/lib/multiplayer.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
