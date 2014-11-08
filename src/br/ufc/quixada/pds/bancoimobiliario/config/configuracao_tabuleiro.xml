@@ -50,6 +50,10 @@
 		
 		<LugarEspecial>
 			<nome>Torcida</nome>
+			<descricao>
+			Sua torcida esta animanda.
+			Avançe 3 posições.
+			</descricao>
 			<listaDeAcoes>
 					<AcaoAvancaPosicao>
 						<quantidadeDePosicoes>3</quantidadeDePosicoes>
@@ -96,6 +100,9 @@
 		
 		<LugarEspecial>
 			<nome>Comitê Disciplinar</nome>
+			<descricao>
+				Saldo decrementado 400
+			</descricao>
 			<listaDeAcoes>
 					<AcaoDecrementaSaldo>
 						<valorASerModificado>400</valorASerModificado>
