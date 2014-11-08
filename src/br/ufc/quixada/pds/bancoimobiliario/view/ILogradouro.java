@@ -7,6 +7,7 @@ package br.ufc.quixada.pds.bancoimobiliario.view;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.Rectangle;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -34,20 +35,10 @@ public class ILogradouro {
 		return logradouro;
 	}
 
-	/**
-	 * @return the x
-	 */
-	public int getX() {
-		return this.casa.getX();
+	public Rectangle getPosicao(){
+		return this.casa.getBounds();
 	}
-
-	/**
-	 * @return the y
-	 */
-	public int getY() {
-		return this.casa.getY();
-	}
-
+	
 	public void addObjetoDireita(Component component) {
 		casa.add(component, BorderLayout.EAST);
 	}

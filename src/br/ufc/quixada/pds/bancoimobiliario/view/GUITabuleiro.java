@@ -1,6 +1,7 @@
 package br.ufc.quixada.pds.bancoimobiliario.view;
 
 import java.awt.Color;
+import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -28,10 +29,13 @@ public class GUITabuleiro extends JFrame {
 	private List<ILogradouro> iLogradouros;
 	private IJogador iJogador1;
 	private IJogador iJogador2;
-	private IJogador jogadorDaVez;
 	private JComboBox<Integer> comboBoxDado2;
 	private JComboBox<Integer> comboBoxDado1;
 	private JButton btnJogar;
+	private JLabel pinoJogador1;
+	private JLabel pinoJogador2;
+	private PanelJogador panelJogador1;
+	private PanelJogador panelJogador2;
 
 	/**
 	 * Create the frame.
@@ -48,7 +52,7 @@ public class GUITabuleiro extends JFrame {
 			inicializar();
 		} catch (LogradourosInsuficientesException e) {
 			JOptionPane.showMessageDialog(this,
-					"Erro no arquivo de configuração do jogo.");
+					"Erro no arquivo de configuraÃ§Ã£o do jogo.");
 			System.exit(0);
 		}
 	}
@@ -61,6 +65,7 @@ public class GUITabuleiro extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		inicializarPinosJogadores();
 		inicializarBotoesTabuleiro();
 		inicializarPanelJogadores();
 		
@@ -73,14 +78,29 @@ public class GUITabuleiro extends JFrame {
 		contentPane.add(lblBackground);
 
 	}
+
+	private void inicializarPinosJogadores(){
+		pinoJogador1 = new JLabel();
+		pinoJogador1.setIcon(new ImageIcon(GUITabuleiro.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/jogador1.png")));
+		pinoJogador2 = new JLabel();
+		pinoJogador2.setIcon(new ImageIcon(GUITabuleiro.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/jogador2.png")));
+		
+		contentPane.add(pinoJogador1);
+		iJogador1.setPino(pinoJogador1);
+		iJogador1.setDeslocamentoPino(0);
+		contentPane.add(pinoJogador2);
+		iJogador2.setPino(pinoJogador2);
+		iJogador2.setDeslocamentoPino(1);
+		
+	}
 	
 	private void inicializarPanelJogadores(){
-		PanelJogador panelJogador1 = new PanelJogador(iJogador1);
+		panelJogador1 = new PanelJogador(iJogador1);
 		panelJogador1.setBackground(Color.WHITE);
 		panelJogador1.setBounds(10, 147, 170, 358);
 		contentPane.add(panelJogador1);
 
-		PanelJogador panelJogador2 = new PanelJogador(iJogador2);
+		panelJogador2 = new PanelJogador(iJogador2);
 		panelJogador2.setOpaque(false);
 		panelJogador2.setBounds(718, 147, 170, 358);
 		contentPane.add(panelJogador2);
@@ -307,15 +327,6 @@ public class GUITabuleiro extends JFrame {
 		return iJogador2;
 	}
 
-	public IJogador getJogadorDaVez() {
-		return jogadorDaVez;
-	}
-
-	public void setJogadorDaVez(IJogador jogadorDaVez){
-		//TODO mudar panel de informações do jogador da vez
-		this.jogadorDaVez = jogadorDaVez;
-	}
-	
 	public int getValorDados(){
 		
 		int dado1 = (Integer)comboBoxDado1.getSelectedItem();
@@ -328,4 +339,9 @@ public class GUITabuleiro extends JFrame {
 		return this.btnJogar;
 	}
 	
+	public void atualizarJogadorDaVez(IJogador jogadorDaVez){
+		panelJogador1.atualizarBordaJogadorDaVez(jogadorDaVez);
+		panelJogador2.atualizarBordaJogadorDaVez(jogadorDaVez);
+	}
+
 }

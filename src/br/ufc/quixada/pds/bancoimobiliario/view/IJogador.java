@@ -1,7 +1,9 @@
 package br.ufc.quixada.pds.bancoimobiliario.view;
 
+import java.awt.Rectangle;
 import java.util.Iterator;
-import java.util.List;
+
+import javax.swing.JLabel;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
 import br.ufc.quixada.pds.bancoimobiliario.model.Propriedade;
@@ -10,7 +12,10 @@ public class IJogador {
 
 	private Jogador jogador;
 	private String imagemPersonagem;
+	private JLabel pino;
+	private int deslocamentoPino;
 	
+
 	public IJogador(Jogador jogador) {
 		this.jogador = jogador;
 	}
@@ -39,12 +44,32 @@ public class IJogador {
 		this.imagemPersonagem = imagemPersonagem;
 	}
 	
+	public int getPosicao(){
+		return this.jogador.getPosicao();
+	}
+	
+	public void setPino(JLabel pino){
+		this.pino = pino;
+	}
+	
+	public void atualizarPosicao(Rectangle posicao){
+		this.pino.setBounds(posicao);
+	}
+	
 	public boolean isJogador(Jogador jogador){
 		boolean isJogador = this.jogador == jogador;
 		
 		return isJogador;
 	}
 
+	public int getDeslocamentoPino() {
+		return deslocamentoPino;
+	}
+
+	public void setDeslocamentoPino(int deslocamentoPino) {
+		this.deslocamentoPino = deslocamentoPino;
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

@@ -1,18 +1,21 @@
 package br.ufc.quixada.pds.bancoimobiliario.view;
 
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import java.awt.Font;
 import java.awt.Color;
-import javax.swing.SwingConstants;
+import java.awt.Font;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
+import javax.swing.SwingConstants;
 
 public class PanelJogador extends JPanel {
 
-	private IJogador jogador;
+	private IJogador iJogador;
 	private JLabel lblSaldo;
 	private JLabel lblNomeJogador;
 	private JLabel lblIconJogador;
@@ -22,7 +25,7 @@ public class PanelJogador extends JPanel {
 	 */
 	public PanelJogador(IJogador jogador) {
 		setOpaque(false);
-		this.jogador = jogador;
+		this.iJogador = jogador;
 		lblNomeJogador = new JLabel(jogador.getNomeJogador());
 		lblNomeJogador.setForeground(Color.WHITE);
 		lblNomeJogador.setHorizontalAlignment(SwingConstants.CENTER);
@@ -63,9 +66,23 @@ public class PanelJogador extends JPanel {
 	
 	public void atualizar(){
 		
-		lblSaldo.setText("Saldo : R$ " + jogador.getSaldoJogador());
+		lblSaldo.setText("Saldo : R$ " + iJogador.getSaldoJogador());
 		//TODO Atualizar lista de propriedades
 		
 	}
+	
+	public void atualizarBordaJogadorDaVez(IJogador iJogador){
+		if(this.iJogador.equals(iJogador)){
+			
+			Border bordaPanel = new LineBorder(Color.RED, 8);
+			this.setBorder(bordaPanel);
+			
+		}else{
+
+			Border bordaPanel = new LineBorder(Color.white, 0);
+			this.setBorder(bordaPanel);
+		}
+	}
+	
 	
 }
