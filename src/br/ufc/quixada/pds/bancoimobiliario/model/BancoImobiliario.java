@@ -20,4 +20,5 @@ public abstract class BancoImobiliario extends Observable{
 	public abstract Jogador getJogadorDaVez();
 	public abstract void comprarPropriedade(Propriedade propriedade) throws SaldoJogadorInsuficienteException, PropriedadeJaVendidaException, JogadorInvalidoException, GameOverJogadorException, ErroArquivoConfiguracoesException;
 	public abstract Logradouro getLogradouroPelaPosicao(int posicao) throws ValorInvalidoException;
+	public abstract Jogador detectarVencedor();
 }
