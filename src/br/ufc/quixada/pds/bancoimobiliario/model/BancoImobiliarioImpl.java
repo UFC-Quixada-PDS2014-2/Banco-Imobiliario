@@ -17,7 +17,7 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 
 	private List<Jogador> jogadoresAtivos;
 	private List<Jogador> jogadoresInativos;
-	
+
 	private Jogador jogadorDaVez;
 	private Tabuleiro tabuleiro;
 
@@ -29,9 +29,9 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 	}
 
 	@Override
-	public AcaoLogradouroEnum realizarTurnoJogador(int valorDosDados) throws GameOverJogadorException,
-			ErroArquivoConfiguracoesException {
-		
+	public AcaoLogradouroEnum realizarTurnoJogador(int valorDosDados)
+			throws GameOverJogadorException, ErroArquivoConfiguracoesException {
+
 		AcaoLogradouroEnum tipoDeAcao;
 
 		jogadorDaVez.setValorDoUltimoDeslocamento(valorDosDados);
@@ -40,38 +40,38 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 
 			Logradouro logradouro = this.tabuleiro.percorrerTabuleiro(
 					this.jogadorDaVez, valorDosDados);
-			
+
 			int posicaoAntiga = jogadorDaVez.getPosicao();
-			
-			//Notificar observadores
+
+			// Notificar observadores
 			setChanged();
 			notifyObservers(logradouro);
-			
+
 			tipoDeAcao = logradouro.acaoLogradouro(jogadorDaVez);
-			
-			if (tipoDeAcao.equals(AcaoLogradouroEnum.AVANCA_POSICAO)) {
+
+			if (tipoDeAcao.equals(AcaoLogradouroEnum.AVANCA_POSICAO) || tipoDeAcao.equals(AcaoLogradouroEnum.VOLTA_POSICAO)) {
 				tipoDeAcao = realizarPulo(jogadorDaVez, posicaoAntiga);
-			} 
-			
+			}
+
 		} catch (JogadorComSaldoNegativoException e) {
 
 			jogadoresInativos.add(jogadorDaVez);
 			jogadoresAtivos.remove(jogadorDaVez);
-				
+
 			throw new GameOverJogadorException();
-	
+
 		} catch (ValorInvalidoException e) {
 
 			throw new ErroArquivoConfiguracoesException();
 		}
 
 		this.mudarJogadorDaVez();
-		
+
 		return tipoDeAcao;
 	}
-	
-	public Jogador detectarVencedor(){
-		if(jogadoresAtivos.size() == 1){
+
+	public Jogador detectarVencedor() {
+		if (jogadoresAtivos.size() == 1) {
 			return jogadoresAtivos.get(0);
 		} else {
 			return null;
@@ -80,17 +80,29 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 
 	private AcaoLogradouroEnum realizarPulo(Jogador jogador, int posicaoAntiga)
 			throws JogadorComSaldoNegativoException, ValorInvalidoException {
-		Logradouro logradouroParada = this.tabuleiro.pularPosicao(jogador,
-				posicaoAntiga);
-		posicaoAntiga = jogador.getPosicao();
-		AcaoLogradouroEnum tipoDeAcao = logradouroParada
-				.acaoLogradouro(jogador);
-		setChanged();
-		notifyObservers(tipoDeAcao);
-		if (tipoDeAcao.equals(AcaoLogradouroEnum.AVANCA_POSICAO)) {
-			return realizarPulo(jogador, posicaoAntiga);
+
+		if (posicaoAntiga < jogador.getPosicao()) {
+			Logradouro logradouroParada = this.tabuleiro.pularPosicao(jogador,
+					posicaoAntiga);
+			posicaoAntiga = jogador.getPosicao();
+			AcaoLogradouroEnum tipoDeAcao = logradouroParada
+					.acaoLogradouro(jogador);
+			setChanged();
+			notifyObservers(tipoDeAcao);
+			if (tipoDeAcao.equals(AcaoLogradouroEnum.AVANCA_POSICAO)) {
+				return realizarPulo(jogador, posicaoAntiga);
+			} else {
+				return tipoDeAcao;
+			}
 		} else {
+			Logradouro logradouroParada = tabuleiro
+					.getLogradouroPelaPosicao(jogador.getPosicao());
+			AcaoLogradouroEnum tipoDeAcao = logradouroParada
+					.acaoLogradouro(jogador);
+			setChanged();
+			notifyObservers(tipoDeAcao);
 			return tipoDeAcao;
+
 		}
 
 	}
@@ -109,36 +121,41 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 	public Jogador getJogadorDaVez() {
 		return this.jogadorDaVez;
 	}
-	
-	private void mudarJogadorDaVez(){
+
+	private void mudarJogadorDaVez() {
 		// TODO : Melhorar
-				jogadoresAtivos.remove(jogadorDaVez);
-				jogadoresAtivos.add(jogadorDaVez);
-				jogadorDaVez = jogadoresAtivos.get(0);
+		jogadoresAtivos.remove(jogadorDaVez);
+		jogadoresAtivos.add(jogadorDaVez);
+		jogadorDaVez = jogadoresAtivos.get(0);
 	}
 
 	@Override
-	public void comprarPropriedade(Jogador jogador, Logradouro logradouro) throws LogradouroIndisponivelCompraException, JogadorInvalidoException, GameOverJogadorException, ErroArquivoConfiguracoesException, SaldoJogadorInsuficienteException {
-		
-		try{
-			if(logradouro.isDisponivelParaCompra()){
+	public void comprarPropriedade(Jogador jogador, Logradouro logradouro)
+			throws LogradouroIndisponivelCompraException,
+			JogadorInvalidoException, GameOverJogadorException,
+			ErroArquivoConfiguracoesException,
+			SaldoJogadorInsuficienteException {
+
+		try {
+			if (logradouro.isDisponivelParaCompra()) {
 				logradouro.comprarLogradouro(jogador);
-			}else{
+			} else {
 				throw new LogradouroIndisponivelCompraException();
 			}
-		} catch(JogadorComSaldoNegativoException e){
+		} catch (JogadorComSaldoNegativoException e) {
 			throw new GameOverJogadorException();
-		} catch(ValorInvalidoException e){
+		} catch (ValorInvalidoException e) {
 			throw new ErroArquivoConfiguracoesException();
 		} catch (SaldoJogadorInsuficienteException e) {
 			throw new SaldoJogadorInsuficienteException();
 		}
-		
+
 	}
 
 	@Override
-	public Logradouro getLogradouroPelaPosicao(int posicao) throws ValorInvalidoException{
+	public Logradouro getLogradouroPelaPosicao(int posicao)
+			throws ValorInvalidoException {
 		return this.tabuleiro.getLogradouroPelaPosicao(posicao);
 	}
-	
+
 }
