@@ -49,7 +49,8 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 
 			tipoDeAcao = logradouro.acaoLogradouro(jogadorDaVez);
 
-			if (tipoDeAcao.equals(AcaoLogradouroEnum.AVANCA_POSICAO) || tipoDeAcao.equals(AcaoLogradouroEnum.VOLTA_POSICAO)) {
+			if (tipoDeAcao.equals(AcaoLogradouroEnum.AVANCA_POSICAO)
+					|| tipoDeAcao.equals(AcaoLogradouroEnum.VOLTA_POSICAO)) {
 				tipoDeAcao = realizarPulo(jogadorDaVez, posicaoAntiga);
 			}
 
@@ -87,9 +88,13 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 			posicaoAntiga = jogador.getPosicao();
 			AcaoLogradouroEnum tipoDeAcao = logradouroParada
 					.acaoLogradouro(jogador);
+			
+			//notificar mudança de posição
 			setChanged();
 			notifyObservers(tipoDeAcao);
-			if (tipoDeAcao.equals(AcaoLogradouroEnum.AVANCA_POSICAO)) {
+			
+			if (tipoDeAcao.equals(AcaoLogradouroEnum.AVANCA_POSICAO)
+					|| tipoDeAcao.equals(AcaoLogradouroEnum.VOLTA_POSICAO)) {
 				return realizarPulo(jogador, posicaoAntiga);
 			} else {
 				return tipoDeAcao;
@@ -99,10 +104,17 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 					.getLogradouroPelaPosicao(jogador.getPosicao());
 			AcaoLogradouroEnum tipoDeAcao = logradouroParada
 					.acaoLogradouro(jogador);
+
+			//notificar mudança de posição
 			setChanged();
 			notifyObservers(tipoDeAcao);
-			return tipoDeAcao;
-
+			
+			if (tipoDeAcao.equals(AcaoLogradouroEnum.AVANCA_POSICAO)
+					|| tipoDeAcao.equals(AcaoLogradouroEnum.VOLTA_POSICAO)) {
+				return realizarPulo(jogador, posicaoAntiga);
+			} else {
+				return tipoDeAcao;
+			}
 		}
 
 	}
