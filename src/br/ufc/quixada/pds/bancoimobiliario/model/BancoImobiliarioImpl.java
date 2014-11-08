@@ -49,10 +49,7 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 			
 			if (tipoDeAcao.equals(AcaoLogradouroEnum.AVANCA_POSICAO)) {
 				tipoDeAcao = realizarPulo(jogadorDaVez, posicaoAntiga);
-			} else if(tipoDeAcao.equals(AcaoLogradouroEnum.DISPONIVEL_PARA_COMPRA)){
-				
-				//TODO : Detectar POSSIvel Venda
-			}
+			} 
 			
 		} catch (JogadorComSaldoNegativoException e) {
 

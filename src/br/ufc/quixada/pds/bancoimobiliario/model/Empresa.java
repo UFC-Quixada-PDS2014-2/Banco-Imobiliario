@@ -64,15 +64,6 @@ public class Empresa extends Propriedade {
 	}
 
 	@Override
-	public boolean isDisponivelParaCompra() {
-		if(super.propriedadeEstaVendida()){
-			return false;
-		} else{
-			return true;
-		}
-	}
-
-	@Override
 	public void comprarLogradouro(Jogador compradorDoLogradouro)
 			throws SaldoJogadorInsuficienteException,
 			PropriedadeJaVendidaException, JogadorInvalidoException,
