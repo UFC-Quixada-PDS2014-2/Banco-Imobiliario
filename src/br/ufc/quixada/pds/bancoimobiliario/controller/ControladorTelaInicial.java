@@ -31,6 +31,7 @@ import br.ufc.quixada.pds.bancoimobiliario.model.exception.ErroArquivoConfigurac
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.MontadorTabuleiroException;
 import br.ufc.quixada.pds.bancoimobiliario.view.GUITelaInicial;
 import br.ufc.quixada.pds.bancoimobiliario.view.IJogador;
+import br.ufc.quixada.pds.bancoimobiliario.view.listeners.ActionListenerAlterarTecnico;
 import br.ufc.quixada.pds.bancoimobiliario.view.listeners.ActionListenerIniciarJogo;
 import br.ufc.quixada.pds.bancoimobiliario.view.listeners.ActionListenerSelecionarTecnico;
 
@@ -46,6 +47,7 @@ public class ControladorTelaInicial {
 		this.guiTelaInicial.setVisible(true);
 		adicionarEventoNosTecnicos();
 		adicionarEventoDeIniciarPartida();
+		adicionarEventoAlterar();
 	}
 	
 	private void adicionarEventoNosTecnicos(){
@@ -59,6 +61,15 @@ public class ControladorTelaInicial {
 		JButton botaoInicial = this.guiTelaInicial.getBotaoInicial();
 		botaoInicial.addActionListener(new ActionListenerIniciarJogo(botaoInicial, this.guiTelaInicial.getTextFielNomeJogadores()
 				, this.guiTelaInicial, this.guiTelaInicial.getTecnicosDosJogadores()));
+	}
+	
+	private void adicionarEventoAlterar(){
+		List<JButton> botoesAlterar = this.guiTelaInicial.getBotoesAlterar();
+		List<JButton> tecnicos = this.guiTelaInicial.getTecnicos();
+		List<JButton> tecnicosDosJogadores = this.guiTelaInicial.getTecnicosDosJogadores();
+		for(int i=0; i<2; i++){
+			botoesAlterar.get(i).addActionListener(new ActionListenerAlterarTecnico(tecnicos, tecnicosDosJogadores.get(i)));
+		}
 	}
 	
 	

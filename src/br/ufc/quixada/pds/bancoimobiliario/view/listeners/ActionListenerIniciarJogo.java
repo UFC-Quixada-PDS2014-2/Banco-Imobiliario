@@ -96,8 +96,10 @@ public class ActionListenerIniciarJogo implements ActionListener{
 				this.guiTelaInicial.dispose();
 			} catch (ErroArquivoConfiguracoesException e1) {
 				JOptionPane.showMessageDialog(botaoInicial, "Erro no arquivo de configuração", "Erro!", JOptionPane.ERROR_MESSAGE);
+				System.exit(0);
 			} catch (MontadorTabuleiroException e1) {
 				JOptionPane.showMessageDialog(botaoInicial, "Erro na configuração do tabuleiro", "Erro!", JOptionPane.ERROR_MESSAGE);
+				System.exit(0);
 			}	
 		}else if(!tecnicosEscolhidos() && !todosOsNomesSetados()){
 			JOptionPane.showMessageDialog(botaoInicial, "Faltam nomes e técnicos", "Aviso!", JOptionPane.WARNING_MESSAGE);

@@ -8,6 +8,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
 import java.awt.Color;
 import java.net.URL;
 import java.text.Normalizer;
@@ -26,13 +28,14 @@ public class GUITelaInicial extends JFrame {
 	private String[] nomesTecnicos = {"Pep Guardiola", "José Mourinho", "Jürgen Klopp", "Arsene Wenger", "Diego Simeone", "Carlo Ancelotti"};
 	private static final String caminhoImagens = "/br/ufc/quixada/pds/bancoimobiliario/view/img/";
 	private List<JButton> tecnicosDosJogadores;
+	private List<JButton> botoesAlterar;
 	
 	public GUITelaInicial(){
 		this.tecnicos = new ArrayList<JButton>();
 		this.nomesJogadores = new ArrayList<JTextField>();
 		this.tecnicosDosJogadores = new ArrayList<JButton>();
-		Rectangle dimensoesTela = new Rectangle(1150, 700);
-	    this.setBounds(dimensoesTela);
+		this.botoesAlterar = new ArrayList<JButton>();
+	    this.setBounds(100, 0, 1150, 700);
 	    initComponents();
 	    this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	    getContentPane().setLayout(null);
@@ -65,6 +68,11 @@ public class GUITelaInicial extends JFrame {
 			
 	    	this.tecnicos.add(tecnico);
 	    	background.add(tecnico);
+	    	
+	    	JLabel nomeTecnico = new JLabel(this.nomesTecnicos[i], SwingConstants.CENTER);
+	    	nomeTecnico.setBounds(64+(i*181), 310, 117, 30);
+	    	nomeTecnico.setForeground(Color.WHITE);
+	    	background.add(nomeTecnico);
 	    }
 	    
 	    JTextField nomeJogador1TxtField = new JTextField(null);
@@ -105,10 +113,12 @@ public class GUITelaInicial extends JFrame {
 	    
 	    JButton alterarJogador1 = new JButton("Alterar");
 	    alterarJogador1.setBounds(40, 650, 117, 25);
+	    this.botoesAlterar.add(alterarJogador1);
 	    background.add(alterarJogador1);
 	    
 	    JButton alterarJogador2 = new JButton("Alterar");
 	    alterarJogador2.setBounds(993, 650, 117, 25);
+	    this.botoesAlterar.add(alterarJogador2);
 	    background.add(alterarJogador2);
 	    
 	    JLabel iniciarOJogoLabel = new JLabel("Iniciar o Jogo");
@@ -149,4 +159,7 @@ public class GUITelaInicial extends JFrame {
 		return this.tecnicosDosJogadores;
 	}
 	
+	public  List<JButton> getBotoesAlterar(){
+		return this.botoesAlterar;
+	}
 }
