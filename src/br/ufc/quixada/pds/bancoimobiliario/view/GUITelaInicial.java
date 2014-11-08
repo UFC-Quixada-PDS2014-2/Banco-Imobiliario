@@ -2,7 +2,6 @@ package br.ufc.quixada.pds.bancoimobiliario.view;
 
 import java.awt.Cursor;
 import java.awt.Font;
-import java.awt.Rectangle;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -17,7 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.ImageIcon;
-import javax.swing.border.EmptyBorder;
+
+import br.ufc.quixada.pds.bancoimobiliario.view.sons.ControladorDeSons;
 
 
 public class GUITelaInicial extends JFrame {
@@ -28,6 +28,8 @@ public class GUITelaInicial extends JFrame {
 	private static final String caminhoImagens = "/br/ufc/quixada/pds/bancoimobiliario/view/img/";
 	private List<JButton> tecnicosDosJogadores;
 	private List<JButton> botoesAlterar;
+	private ControladorDeSons controladorDeSons;
+	private JButton pararMusica;
 	
 	public GUITelaInicial(){
 		this.tecnicos = new ArrayList<JButton>();
@@ -39,6 +41,9 @@ public class GUITelaInicial extends JFrame {
 	    this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	    getContentPane().setLayout(null);
 	    this.setResizable(false);
+	    
+	    this.controladorDeSons = new ControladorDeSons("src/br/ufc/quixada/pds/bancoimobiliario/view/sons/hino.wav");
+	    this.controladorDeSons.start();
 	}
 	
 	public void initComponents(){
@@ -126,7 +131,6 @@ public class GUITelaInicial extends JFrame {
 	    background.add(iniciarOJogoLabel);
 	    
 	    bolaInicioJogo = new JButton();
-	    bolaInicioJogo.setBackground(Color.WHITE);
 	    bolaInicioJogo.setIcon(new ImageIcon(GUITelaInicial.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/Bola.png")));
 	    bolaInicioJogo.setOpaque(false);
 	    bolaInicioJogo.setContentAreaFilled(false);
@@ -136,6 +140,19 @@ public class GUITelaInicial extends JFrame {
 	    bolaInicioJogo.setToolTipText("Clique para iniciar");
 	    bolaInicioJogo.setCursor(cursor);
 	    background.add(bolaInicioJogo);
+	    
+	    pararMusica = new JButton();
+	    pararMusica.setIcon(new ImageIcon(GUITelaInicial.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/sons/music_on.png")));
+	    pararMusica.setOpaque(false);
+	    pararMusica.setContentAreaFilled(false);
+	    pararMusica.setBorderPainted(false);
+	    pararMusica.setBorder(null);
+	    pararMusica.setBounds(1100, 25, 25, 25);
+	    pararMusica.setToolTipText("Clique para iniciar");
+	    pararMusica.setCursor(cursor);
+	    background.add(pararMusica);
+	    
+	    
 	}
 	
 	public List<JButton> getTecnicos(){
@@ -160,5 +177,26 @@ public class GUITelaInicial extends JFrame {
 	
 	public  List<JButton> getBotoesAlterar(){
 		return this.botoesAlterar;
+	}
+	
+	public ControladorDeSons getControladorDeSom(){
+		return this.controladorDeSons;
+	}
+	
+	public JButton getPararMusica(){
+		return this.pararMusica;
+	}
+	
+	public boolean musicaAtiva(){
+		return this.controladorDeSons.isAlive();
+	}
+	
+	public void pararMusica(){
+		this.controladorDeSons.stop();
+	}
+	
+	public void reiniciarMusica(){
+		this.controladorDeSons = new ControladorDeSons("src/br/ufc/quixada/pds/bancoimobiliario/view/sons/hino.wav");
+		this.controladorDeSons.start();
 	}
 }

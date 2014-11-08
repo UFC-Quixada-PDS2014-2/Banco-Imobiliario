@@ -1,36 +1,11 @@
 package br.ufc.quixada.pds.bancoimobiliario.controller.telainicial;
 
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 
-import com.google.inject.Guice;
-import com.google.inject.Injector;
-
-import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroDirector;
-import br.ufc.quixada.pds.bancoimobiliario.guice.TabuleiroModule;
-import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
-import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliarioImpl;
-import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
-import br.ufc.quixada.pds.bancoimobiliario.model.JogadorImpl;
-import br.ufc.quixada.pds.bancoimobiliario.model.Tabuleiro;
-import br.ufc.quixada.pds.bancoimobiliario.model.TabuleiroImpl;
-import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.ConfiguracoesEnum;
-import br.ufc.quixada.pds.bancoimobiliario.model.exception.ErroArquivoConfiguracoesException;
-import br.ufc.quixada.pds.bancoimobiliario.model.exception.MontadorTabuleiroException;
 import br.ufc.quixada.pds.bancoimobiliario.view.GUITelaInicial;
-import br.ufc.quixada.pds.bancoimobiliario.view.IJogador;
 
 public class ControladorTelaInicial {
 	private GUITelaInicial guiTelaInicial;
@@ -45,6 +20,7 @@ public class ControladorTelaInicial {
 		adicionarEventoNosTecnicos();
 		adicionarEventoDeIniciarPartida();
 		adicionarEventoAlterar();
+		adicionarEventoDePararMusica();
 	}
 	
 	private void adicionarEventoNosTecnicos(){
@@ -69,6 +45,10 @@ public class ControladorTelaInicial {
 		}
 	}
 	
+	private void adicionarEventoDePararMusica(){
+		JButton pararMusica = this.guiTelaInicial.getPararMusica();
+		pararMusica.addActionListener(new ActionListenerPararMusica(pararMusica, this.guiTelaInicial));
+	}
 	
 		
 }

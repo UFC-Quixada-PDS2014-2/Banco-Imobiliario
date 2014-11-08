@@ -90,6 +90,7 @@ public class ActionListenerIniciarJogo implements ActionListener{
 				BancoImobiliario bancoImobiliario = new BancoImobiliarioImpl(jogadores, tabuleiro);
 				ControladorTabuleiro controladorTabuleiro = new ControladorTabuleiro(bancoImobiliario, iJogadores.get(0), iJogadores.get(1));
 				
+				this.guiTelaInicial.pararMusica();
 				this.guiTelaInicial.dispose();
 			} catch (ErroArquivoConfiguracoesException e1) {
 				JOptionPane.showMessageDialog(botaoInicial, "Erro no arquivo de configuração", "Erro!", JOptionPane.ERROR_MESSAGE);
