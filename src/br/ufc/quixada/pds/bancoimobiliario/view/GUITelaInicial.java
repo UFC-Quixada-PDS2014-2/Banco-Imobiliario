@@ -148,7 +148,7 @@ public class GUITelaInicial extends JFrame {
 	    pararMusica.setBorderPainted(false);
 	    pararMusica.setBorder(null);
 	    pararMusica.setBounds(1100, 25, 25, 25);
-	    pararMusica.setToolTipText("Clique para iniciar");
+	    pararMusica.setToolTipText("Clique para pausar/continuar a música");
 	    pararMusica.setCursor(cursor);
 	    background.add(pararMusica);
 	    
