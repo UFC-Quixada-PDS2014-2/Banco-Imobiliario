@@ -1,4 +1,4 @@
-package br.ufc.quixada.pds.bancoimobiliario.controller;
+package br.ufc.quixada.pds.bancoimobiliario.controller.telainicial;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -31,9 +31,6 @@ import br.ufc.quixada.pds.bancoimobiliario.model.exception.ErroArquivoConfigurac
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.MontadorTabuleiroException;
 import br.ufc.quixada.pds.bancoimobiliario.view.GUITelaInicial;
 import br.ufc.quixada.pds.bancoimobiliario.view.IJogador;
-import br.ufc.quixada.pds.bancoimobiliario.view.listeners.ActionListenerAlterarTecnico;
-import br.ufc.quixada.pds.bancoimobiliario.view.listeners.ActionListenerIniciarJogo;
-import br.ufc.quixada.pds.bancoimobiliario.view.listeners.ActionListenerSelecionarTecnico;
 
 public class ControladorTelaInicial {
 	private GUITelaInicial guiTelaInicial;

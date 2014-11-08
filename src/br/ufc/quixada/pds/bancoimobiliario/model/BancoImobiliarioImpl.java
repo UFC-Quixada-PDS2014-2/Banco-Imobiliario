@@ -1,5 +1,6 @@
 package br.ufc.quixada.pds.bancoimobiliario.model;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -8,7 +9,7 @@ import br.ufc.quixada.pds.bancoimobiliario.model.exception.ErroArquivoConfigurac
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.GameOverJogadorException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorComSaldoNegativoException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorInvalidoException;
-import br.ufc.quixada.pds.bancoimobiliario.model.exception.PropriedadeJaVendidaException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.LogradouroIndisponivelCompraException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.SaldoJogadorInsuficienteException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
 
@@ -22,6 +23,7 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 
 	public BancoImobiliarioImpl(List<Jogador> jogadores, Tabuleiro tabuleiro) {
 		this.jogadoresAtivos = jogadores;
+		this.jogadoresInativos = new ArrayList<Jogador>();
 		this.tabuleiro = tabuleiro;
 		this.jogadorDaVez = this.jogadoresAtivos.get(0);
 	}
@@ -53,8 +55,8 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 			
 		} catch (JogadorComSaldoNegativoException e) {
 
-			jogadoresAtivos.remove(jogadorDaVez);
 			jogadoresInativos.add(jogadorDaVez);
+			jogadoresAtivos.remove(jogadorDaVez);
 				
 			throw new GameOverJogadorException();
 	
@@ -114,14 +116,20 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 	}
 
 	@Override
-	public void comprarPropriedade(Propriedade propriedade) throws SaldoJogadorInsuficienteException, PropriedadeJaVendidaException, JogadorInvalidoException, GameOverJogadorException, ErroArquivoConfiguracoesException {
+	public void comprarPropriedade(Jogador jogador, Logradouro logradouro) throws LogradouroIndisponivelCompraException, JogadorInvalidoException, GameOverJogadorException, ErroArquivoConfiguracoesException, SaldoJogadorInsuficienteException {
 		
 		try{
-			propriedade.comprarPropriedade(this.jogadorDaVez);
+			if(logradouro.isDisponivelParaCompra()){
+				logradouro.comprarLogradouro(jogador);
+			}else{
+				throw new LogradouroIndisponivelCompraException();
+			}
 		} catch(JogadorComSaldoNegativoException e){
 			throw new GameOverJogadorException();
 		} catch(ValorInvalidoException e){
 			throw new ErroArquivoConfiguracoesException();
+		} catch (SaldoJogadorInsuficienteException e) {
+			throw new SaldoJogadorInsuficienteException();
 		}
 		
 	}

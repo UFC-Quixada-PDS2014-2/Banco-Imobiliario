@@ -1,10 +1,7 @@
-package br.ufc.quixada.pds.bancoimobiliario.view.listeners;
+package br.ufc.quixada.pds.bancoimobiliario.controller.telainicial;
 
-import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroDirector;
-import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorTabuleiro;
+import br.ufc.quixada.pds.bancoimobiliario.controller.telatabuleiro.ControladorTabuleiro;
 import br.ufc.quixada.pds.bancoimobiliario.guice.TabuleiroModule;
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliarioImpl;

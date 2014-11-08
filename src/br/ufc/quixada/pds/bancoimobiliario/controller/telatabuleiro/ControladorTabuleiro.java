@@ -1,4 +1,4 @@
-package br.ufc.quixada.pds.bancoimobiliario.controller;
+package br.ufc.quixada.pds.bancoimobiliario.controller.telatabuleiro;
 
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
@@ -19,13 +19,14 @@ import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
 import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.AcaoLogradouroEnum;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ErroArquivoConfiguracoesException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.GameOverJogadorException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorInvalidoException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.LogradouroIndisponivelCompraException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.SaldoJogadorInsuficienteException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
 import br.ufc.quixada.pds.bancoimobiliario.view.GUITabuleiro;
 import br.ufc.quixada.pds.bancoimobiliario.view.IJogador;
 import br.ufc.quixada.pds.bancoimobiliario.view.ILogradouro;
 import br.ufc.quixada.pds.bancoimobiliario.view.enumeration.CaminhoImagensEnum;
-import br.ufc.quixada.pds.bancoimobiliario.view.listeners.ActionHoverCasaListener;
-import br.ufc.quixada.pds.bancoimobiliario.view.listeners.ActionListenerClickCasa;
 
 public class ControladorTabuleiro implements Observer{
 	
@@ -128,7 +129,7 @@ public class ControladorTabuleiro implements Observer{
 			ImageIcon imageIcon = new ImageIcon(pathImagem);
 			casa.setIcon(imageIcon);
 			
-			casa.addActionListener(new ActionListenerClickCasa(iLogradouro.getLogradouro().toString()));
+			casa.addActionListener(new ActionListenerClickCasa(iLogradouro.getLogradouro()));
 			casa.addMouseListener(new ActionHoverCasaListener(iLogradouro));
 			
 		}
@@ -144,23 +145,46 @@ public class ControladorTabuleiro implements Observer{
 
 			try {
 				AcaoLogradouroEnum acaoLogradouro = bancoImobiliario.realizarTurnoJogador(valorDados);
+				
+				//A movimentação dos dados é feita pelo update do observer
+				// Essa movimentação é proveniente da ação da casa
 				if(acaoLogradouro == AcaoLogradouroEnum.AVANCA_POSICAO || acaoLogradouro == AcaoLogradouroEnum.VOLTA_POSICAO){
 					atualizarPinoJogador(jogadorDaVez);
-				}
+				}else if(acaoLogradouro == AcaoLogradouroEnum.DISPONIVEL_PARA_COMPRA){
+					ILogradouro logradouroParada = buscarILogradouro(jogadorDaVez.getPosicao());
 
-				JOptionPane.showMessageDialog(guiTabuleiro, jogadorDaVez.getJogador().getPosicao() + 1);
+					int opcaoSelecionada = JOptionPane.showConfirmDialog(guiTabuleiro, "Você deseja comprar essa propriedade? :\n " + logradouroParada.toString());
+					
+					if(opcaoSelecionada == JOptionPane.OK_OPTION){
+							bancoImobiliario.comprarPropriedade(jogadorDaVez.getJogador(), logradouroParada.getLogradouro());
+							JOptionPane.showMessageDialog(guiTabuleiro, logradouroParada.getNome() + " adquirido.");
+					}
+					
+				}
+				
 				JOptionPane.showMessageDialog(guiTabuleiro, jogadorDaVez.getJogador().getSaldo());
 				jogadorDaVez = detectarJogadorDaVez();
 				guiTabuleiro.atualizarJogadorDaVez(jogadorDaVez);
 				
 			} catch (GameOverJogadorException e1) {
-				e1.printStackTrace();
-				JOptionPane.showMessageDialog(guiTabuleiro, bancoImobiliario.getJogadorDaVez().getNome() + " perdeu!");
+				Jogador jogadorVencedor = bancoImobiliario.detectarVencedor();
+				JOptionPane.showMessageDialog(guiTabuleiro, jogadorVencedor.getNome() + " ganhou!!!");
+				//Iniciar novo jogo
 			} catch (ErroArquivoConfiguracoesException e1) {
-				e1.printStackTrace();
-				JOptionPane.showMessageDialog(guiTabuleiro, "Erro no arquivo de configura��o do jogo!");
+				JOptionPane.showMessageDialog(guiTabuleiro, "Erro no arquivo de configuração do jogo!");
 				System.exit(1);
-			}
+			} catch (ValorInvalidoException e1) {
+				e1.printStackTrace();
+				JOptionPane.showMessageDialog(guiTabuleiro, "Erro no arquivo de configuração do jogo!");
+				System.exit(1);
+			} catch (LogradouroIndisponivelCompraException e1) {
+				JOptionPane.showMessageDialog(guiTabuleiro, "Essa casa está indisponível!");
+			} catch (SaldoJogadorInsuficienteException e1) {
+				JOptionPane.showMessageDialog(guiTabuleiro, "Você não possui dinheiro suficiente!");
+			}catch (JogadorInvalidoException e1) {
+				//TODO
+				e1.printStackTrace();
+			} 
 			
 		}
 		
@@ -169,8 +193,8 @@ public class ControladorTabuleiro implements Observer{
 
 	@Override
 	public void update(Observable o, Object arg) {
-		JOptionPane.showMessageDialog(guiTabuleiro, arg);
 		atualizarPinoJogador(jogadorDaVez);
+		JOptionPane.showMessageDialog(guiTabuleiro, arg);
 	}
 	
 }

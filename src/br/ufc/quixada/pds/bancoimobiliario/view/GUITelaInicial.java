@@ -19,7 +19,6 @@ import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.border.EmptyBorder;
 
-import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorTabuleiro;
 
 public class GUITelaInicial extends JFrame {
 	private List<JTextField> nomesJogadores; 
@@ -59,7 +58,7 @@ public class GUITelaInicial extends JFrame {
 			nomeImagem = Normalizer.normalize(nomeImagem, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
 			
 			
-			URL pathImagem = ControladorTabuleiro.class.getResource(caminhoImagens  + "tecnicos/" + nomeImagem  +".png");
+			URL pathImagem = GUITelaInicial.class.getResource(caminhoImagens  + "tecnicos/" + nomeImagem  +".png");
 			ImageIcon imageIcon = new ImageIcon(pathImagem);
 			tecnico.setIcon(imageIcon);
 			

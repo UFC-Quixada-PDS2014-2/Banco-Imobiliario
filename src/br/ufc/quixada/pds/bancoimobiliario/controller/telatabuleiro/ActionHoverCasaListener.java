@@ -1,4 +1,4 @@
-package br.ufc.quixada.pds.bancoimobiliario.view.listeners;
+package br.ufc.quixada.pds.bancoimobiliario.controller.telatabuleiro;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -7,7 +7,6 @@ import java.text.Normalizer;
 
 import javax.swing.ImageIcon;
 
-import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorTabuleiro;
 import br.ufc.quixada.pds.bancoimobiliario.view.ILogradouro;
 import br.ufc.quixada.pds.bancoimobiliario.view.enumeration.CaminhoImagensEnum;
 

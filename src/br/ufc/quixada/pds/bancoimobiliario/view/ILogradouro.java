@@ -72,4 +72,9 @@ public class ILogradouro {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return this.logradouro.toString();
+	}
+	
 }

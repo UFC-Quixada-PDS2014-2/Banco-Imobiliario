@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroDirector;
-import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorTabuleiro;
-import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorTelaInicial;
+import br.ufc.quixada.pds.bancoimobiliario.controller.telainicial.ControladorTelaInicial;
+import br.ufc.quixada.pds.bancoimobiliario.controller.telatabuleiro.ControladorTabuleiro;
 import br.ufc.quixada.pds.bancoimobiliario.guice.TabuleiroModule;
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliarioImpl;
