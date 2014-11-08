@@ -20,7 +20,10 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
+import br.ufc.quixada.pds.bancoimobiliario.view.enumeration.DeslocamentoPinoEnum;
 import br.ufc.quixada.pds.bancoimobiliario.view.exception.LogradourosInsuficientesException;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GUITabuleiro extends JFrame {
 
@@ -87,10 +90,11 @@ public class GUITabuleiro extends JFrame {
 		
 		contentPane.add(pinoJogador1);
 		iJogador1.setPino(pinoJogador1);
-		iJogador1.setDeslocamentoPino(0);
+		iJogador1.setDeslocamentoPino(DeslocamentoPinoEnum.PINO_SUPERIOR_ESQUERDA);
 		contentPane.add(pinoJogador2);
 		iJogador2.setPino(pinoJogador2);
-		iJogador2.setDeslocamentoPino(1);
+		iJogador2.setDeslocamentoPino(DeslocamentoPinoEnum.PINO_INFERIOR_DIREITA);
+		
 		
 	}
 	
@@ -153,163 +157,150 @@ public class GUITabuleiro extends JFrame {
 
 	}
 
+	private List<JButton> botoesCasas;
+
 	private void inicializarBotoesTabuleiro() throws LogradourosInsuficientesException{
-		List<JButton> buttons = new ArrayList<>();
-
-		JButton btnCasa1 = new JButton();
-		btnCasa1.setBounds(200, 0, 89, 89);
-		contentPane.add(btnCasa1);
-
-		JButton btnCasa8 = new JButton();
-		btnCasa8.setBounds(629, 0, 89, 89);
-		contentPane.add(btnCasa8);
-
-		JButton btnCasa2 = new JButton();
-		btnCasa2.setBounds(293, 0, 50, 78);
-		contentPane.add(btnCasa2);
-
-		JButton btnCasa3 = new JButton();
-		btnCasa3.setBounds(349, 0, 50, 78);
-		contentPane.add(btnCasa3);
-
-		JButton btnCasa4 = new JButton();
-		btnCasa4.setBounds(405, 0, 50, 78);
-		contentPane.add(btnCasa4);
-
-		JButton btnCasa5 = new JButton();
-		btnCasa5.setBounds(461, 0, 50, 78);
-		contentPane.add(btnCasa5);
-
-		JButton btnCasa6 = new JButton();
-		btnCasa6.setBounds(517, 0, 50, 78);
-		contentPane.add(btnCasa6);
-
-		JButton btnCasa7 = new JButton();
-		btnCasa7.setBounds(572, 0, 50, 78);
-		contentPane.add(btnCasa7);
-
-		JButton btnCasa22 = new JButton();
-		btnCasa22.setBounds(200, 431, 89, 89);
-		contentPane.add(btnCasa22);
-
-		JButton btnCasa21 = new JButton();
-		btnCasa21.setBounds(293, 442, 50, 78);
-		contentPane.add(btnCasa21);
-
-		JButton btnCasa20 = new JButton();
-		btnCasa20.setBounds(349, 442, 50, 78);
-		contentPane.add(btnCasa20);
-
-		JButton btnCasa19 = new JButton();
-		btnCasa19.setBounds(405, 442, 50, 78);
-		contentPane.add(btnCasa19);
-
-		JButton btnCasa18 = new JButton();
-		btnCasa18.setBounds(461, 442, 50, 78);
-		contentPane.add(btnCasa18);
-
-		JButton btnCasa17 = new JButton();
-		btnCasa17.setBounds(517, 442, 50, 78);
-		contentPane.add(btnCasa17);
-
-		JButton btnCasa16 = new JButton();
-		btnCasa16.setBounds(572, 442, 50, 78);
-		contentPane.add(btnCasa16);
-
-		JButton btnCasa15 = new JButton();
-		btnCasa15.setBounds(629, 431, 89, 89);
-		contentPane.add(btnCasa15);
-
-		JButton btnCasa28 = new JButton();
-		btnCasa28.setBounds(200, 92, 73, 53);
-		contentPane.add(btnCasa28);
-
-		JButton btnCasa27 = new JButton();
-		btnCasa27.setBounds(200, 148, 73, 53);
-		contentPane.add(btnCasa27);
-
-		JButton btnCasa26 = new JButton();
-		btnCasa26.setBounds(200, 206, 73, 53);
-		contentPane.add(btnCasa26);
-
-		JButton btnCasa25 = new JButton();
-		btnCasa25.setBounds(200, 260, 73, 53);
-		contentPane.add(btnCasa25);
-
-		JButton btnCasa24 = new JButton();
-		btnCasa24.setBounds(200, 317, 73, 53);
-		contentPane.add(btnCasa24);
-
-		JButton btnCasa23 = new JButton();
-		btnCasa23.setBounds(200, 370, 73, 53);
-		contentPane.add(btnCasa23);
-
-		JButton btnCasa10 = new JButton();
-		btnCasa10.setBounds(639, 148, 79, 53);
-		contentPane.add(btnCasa10);
-
-		JButton btnCasa11 = new JButton();
-		btnCasa11.setBounds(639, 206, 79, 53);
-		contentPane.add(btnCasa11);
-
-		JButton btnCasa9 = new JButton();
-		btnCasa9.setBounds(639, 92, 79, 53);
-		contentPane.add(btnCasa9);
-
-		JButton btnCasa12 = new JButton();
-		btnCasa12.setBounds(639, 260, 79, 53);
-		contentPane.add(btnCasa12);
-
-		JButton btnCasa13 = new JButton();
-		btnCasa13.setBounds(639, 317, 79, 53);
-		contentPane.add(btnCasa13);
-
-		JButton btnCasa14 = new JButton();
-		btnCasa14.setBounds(639, 370, 79, 53);
-		contentPane.add(btnCasa14);
-
-		buttons.add(btnCasa1);
-		buttons.add(btnCasa2);
-		buttons.add(btnCasa3);
-		buttons.add(btnCasa4);
-		buttons.add(btnCasa5);
-		buttons.add(btnCasa6);
-		buttons.add(btnCasa7);
-		buttons.add(btnCasa8);
-		buttons.add(btnCasa9);
-		buttons.add(btnCasa10);
-		buttons.add(btnCasa11);
-		buttons.add(btnCasa12);
-		buttons.add(btnCasa13);
-		buttons.add(btnCasa14);
-		buttons.add(btnCasa15);
-		buttons.add(btnCasa16);
-		buttons.add(btnCasa17);
-		buttons.add(btnCasa18);
-		buttons.add(btnCasa19);
-		buttons.add(btnCasa20);
-		buttons.add(btnCasa21);
-		buttons.add(btnCasa22);
-		buttons.add(btnCasa23);
-		buttons.add(btnCasa24);
-		buttons.add(btnCasa25);
-		buttons.add(btnCasa26);
-		buttons.add(btnCasa27);
-		buttons.add(btnCasa28);
-
+		adicionarBotoesNoTabuleiro();
+		
+		for (JButton botaoCasa : botoesCasas) {
+			contentPane.add(botaoCasa);
+		}
+		
 		iLogradouros = new ArrayList<>();
 		Iterator<Logradouro> logradouros = bancoImobiliario
 				.getCasasDoTabuleiro();
-		for (int index = 0; index < buttons.size(); index++) {
+		for (int index = 0; index < botoesCasas.size(); index++) {
 			if (logradouros.hasNext()) {
 				ILogradouro iLogradouro = new ILogradouro(logradouros.next(),
-						buttons.get(index));
+						botoesCasas.get(index));
 				iLogradouros.add(iLogradouro);
 			} else {
 				throw new LogradourosInsuficientesException();
 			}
 		}
+
 	}
+	
+	private void adicionarBotoesNoTabuleiro(){
+		botoesCasas = new ArrayList<>();
+
+		JButton btnCasa1 = new JButton();
+		btnCasa1.setBounds(200, 0, 89, 89);
+
+		JButton btnCasa8 = new JButton();
+		btnCasa8.setBounds(629, 0, 89, 89);
+
+		JButton btnCasa2 = new JButton();
+		btnCasa2.setBounds(293, 0, 50, 78);
+
+		JButton btnCasa3 = new JButton();
+		btnCasa3.setBounds(349, 0, 50, 78);
+
+		JButton btnCasa4 = new JButton();
+		btnCasa4.setBounds(405, 0, 50, 78);
+
+		JButton btnCasa5 = new JButton();
+		btnCasa5.setBounds(461, 0, 50, 78);
+
+		JButton btnCasa6 = new JButton();
+		btnCasa6.setBounds(517, 0, 50, 78);
+
+		JButton btnCasa7 = new JButton();
+		btnCasa7.setBounds(572, 0, 50, 78);
+
+		JButton btnCasa22 = new JButton();
+		btnCasa22.setBounds(200, 431, 89, 89);
+
+		JButton btnCasa21 = new JButton();
+		btnCasa21.setBounds(293, 442, 50, 78);
+
+		JButton btnCasa20 = new JButton();
+		btnCasa20.setBounds(349, 442, 50, 78);
+
+		JButton btnCasa19 = new JButton();
+		btnCasa19.setBounds(405, 442, 50, 78);
+
+		JButton btnCasa18 = new JButton();
+		btnCasa18.setBounds(461, 442, 50, 78);
+
+		JButton btnCasa17 = new JButton();
+		btnCasa17.setBounds(517, 442, 50, 78);
+
+		JButton btnCasa16 = new JButton();
+		btnCasa16.setBounds(572, 442, 50, 78);
+
+		JButton btnCasa15 = new JButton();
+		btnCasa15.setBounds(629, 431, 89, 89);
+
+		JButton btnCasa28 = new JButton();
+		btnCasa28.setBounds(200, 92, 73, 53);
+
+		JButton btnCasa27 = new JButton();
+		btnCasa27.setBounds(200, 148, 73, 53);
+
+		JButton btnCasa26 = new JButton();
+		btnCasa26.setBounds(200, 206, 73, 53);
+
+		JButton btnCasa25 = new JButton();
+		btnCasa25.setBounds(200, 260, 73, 53);
+
+		JButton btnCasa24 = new JButton();
+		btnCasa24.setBounds(200, 317, 73, 53);
+
+		JButton btnCasa23 = new JButton();
+		btnCasa23.setBounds(200, 370, 73, 53);
+
+		JButton btnCasa10 = new JButton();
+		btnCasa10.setBounds(639, 148, 79, 53);
+
+		JButton btnCasa11 = new JButton();
+		btnCasa11.setBounds(639, 206, 79, 53);
+
+		JButton btnCasa9 = new JButton();
+		btnCasa9.setBounds(639, 92, 79, 53);
+
+		JButton btnCasa12 = new JButton();
+		btnCasa12.setBounds(639, 260, 79, 53);
+
+		JButton btnCasa13 = new JButton();
+		btnCasa13.setBounds(639, 317, 79, 53);
+
+		JButton btnCasa14 = new JButton();
+		btnCasa14.setBounds(639, 370, 79, 53);
+
+		botoesCasas.add(btnCasa1);
+		botoesCasas.add(btnCasa2);
+		botoesCasas.add(btnCasa3);
+		botoesCasas.add(btnCasa4);
+		botoesCasas.add(btnCasa5);
+		botoesCasas.add(btnCasa6);
+		botoesCasas.add(btnCasa7);
+		botoesCasas.add(btnCasa8);
+		botoesCasas.add(btnCasa9);
+		botoesCasas.add(btnCasa10);
+		botoesCasas.add(btnCasa11);
+		botoesCasas.add(btnCasa12);
+		botoesCasas.add(btnCasa13);
+		botoesCasas.add(btnCasa14);
+		botoesCasas.add(btnCasa15);
+		botoesCasas.add(btnCasa16);
+		botoesCasas.add(btnCasa17);
+		botoesCasas.add(btnCasa18);
+		botoesCasas.add(btnCasa19);
+		botoesCasas.add(btnCasa20);
+		botoesCasas.add(btnCasa21);
+		botoesCasas.add(btnCasa22);
+		botoesCasas.add(btnCasa23);
+		botoesCasas.add(btnCasa24);
+		botoesCasas.add(btnCasa25);
+		botoesCasas.add(btnCasa26);
+		botoesCasas.add(btnCasa27);
+		botoesCasas.add(btnCasa28);
+
+	}
+	
+	
+	
 
 	public BancoImobiliario getBancoImobiliario() {
 		return bancoImobiliario;
