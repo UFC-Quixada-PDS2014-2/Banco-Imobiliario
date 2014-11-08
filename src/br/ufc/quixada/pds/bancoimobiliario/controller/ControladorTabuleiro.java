@@ -18,7 +18,7 @@ import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
 import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
 import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.AcaoLogradouroEnum;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ErroArquivoConfiguracoesException;
-import br.ufc.quixada.pds.bancoimobiliario.model.exception.FimDeJogoException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.GameOverJogadorException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
 import br.ufc.quixada.pds.bancoimobiliario.view.GUITabuleiro;
 import br.ufc.quixada.pds.bancoimobiliario.view.IJogador;
@@ -153,7 +153,7 @@ public class ControladorTabuleiro implements Observer{
 				jogadorDaVez = detectarJogadorDaVez();
 				guiTabuleiro.atualizarJogadorDaVez(jogadorDaVez);
 				
-			} catch (FimDeJogoException e1) {
+			} catch (GameOverJogadorException e1) {
 				e1.printStackTrace();
 				JOptionPane.showMessageDialog(guiTabuleiro, bancoImobiliario.getJogadorDaVez().getNome() + " perdeu!");
 			} catch (ErroArquivoConfiguracoesException e1) {

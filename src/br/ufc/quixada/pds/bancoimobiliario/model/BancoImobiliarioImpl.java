@@ -5,7 +5,7 @@ import java.util.List;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.AcaoLogradouroEnum;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ErroArquivoConfiguracoesException;
-import br.ufc.quixada.pds.bancoimobiliario.model.exception.FimDeJogoException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.GameOverJogadorException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorComSaldoNegativoException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorInvalidoException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.PropriedadeJaVendidaException;
@@ -27,8 +27,8 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 	}
 
 	@Override
-	public AcaoLogradouroEnum realizarTurnoJogador(int valorDosDados) throws FimDeJogoException,
-			ErroArquivoConfiguracoesException, GameOverJogadorException {
+	public AcaoLogradouroEnum realizarTurnoJogador(int valorDosDados) throws GameOverJogadorException,
+			ErroArquivoConfiguracoesException {
 		
 		AcaoLogradouroEnum tipoDeAcao;
 
@@ -58,12 +58,9 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 
 			jogadoresAtivos.remove(jogadorDaVez);
 			jogadoresInativos.add(jogadorDaVez);
-			
-			if(jogadoresAtivos.size() == 1)
-				throw new FimDeJogoException();
-			
-			else throw new GameOverJogadorException();
-			
+				
+			throw new GameOverJogadorException();
+	
 		} catch (ValorInvalidoException e) {
 
 			throw new ErroArquivoConfiguracoesException();
@@ -72,6 +69,14 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 		this.mudarJogadorDaVez();
 		
 		return tipoDeAcao;
+	}
+	
+	public Jogador detectarVencedor(){
+		if(jogadoresAtivos.size() == 1){
+			return jogadoresAtivos.get(0);
+		} else {
+			return null;
+		}
 	}
 
 	private AcaoLogradouroEnum realizarPulo(Jogador jogador, int posicaoAntiga)
@@ -112,12 +117,12 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 	}
 
 	@Override
-	public void comprarPropriedade(Propriedade propriedade) throws SaldoJogadorInsuficienteException, PropriedadeJaVendidaException, JogadorInvalidoException, FimDeJogoException, ErroArquivoConfiguracoesException {
+	public void comprarPropriedade(Propriedade propriedade) throws SaldoJogadorInsuficienteException, PropriedadeJaVendidaException, JogadorInvalidoException, GameOverJogadorException, ErroArquivoConfiguracoesException {
 		
 		try{
 			propriedade.comprarPropriedade(this.jogadorDaVez);
 		} catch(JogadorComSaldoNegativoException e){
-			throw new FimDeJogoException();
+			throw new GameOverJogadorException();
 		} catch(ValorInvalidoException e){
 			throw new ErroArquivoConfiguracoesException();
 		}
