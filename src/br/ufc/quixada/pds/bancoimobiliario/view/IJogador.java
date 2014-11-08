@@ -3,6 +3,7 @@ package br.ufc.quixada.pds.bancoimobiliario.view;
 import java.awt.Rectangle;
 import java.util.Iterator;
 
+import javax.swing.Icon;
 import javax.swing.JLabel;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
@@ -12,7 +13,7 @@ import br.ufc.quixada.pds.bancoimobiliario.view.enumeration.DeslocamentoPinoEnum
 public class IJogador {
 
 	private Jogador jogador;
-	private String imagemPersonagem;
+	private Icon imagemPersonagem;
 	private JLabel pino;
 	private DeslocamentoPinoEnum deslocamentoPino;
 	
@@ -37,11 +38,11 @@ public class IJogador {
 		return jogador;
 	}
 
-	public String getImagemPersonagem() {
+	public Icon getImagemPersonagem() {
 		return imagemPersonagem;
 	}
 
-	public void setImagemPersonagem(String imagemPersonagem) {
+	public void setImagemPersonagem(Icon imagemPersonagem) {
 		this.imagemPersonagem = imagemPersonagem;
 	}
 	

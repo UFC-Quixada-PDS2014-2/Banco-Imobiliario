@@ -1,5 +1,6 @@
 package br.ufc.quixada.pds.bancoimobiliario.view;
 
+import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.Rectangle;
 
@@ -8,20 +9,28 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.Color;
+import java.net.URL;
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.border.EmptyBorder;
 
+import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorTabuleiro;
+
 public class GUITelaInicial extends JFrame {
-	private JTextField nomeJogador1TxtArea;
-	private JTextField nomeJogador2TxtArea;
+	private List<JTextField> nomesJogadores; 
 	private List<JButton> tecnicos;
 	private JButton bola;
+	private String[] nomesTecnicos = {"Pep Guardiola", "José Mourinho", "Jürgen Klopp", "Arsene Wenger", "Diego Simeone", "Carlo Ancelotti"};
+	private static final String caminhoImagens = "/br/ufc/quixada/pds/bancoimobiliario/view/img/";
+	private List<JButton> tecnicosDosJogadores;
 	
 	public GUITelaInicial(){
 		this.tecnicos = new ArrayList<JButton>();
+		this.nomesJogadores = new ArrayList<JTextField>();
+		this.tecnicosDosJogadores = new ArrayList<JButton>();
 		Rectangle dimensoesTela = new Rectangle(1150, 700);
 	    this.setBounds(dimensoesTela);
 	    initComponents();
@@ -35,23 +44,39 @@ public class GUITelaInicial extends JFrame {
 	    background.setIcon(new ImageIcon(GUITelaInicial.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/TelaInicialBackground.png")));
 	    background.setBounds(0, 0, 1150, 700);
 	    getContentPane().add(background);
+	    Cursor cursor = new Cursor(Cursor.HAND_CURSOR);
 	    
 	    for(int i=0; i<6; i++){
 	    	JButton tecnico = new JButton("");
 	    	tecnico.setBackground(Color.WHITE);
 	    	tecnico.setBounds(64+(i*181),150,117,150);
+	    	tecnico.setToolTipText(this.nomesTecnicos[i]);
+	    	
+	    	String nomeImagem = this.nomesTecnicos[i].replaceAll("\\s","").toLowerCase();
+			nomeImagem = Normalizer.normalize(nomeImagem, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
+			
+			
+			URL pathImagem = ControladorTabuleiro.class.getResource(caminhoImagens  + "tecnicos/" + nomeImagem  +".png");
+			ImageIcon imageIcon = new ImageIcon(pathImagem);
+			tecnico.setIcon(imageIcon);
+			
+			
+			tecnico.setCursor(cursor);
+			
 	    	this.tecnicos.add(tecnico);
 	    	background.add(tecnico);
 	    }
 	    
-	    nomeJogador1TxtArea = new JTextField();
-	    nomeJogador1TxtArea.setBounds(40, 440, 169, 33);
-	    background.add(nomeJogador1TxtArea);
-	    nomeJogador1TxtArea.setColumns(10);
+	    JTextField nomeJogador1TxtField = new JTextField(null);
+	    nomeJogador1TxtField.setBounds(40, 440, 169, 33);
+	    background.add(nomeJogador1TxtField);
+	    this.nomesJogadores.add(nomeJogador1TxtField);
+	    nomeJogador1TxtField.setColumns(10);
 	    
 	    JButton jogador1Selecionado = new JButton("");
 	    jogador1Selecionado.setBackground(Color.WHITE);
 	    jogador1Selecionado.setBounds(40, 493, 117, 150);
+	    this.tecnicosDosJogadores.add(jogador1Selecionado);
 	    background.add(jogador1Selecionado);
 	    
 	    JLabel nomeJogador1Label = new JLabel("Nome jogador 1:");
@@ -63,12 +88,14 @@ public class GUITelaInicial extends JFrame {
 	    JButton jogador2Selecionado = new JButton("");
 	    jogador2Selecionado.setBackground(Color.WHITE);
 	    jogador2Selecionado.setBounds(993, 493, 117, 150);
+	    this.tecnicosDosJogadores.add(jogador2Selecionado);
 	    background.add(jogador2Selecionado);
 	    
-	    nomeJogador2TxtArea = new JTextField();
-	    nomeJogador2TxtArea.setColumns(10);
-	    nomeJogador2TxtArea.setBounds(941, 440, 169, 33);
-	    background.add(nomeJogador2TxtArea);
+	    JTextField nomeJogador2TxtField = new JTextField(null);
+	    nomeJogador2TxtField.setColumns(10);
+	    nomeJogador2TxtField.setBounds(941, 440, 169, 33);
+	    this.nomesJogadores.add(nomeJogador2TxtField);
+	    background.add(nomeJogador2TxtField);
 	    
 	    JLabel nomeJogador2Label = new JLabel("Nome jogador 2:");
 	    nomeJogador2Label.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -97,6 +124,8 @@ public class GUITelaInicial extends JFrame {
 	    bola.setBorderPainted(false);
 	    bola.setBorder(null);
 	    bola.setBounds(543, 430, 70, 70);
+	    bola.setToolTipText("Clique para iniciar");
+	    bola.setCursor(cursor);
 	    background.add(bola);
 	}
 	
@@ -107,4 +136,17 @@ public class GUITelaInicial extends JFrame {
 	public JButton getBotaoInicial(){
 		return this.bola;
 	}
+	
+	public String[] getNomesTecnicos(){
+		return this.nomesTecnicos;
+	}
+	
+	public List<JTextField> getTextFielNomeJogadores(){
+		return this.nomesJogadores;
+	}
+	
+	public List<JButton> getTecnicosDosJogadores(){
+		return this.tecnicosDosJogadores;
+	}
+	
 }

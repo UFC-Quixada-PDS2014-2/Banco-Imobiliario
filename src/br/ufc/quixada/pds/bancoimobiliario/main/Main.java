@@ -5,6 +5,7 @@ import java.util.List;
 
 import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroDirector;
 import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorTabuleiro;
+import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorTelaInicial;
 import br.ufc.quixada.pds.bancoimobiliario.guice.TabuleiroModule;
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliarioImpl;
@@ -25,7 +26,7 @@ public class Main {
 	public static void main(String[] args) {
 		try {
 
-			/* Iniciando objetos de domínio */
+			/* Iniciando objetos de domï¿½nio */
 			Injector injectorBI = Guice.createInjector(new TabuleiroModule());
 			TabuleiroDirector tabuleiroDirector = injectorBI
 					.getInstance(TabuleiroDirector.class);
@@ -73,12 +74,12 @@ public class Main {
 			}
 
 			//UIBancoImobiliario gui = new UIBancoImobiliario(bancoImobiliario);
-			IJogador iJogador1 = new IJogador(jogador1);
+			/*IJogador iJogador1 = new IJogador(jogador1);
 			iJogador1.setImagemPersonagem("/br/ufc/quixada/pds/bancoimobiliario/view/img/luxemburgo.jpg");
 			IJogador iJogador2 = new IJogador(jogador2);
-			iJogador2.setImagemPersonagem("/br/ufc/quixada/pds/bancoimobiliario/view/img/luxemburgo.jpg");
-			
-			ControladorTabuleiro controladorTabuleiro = new ControladorTabuleiro(bancoImobiliario, iJogador1, iJogador2);
+			iJogador2.setImagemPersonagem("/br/ufc/quixada/pds/bancoimobiliario/view/img/luxemburgo.jpg");*/
+
+			ControladorTelaInicial controladorTelaInicial = new ControladorTelaInicial();
 			
 			
 			/*while (true) {

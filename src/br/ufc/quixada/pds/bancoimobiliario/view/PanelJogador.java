@@ -33,7 +33,7 @@ public class PanelJogador extends JPanel {
 		
 		lblIconJogador = new JLabel("");
 		lblIconJogador.setHorizontalAlignment(SwingConstants.CENTER);
-		lblIconJogador.setIcon(new ImageIcon(PanelJogador.class.getResource(jogador.getImagemPersonagem())));
+		lblIconJogador.setIcon(jogador.getImagemPersonagem());
 		
 		lblSaldo = new JLabel("Saldo : R$ " + jogador.getSaldoJogador());
 		lblSaldo.setHorizontalAlignment(SwingConstants.CENTER);

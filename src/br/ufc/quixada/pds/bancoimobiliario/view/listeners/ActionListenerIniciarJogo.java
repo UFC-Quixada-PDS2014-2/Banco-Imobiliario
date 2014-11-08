@@ -1,0 +1,112 @@
+package br.ufc.quixada.pds.bancoimobiliario.view.listeners;
+
+import java.awt.Cursor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroDirector;
+import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorTabuleiro;
+import br.ufc.quixada.pds.bancoimobiliario.guice.TabuleiroModule;
+import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
+import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliarioImpl;
+import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
+import br.ufc.quixada.pds.bancoimobiliario.model.JogadorImpl;
+import br.ufc.quixada.pds.bancoimobiliario.model.Tabuleiro;
+import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.ConfiguracoesEnum;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.ErroArquivoConfiguracoesException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.MontadorTabuleiroException;
+import br.ufc.quixada.pds.bancoimobiliario.view.GUITelaInicial;
+import br.ufc.quixada.pds.bancoimobiliario.view.IJogador;
+
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+
+public class ActionListenerIniciarJogo implements ActionListener{
+	private JButton botaoInicial;
+	private List<JTextField> nomeJogadores;
+	private GUITelaInicial guiTelaInicial;
+	private List<IJogador> iJogadores;
+	private List<Jogador> jogadores;
+	private List<JButton> tecnicosDosJogadores;
+	
+	public ActionListenerIniciarJogo(JButton botaoInicial, List<JTextField> nomeJogadores, GUITelaInicial guiTelaInicial, List<JButton> tecnicosDosJogadores){
+		this.botaoInicial = botaoInicial;
+		this.nomeJogadores = nomeJogadores;
+		this.guiTelaInicial = guiTelaInicial;
+		this.iJogadores = new ArrayList<IJogador>();
+		this.jogadores = new ArrayList<Jogador>();
+		this.tecnicosDosJogadores = tecnicosDosJogadores;
+	}
+	
+	private boolean tecnicosEscolhidos(){
+		boolean tecnicosEscolhidos = true;
+		for(JButton tecnico : this.tecnicosDosJogadores){
+			if(tecnico.getIcon() == null){
+				tecnicosEscolhidos = false;
+				break;
+			}
+		}
+		return tecnicosEscolhidos;
+	}
+	
+	private boolean todosOsNomesSetados(){
+		boolean todosOsNomesSetados = true;
+		for(JTextField nomeJogador: this.nomeJogadores){
+			if(nomeJogador.getText().equals(null) || nomeJogador.getText().equals("")){
+				todosOsNomesSetados = false;
+				break;
+			}
+		}
+		return todosOsNomesSetados;
+	}
+	
+	private void criarJogadores(){
+		for(int i=0; i<2; i++){
+			String nome = this.nomeJogadores.get(i).getText();
+			Jogador jogador = new JogadorImpl(nome, ConfiguracoesEnum.SALDO_INICIAL.getValor());
+			IJogador iJogador = new IJogador(jogador);
+			iJogador.setImagemPersonagem(this.tecnicosDosJogadores.get(i).getIcon());
+			iJogadores.add(iJogador);
+			jogadores.add(jogador);
+		}
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(todosOsNomesSetados() && tecnicosEscolhidos()){
+			criarJogadores();
+			try {
+				Injector injectorBI = Guice.createInjector(new TabuleiroModule());
+				TabuleiroDirector tabuleiroDirector = injectorBI
+						.getInstance(TabuleiroDirector.class);
+				tabuleiroDirector.construirTabuleiro();
+				Tabuleiro tabuleiro = tabuleiroDirector.getTabuleiro();
+				
+				BancoImobiliario bancoImobiliario = new BancoImobiliarioImpl(jogadores, tabuleiro);
+				ControladorTabuleiro controladorTabuleiro = new ControladorTabuleiro(bancoImobiliario, iJogadores.get(0), iJogadores.get(1));
+				
+				this.guiTelaInicial.dispose();
+			} catch (ErroArquivoConfiguracoesException e1) {
+				JOptionPane.showMessageDialog(botaoInicial, "Erro no arquivo de configuração", "Erro!", JOptionPane.ERROR_MESSAGE);
+			} catch (MontadorTabuleiroException e1) {
+				JOptionPane.showMessageDialog(botaoInicial, "Erro na configuração do tabuleiro", "Erro!", JOptionPane.ERROR_MESSAGE);
+			}	
+		}else if(!tecnicosEscolhidos() && !todosOsNomesSetados()){
+			JOptionPane.showMessageDialog(botaoInicial, "Faltam nomes e técnicos", "Aviso!", JOptionPane.WARNING_MESSAGE);
+		}else if(!tecnicosEscolhidos()){
+			JOptionPane.showMessageDialog(botaoInicial, "Faltam os técnicos", "Aviso!", JOptionPane.WARNING_MESSAGE);
+		}else{
+			JOptionPane.showMessageDialog(botaoInicial, "Faltam os nomes", "Aviso!", JOptionPane.WARNING_MESSAGE);
+		}
+		
+	}
+
+}

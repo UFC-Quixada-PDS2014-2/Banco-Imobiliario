@@ -4,13 +4,35 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+
+import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroDirector;
+import br.ufc.quixada.pds.bancoimobiliario.guice.TabuleiroModule;
+import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
+import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliarioImpl;
+import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
+import br.ufc.quixada.pds.bancoimobiliario.model.JogadorImpl;
+import br.ufc.quixada.pds.bancoimobiliario.model.Tabuleiro;
+import br.ufc.quixada.pds.bancoimobiliario.model.TabuleiroImpl;
+import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.ConfiguracoesEnum;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.ErroArquivoConfiguracoesException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.MontadorTabuleiroException;
 import br.ufc.quixada.pds.bancoimobiliario.view.GUITelaInicial;
+import br.ufc.quixada.pds.bancoimobiliario.view.IJogador;
+import br.ufc.quixada.pds.bancoimobiliario.view.listeners.ActionListenerIniciarJogo;
+import br.ufc.quixada.pds.bancoimobiliario.view.listeners.ActionListenerSelecionarTecnico;
 
 public class ControladorTelaInicial {
 	private GUITelaInicial guiTelaInicial;
@@ -29,66 +51,16 @@ public class ControladorTelaInicial {
 	private void adicionarEventoNosTecnicos(){
 		List<JButton> tecnicos = this.guiTelaInicial.getTecnicos();
 		for(JButton tecnico: tecnicos){
-			tecnico.addActionListener(new ActionSelecionarTecnico(tecnico));
+			tecnico.addActionListener(new ActionListenerSelecionarTecnico(tecnico, this.guiTelaInicial.getTecnicosDosJogadores()));
 		}
 	}
 	
 	private void adicionarEventoDeIniciarPartida(){
 		JButton botaoInicial = this.guiTelaInicial.getBotaoInicial();
-		botaoInicial.addMouseListener(new ActionIniciarJogo(botaoInicial));
-	}
-	
-	private class ActionSelecionarTecnico implements ActionListener{
-		private JButton tecnico;
-		
-		public ActionSelecionarTecnico(JButton tecnico){
-			this.tecnico = tecnico;
-		}
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			
-		}
-		
+		botaoInicial.addActionListener(new ActionListenerIniciarJogo(botaoInicial, this.guiTelaInicial.getTextFielNomeJogadores()
+				, this.guiTelaInicial, this.guiTelaInicial.getTecnicosDosJogadores()));
 	}
 	
 	
-	
-	private class ActionIniciarJogo implements MouseListener{
-		private JButton botaoInicial;
 		
-		public ActionIniciarJogo(JButton botaoInicial){
-			this.botaoInicial = botaoInicial;
-		}
-
-		@Override
-		public void mouseClicked(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mouseEntered(MouseEvent e) {
-			Cursor cursor = new Cursor(Cursor.HAND_CURSOR);
-			botaoInicial.setCursor(cursor);
-			botaoInicial.setToolTipText("Clique para iniciar");
-		}
-
-		@Override
-		public void mouseExited(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mouseReleased(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-	}
 }
