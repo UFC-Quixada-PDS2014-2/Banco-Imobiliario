@@ -7,13 +7,14 @@ import javax.swing.JLabel;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
 import br.ufc.quixada.pds.bancoimobiliario.model.Propriedade;
+import br.ufc.quixada.pds.bancoimobiliario.view.enumeration.DeslocamentoPinoEnum;
 
 public class IJogador {
 
 	private Jogador jogador;
 	private String imagemPersonagem;
 	private JLabel pino;
-	private int deslocamentoPino;
+	private DeslocamentoPinoEnum deslocamentoPino;
 	
 
 	public IJogador(Jogador jogador) {
@@ -63,10 +64,10 @@ public class IJogador {
 	}
 
 	public int getDeslocamentoPino() {
-		return deslocamentoPino;
+		return deslocamentoPino.getDeslocamento();
 	}
 
-	public void setDeslocamentoPino(int deslocamentoPino) {
+	public void setDeslocamentoPino(DeslocamentoPinoEnum deslocamentoPino) {
 		this.deslocamentoPino = deslocamentoPino;
 	}
 	
