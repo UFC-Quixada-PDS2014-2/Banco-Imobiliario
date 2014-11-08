@@ -23,7 +23,7 @@ import javax.swing.border.EmptyBorder;
 public class GUITelaInicial extends JFrame {
 	private List<JTextField> nomesJogadores; 
 	private List<JButton> tecnicos;
-	private JButton bola;
+	private JButton bolaInicioJogo;
 	private String[] nomesTecnicos = {"Pep Guardiola", "José Mourinho", "Jürgen Klopp", "Arsene Wenger", "Diego Simeone", "Carlo Ancelotti"};
 	private static final String caminhoImagens = "/br/ufc/quixada/pds/bancoimobiliario/view/img/";
 	private List<JButton> tecnicosDosJogadores;
@@ -125,17 +125,17 @@ public class GUITelaInicial extends JFrame {
 	    iniciarOJogoLabel.setBounds(530, 500, 150, 15);
 	    background.add(iniciarOJogoLabel);
 	    
-	    bola = new JButton();
-	    bola.setBackground(Color.WHITE);
-	    bola.setIcon(new ImageIcon(GUITelaInicial.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/Bola.png")));
-	    bola.setOpaque(false);
-	    bola.setContentAreaFilled(false);
-	    bola.setBorderPainted(false);
-	    bola.setBorder(null);
-	    bola.setBounds(543, 430, 70, 70);
-	    bola.setToolTipText("Clique para iniciar");
-	    bola.setCursor(cursor);
-	    background.add(bola);
+	    bolaInicioJogo = new JButton();
+	    bolaInicioJogo.setBackground(Color.WHITE);
+	    bolaInicioJogo.setIcon(new ImageIcon(GUITelaInicial.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/Bola.png")));
+	    bolaInicioJogo.setOpaque(false);
+	    bolaInicioJogo.setContentAreaFilled(false);
+	    bolaInicioJogo.setBorderPainted(false);
+	    bolaInicioJogo.setBorder(null);
+	    bolaInicioJogo.setBounds(543, 430, 70, 70);
+	    bolaInicioJogo.setToolTipText("Clique para iniciar");
+	    bolaInicioJogo.setCursor(cursor);
+	    background.add(bolaInicioJogo);
 	}
 	
 	public List<JButton> getTecnicos(){
@@ -143,7 +143,7 @@ public class GUITelaInicial extends JFrame {
 	}
 	
 	public JButton getBotaoInicial(){
-		return this.bola;
+		return this.bolaInicioJogo;
 	}
 	
 	public String[] getNomesTecnicos(){

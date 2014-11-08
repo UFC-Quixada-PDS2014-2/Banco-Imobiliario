@@ -162,9 +162,9 @@ public class ControladorTabuleiro implements Observer{
 					
 				}
 				
-				JOptionPane.showMessageDialog(guiTabuleiro, jogadorDaVez.getJogador().getSaldo());
 				jogadorDaVez = detectarJogadorDaVez();
 				guiTabuleiro.atualizarJogadorDaVez(jogadorDaVez);
+				guiTabuleiro.atualizarPortfolios();
 				
 			} catch (GameOverJogadorException e1) {
 				Jogador jogadorVencedor = bancoImobiliario.detectarVencedor();
