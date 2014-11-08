@@ -10,6 +10,7 @@ import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoExceptio
 public abstract class Logradouro {
 
 	private String nome;
+	private String descricao;
 	
 	public String getNome(){
 		return this.nome;

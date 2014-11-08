@@ -52,7 +52,7 @@ public class Imovel extends Propriedade {
 		if(this.propriedadeEstaVendida()){
 			dono +=  this.getDonoDaPropriedade().getNome() + "\n";
 		} else{
-			dono += "Esta está não possui dono!\n"; 
+			dono += "Este imovel não possui dono!\n"; 
 		}
 		
 		mensagemFinal += nome + valorDaPropriedade + valorDoAluguel + dono;

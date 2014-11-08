@@ -55,7 +55,7 @@ public class Empresa extends Propriedade {
 		if(this.propriedadeEstaVendida()){
 			dono +=  this.getDonoDaPropriedade().getNome() + "\n";
 		} else{
-			dono += "Esta está não possui dono!\n"; 
+			dono += "Esta empresa não possui dono!\n"; 
 		}
 		
 		mensagemFinal += nome + valorDaPropriedade + valorDaTaxa + dono;
