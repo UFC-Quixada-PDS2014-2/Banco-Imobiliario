@@ -85,6 +85,8 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 		posicaoAntiga = jogador.getPosicao();
 		AcaoLogradouroEnum tipoDeAcao = logradouroParada
 				.acaoLogradouro(jogador);
+		setChanged();
+		notifyObservers(tipoDeAcao);
 		if (tipoDeAcao.equals(AcaoLogradouroEnum.AVANCA_POSICAO)) {
 			return realizarPulo(jogador, posicaoAntiga);
 		} else {

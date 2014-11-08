@@ -148,10 +148,10 @@ public class ControladorTabuleiro implements Observer{
 				
 				//A movimentação dos dados é feita pelo update do observer
 				// Essa movimentação é proveniente da ação da casa
+				ILogradouro logradouroParada = buscarILogradouro(jogadorDaVez.getPosicao());
 				if(acaoLogradouro == AcaoLogradouroEnum.AVANCA_POSICAO || acaoLogradouro == AcaoLogradouroEnum.VOLTA_POSICAO){
 					atualizarPinoJogador(jogadorDaVez);
 				}else if(acaoLogradouro == AcaoLogradouroEnum.DISPONIVEL_PARA_COMPRA){
-					ILogradouro logradouroParada = buscarILogradouro(jogadorDaVez.getPosicao());
 
 					int opcaoSelecionada = JOptionPane.showConfirmDialog(guiTabuleiro, "Você deseja comprar essa propriedade? :\n " + logradouroParada.toString());
 					
