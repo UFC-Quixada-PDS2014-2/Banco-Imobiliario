@@ -29,7 +29,8 @@ public class LugarEspecial extends Logradouro {
 	@Override
 	public String toString() {
 		String mensagemFinal = "Lugar Especial\n";
-		mensagemFinal += "Tipo de Ação: " + this.tipoDeAcao + "\n";
+		mensagemFinal += "Tipo de Ação: " + this.tipoDeAcao + "\n\n";
+		mensagemFinal += super.toString();
 		return mensagemFinal;
 	}
 

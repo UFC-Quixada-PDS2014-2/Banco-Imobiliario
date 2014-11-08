@@ -142,6 +142,9 @@
 			
 		<LugarEspecial>
 			<nome>Escalação Irregular</nome>
+			<descricao>Um dos seus times estava com a estalação irregular.
+						Volte duas casas!
+			</descricao>
 			<listaDeAcoes>
 					<AcaoVoltaPosicao>
 						<quantidadeDePosicoes>2</quantidadeDePosicoes>
