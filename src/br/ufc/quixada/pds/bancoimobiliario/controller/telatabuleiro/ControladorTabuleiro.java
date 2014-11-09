@@ -161,10 +161,6 @@ public class ControladorTabuleiro implements Observer{
 					
 				}
 				
-				jogadorDaVez = detectarJogadorDaVez();
-				guiTabuleiro.atualizarJogadorDaVez(jogadorDaVez);
-				guiTabuleiro.atualizarPortfolios();
-				
 			} catch (GameOverJogadorException e1) {
 				Jogador jogadorVencedor = bancoImobiliario.detectarVencedor();
 				JOptionPane.showMessageDialog(guiTabuleiro, jogadorVencedor.getNome() + " ganhou!!!");
@@ -173,7 +169,6 @@ public class ControladorTabuleiro implements Observer{
 				JOptionPane.showMessageDialog(guiTabuleiro, "Erro no arquivo de configuração do jogo!");
 				System.exit(1);
 			} catch (ValorInvalidoException e1) {
-				e1.printStackTrace();
 				JOptionPane.showMessageDialog(guiTabuleiro, "Erro no arquivo de configuração do jogo!");
 				System.exit(1);
 			} catch (LogradouroIndisponivelCompraException e1) {
@@ -185,7 +180,12 @@ public class ControladorTabuleiro implements Observer{
 				e1.printStackTrace();
 			} 
 			
+			jogadorDaVez = detectarJogadorDaVez();
+			guiTabuleiro.atualizarJogadorDaVez(jogadorDaVez);
+			guiTabuleiro.atualizarPortfolios();
+
 		}
+		
 		
 		
 	}
