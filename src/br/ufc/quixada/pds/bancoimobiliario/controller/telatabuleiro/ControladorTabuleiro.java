@@ -26,6 +26,7 @@ import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoExceptio
 import br.ufc.quixada.pds.bancoimobiliario.view.GUITabuleiro;
 import br.ufc.quixada.pds.bancoimobiliario.view.IJogador;
 import br.ufc.quixada.pds.bancoimobiliario.view.ILogradouro;
+import br.ufc.quixada.pds.bancoimobiliario.view.PanelJogador;
 import br.ufc.quixada.pds.bancoimobiliario.view.enumeration.CaminhoImagensEnum;
 
 public class ControladorTabuleiro implements Observer{
@@ -42,7 +43,6 @@ public class ControladorTabuleiro implements Observer{
 		this.iJogador1 = iJogador1;
 		this.iJogador2 = iJogador2;
 		this.guiTabuleiro = new GUITabuleiro(bancoImobiliario, iJogador1, iJogador2);
-		inicializar();
 	}
 	
 	public void inicializar(){
@@ -54,6 +54,14 @@ public class ControladorTabuleiro implements Observer{
 		
 		JButton btnJogador = this.guiTabuleiro.getBtnJogar();
 		btnJogador.addActionListener(new ActionRealizarRodada());
+	
+		PanelJogador panelJogador1 = guiTabuleiro.getPanelJogador1();
+		JButton botaoPortfolioJogador1 = panelJogador1.getBotaoPortfolio();
+		botaoPortfolioJogador1.addActionListener(new ActionListenerBotaoPortfolio(iJogador1));
+		
+		PanelJogador panelJogador2 = guiTabuleiro.getPanelJogador2();
+		JButton botaoPortfolioJogador2 = panelJogador2.getBotaoPortfolio();
+		botaoPortfolioJogador2.addActionListener(new ActionListenerBotaoPortfolio(iJogador2));
 		
 		atualizarPinoJogador(iJogador1);
 		atualizarPinoJogador(iJogador2);

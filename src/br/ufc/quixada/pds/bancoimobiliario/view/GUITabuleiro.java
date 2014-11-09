@@ -22,6 +22,7 @@ import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
 import br.ufc.quixada.pds.bancoimobiliario.view.enumeration.DeslocamentoPinoEnum;
 import br.ufc.quixada.pds.bancoimobiliario.view.exception.LogradourosInsuficientesException;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -62,8 +63,9 @@ public class GUITabuleiro extends JFrame {
 
 	private void inicializar() throws LogradourosInsuficientesException {
 		setResizable(false);
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 10, 910, 570);
+		setBounds(100, 10, 900, 550);
 		contentPane = new JPanel();
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -77,7 +79,7 @@ public class GUITabuleiro extends JFrame {
 
 				JLabel lblBackground = new JLabel("");
 		lblBackground.setIcon(new ImageIcon(GUITabuleiro.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/background.png")));
-		lblBackground.setBounds(10, 0, 910, 550);
+		lblBackground.setBounds(0, 0, 910, 550);
 		contentPane.add(lblBackground);
 
 	}
@@ -136,9 +138,6 @@ public class GUITabuleiro extends JFrame {
 				gl_panelCentral.setHorizontalGroup(
 					gl_panelCentral.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_panelCentral.createSequentialGroup()
-							.addContainerGap(273, Short.MAX_VALUE)
-							.addComponent(btnHelp))
-						.addGroup(gl_panelCentral.createSequentialGroup()
 							.addGap(56)
 							.addGroup(gl_panelCentral.createParallelGroup(Alignment.TRAILING, false)
 								.addComponent(comboBoxDado2, Alignment.LEADING, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -146,10 +145,14 @@ public class GUITabuleiro extends JFrame {
 							.addGap(18)
 							.addComponent(btnJogar)
 							.addContainerGap(136, Short.MAX_VALUE))
+						.addGroup(Alignment.TRAILING, gl_panelCentral.createSequentialGroup()
+							.addContainerGap(261, Short.MAX_VALUE)
+							.addComponent(btnHelp)
+							.addContainerGap())
 				);
 				gl_panelCentral.setVerticalGroup(
-					gl_panelCentral.createParallelGroup(Alignment.LEADING)
-						.addGroup(Alignment.TRAILING, gl_panelCentral.createSequentialGroup()
+					gl_panelCentral.createParallelGroup(Alignment.TRAILING)
+						.addGroup(gl_panelCentral.createSequentialGroup()
 							.addComponent(btnHelp, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
 							.addGroup(gl_panelCentral.createParallelGroup(Alignment.LEADING)
@@ -192,88 +195,88 @@ public class GUITabuleiro extends JFrame {
 		botoesCasas = new ArrayList<>();
 
 		JButton btnCasa1 = new JButton();
-		btnCasa1.setBounds(200, 0, 89, 89);
+		btnCasa1.setBounds(192, 0, 89, 89);
 
 		JButton btnCasa8 = new JButton();
-		btnCasa8.setBounds(629, 0, 89, 89);
+		btnCasa8.setBounds(621, 0, 89, 89);
 
 		JButton btnCasa2 = new JButton();
-		btnCasa2.setBounds(293, 0, 50, 78);
+		btnCasa2.setBounds(285, 0, 50, 78);
 
 		JButton btnCasa3 = new JButton();
-		btnCasa3.setBounds(349, 0, 50, 78);
+		btnCasa3.setBounds(341, 0, 50, 78);
 
 		JButton btnCasa4 = new JButton();
-		btnCasa4.setBounds(405, 0, 50, 78);
+		btnCasa4.setBounds(397, 0, 50, 78);
 
 		JButton btnCasa5 = new JButton();
-		btnCasa5.setBounds(461, 0, 50, 78);
+		btnCasa5.setBounds(453, 0, 50, 78);
 
 		JButton btnCasa6 = new JButton();
-		btnCasa6.setBounds(517, 0, 50, 78);
+		btnCasa6.setBounds(509, 0, 50, 78);
 
 		JButton btnCasa7 = new JButton();
-		btnCasa7.setBounds(572, 0, 50, 78);
+		btnCasa7.setBounds(564, 0, 50, 78);
 
 		JButton btnCasa22 = new JButton();
-		btnCasa22.setBounds(200, 431, 89, 89);
+		btnCasa22.setBounds(192, 431, 89, 89);
 
 		JButton btnCasa21 = new JButton();
-		btnCasa21.setBounds(293, 442, 50, 78);
+		btnCasa21.setBounds(285, 442, 50, 78);
 
 		JButton btnCasa20 = new JButton();
-		btnCasa20.setBounds(349, 442, 50, 78);
+		btnCasa20.setBounds(341, 442, 50, 78);
 
 		JButton btnCasa19 = new JButton();
-		btnCasa19.setBounds(405, 442, 50, 78);
+		btnCasa19.setBounds(397, 442, 50, 78);
 
 		JButton btnCasa18 = new JButton();
-		btnCasa18.setBounds(461, 442, 50, 78);
+		btnCasa18.setBounds(453, 442, 50, 78);
 
 		JButton btnCasa17 = new JButton();
-		btnCasa17.setBounds(517, 442, 50, 78);
+		btnCasa17.setBounds(509, 442, 50, 78);
 
 		JButton btnCasa16 = new JButton();
-		btnCasa16.setBounds(572, 442, 50, 78);
+		btnCasa16.setBounds(564, 442, 50, 78);
 
 		JButton btnCasa15 = new JButton();
-		btnCasa15.setBounds(629, 431, 89, 89);
+		btnCasa15.setBounds(621, 431, 89, 89);
 
 		JButton btnCasa28 = new JButton();
-		btnCasa28.setBounds(200, 92, 73, 53);
+		btnCasa28.setBounds(192, 92, 73, 53);
 
 		JButton btnCasa27 = new JButton();
-		btnCasa27.setBounds(200, 148, 73, 53);
+		btnCasa27.setBounds(192, 148, 73, 53);
 
 		JButton btnCasa26 = new JButton();
-		btnCasa26.setBounds(200, 206, 73, 53);
+		btnCasa26.setBounds(192, 206, 73, 53);
 
 		JButton btnCasa25 = new JButton();
-		btnCasa25.setBounds(200, 260, 73, 53);
+		btnCasa25.setBounds(192, 260, 73, 53);
 
 		JButton btnCasa24 = new JButton();
-		btnCasa24.setBounds(200, 317, 73, 53);
+		btnCasa24.setBounds(192, 317, 73, 53);
 
 		JButton btnCasa23 = new JButton();
-		btnCasa23.setBounds(200, 370, 73, 53);
+		btnCasa23.setBounds(192, 375, 73, 53);
 
 		JButton btnCasa10 = new JButton();
-		btnCasa10.setBounds(639, 148, 79, 53);
+		btnCasa10.setBounds(631, 148, 79, 53);
 
 		JButton btnCasa11 = new JButton();
-		btnCasa11.setBounds(639, 206, 79, 53);
+		btnCasa11.setBounds(631, 206, 79, 53);
 
 		JButton btnCasa9 = new JButton();
-		btnCasa9.setBounds(639, 92, 79, 53);
+		btnCasa9.setBounds(631, 92, 79, 53);
 
 		JButton btnCasa12 = new JButton();
-		btnCasa12.setBounds(639, 260, 79, 53);
+		btnCasa12.setBounds(631, 260, 79, 53);
 
 		JButton btnCasa13 = new JButton();
-		btnCasa13.setBounds(639, 317, 79, 53);
+		btnCasa13.setBounds(631, 317, 79, 53);
 
 		JButton btnCasa14 = new JButton();
-		btnCasa14.setBounds(639, 370, 79, 53);
+		btnCasa14.setBounds(631, 375, 79, 53);
 
 		botoesCasas.add(btnCasa1);
 		botoesCasas.add(btnCasa2);
@@ -335,6 +338,14 @@ public class GUITabuleiro extends JFrame {
 	
 	public JButton getBtnJogar(){
 		return this.btnJogar;
+	}
+
+	public PanelJogador getPanelJogador1(){
+		return panelJogador1;
+	}
+	
+	public PanelJogador getPanelJogador2(){
+		return panelJogador2;
 	}
 	
 	public void atualizarJogadorDaVez(IJogador jogadorDaVez){

@@ -23,6 +23,10 @@ public class JogadorImpl implements Jogador{
 		this.propriedadesAdquiridas = new ArrayList<>();
 	}
 
+	public int getQuantidadePropriedades(){
+		return this.propriedadesAdquiridas.size();
+	}
+	
 	@Override
 	public String getNome() {
 		return nome;
@@ -48,6 +52,7 @@ public class JogadorImpl implements Jogador{
 		if(valor <= 0.00){
 			throw new ValorInvalidoException();
 		} 
+			
 		this.saldo += valor;
 	}
 
@@ -87,6 +92,7 @@ public class JogadorImpl implements Jogador{
 			throw new ValorInvalidoException();
 		
 		this.posicao = (this.posicao + quantidadeDePosicoes) % ConfiguracoesEnum.NUMERO_CASAS.getValor();
+		
 	}
 
 	@Override

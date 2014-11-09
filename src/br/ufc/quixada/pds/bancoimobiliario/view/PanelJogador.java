@@ -3,15 +3,12 @@ package br.ufc.quixada.pds.bancoimobiliario.view;
 import java.awt.Color;
 import java.awt.Font;
 
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
-import javax.swing.SwingConstants;
 
 public class PanelJogador extends JPanel {
 
@@ -19,6 +16,7 @@ public class PanelJogador extends JPanel {
 	private JLabel lblSaldo;
 	private JLabel lblNomeJogador;
 	private JLabel lblIconJogador;
+	private JButton btnPortfolio;
 	
 	/**
 	 * Create the panel.
@@ -27,41 +25,29 @@ public class PanelJogador extends JPanel {
 		setOpaque(false);
 		this.iJogador = jogador;
 		lblNomeJogador = new JLabel(jogador.getNomeJogador());
+		lblNomeJogador.setBounds(12, 12, 155, 31);
 		lblNomeJogador.setForeground(Color.WHITE);
 		lblNomeJogador.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNomeJogador.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 		
 		lblIconJogador = new JLabel("");
+		lblIconJogador.setBounds(12, 55, 155, 150);
 		lblIconJogador.setHorizontalAlignment(SwingConstants.CENTER);
-		lblIconJogador.setIcon(jogador.getImagemPersonagem());
+		lblIconJogador.setIcon(iJogador.getImagemPersonagem());
 		
 		lblSaldo = new JLabel("Saldo : R$ " + jogador.getSaldoJogador());
+		lblSaldo.setBounds(12, 211, 155, 35);
 		lblSaldo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSaldo.setForeground(Color.WHITE);
 		lblSaldo.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		GroupLayout groupLayout = new GroupLayout(this);
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblSaldo, GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
-						.addComponent(lblNomeJogador, GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
-						.addComponent(lblIconJogador, GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE))
-					.addContainerGap())
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(lblNomeJogador, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(lblIconJogador)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(lblSaldo, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(215, Short.MAX_VALUE))
-		);
-		setLayout(groupLayout);
+		setLayout(null);
+		
+		btnPortfolio = new JButton("Portfólio");
+		btnPortfolio.setBounds(48, 252, 95, 25);
+		add(btnPortfolio);
+		add(lblSaldo);
+		add(lblNomeJogador);
+		add(lblIconJogador);
 	}
 	
 	public void atualizar(){
@@ -82,6 +68,10 @@ public class PanelJogador extends JPanel {
 			Border bordaPanel = new LineBorder(Color.white, 0);
 			this.setBorder(bordaPanel);
 		}
+	}
+	
+	public JButton getBotaoPortfolio(){
+		return this.btnPortfolio;
 	}
 	
 	
