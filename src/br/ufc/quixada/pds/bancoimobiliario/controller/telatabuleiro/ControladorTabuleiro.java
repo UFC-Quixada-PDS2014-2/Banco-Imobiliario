@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
-import br.ufc.quixada.pds.bancoimobiliario.controller.ControllerRestartGame;
+import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorRestartGame;
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
 import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
@@ -37,9 +37,9 @@ public class ControladorTabuleiro implements Observer{
 	private IJogador iJogador1;
 	private IJogador iJogador2;
 	private IJogador jogadorDaVez;
-	private ControllerRestartGame restartGame;
+	private ControladorRestartGame restartGame;
 	
-	public ControladorTabuleiro(BancoImobiliario bancoImobiliario, IJogador iJogador1, IJogador iJogador2, ControllerRestartGame restartGame){
+	public ControladorTabuleiro(BancoImobiliario bancoImobiliario, IJogador iJogador1, IJogador iJogador2, ControladorRestartGame restartGame){
 		this.bancoImobiliario = bancoImobiliario;
 		this.bancoImobiliario.addObserver(this);
 		this.iJogador1 = iJogador1;

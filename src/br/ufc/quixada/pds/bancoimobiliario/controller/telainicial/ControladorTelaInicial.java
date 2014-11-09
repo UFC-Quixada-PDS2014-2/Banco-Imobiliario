@@ -5,14 +5,14 @@ import java.util.List;
 
 import javax.swing.JButton;
 
-import br.ufc.quixada.pds.bancoimobiliario.controller.ControllerRestartGame;
+import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorRestartGame;
 import br.ufc.quixada.pds.bancoimobiliario.view.GUITelaInicial;
 
 public class ControladorTelaInicial {
 	private GUITelaInicial guiTelaInicial;
-	private ControllerRestartGame restartGame;
+	private ControladorRestartGame restartGame;
 	
-	public ControladorTelaInicial(ControllerRestartGame restartGame){
+	public ControladorTelaInicial(ControladorRestartGame restartGame){
 		this.guiTelaInicial = new GUITelaInicial();
 		this.restartGame = restartGame;
 	}

@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroDirector;
-import br.ufc.quixada.pds.bancoimobiliario.controller.ControllerRestartGame;
+import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorRestartGame;
 import br.ufc.quixada.pds.bancoimobiliario.controller.telainicial.ControladorTelaInicial;
 import br.ufc.quixada.pds.bancoimobiliario.guice.TabuleiroModule;
 import br.ufc.quixada.pds.bancoimobiliario.model.Tabuleiro;
@@ -70,7 +70,7 @@ public class Main implements Observer{
 			}
 
 			
-			ControllerRestartGame restartGame = new ControllerRestartGame();
+			ControladorRestartGame restartGame = new ControladorRestartGame();
 			restartGame.addObserver(this);
 			ControladorTelaInicial controladorTelaInicial = new ControladorTelaInicial(restartGame);
 			controladorTelaInicial.inicializar();

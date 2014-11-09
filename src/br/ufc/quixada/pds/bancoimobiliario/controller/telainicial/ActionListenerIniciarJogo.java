@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroDirector;
-import br.ufc.quixada.pds.bancoimobiliario.controller.ControllerRestartGame;
+import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorRestartGame;
 import br.ufc.quixada.pds.bancoimobiliario.controller.telatabuleiro.ControladorTabuleiro;
 import br.ufc.quixada.pds.bancoimobiliario.guice.TabuleiroModule;
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
@@ -34,9 +34,9 @@ public class ActionListenerIniciarJogo implements ActionListener{
 	private List<IJogador> iJogadores;
 	private List<Jogador> jogadores;
 	private List<JButton> tecnicosDosJogadores;
-	private ControllerRestartGame restartGame;
+	private ControladorRestartGame restartGame;
 	
-	public ActionListenerIniciarJogo(JButton botaoInicial, List<JTextField> nomeJogadores, GUITelaInicial guiTelaInicial, List<JButton> tecnicosDosJogadores, ControllerRestartGame restartGame){
+	public ActionListenerIniciarJogo(JButton botaoInicial, List<JTextField> nomeJogadores, GUITelaInicial guiTelaInicial, List<JButton> tecnicosDosJogadores, ControladorRestartGame restartGame){
 		this.botaoInicial = botaoInicial;
 		this.nomeJogadores = nomeJogadores;
 		this.guiTelaInicial = guiTelaInicial;
