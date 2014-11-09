@@ -42,8 +42,7 @@ public class GUITelaInicial extends JFrame {
 	    getContentPane().setLayout(null);
 	    this.setResizable(false);
 	    
-	    this.controladorDeSons = new ControladorDeSons("src/br/ufc/quixada/pds/bancoimobiliario/view/sons/hino.wav");
-	    this.controladorDeSons.start();
+	    iniciarMusica();
 	}
 	
 	public void initComponents(){
@@ -195,8 +194,8 @@ public class GUITelaInicial extends JFrame {
 		this.controladorDeSons.stop();
 	}
 	
-	public void reiniciarMusica(){
-		this.controladorDeSons = new ControladorDeSons("src/br/ufc/quixada/pds/bancoimobiliario/view/sons/hino.wav");
-		this.controladorDeSons.start();
+	public void iniciarMusica(){
+		this.controladorDeSons = new ControladorDeSons(GUITelaInicial.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/sons/hino.wav").getPath());
+	    this.controladorDeSons.start();
 	}
 }

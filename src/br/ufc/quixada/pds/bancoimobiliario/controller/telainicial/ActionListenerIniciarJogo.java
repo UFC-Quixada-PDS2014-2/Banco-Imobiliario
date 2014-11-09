@@ -57,7 +57,7 @@ public class ActionListenerIniciarJogo implements ActionListener{
 	private boolean todosOsNomesSetados(){
 		boolean todosOsNomesSetados = true;
 		for(JTextField nomeJogador: this.nomeJogadores){
-			if(nomeJogador.getText().equals(null) || nomeJogador.getText().equals("")){
+			if(nomeJogador.getText().equals(null) || nomeJogador.getText().trim().equals("")){
 				todosOsNomesSetados = false;
 				break;
 			}

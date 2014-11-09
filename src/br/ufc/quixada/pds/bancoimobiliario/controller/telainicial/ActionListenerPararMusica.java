@@ -24,10 +24,10 @@ public class ActionListenerPararMusica implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(this.guiTelaInicial.musicaAtiva()){
 			this.guiTelaInicial.pararMusica();
-			this.pararMusica.setIcon(new ImageIcon(getClass().getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/sons/music_off.png")));
+			this.pararMusica.setIcon(new ImageIcon(ActionListenerPararMusica.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/sons/music_off.png")));
 		}else{
-			this.guiTelaInicial.reiniciarMusica();
-			this.pararMusica.setIcon(new ImageIcon(getClass().getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/sons/music_on.png")));
+			this.guiTelaInicial.iniciarMusica();
+			this.pararMusica.setIcon(new ImageIcon(ActionListenerPararMusica.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/sons/music_on.png")));
 		}
 	}
 

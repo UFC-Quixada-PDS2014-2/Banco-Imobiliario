@@ -12,10 +12,9 @@ public class ControladorTelaInicial {
 	
 	public ControladorTelaInicial(){
 		this.guiTelaInicial = new GUITelaInicial();
-		inicializar();
 	}
 	
-	private void inicializar(){
+	public void inicializar(){
 		this.guiTelaInicial.setVisible(true);
 		adicionarEventoNosTecnicos();
 		adicionarEventoDeIniciarPartida();
