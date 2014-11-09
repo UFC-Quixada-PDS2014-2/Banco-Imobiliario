@@ -4,7 +4,7 @@
 		
 		<PontoDePartida>
 			<nome>Apito Inicial</nome>
-			<descricao>Ganhou $200 </descricao>
+			<descricao></descricao>
 			<valorASerIncrementado>200</valorASerIncrementado>
 		</PontoDePartida>
 		
@@ -35,7 +35,7 @@
 		<LugarEspecial>
 			<nome>Patrocinador</nome>
 			<descricao>Você ganhou um novo patrocinador!
-			Seu saldo será incrementado em $100</descricao>
+			Seu saldo será incrementado em R$100</descricao>
 			<listaDeAcoes>
 					<AcaoIncrementaSaldo>
 						<valorASerModificado>100</valorASerModificado>
@@ -104,7 +104,7 @@
 			<nome>Comitê Disciplinar</nome>
 			<descricao>
 				Você foi punido por suas ultimas ações, levando uma multa.
-				Perdendo $400!
+				Perdendo R$400!
 			</descricao>
 			<listaDeAcoes>
 					<AcaoDecrementaSaldo>
@@ -153,7 +153,7 @@
 		<LugarEspecial>
 			<nome>Escalação Irregular</nome>
 			<descricao>Um dos seus times estava com a estalação irregular.
-						Volte duas casas!
+						Volte 2 casas!
 			</descricao>
 			<listaDeAcoes>
 					<AcaoVoltaPosicao>
