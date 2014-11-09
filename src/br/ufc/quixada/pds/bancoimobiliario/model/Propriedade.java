@@ -9,7 +9,7 @@ import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoExceptio
 
 public abstract class Propriedade extends Logradouro{
 
-	final private double valorDaPropriedade;
+	private double valorDaPropriedade;
 	private boolean adquirida;
 	private Jogador donoDaPropriedade;
 	

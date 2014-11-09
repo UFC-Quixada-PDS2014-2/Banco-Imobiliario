@@ -37,7 +37,6 @@ public class Imovel extends Propriedade {
 	@Override
 	public void passeiPorAqui(Jogador jogador) {
 		// TODO Auto-generated method stub
-		
 	}
 	
 	@Override

@@ -4,7 +4,7 @@
 		
 		<PontoDePartida>
 			<nome>Apito Inicial</nome>
-			<descricao>hjsdkhfkjdhfdksjhfsjkdhf</descricao>
+			<descricao>Ganhou $200 </descricao>
 			<valorASerIncrementado>200</valorASerIncrementado>
 		</PontoDePartida>
 		
@@ -34,6 +34,8 @@
 		
 		<LugarEspecial>
 			<nome>Patrocinador</nome>
+			<descricao>Você ganhou um novo patrocinador!
+			Seu saldo será incrementado em $100</descricao>
 			<listaDeAcoes>
 					<AcaoIncrementaSaldo>
 						<valorASerModificado>100</valorASerModificado>
@@ -51,8 +53,8 @@
 		<LugarEspecial>
 			<nome>Torcida</nome>
 			<descricao>
-			Sua torcida esta animanda.
-			Avançe 3 posições.
+			Sua torcida está empolgada!
+			Com o apoio da torcida avance 3 posições.
 			</descricao>
 			<listaDeAcoes>
 					<AcaoAvancaPosicao>
@@ -101,7 +103,8 @@
 		<LugarEspecial>
 			<nome>Comitê Disciplinar</nome>
 			<descricao>
-				Saldo decrementado 400
+				Você foi punido por suas ultimas ações, levando uma multa.
+				Perdendo $400!
 			</descricao>
 			<listaDeAcoes>
 					<AcaoDecrementaSaldo>

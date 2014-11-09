@@ -40,7 +40,6 @@ public class Empresa extends Propriedade {
 	@Override
 	public void passeiPorAqui(Jogador jogador) {
 		// TODO Auto-generated method stub
-		
 	}
 	
 	@Override
@@ -70,7 +69,5 @@ public class Empresa extends Propriedade {
 			JogadorComSaldoNegativoException, ValorInvalidoException {
 		
 		super.comprarPropriedade(compradorDoLogradouro);
-		
 	}
-	
 }

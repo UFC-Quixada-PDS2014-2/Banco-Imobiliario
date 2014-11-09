@@ -17,7 +17,7 @@ public class PontoDePartida extends Logradouro {
 
 	@Override
 	public void passeiPorAqui(Jogador jogador) throws ValorInvalidoException {
-			jogador.acrescentarSaldo(this.valorASerIncrementado);
+		jogador.acrescentarSaldo(this.valorASerIncrementado);
 	}
 	
 	@Override
@@ -26,8 +26,7 @@ public class PontoDePartida extends Logradouro {
 	}
 	@Override
 	public void comprarLogradouro(Jogador compradorDoLogradouro) {
-		//TODO : 
+		 //TODO : 
 	}
-
 }
 

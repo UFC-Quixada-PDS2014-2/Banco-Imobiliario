@@ -62,7 +62,6 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 			throw new GameOverJogadorException();
 
 		} catch (ValorInvalidoException e) {
-
 			throw new ErroArquivoConfiguracoesException();
 		}
 
@@ -116,7 +115,6 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 				return tipoDeAcao;
 			}
 		}
-
 	}
 
 	@Override
@@ -161,7 +159,6 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 		} catch (SaldoJogadorInsuficienteException e) {
 			throw new SaldoJogadorInsuficienteException();
 		}
-
 	}
 
 	@Override
@@ -169,5 +166,4 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 			throws ValorInvalidoException {
 		return this.tabuleiro.getLogradouroPelaPosicao(posicao);
 	}
-
 }

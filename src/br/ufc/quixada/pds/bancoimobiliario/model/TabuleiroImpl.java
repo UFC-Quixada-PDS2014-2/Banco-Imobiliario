@@ -75,5 +75,4 @@ public class TabuleiroImpl implements Tabuleiro{
 		
 		return this.logradouros.get(posicao);
 	}
-
 }
