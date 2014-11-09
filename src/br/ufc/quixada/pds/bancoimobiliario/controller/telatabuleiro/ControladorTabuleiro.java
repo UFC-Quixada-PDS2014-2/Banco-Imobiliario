@@ -13,6 +13,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
+import br.ufc.quixada.pds.bancoimobiliario.controller.RestartGame;
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
 import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
@@ -172,7 +173,9 @@ public class ControladorTabuleiro implements Observer{
 			} catch (GameOverJogadorException e1) {
 				Jogador jogadorVencedor = bancoImobiliario.detectarVencedor();
 				JOptionPane.showMessageDialog(guiTabuleiro, jogadorVencedor.getNome() + " ganhou!!!");
-				//Iniciar novo jogo
+				
+				reiniciarJogo();
+				
 			} catch (ErroArquivoConfiguracoesException e1) {
 				JOptionPane.showMessageDialog(guiTabuleiro, "Erro no arquivo de configuração do jogo!");
 				System.exit(1);
@@ -184,7 +187,8 @@ public class ControladorTabuleiro implements Observer{
 			} catch (SaldoJogadorInsuficienteException e1) {
 				JOptionPane.showMessageDialog(guiTabuleiro, "Você não possui dinheiro suficiente!");
 			}catch (JogadorInvalidoException e1) {
-				//TODO
+				// Erro de jogador nulo
+				JOptionPane.showMessageDialog(guiTabuleiro, "Ops, ocorreu um erro na exercução do jogo!");
 				e1.printStackTrace();
 			} 
 			
@@ -202,6 +206,17 @@ public class ControladorTabuleiro implements Observer{
 	public void update(Observable o, Object mensagem) {
 		atualizarPinoJogador(jogadorDaVez);
 		JOptionPane.showMessageDialog(guiTabuleiro, mensagem);
+	}
+
+	public void reiniciarJogo(){
+		int opcao = JOptionPane.showConfirmDialog(guiTabuleiro, "Você reinciar a partida ", null ,JOptionPane.YES_NO_OPTION);
+		
+		if(opcao == JOptionPane.OK_OPTION){
+			RestartGame restartGame = new RestartGame();
+			restartGame.reiniciarJogo();
+		}else{
+			guiTabuleiro.dispose();
+		}
 	}
 	
 }

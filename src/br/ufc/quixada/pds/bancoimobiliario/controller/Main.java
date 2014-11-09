@@ -1,4 +1,4 @@
-package br.ufc.quixada.pds.bancoimobiliario.main;
+package br.ufc.quixada.pds.bancoimobiliario.controller;
 
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
@@ -17,6 +17,11 @@ import com.google.inject.Injector;
 public class Main {
 
 	public static void main(String[] args) {
+		Main jogo = new Main();
+		jogo.iniciarJogo();
+	}
+	
+	public void iniciarJogo(){
 		try {
 
 			/* Iniciando objetos de domínio */
