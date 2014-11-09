@@ -90,7 +90,7 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 			
 			//notificar mudança de posição
 			setChanged();
-			notifyObservers(tipoDeAcao);
+			notifyObservers(logradouroParada);
 			
 			if (tipoDeAcao.equals(AcaoLogradouroEnum.AVANCA_POSICAO)
 					|| tipoDeAcao.equals(AcaoLogradouroEnum.VOLTA_POSICAO)) {
@@ -106,7 +106,7 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 
 			//notificar mudança de posição
 			setChanged();
-			notifyObservers(tipoDeAcao);
+			notifyObservers(logradouroParada);
 			
 			if (tipoDeAcao.equals(AcaoLogradouroEnum.AVANCA_POSICAO)
 					|| tipoDeAcao.equals(AcaoLogradouroEnum.VOLTA_POSICAO)) {

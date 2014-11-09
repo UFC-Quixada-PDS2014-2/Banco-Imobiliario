@@ -199,9 +199,9 @@ public class ControladorTabuleiro implements Observer{
 	}
 
 	@Override
-	public void update(Observable o, Object arg) {
+	public void update(Observable o, Object mensagem) {
 		atualizarPinoJogador(jogadorDaVez);
-		JOptionPane.showMessageDialog(guiTabuleiro, arg);
+		JOptionPane.showMessageDialog(guiTabuleiro, mensagem);
 	}
 	
 }
