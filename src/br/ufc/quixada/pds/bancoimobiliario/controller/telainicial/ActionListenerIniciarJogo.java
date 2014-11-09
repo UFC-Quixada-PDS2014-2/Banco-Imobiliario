@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroDirector;
+import br.ufc.quixada.pds.bancoimobiliario.controller.ControllerRestartGame;
 import br.ufc.quixada.pds.bancoimobiliario.controller.telatabuleiro.ControladorTabuleiro;
 import br.ufc.quixada.pds.bancoimobiliario.guice.TabuleiroModule;
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
@@ -33,14 +34,16 @@ public class ActionListenerIniciarJogo implements ActionListener{
 	private List<IJogador> iJogadores;
 	private List<Jogador> jogadores;
 	private List<JButton> tecnicosDosJogadores;
+	private ControllerRestartGame restartGame;
 	
-	public ActionListenerIniciarJogo(JButton botaoInicial, List<JTextField> nomeJogadores, GUITelaInicial guiTelaInicial, List<JButton> tecnicosDosJogadores){
+	public ActionListenerIniciarJogo(JButton botaoInicial, List<JTextField> nomeJogadores, GUITelaInicial guiTelaInicial, List<JButton> tecnicosDosJogadores, ControllerRestartGame restartGame){
 		this.botaoInicial = botaoInicial;
 		this.nomeJogadores = nomeJogadores;
 		this.guiTelaInicial = guiTelaInicial;
 		this.iJogadores = new ArrayList<IJogador>();
 		this.jogadores = new ArrayList<Jogador>();
 		this.tecnicosDosJogadores = tecnicosDosJogadores;
+		this.restartGame = restartGame;
 	}
 	
 	private boolean tecnicosEscolhidos(){
@@ -88,7 +91,7 @@ public class ActionListenerIniciarJogo implements ActionListener{
 				Tabuleiro tabuleiro = tabuleiroDirector.getTabuleiro();
 				
 				BancoImobiliario bancoImobiliario = new BancoImobiliarioImpl(jogadores, tabuleiro);
-				ControladorTabuleiro controladorTabuleiro = new ControladorTabuleiro(bancoImobiliario, iJogadores.get(0), iJogadores.get(1));
+				ControladorTabuleiro controladorTabuleiro = new ControladorTabuleiro(bancoImobiliario, iJogadores.get(0), iJogadores.get(1), restartGame);
 				controladorTabuleiro.inicializar();
 				
 				this.guiTelaInicial.pararMusica();

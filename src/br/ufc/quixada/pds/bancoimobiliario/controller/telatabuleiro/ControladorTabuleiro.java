@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
-import br.ufc.quixada.pds.bancoimobiliario.controller.RestartGame;
+import br.ufc.quixada.pds.bancoimobiliario.controller.ControllerRestartGame;
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
 import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
@@ -37,13 +37,15 @@ public class ControladorTabuleiro implements Observer{
 	private IJogador iJogador1;
 	private IJogador iJogador2;
 	private IJogador jogadorDaVez;
+	private ControllerRestartGame restartGame;
 	
-	public ControladorTabuleiro(BancoImobiliario bancoImobiliario, IJogador iJogador1, IJogador iJogador2){
+	public ControladorTabuleiro(BancoImobiliario bancoImobiliario, IJogador iJogador1, IJogador iJogador2, ControllerRestartGame restartGame){
 		this.bancoImobiliario = bancoImobiliario;
 		this.bancoImobiliario.addObserver(this);
 		this.iJogador1 = iJogador1;
 		this.iJogador2 = iJogador2;
 		this.guiTabuleiro = new GUITabuleiro(bancoImobiliario, iJogador1, iJogador2);
+		this.restartGame = restartGame;
 	}
 	
 	public void inicializar(){
@@ -212,7 +214,6 @@ public class ControladorTabuleiro implements Observer{
 		int opcao = JOptionPane.showConfirmDialog(guiTabuleiro, "Você reinciar a partida ", null ,JOptionPane.YES_NO_OPTION);
 		
 		if(opcao == JOptionPane.OK_OPTION){
-			RestartGame restartGame = new RestartGame();
 			restartGame.reiniciarJogo();
 		}else{
 			guiTabuleiro.dispose();

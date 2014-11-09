@@ -5,13 +5,16 @@ import java.util.List;
 
 import javax.swing.JButton;
 
+import br.ufc.quixada.pds.bancoimobiliario.controller.ControllerRestartGame;
 import br.ufc.quixada.pds.bancoimobiliario.view.GUITelaInicial;
 
 public class ControladorTelaInicial {
 	private GUITelaInicial guiTelaInicial;
+	private ControllerRestartGame restartGame;
 	
-	public ControladorTelaInicial(){
+	public ControladorTelaInicial(ControllerRestartGame restartGame){
 		this.guiTelaInicial = new GUITelaInicial();
+		this.restartGame = restartGame;
 	}
 	
 	public void inicializar(){
@@ -31,8 +34,10 @@ public class ControladorTelaInicial {
 	
 	private void adicionarEventoDeIniciarPartida(){
 		JButton botaoInicial = this.guiTelaInicial.getBotaoInicial();
+		
+		
 		botaoInicial.addActionListener(new ActionListenerIniciarJogo(botaoInicial, this.guiTelaInicial.getTextFielNomeJogadores()
-				, this.guiTelaInicial, this.guiTelaInicial.getTecnicosDosJogadores()));
+				, this.guiTelaInicial, this.guiTelaInicial.getTecnicosDosJogadores(),restartGame) );
 	}
 	
 	private void adicionarEventoAlterar(){

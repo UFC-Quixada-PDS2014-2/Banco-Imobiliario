@@ -1,9 +1,13 @@
-package br.ufc.quixada.pds.bancoimobiliario.controller;
+package br.ufc.quixada.pds.bancoimobiliario.main;
+
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroDirector;
+import br.ufc.quixada.pds.bancoimobiliario.controller.ControllerRestartGame;
 import br.ufc.quixada.pds.bancoimobiliario.controller.telainicial.ControladorTelaInicial;
 import br.ufc.quixada.pds.bancoimobiliario.guice.TabuleiroModule;
 import br.ufc.quixada.pds.bancoimobiliario.model.Tabuleiro;
@@ -14,7 +18,7 @@ import br.ufc.quixada.pds.bancoimobiliario.view.GUITelaInicial;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
-public class Main {
+public class Main implements Observer{
 
 	public static void main(String[] args) {
 		Main jogo = new Main();
@@ -65,7 +69,10 @@ public class Main {
 						java.util.logging.Level.SEVERE, null, ex);
 			}
 
-			ControladorTelaInicial controladorTelaInicial = new ControladorTelaInicial();
+			
+			ControllerRestartGame restartGame = new ControllerRestartGame();
+			restartGame.addObserver(this);
+			ControladorTelaInicial controladorTelaInicial = new ControladorTelaInicial(restartGame);
 			controladorTelaInicial.inicializar();
 			
 		} catch (ErroArquivoConfiguracoesException e) {
@@ -75,6 +82,17 @@ public class Main {
 			e2.printStackTrace();
 			JOptionPane.showMessageDialog(null, "Erro ao carregar jogo :(");
 		} 
+	}
+
+	@Override
+	public void update(Observable arg0, Object arg1) {
+
+		Runtime runtime = Runtime.getRuntime();
+		runtime.runFinalization();
+		runtime.gc();
+		
+		//Reinicio do jogo
+		iniciarJogo();
 	}
 
 }
