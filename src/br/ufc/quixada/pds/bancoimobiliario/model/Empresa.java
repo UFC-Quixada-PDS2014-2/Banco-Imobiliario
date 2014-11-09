@@ -48,7 +48,7 @@ public class Empresa extends Propriedade {
 		
 		String nome = "Nome: " + this.getNome() + "\n";
 		String valorDaPropriedade = "Preço: R$" + String.format("%.2f", this.getValorDaPropriedade()) + "\n";
-		String valorDaTaxa = "Taxa de Uso: R$" + String.format("%.2f", this.valorDaTaxa) + "\n";
+		String valorDaTaxa = "Taxa de Uso: R$" + String.format("%.2f", this.valorDaTaxa) + " x Valor dos Dados\n";
 		String dono = "Dono: ";
 		
 		if(this.propriedadeEstaVendida()){
