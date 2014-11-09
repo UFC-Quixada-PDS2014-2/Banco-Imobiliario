@@ -45,7 +45,7 @@ public class Empresa extends Propriedade {
 	
 	@Override
 	public String toString() {
-		String mensagemFinal ="Empresa\n";
+		String mensagemFinal ="\nEmpresa\n";
 		
 		String nome = "Nome: " + this.getNome() + "\n";
 		String valorDaPropriedade = "Preço: R$" + String.format("%.2f", this.getValorDaPropriedade()) + "\n";

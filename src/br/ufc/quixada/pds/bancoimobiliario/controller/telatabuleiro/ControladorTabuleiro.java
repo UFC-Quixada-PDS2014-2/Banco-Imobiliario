@@ -128,7 +128,7 @@ public class ControladorTabuleiro implements Observer{
 			
 			ImageIcon imageIcon = new ImageIcon(pathImagem);
 			casa.setIcon(imageIcon);
-			
+			casa.setText("");
 			casa.addActionListener(new ActionListenerClickCasa(iLogradouro.getLogradouro()));
 			casa.addMouseListener(new ActionHoverCasaListener(iLogradouro));
 			
@@ -152,7 +152,7 @@ public class ControladorTabuleiro implements Observer{
 
 				if(acaoLogradouro == AcaoLogradouroEnum.DISPONIVEL_PARA_COMPRA){
 
-					int opcaoSelecionada = JOptionPane.showConfirmDialog(guiTabuleiro, "Você deseja comprar essa propriedade? :\n " + logradouroParada.toString());
+					int opcaoSelecionada = JOptionPane.showConfirmDialog(guiTabuleiro, "Você deseja comprar essa propriedade? \n " + logradouroParada.toString(), null ,JOptionPane.YES_NO_OPTION);
 					
 					if(opcaoSelecionada == JOptionPane.OK_OPTION){
 							bancoImobiliario.comprarPropriedade(jogadorDaVez.getJogador(), logradouroParada.getLogradouro());

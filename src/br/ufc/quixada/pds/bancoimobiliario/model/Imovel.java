@@ -42,7 +42,7 @@ public class Imovel extends Propriedade {
 	
 	@Override
 	public String toString() {
-		String mensagemFinal = "Imóvel\n";
+		String mensagemFinal = "\nImóvel\n";
 		
 		String nome = "Nome: " + this.getNome() + "\n";
 		String valorDaPropriedade = "Preço: R$" + String.format("%.2f", this.getValorDaPropriedade()) + "\n";
