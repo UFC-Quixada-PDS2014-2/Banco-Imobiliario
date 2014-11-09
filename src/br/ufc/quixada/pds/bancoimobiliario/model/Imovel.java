@@ -58,9 +58,4 @@ public class Imovel extends Propriedade {
 		
 		return mensagemFinal;
 	}
-
-	@Override
-	public void comprarLogradouro(Jogador compradorDoLogradouro) throws SaldoJogadorInsuficienteException, LogradouroIndisponivelCompraException, JogadorInvalidoException, JogadorComSaldoNegativoException, ValorInvalidoException {
-		super.comprarPropriedade(compradorDoLogradouro);
-	}
 }

@@ -156,7 +156,7 @@ public class ControladorTabuleiro implements Observer{
 
 			try {
 				AcaoLogradouroEnum acaoLogradouro = bancoImobiliario.realizarTurnoJogador(valorDados);
-				
+							
 				//A movimentação dos dados é feita pelo update do observer
 				// Essa movimentação é proveniente da ação da casa
 				ILogradouro logradouroParada = buscarILogradouro(jogadorDaVez.getPosicao());
@@ -207,6 +207,7 @@ public class ControladorTabuleiro implements Observer{
 	@Override
 	public void update(Observable o, Object mensagem) {
 		atualizarPinoJogador(jogadorDaVez);
+		guiTabuleiro.atualizarPortfolios();	
 		JOptionPane.showMessageDialog(guiTabuleiro, mensagem);
 	}
 
@@ -214,6 +215,7 @@ public class ControladorTabuleiro implements Observer{
 		int opcao = JOptionPane.showConfirmDialog(guiTabuleiro, "Você reinciar a partida ", null ,JOptionPane.YES_NO_OPTION);
 		
 		if(opcao == JOptionPane.OK_OPTION){
+			guiTabuleiro.dispose();
 			restartGame.reiniciarJogo();
 		}else{
 			guiTabuleiro.dispose();
