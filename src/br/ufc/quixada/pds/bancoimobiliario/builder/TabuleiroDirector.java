@@ -28,7 +28,7 @@ public class TabuleiroDirector {
 		try {
 			this.readerLogradouros.carregarReader();
 			
-			PontoDePartida pontoDePartida = readerLogradouros.pegarPontoDePartida();
+			PontoDePartida pontoDePartida = readerLogradouros.getPontoDePartida();
 			List<Logradouro> listaLogradouros = readerLogradouros.lerLogradouros();
 		
 		
@@ -45,17 +45,13 @@ public class TabuleiroDirector {
 			}
 			
 		} catch (MontadorTabuleiroException e) {
-			e.printStackTrace();
 			throw new ErroArquivoConfiguracoesException();
 		} catch (ErroNaLeituraDoXMLException e) {
-			e.printStackTrace();
 			throw new ErroArquivoConfiguracoesException();
 		}
-		
 	}
 	
 	public Tabuleiro getTabuleiro() throws MontadorTabuleiroException{
 		return builderTabuleiro.getTabuleiro();
 	}
-	
 }

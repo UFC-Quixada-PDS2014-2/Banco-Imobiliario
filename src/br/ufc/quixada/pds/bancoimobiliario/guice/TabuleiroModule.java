@@ -15,13 +15,7 @@ public class TabuleiroModule extends AbstractModule{
 	
 	@Override
 	protected void configure() {
-		
 		bind(TabuleiroBuilder.class).to(TabuleiroBuilderConcrete.class);
 		bind(ReaderLogradouros.class).to(ConfiguracaoCasasTabuleiroComXStream.class);
-
-		//TODO Assisted Inject
-		//install(new FactoryModuleBuilder().implement(Tabuleiro.class, TabuleiroImpl.class).build(TabuleiroDirector.class));
-		
 	}
-
 }

@@ -11,23 +11,23 @@ import br.ufc.quixada.pds.bancoimobiliario.model.exception.MontadorTabuleiroExce
 public class TabuleiroBuilderConcrete implements TabuleiroBuilder{
 
 	private TabuleiroImpl tabuleiroImpl;
-	private boolean first,last;
-	private int qtdCasas;
+	private boolean primeiro,ultimo;
+	private int quantidadeDeCasas;
 	
 	
 	public TabuleiroBuilderConcrete(){
 		this.tabuleiroImpl = new TabuleiroImpl();
-		this.first = false;
-		this.last = false;
-		this.qtdCasas = 0;
+		this.primeiro = false;
+		this.ultimo = false;
+		this.quantidadeDeCasas = 0;
 	}
 	
 	@Override
 	public void montarPontoPartida(PontoDePartida pontoDePartida) throws MontadorTabuleiroException {
-		if(first == false){
+		if(primeiro == false){
 			tabuleiroImpl.addLogradouro(pontoDePartida);
-			first = true;
-			this.qtdCasas++;
+			primeiro = true;
+			this.quantidadeDeCasas++;
 		}else{
 			throw new MontadorTabuleiroException("Ponto de partida já adicionado");
 		}
@@ -35,13 +35,13 @@ public class TabuleiroBuilderConcrete implements TabuleiroBuilder{
 
 	@Override
 	public void montarCasaIntermediaria(Logradouro logradouro) throws MontadorTabuleiroException {
-		int casasRestantes = ConfiguracoesEnum.NUMERO_CASAS.getValor() - qtdCasas;
-		if(first && (casasRestantes > 1)){
+		int casasRestantes = ConfiguracoesEnum.NUMERO_CASAS.getValor() - quantidadeDeCasas;
+		if(primeiro && (casasRestantes > 1)){
 			tabuleiroImpl.addLogradouro(logradouro);
-			this.qtdCasas++;
+			this.quantidadeDeCasas++;
 		}else{
 			String mensagem = "";
-			if(first == false){
+			if(primeiro == false){
 				mensagem = "Necessário adicionar ponto inicial";
 			}else{
 				mensagem = "Já foram adicionadas muitas casas, adicione a última";
@@ -52,24 +52,22 @@ public class TabuleiroBuilderConcrete implements TabuleiroBuilder{
 
 	@Override
 	public void montarUltimaCasa(Logradouro logradouro) throws MontadorTabuleiroException {
-		int casasRestantes = ConfiguracoesEnum.NUMERO_CASAS.getValor() - qtdCasas;
+		int casasRestantes = ConfiguracoesEnum.NUMERO_CASAS.getValor() - quantidadeDeCasas;
 		if(casasRestantes == 1){
 			tabuleiroImpl.addLogradouro(logradouro);
-			this.qtdCasas++;
-			last = true;
+			this.quantidadeDeCasas++;
+			ultimo = true;
 		}else{
 			throw new MontadorTabuleiroException("Faltam adicionar " + (casasRestantes - 1) +" casa(s)");
 		}
-		
 	}
 	
 	@Override
 	public Tabuleiro getTabuleiro() throws MontadorTabuleiroException{
-		if(first && last){
+		if(primeiro && ultimo){
 			return this.tabuleiroImpl;
 		}else{
 			throw new MontadorTabuleiroException("Tabuleiro não montado");
 		}
 	}
-
 }
