@@ -47,8 +47,6 @@ public class Empresa extends Propriedade {
 		if (jogadorDaVez.equals(this.getDonoDaPropriedade())) {
 
 			mensagem = "Essa empresa é sua!";
-
-			return mensagem;
 			
 		} else if (this.propriedadeEstaVendida()) {
 
@@ -58,17 +56,19 @@ public class Empresa extends Propriedade {
 			mensagem = "Essa empresa possui dono\n" + 
 							  "Você pagou R$" + String.format("%.2f", valorTotal )+ " para o jogador: " + 
 							  this.getDonoDaPropriedade().getNome();
-			return mensagem;
+
+		}else{
+			mensagem = "Empresa disponível para compra";
 		}
 	
-		mensagem = "Empresa disponível para compra";
+		
 
 		return mensagem;
 	}
 	
 	@Override
 	public void passeiPorAqui(Jogador jogador) {
-		// TODO Auto-generated method stub
+
 	}
 
 	@Override
@@ -97,5 +97,4 @@ public class Empresa extends Propriedade {
 
 		return mensagemFinal;
 	}
-
 }

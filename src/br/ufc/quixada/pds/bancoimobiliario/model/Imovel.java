@@ -27,18 +27,10 @@ public class Imovel extends Propriedade {
 			
 			jogador.decrementarSaldo(valorDoAluguel);
 			donoDaPropriedade.acrescentarSaldo(valorDoAluguel);
-		
-			String mensagem = "Imóvel possui dono\n" + 
-							  "Você pagou R$ " + 
-							  String.format("%.2f", this.valorDoAluguel)
-							  + " ao jogador " + 
-							  this.getDonoDaPropriedade().getNome();
 			
 			return AcaoLogradouroEnum.PAGAR_ALUGUEL;
 		}
 		
-		String mensagem = "Disponível para compra";
-
 		return AcaoLogradouroEnum.DISPONIVEL_PARA_COMPRA;
 	}
 
@@ -52,8 +44,6 @@ public class Imovel extends Propriedade {
 
 			mensagem = "Esse imóvel é seu!";
 
-			return mensagem;
-			
 		} else if (this.propriedadeEstaVendida()) {
 			mensagem = "Imóvel possui dono\n" + 
 							  "Você pagou R$ " + 
@@ -61,18 +51,18 @@ public class Imovel extends Propriedade {
 							  + " para o jogador: " + 
 							  this.getDonoDaPropriedade().getNome();
 			
-			return mensagem;
+		} else{
+			
+			mensagem = "Imóvel disponível para compra";
 		}
-	
-		mensagem = "Imóvel disponível para compra";
-
+		
 		return mensagem;
 	}
 
 	
 	@Override
 	public void passeiPorAqui(Jogador jogador) {
-		// TODO Auto-generated method stub
+
 	}
 	
 	@Override
@@ -99,5 +89,4 @@ public class Imovel extends Propriedade {
 	public double getTaxa() {
 		return this.valorDoAluguel;
 	}
-	
 }

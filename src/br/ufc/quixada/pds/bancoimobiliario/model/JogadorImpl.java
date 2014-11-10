@@ -101,8 +101,6 @@ public class JogadorImpl implements Jogador{
 		if(quantidadeDePosicoes <= 0)
 			throw new ValorInvalidoException();
 		
-		//TODO rever logica 
-		
 		quantidadeDePosicoes = quantidadeDePosicoes % ConfiguracoesEnum.NUMERO_CASAS.getValor();
 		
 		int novaPosicao = this.posicao - quantidadeDePosicoes;
