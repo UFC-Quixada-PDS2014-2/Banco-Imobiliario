@@ -56,7 +56,7 @@ public class Empresa extends Propriedade {
 					* jogadorDaVez.getValorDoUltimoDeslocamento();
 
 			mensagem = "Essa empresa possui dono\n" + 
-							  "Você pagou R$" + String.format("%.2f", valorTotal )+ " para o " + 
+							  "Você pagou R$" + String.format("%.2f", valorTotal )+ " para o jogador: " + 
 							  this.getDonoDaPropriedade().getNome();
 			return mensagem;
 		}
