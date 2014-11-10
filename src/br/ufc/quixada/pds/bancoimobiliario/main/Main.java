@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroDirector;
-import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroDirectorImpl;
+import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroDirector;
 import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorRestartGame;
 import br.ufc.quixada.pds.bancoimobiliario.controller.telainicial.ControladorTelaInicial;
 import br.ufc.quixada.pds.bancoimobiliario.guice.TabuleiroModule;
@@ -23,24 +23,18 @@ import com.google.inject.Injector;
 public class Main implements Observer{
 
 	public static void main(String[] args) {
-		Injector injectorBancoImobiliario = Guice.createInjector(new TabuleiroModule());
-		Main jogo = injectorBancoImobiliario
-				.getInstance(Main.class);
+		Main jogo = new Main();
 		jogo.iniciarJogo();
 	}
 	
-	private TabuleiroDirector tabuleiroDirector;
-	
-	@Inject
-	public Main(TabuleiroDirector tabuleiroDirector){
-		this.tabuleiroDirector = tabuleiroDirector;
-	}
-	 
 	public void iniciarJogo(){
 		
 		try {
 
 			/* Iniciando objetos de domínio */
+			Injector injectorBancoImobiliario = Guice.createInjector(new TabuleiroModule());
+			TabuleiroDirector tabuleiroDirector = injectorBancoImobiliario
+					.getInstance(TabuleiroDirector.class);
 			tabuleiroDirector.construirTabuleiro();
 			Tabuleiro tabuleiro = tabuleiroDirector.getTabuleiro();
 
@@ -85,10 +79,8 @@ public class Main implements Observer{
 			controladorTelaInicial.inicializar();
 			
 		} catch (ErroArquivoConfiguracoesException e) {
-			e.printStackTrace();
 			JOptionPane.showMessageDialog(null, "Erro ao carregar jogo :(");
 		} catch (MontadorTabuleiroException e2) {
-			e2.printStackTrace();
 			JOptionPane.showMessageDialog(null, "Erro ao carregar jogo :(");
 		} 
 	}
