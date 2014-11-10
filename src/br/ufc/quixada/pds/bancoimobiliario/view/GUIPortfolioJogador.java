@@ -61,7 +61,7 @@ public class GUIPortfolioJogador extends JFrame{
 			
 		}
 
-		String[] colunas = {"Nome", "Valor", "Valor da Taxa"};
+		String[] colunas = {"Nome", "Valor", "Valor de Uso"};
 		
 		JPanel panel = new JPanel();
 		panel.setLayout(new BorderLayout());
