@@ -32,4 +32,15 @@ public class LugarEspecial extends Logradouro {
 		mensagemFinal += super.toString();
 		return mensagemFinal;
 	}
+
+	@Override
+	public boolean isDisponivelParaCompra() {
+		return false;
+	}
+
+	@Override
+	public void comprarLogradouro(Jogador compradorDoLogradouro) {
+		// TODO Auto-generated method stub
+		
+	}
 }

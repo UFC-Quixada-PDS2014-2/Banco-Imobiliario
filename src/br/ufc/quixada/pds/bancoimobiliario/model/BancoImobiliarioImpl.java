@@ -20,7 +20,6 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 
 	private Jogador jogadorDaVez;
 	private Tabuleiro tabuleiro;
-	private GerenciadorDeCompra gerenciadorDeCompra;
 
 	public BancoImobiliarioImpl(List<Jogador> jogadores, Tabuleiro tabuleiro) {
 		this.jogadoresAtivos = jogadores;
@@ -148,7 +147,11 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 			SaldoJogadorInsuficienteException {
 
 		try {
-			gerenciadorDeCompra.comprarPropriedade(jogador, logradouro);
+			if (logradouro.isDisponivelParaCompra()) {
+				logradouro.comprarLogradouro(jogador);
+			} else {
+				throw new LogradouroIndisponivelCompraException();
+			}
 		} catch (JogadorComSaldoNegativoException e) {
 			throw new GameOverJogadorException();
 		} catch (ValorInvalidoException e) {

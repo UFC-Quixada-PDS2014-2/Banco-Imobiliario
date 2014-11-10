@@ -48,7 +48,7 @@ public class Empresa extends Propriedade {
 		
 		String nome = "Nome: " + this.getNome() + "\n";
 		String valorDaPropriedade = "Preço: R$" + String.format("%.2f", this.getValorDaPropriedade()) + "\n";
-		String valorDaTaxa = "Taxa de Uso: R$" + String.format("%.2f", this.valorDaTaxa) + " x Valor dos Dados\n";
+		String valorDaTaxa = "Taxa de Uso: R$" + String.format("%.2f", this.valorDaTaxa) + "\n";
 		String dono = "Dono: ";
 		
 		if(this.propriedadeEstaVendida()){
@@ -60,5 +60,14 @@ public class Empresa extends Propriedade {
 		mensagemFinal += nome + valorDaPropriedade + valorDaTaxa + dono;
 		
 		return mensagemFinal;
+	}
+
+	@Override
+	public void comprarLogradouro(Jogador compradorDoLogradouro)
+			throws SaldoJogadorInsuficienteException,
+			LogradouroIndisponivelCompraException, JogadorInvalidoException,
+			JogadorComSaldoNegativoException, ValorInvalidoException {
+		
+		super.comprarPropriedade(compradorDoLogradouro);
 	}
 }

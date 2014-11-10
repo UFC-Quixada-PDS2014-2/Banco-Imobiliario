@@ -24,7 +24,16 @@ public abstract class Propriedade extends Logradouro{
 	
 	public double getValorDaPropriedade(){
 		return this.valorDaPropriedade;
-	}	
+	}
+	
+	@Override
+	public boolean isDisponivelParaCompra() {
+		if(propriedadeEstaVendida()){
+			return false;
+		} else{
+			return true;
+		}
+	}
 	
 	public void comprarPropriedade(Jogador compradorDaPropriedade) throws SaldoJogadorInsuficienteException, LogradouroIndisponivelCompraException, JogadorInvalidoException, JogadorComSaldoNegativoException, ValorInvalidoException{
 		

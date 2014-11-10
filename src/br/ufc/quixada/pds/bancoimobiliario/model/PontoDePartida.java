@@ -19,5 +19,14 @@ public class PontoDePartida extends Logradouro {
 	public void passeiPorAqui(Jogador jogador) throws ValorInvalidoException {
 		jogador.acrescentarSaldo(this.valorASerIncrementado);
 	}
+	
+	@Override
+	public boolean isDisponivelParaCompra() {
+		return false;
+	}
+	@Override
+	public void comprarLogradouro(Jogador compradorDoLogradouro) {
+		 //TODO : 
+	}
 }
 
