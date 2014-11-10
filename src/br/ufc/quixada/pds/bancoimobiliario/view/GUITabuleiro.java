@@ -2,7 +2,6 @@ package br.ufc.quixada.pds.bancoimobiliario.view;
 
 import java.awt.Color;
 import java.awt.Cursor;
-import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -24,9 +23,6 @@ import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
 import br.ufc.quixada.pds.bancoimobiliario.view.enumeration.CaminhoImagensEnum;
 import br.ufc.quixada.pds.bancoimobiliario.view.enumeration.DeslocamentoPinoEnum;
 import br.ufc.quixada.pds.bancoimobiliario.view.exception.LogradourosInsuficientesException;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class GUITabuleiro extends JFrame {
 

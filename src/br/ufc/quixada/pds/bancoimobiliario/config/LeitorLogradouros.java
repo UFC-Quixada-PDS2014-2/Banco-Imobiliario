@@ -5,7 +5,7 @@ import java.util.List;
 import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
 import br.ufc.quixada.pds.bancoimobiliario.model.PontoDePartida;
 
-public interface ReaderLogradouros {
+public interface LeitorLogradouros {
 	public PontoDePartida getPontoDePartida();
 	public List<Logradouro> lerLogradouros();
 	public void carregarReader() throws ErroNaLeituraDoXMLException ;

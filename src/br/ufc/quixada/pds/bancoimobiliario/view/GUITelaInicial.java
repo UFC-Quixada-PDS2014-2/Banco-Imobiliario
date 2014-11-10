@@ -1,21 +1,19 @@
 package br.ufc.quixada.pds.bancoimobiliario.view;
 
+import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-
-import java.awt.Color;
 import java.net.URL;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 import br.ufc.quixada.pds.bancoimobiliario.view.enumeration.CaminhoImagensEnum;
 import br.ufc.quixada.pds.bancoimobiliario.view.sons.GerenciadorDeAudio;

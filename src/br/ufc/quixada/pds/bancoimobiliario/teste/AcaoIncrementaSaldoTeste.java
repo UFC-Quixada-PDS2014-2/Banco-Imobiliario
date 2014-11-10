@@ -1,13 +1,12 @@
 package br.ufc.quixada.pds.bancoimobiliario.teste;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
 import br.ufc.quixada.pds.bancoimobiliario.model.JogadorImpl;
-import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorComSaldoNegativoException;
-import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
 import br.ufc.quixada.pds.bancoimobiliario.model.lugarespecial.AcaoIncrementaSaldo;
 
 public class AcaoIncrementaSaldoTeste {

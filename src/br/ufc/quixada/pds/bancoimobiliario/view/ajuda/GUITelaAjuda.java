@@ -1,11 +1,5 @@
 package br.ufc.quixada.pds.bancoimobiliario.view.ajuda;
 
-import javax.inject.Inject;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -13,19 +7,22 @@ import java.awt.Insets;
 import java.io.IOException;
 import java.net.URL;
 
+import javax.inject.Inject;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import br.ufc.quixada.pds.bancoimobiliario.config.ReaderArquivo;
-import br.ufc.quixada.pds.bancoimobiliario.config.ReaderArquivoImpl;
+import br.ufc.quixada.pds.bancoimobiliario.config.LeitorArquivo;
 import br.ufc.quixada.pds.bancoimobiliario.view.enumeration.CaminhoImagensEnum;
 
 public class GUITelaAjuda extends JFrame {
 
-	private ReaderArquivo leitorArquivo;
+	private LeitorArquivo leitorArquivo;
 	
 	@Inject
-	public GUITelaAjuda(ReaderArquivo leitorArquivo) {
+	public GUITelaAjuda(LeitorArquivo leitorArquivo) {
 		this.leitorArquivo = leitorArquivo;
 	}
 

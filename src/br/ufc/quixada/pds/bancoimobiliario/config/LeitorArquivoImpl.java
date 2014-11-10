@@ -7,7 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class ReaderArquivoImpl implements ReaderArquivo{
+public class LeitorArquivoImpl implements LeitorArquivo{
 	
 	public String lerArquivo(String caminho) throws IOException{
 		

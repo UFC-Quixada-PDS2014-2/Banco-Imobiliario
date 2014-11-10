@@ -10,7 +10,6 @@ import java.awt.Component;
 import java.awt.Rectangle;
 
 import javax.swing.JButton;
-import javax.swing.JPanel;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
 

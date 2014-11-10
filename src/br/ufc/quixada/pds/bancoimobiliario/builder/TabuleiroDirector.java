@@ -6,7 +6,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import br.ufc.quixada.pds.bancoimobiliario.config.ErroNaLeituraDoXMLException;
-import br.ufc.quixada.pds.bancoimobiliario.config.ReaderLogradouros;
+import br.ufc.quixada.pds.bancoimobiliario.config.LeitorLogradouros;
 import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
 import br.ufc.quixada.pds.bancoimobiliario.model.PontoDePartida;
 import br.ufc.quixada.pds.bancoimobiliario.model.Tabuleiro;
@@ -16,10 +16,10 @@ import br.ufc.quixada.pds.bancoimobiliario.model.exception.MontadorTabuleiroExce
 public class TabuleiroDirector {
 
 	private TabuleiroBuilder builderTabuleiro;
-	private ReaderLogradouros readerLogradouros;
+	private LeitorLogradouros readerLogradouros;
 	
 	@Inject
-	public TabuleiroDirector(TabuleiroBuilder builderTabuleiro, ReaderLogradouros readerLogradouros){
+	public TabuleiroDirector(TabuleiroBuilder builderTabuleiro, LeitorLogradouros readerLogradouros){
 		this.builderTabuleiro = builderTabuleiro;
 		this.readerLogradouros = readerLogradouros;
 	}

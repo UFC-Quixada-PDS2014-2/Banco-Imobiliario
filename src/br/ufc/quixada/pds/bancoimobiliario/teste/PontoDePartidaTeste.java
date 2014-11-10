@@ -1,13 +1,13 @@
 package br.ufc.quixada.pds.bancoimobiliario.teste;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
 import br.ufc.quixada.pds.bancoimobiliario.model.JogadorImpl;
 import br.ufc.quixada.pds.bancoimobiliario.model.PontoDePartida;
-import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.ConfiguracoesEnum;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
 
 public class PontoDePartidaTeste {

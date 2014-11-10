@@ -19,7 +19,7 @@ import br.ufc.quixada.pds.bancoimobiliario.model.lugarespecial.LugarEspecial;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
-public class ConfiguracaoCasasTabuleiroComXStream implements ReaderLogradouros{
+public class ConfiguracaoCasasTabuleiroComXStream implements LeitorLogradouros{
 	
 	private XStream stream;
 	private List<Logradouro> listaDeLogradouros; 
