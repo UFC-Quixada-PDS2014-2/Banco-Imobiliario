@@ -133,7 +133,6 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 	}
 
 	private void mudarJogadorDaVez() {
-		// TODO : Melhorar
 		jogadoresAtivos.remove(jogadorDaVez);
 		jogadoresAtivos.add(jogadorDaVez);
 		jogadorDaVez = jogadoresAtivos.get(0);
