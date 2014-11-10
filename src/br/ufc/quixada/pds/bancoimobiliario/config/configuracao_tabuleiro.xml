@@ -34,8 +34,9 @@
 		
 		<LugarEspecial>
 			<nome>Patrocinador</nome>
-			<descricao>Você ganhou um novo patrocinador!
-			Seu saldo será incrementado em R$100</descricao>
+			<descricao>Caindo nessa casa o jogador ganhará R$100</descricao>
+			<mensagemDeAcao>Você ganhou um novo patrocinador!
+			Seu saldo será incrementado em R$100</mensagemDeAcao>
 			<listaDeAcoes>
 					<AcaoIncrementaSaldo>
 						<valorASerModificado>100</valorASerModificado>
@@ -52,10 +53,9 @@
 		
 		<LugarEspecial>
 			<nome>Torcida</nome>
-			<descricao>
-			Sua torcida está empolgada!
-			Com o apoio da torcida avance 3 posições.
-			</descricao>
+			<descricao>Caindo nessa casa o jogador avançará 3 posições</descricao>
+			<mensagemDeAcao>Sua torcida está empolgada!
+			Com o apoio da torcida avance 3 posições.</mensagemDeAcao>
 			<listaDeAcoes>
 					<AcaoAvancaPosicao>
 						<quantidadeDePosicoes>3</quantidadeDePosicoes>
@@ -102,10 +102,9 @@
 		
 		<LugarEspecial>
 			<nome>Comitê Disciplinar</nome>
-			<descricao>
-				Você foi punido por suas ultimas ações, levando uma multa.
-				Perdendo R$400!
-			</descricao>
+			<descricao>Caindo nessa casa o jogador perderá R$400</descricao>
+			<mensagemDeAcao>Você foi punido por suas ultimas ações, levando uma multa.
+				Perdendo R$400!</mensagemDeAcao>
 			<listaDeAcoes>
 					<AcaoDecrementaSaldo>
 						<valorASerModificado>400</valorASerModificado>
@@ -152,9 +151,10 @@
 			
 		<LugarEspecial>
 			<nome>Escalação Irregular</nome>
-			<descricao>Um dos seus times estava com a estalação irregular.
-						Volte 2 casas!
-			</descricao>
+			<descricao>Caindo nessa casa o jogador voltará 2 posições</descricao>
+			<mensagemDeAcao>Um dos seus times estava com a estalação irregular.
+						Volte 2 casas!</mensagemDeAcao>
+			
 			<listaDeAcoes>
 					<AcaoVoltaPosicao>
 						<quantidadeDePosicoes>2</quantidadeDePosicoes>
