@@ -1,6 +1,5 @@
 package br.ufc.quixada.pds.bancoimobiliario.controller.telainicial;
 
-import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;

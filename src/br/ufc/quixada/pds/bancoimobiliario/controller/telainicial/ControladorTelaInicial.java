@@ -4,6 +4,7 @@ package br.ufc.quixada.pds.bancoimobiliario.controller.telainicial;
 import java.util.List;
 
 import javax.swing.JButton;
+import javax.swing.JTextField;
 
 import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorRestartGame;
 import br.ufc.quixada.pds.bancoimobiliario.view.GUITelaInicial;
@@ -28,16 +29,18 @@ public class ControladorTelaInicial {
 	private void adicionarEventoNosTecnicos(){
 		List<JButton> tecnicos = this.guiTelaInicial.getTecnicos();
 		for(JButton tecnico: tecnicos){
-			tecnico.addActionListener(new ActionListenerSelecionarTecnico(tecnico, this.guiTelaInicial.getTecnicosDosJogadores()));
+			List<JButton> tecnicosJogadores = this.guiTelaInicial.getTecnicosDosJogadores();
+			tecnico.addActionListener(new ActionListenerSelecionarTecnico(tecnico, tecnicosJogadores));
 		}
 	}
 	
 	private void adicionarEventoDeIniciarPartida(){
 		JButton botaoInicial = this.guiTelaInicial.getBotaoInicial();
+		List<JTextField> textFieldNomeJogadores = this.guiTelaInicial.getTextFielNomeJogadores();
+		List<JButton> tecnicosJogadores = this.guiTelaInicial.getTecnicosDosJogadores();
 		
-		
-		botaoInicial.addActionListener(new ActionListenerIniciarJogo(botaoInicial, this.guiTelaInicial.getTextFielNomeJogadores()
-				, this.guiTelaInicial, this.guiTelaInicial.getTecnicosDosJogadores(),restartGame) );
+		botaoInicial.addActionListener(new ActionListenerIniciarJogo(botaoInicial, textFieldNomeJogadores
+				, this.guiTelaInicial, tecnicosJogadores, this.restartGame) );
 	}
 	
 	private void adicionarEventoAlterar(){
