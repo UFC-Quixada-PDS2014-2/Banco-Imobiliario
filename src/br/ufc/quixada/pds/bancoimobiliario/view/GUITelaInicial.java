@@ -34,7 +34,8 @@ public class GUITelaInicial extends JFrame {
 		this.nomesJogadores = new ArrayList<JTextField>();
 		this.tecnicosDosJogadores = new ArrayList<JButton>();
 		this.botoesAlterar = new ArrayList<JButton>();
-	    this.setBounds(100, 0, 1150, 700);
+		this.setSize(1150, 700);
+		this.setLocationRelativeTo(null);
 	    initComponents();
 	    this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	    getContentPane().setLayout(null);

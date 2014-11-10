@@ -3,6 +3,7 @@ package br.ufc.quixada.pds.bancoimobiliario.view;
 import java.awt.Color;
 import java.awt.Font;
 
+import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -21,9 +22,14 @@ public class PanelJogador extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public PanelJogador(IJogador jogador) {
+	public PanelJogador(IJogador jogador, Icon pinoJogador) {
 		setOpaque(false);
 		this.iJogador = jogador;
+		
+		JLabel lblPinoJogador = new JLabel();
+		lblPinoJogador.setIcon(pinoJogador);
+		lblPinoJogador.setBounds(10,10,100,100);
+		
 		lblNomeJogador = new JLabel(jogador.getNomeJogador());
 		lblNomeJogador.setBounds(12, 12, 155, 31);
 		lblNomeJogador.setForeground(Color.WHITE);
@@ -48,6 +54,7 @@ public class PanelJogador extends JPanel {
 		add(lblSaldo);
 		add(lblNomeJogador);
 		add(lblIconJogador);
+		add(lblPinoJogador);
 	}
 	
 	public void atualizar(){

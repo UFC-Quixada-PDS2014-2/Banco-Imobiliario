@@ -1,6 +1,7 @@
 package br.ufc.quixada.pds.bancoimobiliario.view;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.util.Iterator;
 
 import javax.swing.ImageIcon;
@@ -20,7 +21,8 @@ public class GUIPortfolioJogador extends JFrame{
 
 	public GUIPortfolioJogador(IJogador iJogador) {
 		getContentPane().setLayout(null);
-		this.setBounds(100,10,500,300);
+		this.setSize(500, 300);
+		this.setLocationRelativeTo(null);
 		this.setResizable(false);
 		
 		JLabel labelBackground = new JLabel();
@@ -29,18 +31,20 @@ public class GUIPortfolioJogador extends JFrame{
 		getContentPane().add(labelBackground);
 		
 		String nome = "Nome: "+iJogador.getNomeJogador();
-		JLabel lableNomeDoJogador = new JLabel(nome);
-		lableNomeDoJogador.setBounds(23, 190, 144, 15);
-		labelBackground.add(lableNomeDoJogador);
+		JLabel labelNomeDoJogador = new JLabel(nome);
+		labelNomeDoJogador.setBounds(23, 190, 144, 15);
+		labelNomeDoJogador.setForeground(Color.WHITE);
+		labelBackground.add(labelNomeDoJogador);
 		
-		JLabel lableIconeDoJogador = new JLabel(iJogador.getImagemPersonagem());
-		lableIconeDoJogador.setBounds(25, 25, 117, 150);
-		labelBackground.add(lableIconeDoJogador);
+		JLabel labelIconeDoJogador = new JLabel(iJogador.getImagemPersonagem());
+		labelIconeDoJogador.setBounds(25, 25, 117, 150);
+		labelBackground.add(labelIconeDoJogador);
 		
 		String saldo = "Saldo : " + String.format("%.2f", iJogador.getSaldoJogador());
-		JLabel lableSaldoDoJogador = new JLabel(saldo);
-		lableSaldoDoJogador.setBounds(23, 210, 144, 15);
-		labelBackground.add(lableSaldoDoJogador);
+		JLabel labelSaldoDoJogador = new JLabel(saldo);
+		labelSaldoDoJogador.setBounds(23, 210, 144, 15);
+		labelSaldoDoJogador.setForeground(Color.WHITE);
+		labelBackground.add(labelSaldoDoJogador);
 		
 		Jogador jogador = iJogador.getJogador();
 		
@@ -61,11 +65,11 @@ public class GUIPortfolioJogador extends JFrame{
 		
 		JPanel panel = new JPanel();
 		panel.setLayout(new BorderLayout());
-		panel.setBounds(175, 32, 320, 228);
+		panel.setBounds(175, 13, 320, 228);
 		
 		
 		table = new JTable(dados, colunas);
-		table.setBounds(175, 32, 320, 228);
+		table.setBounds(0, 0, 320, 228);
 		
 		JScrollPane scrollbar = new JScrollPane(table);
 		scrollbar.setBounds(399, 32, 17, 225);

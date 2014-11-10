@@ -1,6 +1,4 @@
-﻿Ajuda
-
-Tipo de Jogo: Banco Imobiliário
+﻿Tipo de Jogo: Banco Imobiliário
 Tema do Jogo: Liga dos Campeões da Europa
 
 O jogo tem 28 casas, onde existem 4 tipos de casas( ponto de partida, lugares especias, imóveis e empresas).

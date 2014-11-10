@@ -33,7 +33,7 @@ public class GUITelaAjuda extends JFrame {
 		labelBackground.setBounds(0, 0, 600, 400);
 		labelBackground.setIcon(new ImageIcon(GUITelaAjuda.class
 				.getResource(CaminhoImagensEnum.PASTA_IMAGENS.getValor()
-						+ "ajuda.png")));
+						+ "ajudaBackground.png")));
 		getContentPane().add(labelBackground);
 
 		JLabel tituloTela = new JLabel("Ajuda - Banco Imobiliário");
@@ -66,7 +66,10 @@ public class GUITelaAjuda extends JFrame {
 
 		labelBackground.add(scrollbar, BorderLayout.CENTER);
 
-		this.setBounds(300, 100, 600, 400);
+
+		this.setSize(600, 400);
+		this.setLocationRelativeTo(null);
+		
 		this.setResizable(false);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);

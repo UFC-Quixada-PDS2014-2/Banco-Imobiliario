@@ -64,7 +64,8 @@ public class GUITabuleiro extends JFrame {
 		setResizable(false);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 10, 900, 550);
+		this.setSize(900, 550);
+		this.setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -77,7 +78,7 @@ public class GUITabuleiro extends JFrame {
 				"img/background.png"));
 
 				JLabel lblBackground = new JLabel("");
-		lblBackground.setIcon(new ImageIcon(GUITabuleiro.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/background.png")));
+		lblBackground.setIcon(new ImageIcon(GUITabuleiro.class.getResource(CaminhoImagensEnum.PASTA_IMAGENS.getValor()+"background.png")));
 		lblBackground.setBounds(0, 0, 910, 550);
 		contentPane.add(lblBackground);
 
@@ -85,9 +86,9 @@ public class GUITabuleiro extends JFrame {
 
 	private void inicializarPinosJogadores(){
 		pinoJogador1 = new JLabel();
-		pinoJogador1.setIcon(new ImageIcon(GUITabuleiro.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/jogador1.png")));
+		pinoJogador1.setIcon(new ImageIcon(GUITabuleiro.class.getResource(CaminhoImagensEnum.PASTA_IMAGENS.getValor()+"jogador1.png")));
 		pinoJogador2 = new JLabel();
-		pinoJogador2.setIcon(new ImageIcon(GUITabuleiro.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/jogador2.png")));
+		pinoJogador2.setIcon(new ImageIcon(GUITabuleiro.class.getResource(CaminhoImagensEnum.PASTA_IMAGENS.getValor()+"jogador2.png")));
 		
 		contentPane.add(pinoJogador1);
 		iJogador1.setPino(pinoJogador1);
@@ -100,12 +101,12 @@ public class GUITabuleiro extends JFrame {
 	}
 	
 	private void inicializarPanelJogadores(){
-		panelJogador1 = new PanelJogador(iJogador1);
+		panelJogador1 = new PanelJogador(iJogador1, pinoJogador1.getIcon());
 		panelJogador1.setBackground(Color.WHITE);
 		panelJogador1.setBounds(10, 147, 170, 358);
 		contentPane.add(panelJogador1);
 
-		panelJogador2 = new PanelJogador(iJogador2);
+		panelJogador2 = new PanelJogador(iJogador2, pinoJogador2.getIcon());
 		panelJogador2.setOpaque(false);
 		panelJogador2.setBounds(718, 147, 170, 358);
 		contentPane.add(panelJogador2);
@@ -115,7 +116,14 @@ public class GUITabuleiro extends JFrame {
 		panelCentral.setBounds(290, 89, 339, 342);
 		contentPane.add(panelCentral);
 		
-				botaoAjuda = new JButton("Ajuda");
+				botaoAjuda = new JButton();
+				botaoAjuda.setToolTipText("Ajuda");
+				botaoAjuda.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				botaoAjuda.setIcon(new ImageIcon(GUITabuleiro.class.getResource(CaminhoImagensEnum.PASTA_IMAGENS.getValor()+"ajuda.png")));
+				botaoAjuda.setOpaque(false);
+				botaoAjuda.setContentAreaFilled(false);
+				botaoAjuda.setBorderPainted(false);
+				botaoAjuda.setBorder(null);
 				
 				comboBoxDado1 = new JComboBox<Integer>();
 				comboBoxDado1.setModel(new DefaultComboBoxModel(new Integer[] {1, 2, 3, 4, 5, 6}));
@@ -125,7 +133,7 @@ public class GUITabuleiro extends JFrame {
 								
 				botaoJogar = new JButton();
 			    botaoJogar.setBackground(Color.WHITE);
-			    botaoJogar.setIcon(new ImageIcon(GUITelaInicial.class.getResource(CaminhoImagensEnum.PASTA_IMAGENS.getValor()+"Bola.png")));
+			    botaoJogar.setIcon(new ImageIcon(GUITabuleiro.class.getResource(CaminhoImagensEnum.PASTA_IMAGENS.getValor()+"Bola.png")));
 			    botaoJogar.setOpaque(false);
 			    botaoJogar.setContentAreaFilled(false);
 			    botaoJogar.setBorderPainted(false);
