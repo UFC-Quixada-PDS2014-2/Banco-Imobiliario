@@ -11,6 +11,7 @@ public abstract class Logradouro {
 
 	private String nome;
 	private String descricao;
+	private String mensagemDeAcao;
 	
 	public String getNome(){
 		return this.nome;
@@ -24,5 +25,9 @@ public abstract class Logradouro {
 	@Override
 	public String toString() {
 		return this.nome + "\n" + this.descricao;
+	}
+	
+	public String getMensagemDeAcao(){
+		return mensagemDeAcao;
 	}
 }

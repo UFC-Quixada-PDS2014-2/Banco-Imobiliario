@@ -34,7 +34,7 @@ public class Empresa extends Propriedade {
 			jogador.decrementarSaldo(valorTotal);
 			donoDaPropriedade.acrescentarSaldo(valorTotal);
 
-			return AcaoLogradouroEnum.POSICAO_INALTERADA;
+			return AcaoLogradouroEnum.PAGAR_TAXA_EMPRESA;
 		}
 		return AcaoLogradouroEnum.DISPONIVEL_PARA_COMPRA;
 	}

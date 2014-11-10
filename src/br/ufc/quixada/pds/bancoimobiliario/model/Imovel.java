@@ -29,7 +29,7 @@ public class Imovel extends Propriedade {
 			jogador.decrementarSaldo(valorDoAluguel);
 			donoDaPropriedade.acrescentarSaldo(valorDoAluguel);
 		
-			return AcaoLogradouroEnum.POSICAO_INALTERADA;
+			return AcaoLogradouroEnum.PAGAR_ALUGUEL;
 		}
 		return AcaoLogradouroEnum.DISPONIVEL_PARA_COMPRA;
 	}
