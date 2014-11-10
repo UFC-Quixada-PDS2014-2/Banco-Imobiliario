@@ -32,7 +32,7 @@ public class LugarEspecial extends Logradouro {
 	
 	@Override
 	public void passeiPorAqui(Jogador jogador) {
-		// TODO Auto-generated method stub
+
 	}
 	
 	@Override

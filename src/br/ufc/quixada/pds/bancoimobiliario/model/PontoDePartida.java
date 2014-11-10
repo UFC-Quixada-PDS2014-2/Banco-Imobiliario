@@ -36,4 +36,3 @@ public class PontoDePartida extends Logradouro {
 		return "Você passou no ponto de partida\n Você ganhou R$" + this.valorASerIncrementado;
 	}
 }
-

@@ -13,7 +13,7 @@ import br.ufc.quixada.pds.bancoimobiliario.model.Tabuleiro;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ErroArquivoConfiguracoesException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.MontadorTabuleiroException;
 
-public class TabuleiroDirector {
+public class TabuleiroDirector{
 
 	private TabuleiroBuilder builderTabuleiro;
 	private LeitorLogradouros readerLogradouros;

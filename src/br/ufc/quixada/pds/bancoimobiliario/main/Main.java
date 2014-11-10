@@ -3,9 +3,11 @@ package br.ufc.quixada.pds.bancoimobiliario.main;
 import java.util.Observable;
 import java.util.Observer;
 
+import javax.inject.Inject;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
+import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroDirector;
 import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroDirector;
 import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorRestartGame;
 import br.ufc.quixada.pds.bancoimobiliario.controller.telainicial.ControladorTelaInicial;
@@ -77,10 +79,8 @@ public class Main implements Observer{
 			controladorTelaInicial.inicializar();
 			
 		} catch (ErroArquivoConfiguracoesException e) {
-			e.printStackTrace();
 			JOptionPane.showMessageDialog(null, "Erro ao carregar jogo :(");
 		} catch (MontadorTabuleiroException e2) {
-			e2.printStackTrace();
 			JOptionPane.showMessageDialog(null, "Erro ao carregar jogo :(");
 		} 
 	}
