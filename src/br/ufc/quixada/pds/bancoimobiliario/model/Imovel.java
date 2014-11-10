@@ -57,8 +57,8 @@ public class Imovel extends Propriedade {
 		} else if (this.propriedadeEstaVendida()) {
 			mensagem = "Imóvel possui dono\n" + 
 							  "Você pagou R$ " + 
-							  String.format("%f.2", this.valorDoAluguel)
-							  + " ao jogador " + 
+							  String.format("%.2f", this.valorDoAluguel)
+							  + " para o jogador: " + 
 							  this.getDonoDaPropriedade().getNome();
 			
 			return mensagem;
