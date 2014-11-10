@@ -46,7 +46,7 @@ public class ImovelTeste {
 		Imovel imovel = new Imovel(valorDaPropriedade,valorDoAluguel);
 		
 		try {
-			imovel.comprarPropriedade(jogador);
+			imovel.comprarLogradouro(jogador);
 			fail("Deveria Ter Disparado a Exception JogadorComSaldoNegativo");
 		} catch (Exception e) {
 
@@ -68,7 +68,7 @@ public class ImovelTeste {
 		Imovel imovel = new Imovel(valorDaPropriedade,valorDoAluguel);
 		
 		try {
-			imovel.comprarPropriedade(jogador1);
+			imovel.comprarLogradouro(jogador1);
 			imovel.acaoLogradouro(jogador2);
 			
 			final double valorFinalEsperadoJogador1 = (saldoInicial - valorDaPropriedade) + valorDoAluguel;
@@ -96,7 +96,7 @@ public class ImovelTeste {
 		Imovel imovel = new Imovel(valorDaPropriedade,valorDoAluguel);
 		
 		try {
-			imovel.comprarPropriedade(jogador1);
+			imovel.comprarLogradouro(jogador1);
 			imovel.acaoLogradouro(jogador2);
 			fail();
 			

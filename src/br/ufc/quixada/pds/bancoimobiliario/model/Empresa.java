@@ -15,23 +15,25 @@ public class Empresa extends Propriedade {
 		super(valorDaPropriedade);
 		this.valorDaTaxa = valorDaTaxa;
 	}
-	
+
 	@Override
-	public AcaoLogradouroEnum acaoLogradouro(Jogador jogador) throws JogadorComSaldoNegativoException, ValorInvalidoException {
-		
-		if(jogador.equals(this.getDonoDaPropriedade())){
-			
+	public AcaoLogradouroEnum acaoLogradouro(Jogador jogador)
+			throws JogadorComSaldoNegativoException, ValorInvalidoException {
+
+		if (jogador.equals(this.getDonoDaPropriedade())) {
+
 			return AcaoLogradouroEnum.PERTENCE_AO_JOGADOR;
-		
-		} else if(this.propriedadeEstaVendida()){
-			
-			final double valorTotal = this.valorDaTaxa * jogador.getValorDoUltimoDeslocamento();
-			
+
+		} else if (this.propriedadeEstaVendida()) {
+
+			final double valorTotal = this.valorDaTaxa
+					* jogador.getValorDoUltimoDeslocamento();
+
 			Jogador donoDaPropriedade = this.getDonoDaPropriedade();
-			
+
 			jogador.decrementarSaldo(valorTotal);
 			donoDaPropriedade.acrescentarSaldo(valorTotal);
-			
+
 			return AcaoLogradouroEnum.POSICAO_INALTERADA;
 		}
 		return AcaoLogradouroEnum.DISPONIVEL_PARA_COMPRA;
@@ -41,33 +43,32 @@ public class Empresa extends Propriedade {
 	public void passeiPorAqui(Jogador jogador) {
 		// TODO Auto-generated method stub
 	}
+
+	@Override
+	public double getTaxa() {
+		return this.valorDaTaxa;
+	}
 	
 	@Override
 	public String toString() {
-		String mensagemFinal ="\nEmpresa\n";
-		
+		String mensagemFinal = "\nEmpresa\n";
+
 		String nome = "Nome: " + this.getNome() + "\n";
-		String valorDaPropriedade = "Preço: R$" + String.format("%.2f", this.getValorDaPropriedade()) + "\n";
-		String valorDaTaxa = "Taxa de Uso: R$" + String.format("%.2f", this.valorDaTaxa) + "\n";
+		String valorDaPropriedade = "Preço: R$"
+				+ String.format("%.2f", this.getValorDaPropriedade()) + "\n";
+		String valorDaTaxa = "Taxa de Uso: R$"
+				+ String.format("%.2f", this.valorDaTaxa) + "\n";
 		String dono = "Dono: ";
-		
-		if(this.propriedadeEstaVendida()){
-			dono +=  this.getDonoDaPropriedade().getNome() + "\n";
-		} else{
-			dono += "Esta empresa não possui dono!\n"; 
+
+		if (this.propriedadeEstaVendida()) {
+			dono += this.getDonoDaPropriedade().getNome() + "\n";
+		} else {
+			dono += "Esta empresa não possui dono!\n";
 		}
-		
+
 		mensagemFinal += nome + valorDaPropriedade + valorDaTaxa + dono;
-		
+
 		return mensagemFinal;
 	}
 
-	@Override
-	public void comprarLogradouro(Jogador compradorDoLogradouro)
-			throws SaldoJogadorInsuficienteException,
-			LogradouroIndisponivelCompraException, JogadorInvalidoException,
-			JogadorComSaldoNegativoException, ValorInvalidoException {
-		
-		super.comprarPropriedade(compradorDoLogradouro);
-	}
 }

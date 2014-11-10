@@ -28,7 +28,7 @@ public class PropriedadeTeste {
 		Jogador jogador = null;
 		 
 		try {
-			imovel.comprarPropriedade(jogador);
+			imovel.comprarLogradouro(jogador);
 			fail();
 		} catch (Exception e) {
 			
@@ -38,7 +38,7 @@ public class PropriedadeTeste {
 	}
 	
 	@Test
-	public void comprarPropriedadeJaAdquirida() {
+	public void comprarLogradouroJaAdquirida() {
 		
 		final double saldo = 200.00;
 		final double valorDaPropriedade = 50;
@@ -50,8 +50,8 @@ public class PropriedadeTeste {
 		Propriedade imovel = new Imovel(valorDaPropriedade,valorDoAluguel);
 
 		try {
-			imovel.comprarPropriedade(jogador1);
-			imovel.comprarPropriedade(jogador2);
+			imovel.comprarLogradouro(jogador1);
+			imovel.comprarLogradouro(jogador2);
 			fail();
 		} catch (Exception e) {
 			
@@ -83,7 +83,7 @@ public class PropriedadeTeste {
 			Jogador jogador = new JogadorImpl("Teste",200.00);
 			
 			try {
-				imovel.comprarPropriedade(jogador);
+				imovel.comprarLogradouro(jogador);
 			} catch (Exception e) {
 				fail();
 			}
@@ -92,7 +92,7 @@ public class PropriedadeTeste {
 	}
 	
 	@Test
-	public void comprarPropriedadeSemTerSaldoSuficiente(){
+	public void comprarLogradouroSemTerSaldoSuficiente(){
 
 		final double saldoInicial = 500;
 		final double valorDaPropriedade = 600;
@@ -103,7 +103,7 @@ public class PropriedadeTeste {
 		Propriedade imovel = new Imovel(valorDaPropriedade,valorDoAluguel);
 		
 		try {
-			imovel.comprarPropriedade(jogador);
+			imovel.comprarLogradouro(jogador);
 			fail();
 		} catch (Exception e) {
 			
@@ -113,7 +113,7 @@ public class PropriedadeTeste {
 	}
 	
 	@Test
-	public void comprarPropriedadeComSaldoSuficiente(){
+	public void comprarLogradouroComSaldoSuficiente(){
 		
 		final double saldoInicial = 500;
 		final double valorDaPropriedade = 350;
@@ -123,7 +123,7 @@ public class PropriedadeTeste {
 		Propriedade imovel = new Imovel(valorDaPropriedade,valorDoAluguel);
 		
 		try {
-			imovel.comprarPropriedade(jogador);
+			imovel.comprarLogradouro(jogador);
 			assertTrue(jogador.equals(imovel.getDonoDaPropriedade()));
 		
 		} catch (Exception e) {

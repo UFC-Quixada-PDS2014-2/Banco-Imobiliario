@@ -55,7 +55,7 @@ public class EmpresaTeste {
 		
 		try {
 			
-			empresa.comprarPropriedade(jogador1);
+			empresa.comprarLogradouro(jogador1);
 			
 			AcaoLogradouroEnum acaoEnum = empresa.acaoLogradouro(jogador2);
 			
@@ -83,7 +83,7 @@ public class EmpresaTeste {
 		
 		try {
 			
-			empresa.comprarPropriedade(jogador1);
+			empresa.comprarLogradouro(jogador1);
 			
 			empresa.acaoLogradouro(jogador2);
 			
@@ -112,7 +112,7 @@ public class EmpresaTeste {
 		
 		try {
 			
-			empresa.comprarPropriedade(jogador1);
+			empresa.comprarLogradouro(jogador1);
 			
 			AcaoLogradouroEnum acaoEnum = empresa.acaoLogradouro(jogador1);
 			
@@ -141,7 +141,7 @@ public class EmpresaTeste {
 		
 		try {
 			
-			empresa.comprarPropriedade(jogador1);
+			empresa.comprarLogradouro(jogador1);
 			empresa.acaoLogradouro(jogador2);
 			fail();
 			
@@ -153,7 +153,7 @@ public class EmpresaTeste {
 	}
 	
 	@Test
-	public void jogadorTentaComprarPropriedadeSemTerSaldoSuficiente(){
+	public void jogadorTentacomprarLogradouroSemTerSaldoSuficiente(){
 	
 		final double saldoInicialJogador1 = 500;
 		final double valorDaPropriedade = 1000;
@@ -163,7 +163,7 @@ public class EmpresaTeste {
 		Jogador jogador1 = new JogadorImpl("Teste", saldoInicialJogador1);
 		
 		try {
-			empresa.comprarPropriedade(jogador1);
+			empresa.comprarLogradouro(jogador1);
 			fail();
 			
 		} catch (Exception e) {

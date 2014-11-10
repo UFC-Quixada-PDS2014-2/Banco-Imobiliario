@@ -6,6 +6,7 @@ import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
 import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
 import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.AcaoLogradouroEnum;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorComSaldoNegativoException;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.LogradouroIndisponivelCompraException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
 
 public class LugarEspecial extends Logradouro {
@@ -39,8 +40,7 @@ public class LugarEspecial extends Logradouro {
 	}
 
 	@Override
-	public void comprarLogradouro(Jogador compradorDoLogradouro) {
-		// TODO Auto-generated method stub
-		
+	public void comprarLogradouro(Jogador compradorDoLogradouro) throws LogradouroIndisponivelCompraException {
+		throw new LogradouroIndisponivelCompraException();
 	}
 }

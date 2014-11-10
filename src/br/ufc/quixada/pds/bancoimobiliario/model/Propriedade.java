@@ -17,6 +17,8 @@ public abstract class Propriedade extends Logradouro{
 		this.valorDaPropriedade = valorDaPropriedade;
 		this.adquirida = false;
 	}
+
+	public abstract double getTaxa();
 	
 	public Jogador getDonoDaPropriedade(){
 		return this.donoDaPropriedade;
@@ -35,7 +37,9 @@ public abstract class Propriedade extends Logradouro{
 		}
 	}
 	
-	public void comprarPropriedade(Jogador compradorDaPropriedade) throws SaldoJogadorInsuficienteException, LogradouroIndisponivelCompraException, JogadorInvalidoException, JogadorComSaldoNegativoException, ValorInvalidoException{
+	
+	@Override
+	public void comprarLogradouro(Jogador compradorDaPropriedade) throws SaldoJogadorInsuficienteException, LogradouroIndisponivelCompraException, JogadorInvalidoException, JogadorComSaldoNegativoException, ValorInvalidoException{
 		
 		if(compradorDaPropriedade == null){
 			throw new JogadorInvalidoException();

@@ -1,6 +1,7 @@
 package br.ufc.quixada.pds.bancoimobiliario.model;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.AcaoLogradouroEnum;
+import br.ufc.quixada.pds.bancoimobiliario.model.exception.LogradouroIndisponivelCompraException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
 
 public class PontoDePartida extends Logradouro {
@@ -24,9 +25,10 @@ public class PontoDePartida extends Logradouro {
 	public boolean isDisponivelParaCompra() {
 		return false;
 	}
+	
 	@Override
-	public void comprarLogradouro(Jogador compradorDoLogradouro) {
-		 //TODO : 
+	public void comprarLogradouro(Jogador compradorDoLogradouro) throws LogradouroIndisponivelCompraException {
+		 throw new LogradouroIndisponivelCompraException();
 	}
 }
 
