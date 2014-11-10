@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -60,7 +61,9 @@ public class ActionListenerIniciarJogo implements ActionListener{
 	private boolean todosOsNomesSetados(){
 		boolean todosOsNomesSetados = true;
 		for(JTextField nomeJogador: this.nomeJogadores){
-			if(nomeJogador.getText().equals(null) || nomeJogador.getText().trim().equals("")){
+			String textoNomeJogador = nomeJogador.getText();
+			
+			if(textoNomeJogador.equals(null) || textoNomeJogador.trim().equals("")){
 				todosOsNomesSetados = false;
 				break;
 			}
@@ -70,10 +73,17 @@ public class ActionListenerIniciarJogo implements ActionListener{
 	
 	private void criarJogadores(){
 		for(int i=0; i<2; i++){
-			String nome = this.nomeJogadores.get(i).getText();
+			JTextField jogadorTextField = this.nomeJogadores.get(i);
+			
+			String nome = jogadorTextField.getText();
+			
 			Jogador jogador = new JogadorImpl(nome, ConfiguracoesEnum.SALDO_INICIAL.getValor());
 			IJogador iJogador = new IJogador(jogador);
-			iJogador.setImagemPersonagem(this.tecnicosDosJogadores.get(i).getIcon());
+			
+			JButton tecnicoDoJogador = this.tecnicosDosJogadores.get(i);
+			Icon iconeTecnicoDoJogador = tecnicoDoJogador.getIcon();
+			
+			iJogador.setImagemPersonagem(iconeTecnicoDoJogador);
 			iJogadores.add(iJogador);
 			jogadores.add(jogador);
 		}
