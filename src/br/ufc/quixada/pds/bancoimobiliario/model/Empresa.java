@@ -19,11 +19,15 @@ public class Empresa extends Propriedade {
 
 		if (jogador.equals(this.getDonoDaPropriedade())) {
 
-			return AcaoLogradouroEnum.PERTENCE_AO_JOGADOR;
+			String mensagem = "Essa empresa é sua!";
+			AcaoLogradouroEnum acaoLogradouro = AcaoLogradouroEnum.PERTENCE_AO_JOGADOR;
+			acaoLogradouro.setMensagem(mensagem);
+			
+			return acaoLogradouro;
 
 		} else if (this.propriedadeEstaVendida()) {
 
-			final double valorTotal = this.valorDaTaxa
+		    double valorTotal = this.valorDaTaxa
 					* jogador.getValorDoUltimoDeslocamento();
 
 			Jogador donoDaPropriedade = this.getDonoDaPropriedade();
@@ -31,9 +35,20 @@ public class Empresa extends Propriedade {
 			jogador.decrementarSaldo(valorTotal);
 			donoDaPropriedade.acrescentarSaldo(valorTotal);
 
-			return AcaoLogradouroEnum.PAGAR_TAXA_EMPRESA;
+			String mensagem = "Essa empresa possui dono\n" + 
+							  "Você pagou R$" + valorTotal + " para o " + 
+							  this.getDonoDaPropriedade().getNome();
+			AcaoLogradouroEnum acaoLogradouro = AcaoLogradouroEnum.PAGAR_TAXA_EMPRESA;
+			acaoLogradouro.setMensagem(mensagem);
+			
+			return acaoLogradouro;
 		}
-		return AcaoLogradouroEnum.DISPONIVEL_PARA_COMPRA;
+	
+		String mensagem = "Empresa disponível para compra";
+		AcaoLogradouroEnum acaoLogradouro = AcaoLogradouroEnum.DISPONIVEL_PARA_COMPRA;
+		acaoLogradouro.setMensagem(mensagem);
+		
+		return acaoLogradouro;
 	}
 
 	@Override

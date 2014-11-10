@@ -18,7 +18,11 @@ public class Imovel extends Propriedade {
 		
 		if(jogador.equals(this.getDonoDaPropriedade())){
 			
-			return AcaoLogradouroEnum.PERTENCE_AO_JOGADOR;
+			String mensagem = "Este imóvel é seu!";
+			AcaoLogradouroEnum acaoLogradouro = AcaoLogradouroEnum.PERTENCE_AO_JOGADOR;
+			acaoLogradouro.setMensagem(mensagem);
+			
+			return acaoLogradouro;
 			
 		} else if(this.propriedadeEstaVendida()){	
 			Jogador donoDaPropriedade = this.getDonoDaPropriedade();
@@ -26,9 +30,23 @@ public class Imovel extends Propriedade {
 			jogador.decrementarSaldo(valorDoAluguel);
 			donoDaPropriedade.acrescentarSaldo(valorDoAluguel);
 		
-			return AcaoLogradouroEnum.PAGAR_ALUGUEL;
+			String mensagem = "Imóvel possui dono\n" + 
+							  "Você pagou R$ " + 
+							  String.format("%f.2", this.valorDoAluguel)
+							  + " ao jogador " + 
+							  this.getDonoDaPropriedade().getNome();
+			
+			AcaoLogradouroEnum acaoLogradouro = AcaoLogradouroEnum.PAGAR_ALUGUEL;
+			acaoLogradouro.setMensagem(mensagem);
+			
+			return acaoLogradouro;
 		}
-		return AcaoLogradouroEnum.DISPONIVEL_PARA_COMPRA;
+		
+		String mensagem = "Disponível para compra";
+		AcaoLogradouroEnum acaoLogradouro = AcaoLogradouroEnum.DISPONIVEL_PARA_COMPRA;
+		acaoLogradouro.setMensagem(mensagem);
+		
+		return acaoLogradouro;
 	}
 
 	@Override

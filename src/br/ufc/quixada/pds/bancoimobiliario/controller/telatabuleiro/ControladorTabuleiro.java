@@ -201,11 +201,12 @@ public class ControladorTabuleiro implements Observer{
 	public void update(Observable o, Object mensagem) {
 		atualizarPinoJogador(jogadorDaVez);
 		guiTabuleiro.atualizarPortfolios();	
+		
 		JOptionPane.showMessageDialog(guiTabuleiro, mensagem);
 	}
 
 	public void reiniciarJogo(){
-		int opcao = JOptionPane.showConfirmDialog(guiTabuleiro, "Você reinciar a partida ", null ,JOptionPane.YES_NO_OPTION);
+		int opcao = JOptionPane.showConfirmDialog(guiTabuleiro, "Você deseja reiniciar a partida ", null ,JOptionPane.YES_NO_OPTION);
 		
 		if(opcao == JOptionPane.OK_OPTION){
 			guiTabuleiro.dispose();

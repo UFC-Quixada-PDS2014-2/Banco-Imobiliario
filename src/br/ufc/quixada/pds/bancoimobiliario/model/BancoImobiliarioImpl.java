@@ -42,11 +42,12 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 
 			int posicaoAntiga = jogadorDaVez.getPosicao();
 
-			// Notificar observadores
-			setChanged();
-			notifyObservers(logradouro);
 
 			tipoDeAcao = logradouro.acaoLogradouro(jogadorDaVez);
+
+			// Notificar observadores
+			setChanged();
+			notifyObservers(tipoDeAcao.getMensagem());
 
 			if (tipoDeAcao.equals(AcaoLogradouroEnum.AVANCA_POSICAO)
 					|| tipoDeAcao.equals(AcaoLogradouroEnum.VOLTA_POSICAO)) {
