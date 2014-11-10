@@ -1,7 +1,6 @@
 package br.ufc.quixada.pds.bancoimobiliario.view;
 
 import java.awt.BorderLayout;
-import java.awt.Scrollbar;
 import java.util.Iterator;
 
 import javax.swing.JFrame;
@@ -39,18 +38,19 @@ public class GUIPortfolioJogador extends JFrame{
 		Jogador jogador = iJogador.getJogador();
 		
 		Iterator<Propriedade> iteratorPropriedades = jogador.getPropriedadesAdquiridas();
-		Object[][] dados = new Object[jogador.getQuantidadePropriedades()][2];
+		Object[][] dados = new Object[jogador.getQuantidadePropriedades()][3];
 		int index = 0;
 		while(iteratorPropriedades.hasNext()){
 			Propriedade propriedade = iteratorPropriedades.next();
 			
 			dados[index][0] = propriedade.getNome();
 			dados[index][1] = propriedade.getValorDaPropriedade();
+			dados[index][2] = propriedade.getTaxa();
 			index++;
 			
 		}
 
-		String[] colunas = {"Nome", "Valor da Propriedade"};
+		String[] colunas = {"Nome", "Valor", "Valor da Taxa"};
 		
 		JPanel panel = new JPanel();
 		panel.setLayout(new BorderLayout());
