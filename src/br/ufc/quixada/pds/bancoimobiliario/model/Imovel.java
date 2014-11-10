@@ -30,7 +30,7 @@ public class Imovel extends Propriedade {
 		
 			String mensagem = "Imóvel possui dono\n" + 
 							  "Você pagou R$ " + 
-							  String.format("%f.2", this.valorDoAluguel)
+							  String.format("%.2f", this.valorDoAluguel)
 							  + " ao jogador " + 
 							  this.getDonoDaPropriedade().getNome();
 			

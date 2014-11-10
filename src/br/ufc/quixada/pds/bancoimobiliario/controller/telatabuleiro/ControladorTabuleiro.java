@@ -172,9 +172,6 @@ public class ControladorTabuleiro implements Observer{
 							JOptionPane.showMessageDialog(guiTabuleiro, logradouroParada.getNome() + " adquirido.");
 					}
 					
-				}else{
-					
-					JOptionPane.showMessageDialog(guiTabuleiro, logradouroParada.getMensagemDeAcao(jogadorDaVez));					
 				}
 				
 			} catch (GameOverJogadorException e1) {
