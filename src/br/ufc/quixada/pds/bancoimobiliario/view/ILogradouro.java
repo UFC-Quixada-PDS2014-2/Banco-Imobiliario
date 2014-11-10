@@ -55,6 +55,10 @@ public class ILogradouro {
 		return this.logradouro.getNome();
 	}
 
+	public String getMensagemDeAcao(IJogador iJogadorDaVez){
+		return this.logradouro.getMensagemDeAcao(iJogadorDaVez.getJogador());
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -76,5 +80,7 @@ public class ILogradouro {
 	public String toString() {
 		return this.logradouro.toString();
 	}
+
+	
 	
 }
