@@ -3,10 +3,12 @@ package br.ufc.quixada.pds.bancoimobiliario.main;
 import java.util.Observable;
 import java.util.Observer;
 
+import javax.inject.Inject;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroDirector;
+import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroDirectorImpl;
 import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorRestartGame;
 import br.ufc.quixada.pds.bancoimobiliario.controller.telainicial.ControladorTelaInicial;
 import br.ufc.quixada.pds.bancoimobiliario.guice.TabuleiroModule;
@@ -21,18 +23,24 @@ import com.google.inject.Injector;
 public class Main implements Observer{
 
 	public static void main(String[] args) {
-		Main jogo = new Main();
+		Injector injectorBancoImobiliario = Guice.createInjector(new TabuleiroModule());
+		Main jogo = injectorBancoImobiliario
+				.getInstance(Main.class);
 		jogo.iniciarJogo();
 	}
 	
+	private TabuleiroDirector tabuleiroDirector;
+	
+	@Inject
+	public Main(TabuleiroDirector tabuleiroDirector){
+		this.tabuleiroDirector = tabuleiroDirector;
+	}
+	 
 	public void iniciarJogo(){
 		
 		try {
 
 			/* Iniciando objetos de domínio */
-			Injector injectorBancoImobiliario = Guice.createInjector(new TabuleiroModule());
-			TabuleiroDirector tabuleiroDirector = injectorBancoImobiliario
-					.getInstance(TabuleiroDirector.class);
 			tabuleiroDirector.construirTabuleiro();
 			Tabuleiro tabuleiro = tabuleiroDirector.getTabuleiro();
 
