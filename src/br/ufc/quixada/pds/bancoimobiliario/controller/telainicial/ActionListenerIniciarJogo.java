@@ -101,7 +101,11 @@ public class ActionListenerIniciarJogo implements ActionListener{
 				Tabuleiro tabuleiro = tabuleiroDirector.getTabuleiro();
 				
 				BancoImobiliario bancoImobiliario = new BancoImobiliarioImpl(jogadores, tabuleiro);
-				ControladorTabuleiro controladorTabuleiro = new ControladorTabuleiro(bancoImobiliario, iJogadores.get(0), iJogadores.get(1), restartGame);
+				
+				IJogador iJogador1 = iJogadores.get(0);
+				IJogador iJogador2 = iJogadores.get(1);
+				
+				ControladorTabuleiro controladorTabuleiro = new ControladorTabuleiro(bancoImobiliario, iJogador1, iJogador2, restartGame);
 				controladorTabuleiro.inicializar();
 				
 				this.guiTelaInicial.pararMusica();

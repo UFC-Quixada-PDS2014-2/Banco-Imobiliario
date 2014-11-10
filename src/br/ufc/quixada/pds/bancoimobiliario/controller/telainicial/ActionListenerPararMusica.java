@@ -9,6 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import br.ufc.quixada.pds.bancoimobiliario.view.GUITelaInicial;
+import br.ufc.quixada.pds.bancoimobiliario.view.enumeration.CaminhoImagensEnum;
 
 
 public class ActionListenerPararMusica implements ActionListener{
@@ -24,10 +25,10 @@ public class ActionListenerPararMusica implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(this.guiTelaInicial.musicaAtiva()){
 			this.guiTelaInicial.pararMusica();
-			this.pararMusica.setIcon(new ImageIcon(ActionListenerPararMusica.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/sons/music_off.png")));
+			this.pararMusica.setIcon(new ImageIcon(ActionListenerPararMusica.class.getResource(CaminhoImagensEnum.PASTA_SONS.getValor() + "music_off.png")));
 		}else{
 			this.guiTelaInicial.iniciarMusica();
-			this.pararMusica.setIcon(new ImageIcon(ActionListenerPararMusica.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/sons/music_on.png")));
+			this.pararMusica.setIcon(new ImageIcon(ActionListenerPararMusica.class.getResource(CaminhoImagensEnum.PASTA_SONS.getValor() + "music_on.png")));
 		}
 	}
 

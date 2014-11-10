@@ -17,7 +17,8 @@ import java.util.List;
 
 import javax.swing.ImageIcon;
 
-import br.ufc.quixada.pds.bancoimobiliario.view.sons.ControladorDeSons;
+import br.ufc.quixada.pds.bancoimobiliario.view.enumeration.CaminhoImagensEnum;
+import br.ufc.quixada.pds.bancoimobiliario.view.sons.GerenciadorDeAudio;
 
 
 public class GUITelaInicial extends JFrame {
@@ -25,10 +26,9 @@ public class GUITelaInicial extends JFrame {
 	private List<JButton> tecnicos;
 	private JButton bolaInicioJogo;
 	private String[] nomesTecnicos = {"Pep Guardiola", "José Mourinho", "Jürgen Klopp", "Arsene Wenger", "Diego Simeone", "Carlo Ancelotti"};
-	private static final String caminhoImagens = "/br/ufc/quixada/pds/bancoimobiliario/view/img/";
 	private List<JButton> tecnicosDosJogadores;
 	private List<JButton> botoesAlterar;
-	private ControladorDeSons controladorDeSons;
+	private GerenciadorDeAudio controladorDeSons;
 	private JButton pararMusica;
 	
 	public GUITelaInicial(){
@@ -47,7 +47,7 @@ public class GUITelaInicial extends JFrame {
 	
 	public void initComponents(){
 		JLabel background = new JLabel();
-	    background.setIcon(new ImageIcon(GUITelaInicial.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/TelaInicialBackground.png")));
+	    background.setIcon(new ImageIcon(GUITelaInicial.class.getResource(CaminhoImagensEnum.PASTA_IMAGENS.getValor() + "TelaInicialBackground.png")));
 	    background.setBounds(0, 0, 1150, 700);
 	    getContentPane().add(background);
 	    Cursor cursor = new Cursor(Cursor.HAND_CURSOR);
@@ -62,7 +62,7 @@ public class GUITelaInicial extends JFrame {
 			nomeImagem = Normalizer.normalize(nomeImagem, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
 			
 			
-			URL pathImagem = GUITelaInicial.class.getResource(caminhoImagens  + "tecnicos/" + nomeImagem  +".png");
+			URL pathImagem = GUITelaInicial.class.getResource(CaminhoImagensEnum.PASTA_TECNICOS.getValor() + nomeImagem  +".png");
 			ImageIcon imageIcon = new ImageIcon(pathImagem);
 			tecnico.setIcon(imageIcon);
 			
@@ -130,7 +130,7 @@ public class GUITelaInicial extends JFrame {
 	    background.add(iniciarOJogoLabel);
 	    
 	    bolaInicioJogo = new JButton();
-	    bolaInicioJogo.setIcon(new ImageIcon(GUITelaInicial.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/Bola.png")));
+	    bolaInicioJogo.setIcon(new ImageIcon(GUITelaInicial.class.getResource(CaminhoImagensEnum.PASTA_IMAGENS.getValor() + "Bola.png")));
 	    bolaInicioJogo.setOpaque(false);
 	    bolaInicioJogo.setContentAreaFilled(false);
 	    bolaInicioJogo.setBorderPainted(false);
@@ -141,7 +141,7 @@ public class GUITelaInicial extends JFrame {
 	    background.add(bolaInicioJogo);
 	    
 	    pararMusica = new JButton();
-	    pararMusica.setIcon(new ImageIcon(GUITelaInicial.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/sons/music_on.png")));
+	    pararMusica.setIcon(new ImageIcon(GUITelaInicial.class.getResource(CaminhoImagensEnum.PASTA_SONS.getValor() + "music_on.png")));
 	    pararMusica.setOpaque(false);
 	    pararMusica.setContentAreaFilled(false);
 	    pararMusica.setBorderPainted(false);
@@ -178,7 +178,7 @@ public class GUITelaInicial extends JFrame {
 		return this.botoesAlterar;
 	}
 	
-	public ControladorDeSons getControladorDeSom(){
+	public GerenciadorDeAudio getControladorDeSom(){
 		return this.controladorDeSons;
 	}
 	
@@ -195,7 +195,7 @@ public class GUITelaInicial extends JFrame {
 	}
 	
 	public void iniciarMusica(){
-		this.controladorDeSons = new ControladorDeSons(GUITelaInicial.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/sons/hino.wav").getPath());
+		this.controladorDeSons = new GerenciadorDeAudio(GUITelaInicial.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/sons/hino.wav").getPath());
 	    this.controladorDeSons.start();
 	}
 }
