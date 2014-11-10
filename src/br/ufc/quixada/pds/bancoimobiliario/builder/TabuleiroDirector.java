@@ -45,17 +45,13 @@ public class TabuleiroDirector {
 			}
 			
 		} catch (MontadorTabuleiroException e) {
-			e.printStackTrace();
 			throw new ErroArquivoConfiguracoesException();
 		} catch (ErroNaLeituraDoXMLException e) {
-			e.printStackTrace();
 			throw new ErroArquivoConfiguracoesException();
 		}
-		
 	}
 	
 	public Tabuleiro getTabuleiro() throws MontadorTabuleiroException{
 		return builderTabuleiro.getTabuleiro();
 	}
-	
 }
