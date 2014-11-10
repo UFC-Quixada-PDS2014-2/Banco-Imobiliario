@@ -86,8 +86,4 @@ public class GUITelaAjuda extends JFrame{
 		this.setResizable(false);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
-	
-	public static void main(String[] args) {
-		new GUITelaAjuda();
-	}
 }
