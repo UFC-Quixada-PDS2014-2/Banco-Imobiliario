@@ -10,7 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroDirectorImpl;
+import br.ufc.quixada.pds.bancoimobiliario.builder.TabuleiroDirector;
 import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorRestartGame;
 import br.ufc.quixada.pds.bancoimobiliario.controller.telatabuleiro.ControladorTabuleiro;
 import br.ufc.quixada.pds.bancoimobiliario.guice.TabuleiroModule;
@@ -96,8 +96,8 @@ public class ActionListenerIniciarJogo implements ActionListener{
 			criarJogadores();
 			try {
 				Injector injectorBI = Guice.createInjector(new TabuleiroModule());
-				TabuleiroDirectorImpl tabuleiroDirector = injectorBI
-						.getInstance(TabuleiroDirectorImpl.class);
+				TabuleiroDirector tabuleiroDirector = injectorBI
+						.getInstance(TabuleiroDirector.class);
 				tabuleiroDirector.construirTabuleiro();
 				Tabuleiro tabuleiro = tabuleiroDirector.getTabuleiro();
 				
