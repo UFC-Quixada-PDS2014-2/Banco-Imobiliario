@@ -26,11 +26,12 @@ public class Main implements Observer{
 	}
 	
 	public void iniciarJogo(){
+		
 		try {
 
 			/* Iniciando objetos de domínio */
-			Injector injectorBI = Guice.createInjector(new TabuleiroModule());
-			TabuleiroDirector tabuleiroDirector = injectorBI
+			Injector injectorBancoImobiliario = Guice.createInjector(new TabuleiroModule());
+			TabuleiroDirector tabuleiroDirector = injectorBancoImobiliario
 					.getInstance(TabuleiroDirector.class);
 			tabuleiroDirector.construirTabuleiro();
 			Tabuleiro tabuleiro = tabuleiroDirector.getTabuleiro();
@@ -94,5 +95,4 @@ public class Main implements Observer{
 		//Reinicio do jogo
 		iniciarJogo();
 	}
-
 }
