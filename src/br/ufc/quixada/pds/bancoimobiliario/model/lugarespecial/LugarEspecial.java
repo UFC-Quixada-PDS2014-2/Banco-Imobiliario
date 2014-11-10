@@ -21,11 +21,15 @@ public class LugarEspecial extends Logradouro {
 		}
 
 		AcaoLogradouroEnum acaoLogradouro = AcaoLogradouroEnum.valueOf(tipoDeAcao);
-		acaoLogradouro.setMensagem(this.mensagemDeAcao);
 		
 		return acaoLogradouro;
 	}
 
+	@Override
+	public String getMensagemDeAcao(Jogador jogadorDaVez) {
+		return this.mensagemDeAcao;
+	}
+	
 	@Override
 	public void passeiPorAqui(Jogador jogador) {
 		// TODO Auto-generated method stub

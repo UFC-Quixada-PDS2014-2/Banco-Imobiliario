@@ -30,5 +30,10 @@ public class PontoDePartida extends Logradouro {
 	public void comprarLogradouro(Jogador compradorDoLogradouro) throws LogradouroIndisponivelCompraException {
 		 throw new LogradouroIndisponivelCompraException();
 	}
+	
+	@Override
+	public String getMensagemDeAcao(Jogador jogadorDaVez) {
+		return "Você passou no ponto de partida\n Você ganhou R$" + this.valorASerIncrementado;
+	}
 }
 

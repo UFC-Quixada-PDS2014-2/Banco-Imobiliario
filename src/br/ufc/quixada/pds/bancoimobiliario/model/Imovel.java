@@ -19,10 +19,8 @@ public class Imovel extends Propriedade {
 		if(jogador.equals(this.getDonoDaPropriedade())){
 			
 			String mensagem = "Este imóvel é seu!";
-			AcaoLogradouroEnum acaoLogradouro = AcaoLogradouroEnum.PERTENCE_AO_JOGADOR;
-			acaoLogradouro.setMensagem(mensagem);
 			
-			return acaoLogradouro;
+			return AcaoLogradouroEnum.PERTENCE_AO_JOGADOR;
 			
 		} else if(this.propriedadeEstaVendida()){	
 			Jogador donoDaPropriedade = this.getDonoDaPropriedade();
@@ -36,19 +34,42 @@ public class Imovel extends Propriedade {
 							  + " ao jogador " + 
 							  this.getDonoDaPropriedade().getNome();
 			
-			AcaoLogradouroEnum acaoLogradouro = AcaoLogradouroEnum.PAGAR_ALUGUEL;
-			acaoLogradouro.setMensagem(mensagem);
-			
-			return acaoLogradouro;
+			return AcaoLogradouroEnum.PAGAR_ALUGUEL;
 		}
 		
 		String mensagem = "Disponível para compra";
-		AcaoLogradouroEnum acaoLogradouro = AcaoLogradouroEnum.DISPONIVEL_PARA_COMPRA;
-		acaoLogradouro.setMensagem(mensagem);
-		
-		return acaoLogradouro;
+
+		return AcaoLogradouroEnum.DISPONIVEL_PARA_COMPRA;
 	}
 
+
+	@Override
+	public String getMensagemDeAcao(Jogador jogadorDaVez) {
+
+		String mensagem;
+		
+		if (jogadorDaVez.equals(this.getDonoDaPropriedade())) {
+
+			mensagem = "Esse imóvel é seu!";
+
+			return mensagem;
+			
+		} else if (this.propriedadeEstaVendida()) {
+			mensagem = "Imóvel possui dono\n" + 
+							  "Você pagou R$ " + 
+							  String.format("%f.2", this.valorDoAluguel)
+							  + " ao jogador " + 
+							  this.getDonoDaPropriedade().getNome();
+			
+			return mensagem;
+		}
+	
+		mensagem = "Imóvel disponível para compra";
+
+		return mensagem;
+	}
+
+	
 	@Override
 	public void passeiPorAqui(Jogador jogador) {
 		// TODO Auto-generated method stub

@@ -155,20 +155,26 @@ public class ControladorTabuleiro implements Observer{
 
 			try {
 				AcaoLogradouroEnum acaoLogradouro = bancoImobiliario.realizarTurnoJogador(valorDados);
-							
+				
 				//A movimentação proveniente do lancamento dos dados dados é feita pelo update do observer
 				// Essa movimentação é proveniente da ação da casa
 				ILogradouro logradouroParada = buscarILogradouro(jogadorDaVez.getPosicao());
 
 				if(acaoLogradouro == AcaoLogradouroEnum.DISPONIVEL_PARA_COMPRA){
 
-					int opcaoSelecionada = JOptionPane.showConfirmDialog(guiTabuleiro, "Você deseja comprar essa propriedade? \n " + logradouroParada.toString(), null ,JOptionPane.YES_NO_OPTION);
+					int opcaoSelecionada = JOptionPane.showConfirmDialog(guiTabuleiro, 
+							"Você deseja comprar essa propriedade? \n " + logradouroParada.toString()
+							, null 
+							,JOptionPane.YES_NO_OPTION);
 					
 					if(opcaoSelecionada == JOptionPane.OK_OPTION){
 							bancoImobiliario.comprarPropriedade(jogadorDaVez.getJogador(), logradouroParada.getLogradouro());
 							JOptionPane.showMessageDialog(guiTabuleiro, logradouroParada.getNome() + " adquirido.");
 					}
 					
+				}else{
+					
+					JOptionPane.showMessageDialog(guiTabuleiro, logradouroParada.getMensagemDeAcao(jogadorDaVez));					
 				}
 				
 			} catch (GameOverJogadorException e1) {

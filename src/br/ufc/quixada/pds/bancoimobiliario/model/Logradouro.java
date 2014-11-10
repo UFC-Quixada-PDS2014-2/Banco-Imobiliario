@@ -10,7 +10,6 @@ public abstract class Logradouro {
 
 	private String nome;
 	private String descricao;
-	private String mensagemDeAcao;
 	
 	public String getNome(){
 		return this.nome;
@@ -20,13 +19,12 @@ public abstract class Logradouro {
 	public abstract void passeiPorAqui(Jogador jogador) throws JogadorComSaldoNegativoException,ValorInvalidoException;
 	public abstract boolean isDisponivelParaCompra();
 	public abstract void comprarLogradouro(Jogador compradorDoLogradouro) throws SaldoJogadorInsuficienteException, LogradouroIndisponivelCompraException,JogadorComSaldoNegativoException, ValorInvalidoException;
+	public abstract String getMensagemDeAcao(Jogador jogadorDaVez);
+	
 	
 	@Override
 	public String toString() {
 		return this.nome + "\n" + this.descricao;
 	}
 	
-	public String getMensagemDeAcao(){
-		return mensagemDeAcao;
-	}
 }
