@@ -1,19 +1,15 @@
 package br.ufc.quixada.pds.bancoimobiliario.teste;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
-import br.ufc.quixada.pds.bancoimobiliario.model.Empresa;
 import br.ufc.quixada.pds.bancoimobiliario.model.Imovel;
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
 import br.ufc.quixada.pds.bancoimobiliario.model.JogadorImpl;
 import br.ufc.quixada.pds.bancoimobiliario.model.Propriedade;
-import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorComSaldoNegativoException;
-import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorInvalidoException;
-import br.ufc.quixada.pds.bancoimobiliario.model.exception.LogradouroIndisponivelCompraException;
-import br.ufc.quixada.pds.bancoimobiliario.model.exception.SaldoJogadorInsuficienteException;
-import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
 
 public class PropriedadeTeste {
 

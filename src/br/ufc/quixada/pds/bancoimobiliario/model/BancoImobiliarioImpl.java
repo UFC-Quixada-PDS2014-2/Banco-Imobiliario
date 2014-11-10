@@ -8,7 +8,6 @@ import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.AcaoLogradouroEnum;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ErroArquivoConfiguracoesException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.GameOverJogadorException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorComSaldoNegativoException;
-import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorInvalidoException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.LogradouroIndisponivelCompraException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.SaldoJogadorInsuficienteException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
@@ -142,9 +141,9 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 	@Override
 	public void comprarPropriedade(Jogador jogador, Logradouro logradouro)
 			throws LogradouroIndisponivelCompraException,
-			JogadorInvalidoException, GameOverJogadorException,
-			ErroArquivoConfiguracoesException,
-			SaldoJogadorInsuficienteException {
+			GameOverJogadorException,
+			ErroArquivoConfiguracoesException, SaldoJogadorInsuficienteException,
+			ValorInvalidoException {
 
 		try {
 			if (logradouro.isDisponivelParaCompra()) {

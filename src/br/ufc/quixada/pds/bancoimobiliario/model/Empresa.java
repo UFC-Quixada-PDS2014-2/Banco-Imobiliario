@@ -2,9 +2,6 @@ package br.ufc.quixada.pds.bancoimobiliario.model;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.AcaoLogradouroEnum;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorComSaldoNegativoException;
-import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorInvalidoException;
-import br.ufc.quixada.pds.bancoimobiliario.model.exception.LogradouroIndisponivelCompraException;
-import br.ufc.quixada.pds.bancoimobiliario.model.exception.SaldoJogadorInsuficienteException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
 
 public class Empresa extends Propriedade {
