@@ -88,6 +88,7 @@ public class ActionListenerIniciarJogo implements ActionListener{
 			jogadores.add(jogador);
 		}
 	}
+
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {

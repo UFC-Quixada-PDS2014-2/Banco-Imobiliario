@@ -54,7 +54,7 @@ public class ControladorTabuleiro implements Observer{
 		
 		adicionarEventosBotoesCasas();
 		
-		JButton btnJogador = this.guiTabuleiro.getBtnJogar();
+		JButton btnJogador = this.guiTabuleiro.getBotaoJogar();
 		btnJogador.addActionListener(new ActionRealizarRodada());
 	
 		PanelJogador panelJogador1 = guiTabuleiro.getPanelJogador1();
@@ -64,6 +64,9 @@ public class ControladorTabuleiro implements Observer{
 		PanelJogador panelJogador2 = guiTabuleiro.getPanelJogador2();
 		JButton botaoPortfolioJogador2 = panelJogador2.getBotaoPortfolio();
 		botaoPortfolioJogador2.addActionListener(new ActionListenerBotaoPortfolio(iJogador2));
+		
+		JButton botaoAjuda = this.guiTabuleiro.getBotaoAjuda();
+		botaoAjuda.addActionListener(new ActionListenerBotaoAjuda());
 		
 		atualizarPinoJogador(iJogador1);
 		atualizarPinoJogador(iJogador2);

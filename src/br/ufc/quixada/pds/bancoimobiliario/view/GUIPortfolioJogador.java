@@ -3,6 +3,7 @@ package br.ufc.quixada.pds.bancoimobiliario.view;
 import java.awt.BorderLayout;
 import java.util.Iterator;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -11,6 +12,7 @@ import javax.swing.JTable;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
 import br.ufc.quixada.pds.bancoimobiliario.model.Propriedade;
+import br.ufc.quixada.pds.bancoimobiliario.view.enumeration.CaminhoImagensEnum;
 
 public class GUIPortfolioJogador extends JFrame{
 	
@@ -21,19 +23,24 @@ public class GUIPortfolioJogador extends JFrame{
 		this.setBounds(100,10,500,300);
 		this.setResizable(false);
 		
+		JLabel labelBackground = new JLabel();
+		labelBackground.setBounds(0,0,500,300);
+		labelBackground.setIcon(new ImageIcon(GUIPortfolioJogador.class.getResource(CaminhoImagensEnum.PASTA_IMAGENS.getValor()+"portfolio.png")));
+		getContentPane().add(labelBackground);
+		
 		String nome = "Nome: "+iJogador.getNomeJogador();
 		JLabel lableNomeDoJogador = new JLabel(nome);
 		lableNomeDoJogador.setBounds(23, 190, 144, 15);
-		getContentPane().add(lableNomeDoJogador);
+		labelBackground.add(lableNomeDoJogador);
 		
 		JLabel lableIconeDoJogador = new JLabel(iJogador.getImagemPersonagem());
 		lableIconeDoJogador.setBounds(25, 25, 117, 150);
-		getContentPane().add(lableIconeDoJogador);
+		labelBackground.add(lableIconeDoJogador);
 		
 		String saldo = "Saldo : " + String.format("%.2f", iJogador.getSaldoJogador());
 		JLabel lableSaldoDoJogador = new JLabel(saldo);
 		lableSaldoDoJogador.setBounds(23, 210, 144, 15);
-		getContentPane().add(lableSaldoDoJogador);
+		labelBackground.add(lableSaldoDoJogador);
 		
 		Jogador jogador = iJogador.getJogador();
 		
@@ -64,7 +71,7 @@ public class GUIPortfolioJogador extends JFrame{
 		scrollbar.setBounds(399, 32, 17, 225);
 		panel.add(scrollbar, BorderLayout.CENTER);
 		
-		getContentPane().add(panel);
+		labelBackground.add(panel);
 	}
 	
 }

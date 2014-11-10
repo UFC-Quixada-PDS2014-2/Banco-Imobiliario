@@ -37,11 +37,12 @@ public class GUITabuleiro extends JFrame {
 	private IJogador iJogador2;
 	private JComboBox<Integer> comboBoxDado2;
 	private JComboBox<Integer> comboBoxDado1;
-	private JButton btnJogar;
+	private JButton botaoJogar;
 	private JLabel pinoJogador1;
 	private JLabel pinoJogador2;
 	private PanelJogador panelJogador1;
 	private PanelJogador panelJogador2;
+	private JButton botaoAjuda;
 
 	/**
 	 * Create the frame.
@@ -118,7 +119,7 @@ public class GUITabuleiro extends JFrame {
 		panelCentral.setBounds(290, 89, 339, 342);
 		contentPane.add(panelCentral);
 		
-				JButton btnHelp = new JButton("Help");
+				botaoAjuda = new JButton("Ajuda");
 				
 				comboBoxDado1 = new JComboBox<Integer>();
 				comboBoxDado1.setModel(new DefaultComboBoxModel(new Integer[] {1, 2, 3, 4, 5, 6}));
@@ -126,15 +127,15 @@ public class GUITabuleiro extends JFrame {
 				comboBoxDado2 = new JComboBox();
 				comboBoxDado2.setModel(new DefaultComboBoxModel(new Integer[] {1, 2, 3, 4, 5, 6}));
 								
-				btnJogar = new JButton();
-			    btnJogar.setBackground(Color.WHITE);
-			    btnJogar.setIcon(new ImageIcon(GUITelaInicial.class.getResource(CaminhoImagensEnum.PASTA_IMAGENS.getValor()+"Bola.png")));
-			    btnJogar.setOpaque(false);
-			    btnJogar.setContentAreaFilled(false);
-			    btnJogar.setBorderPainted(false);
-			    btnJogar.setBorder(null);
-			    btnJogar.setCursor(new Cursor(Cursor.HAND_CURSOR));
-			    btnJogar.setToolTipText("Clique para realizar jogada");
+				botaoJogar = new JButton();
+			    botaoJogar.setBackground(Color.WHITE);
+			    botaoJogar.setIcon(new ImageIcon(GUITelaInicial.class.getResource(CaminhoImagensEnum.PASTA_IMAGENS.getValor()+"Bola.png")));
+			    botaoJogar.setOpaque(false);
+			    botaoJogar.setContentAreaFilled(false);
+			    botaoJogar.setBorderPainted(false);
+			    botaoJogar.setBorder(null);
+			    botaoJogar.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			    botaoJogar.setToolTipText("Clique para realizar jogada");
 				
 				GroupLayout gl_panelCentral = new GroupLayout(panelCentral);
 				gl_panelCentral.setHorizontalGroup(
@@ -145,20 +146,20 @@ public class GUITabuleiro extends JFrame {
 								.addComponent(comboBoxDado2, Alignment.LEADING, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 								.addComponent(comboBoxDado1, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 66, GroupLayout.PREFERRED_SIZE))
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(btnJogar)
+							.addComponent(botaoJogar)
 							.addContainerGap(148, Short.MAX_VALUE))
 						.addGroup(gl_panelCentral.createSequentialGroup()
 							.addContainerGap(261, Short.MAX_VALUE)
-							.addComponent(btnHelp)
+							.addComponent(botaoAjuda)
 							.addContainerGap())
 				);
 				gl_panelCentral.setVerticalGroup(
 					gl_panelCentral.createParallelGroup(Alignment.TRAILING)
 						.addGroup(gl_panelCentral.createSequentialGroup()
-							.addComponent(btnHelp, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
+							.addComponent(botaoAjuda, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
 							.addGroup(gl_panelCentral.createParallelGroup(Alignment.LEADING)
-								.addComponent(btnJogar)
+								.addComponent(botaoJogar)
 								.addGroup(gl_panelCentral.createSequentialGroup()
 									.addComponent(comboBoxDado1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 									.addPreferredGap(ComponentPlacement.RELATED)
@@ -166,7 +167,7 @@ public class GUITabuleiro extends JFrame {
 							.addGap(56))
 				);
 				
-				btnJogar.setBounds(530, 430, 70, 70);
+				botaoJogar.setBounds(530, 430, 70, 70);
 				panelCentral.setLayout(gl_panelCentral);
 				
 				JLabel realizarJogadaLabel = new JLabel("Jogar");
@@ -344,8 +345,8 @@ public class GUITabuleiro extends JFrame {
 		return dado1 + dado2;
 	}
 	
-	public JButton getBtnJogar(){
-		return this.btnJogar;
+	public JButton getBotaoJogar(){
+		return this.botaoJogar;
 	}
 
 	public PanelJogador getPanelJogador1(){
@@ -366,4 +367,7 @@ public class GUITabuleiro extends JFrame {
 		panelJogador2.atualizar();
 	}
 	
+	public JButton getBotaoAjuda(){
+		return this.botaoAjuda;
+	}
 }
