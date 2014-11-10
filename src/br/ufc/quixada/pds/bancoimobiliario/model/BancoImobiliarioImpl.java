@@ -85,12 +85,14 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 			Logradouro logradouroParada = this.tabuleiro.pularPosicao(jogador,
 					posicaoAntiga);
 			posicaoAntiga = jogador.getPosicao();
-			AcaoLogradouroEnum tipoDeAcao = logradouroParada
-					.acaoLogradouro(jogador);
 			
 			//notificar mudança de posição
 			setChanged();
 			notifyObservers(logradouroParada.getMensagemDeAcao(jogador));
+
+			AcaoLogradouroEnum tipoDeAcao = logradouroParada
+					.acaoLogradouro(jogador);
+			
 			
 			if (tipoDeAcao.equals(AcaoLogradouroEnum.AVANCA_POSICAO)
 					|| tipoDeAcao.equals(AcaoLogradouroEnum.VOLTA_POSICAO)) {
@@ -101,12 +103,13 @@ public class BancoImobiliarioImpl extends BancoImobiliario {
 		} else {
 			Logradouro logradouroParada = tabuleiro
 					.getLogradouroPelaPosicao(jogador.getPosicao());
-			AcaoLogradouroEnum tipoDeAcao = logradouroParada
-					.acaoLogradouro(jogador);
-
 			//notificar mudança de posição
 			setChanged();
 			notifyObservers(logradouroParada.getMensagemDeAcao(jogador));
+
+			AcaoLogradouroEnum tipoDeAcao = logradouroParada
+					.acaoLogradouro(jogador);
+
 			
 			if (tipoDeAcao.equals(AcaoLogradouroEnum.AVANCA_POSICAO)
 					|| tipoDeAcao.equals(AcaoLogradouroEnum.VOLTA_POSICAO)) {
