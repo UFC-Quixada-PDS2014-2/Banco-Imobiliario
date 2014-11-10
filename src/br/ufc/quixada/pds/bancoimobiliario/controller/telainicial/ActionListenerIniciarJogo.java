@@ -75,7 +75,7 @@ public class ActionListenerIniciarJogo implements ActionListener{
 		for(int i=0; i<2; i++){
 			JTextField jogadorTextField = this.nomeJogadores.get(i);
 			
-			String nome = jogadorTextField.getText();
+			String nome = jogadorTextField.getText().trim();
 			
 			Jogador jogador = new JogadorImpl(nome, ConfiguracoesEnum.SALDO_INICIAL.getValor());
 			IJogador iJogador = new IJogador(jogador);

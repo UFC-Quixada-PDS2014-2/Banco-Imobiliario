@@ -20,7 +20,7 @@ public class GerenciadorDeAudio extends Thread {
     private static final int TAMANHO_BUFFER_EXTERNO = 524288; // 128Kb 
  
     enum Posicao { 
-        LEFT, RIGHT, NORMAL
+        ESQUERDA, DIREITA, NORMAL
     };
  
     public GerenciadorDeAudio(String arquivoWAV) { 
@@ -65,9 +65,9 @@ public class GerenciadorDeAudio extends Thread {
         if (auline.isControlSupported(FloatControl.Type.PAN)) { 
             FloatControl pan = (FloatControl) auline
                     .getControl(FloatControl.Type.PAN);
-            if (curPosition == Posicao.RIGHT) 
+            if (curPosition == Posicao.DIREITA) 
                 pan.setValue(1.0f);
-            else if (curPosition == Posicao.LEFT) 
+            else if (curPosition == Posicao.ESQUERDA) 
                 pan.setValue(-1.0f);
         } 
  

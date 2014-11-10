@@ -1,6 +1,7 @@
 package br.ufc.quixada.pds.bancoimobiliario.view;
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -20,6 +21,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
+import br.ufc.quixada.pds.bancoimobiliario.view.enumeration.CaminhoImagensEnum;
 import br.ufc.quixada.pds.bancoimobiliario.view.enumeration.DeslocamentoPinoEnum;
 import br.ufc.quixada.pds.bancoimobiliario.view.exception.LogradourosInsuficientesException;
 
@@ -126,26 +128,26 @@ public class GUITabuleiro extends JFrame {
 								
 				btnJogar = new JButton();
 			    btnJogar.setBackground(Color.WHITE);
-			    btnJogar.setIcon(new ImageIcon(GUITelaInicial.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/img/Bola.png")));
+			    btnJogar.setIcon(new ImageIcon(GUITelaInicial.class.getResource(CaminhoImagensEnum.PASTA_IMAGENS.getValor()+"Bola.png")));
 			    btnJogar.setOpaque(false);
 			    btnJogar.setContentAreaFilled(false);
 			    btnJogar.setBorderPainted(false);
 			    btnJogar.setBorder(null);
-			    btnJogar.setBounds(543, 430, 70, 70);
+			    btnJogar.setCursor(new Cursor(Cursor.HAND_CURSOR));
 			    btnJogar.setToolTipText("Clique para realizar jogada");
 				
 				GroupLayout gl_panelCentral = new GroupLayout(panelCentral);
 				gl_panelCentral.setHorizontalGroup(
-					gl_panelCentral.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panelCentral.createSequentialGroup()
+					gl_panelCentral.createParallelGroup(Alignment.TRAILING)
+						.addGroup(Alignment.LEADING, gl_panelCentral.createSequentialGroup()
 							.addGap(56)
 							.addGroup(gl_panelCentral.createParallelGroup(Alignment.TRAILING, false)
 								.addComponent(comboBoxDado2, Alignment.LEADING, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 								.addComponent(comboBoxDado1, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 66, GroupLayout.PREFERRED_SIZE))
-							.addGap(18)
+							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(btnJogar)
-							.addContainerGap(136, Short.MAX_VALUE))
-						.addGroup(Alignment.TRAILING, gl_panelCentral.createSequentialGroup()
+							.addContainerGap(148, Short.MAX_VALUE))
+						.addGroup(gl_panelCentral.createSequentialGroup()
 							.addContainerGap(261, Short.MAX_VALUE)
 							.addComponent(btnHelp)
 							.addContainerGap())
@@ -156,14 +158,20 @@ public class GUITabuleiro extends JFrame {
 							.addComponent(btnHelp, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
 							.addGroup(gl_panelCentral.createParallelGroup(Alignment.LEADING)
+								.addComponent(btnJogar)
 								.addGroup(gl_panelCentral.createSequentialGroup()
 									.addComponent(comboBoxDado1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(comboBoxDado2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-								.addComponent(btnJogar))
+									.addComponent(comboBoxDado2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
 							.addGap(56))
 				);
+				
+				btnJogar.setBounds(530, 430, 70, 70);
 				panelCentral.setLayout(gl_panelCentral);
+				
+				JLabel realizarJogadaLabel = new JLabel("Jogar");
+				realizarJogadaLabel.setBounds(145, 285, 200, 20);
+				panelCentral.add(realizarJogadaLabel);
 
 	}
 
