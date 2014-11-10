@@ -14,26 +14,6 @@ import br.ufc.quixada.pds.bancoimobiliario.model.Propriedade;
 public class PropriedadeTeste {
 
 	@Test
-	public void testeComprarPropiedadePassandoJogadorNull(){
-		
-		final double valorDaPropriedade = 500;
-		final double valorDoAluguel = 20;
-		
-		Propriedade imovel = new Imovel(valorDaPropriedade,valorDoAluguel);
-		
-		Jogador jogador = null;
-		 
-		try {
-			imovel.comprarLogradouro(jogador);
-			fail();
-		} catch (Exception e) {
-			
-			final String mensagemEsperada = "Jogador usando é inválido ou não existe.";
-			assertEquals(mensagemEsperada,e.getMessage());
-		}
-	}
-	
-	@Test
 	public void comprarLogradouroJaAdquirida() {
 		
 		final double saldo = 200.00;

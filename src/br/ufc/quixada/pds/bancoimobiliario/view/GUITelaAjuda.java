@@ -77,9 +77,9 @@ public class GUITelaAjuda extends JFrame{
 		scrollbar.setBounds(50, 40, 500, 320);
 		scrollbar.setOpaque(false);
 		scrollbar.setBackground(Color.WHITE);
+		scrollbar.getViewport().setOpaque(false);
+
 		labelBackground.add(scrollbar, BorderLayout.CENTER);
-		
-		
 		
 		this.setBounds(300,100,600,400);
 		this.setVisible(true);
