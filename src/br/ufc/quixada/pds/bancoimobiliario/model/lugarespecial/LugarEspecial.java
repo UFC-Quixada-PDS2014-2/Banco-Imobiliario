@@ -12,14 +12,18 @@ import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoExceptio
 public class LugarEspecial extends Logradouro {
 	private List<AcaoLugarEspecial> listaDeAcoes;
 	private String tipoDeAcao;
-	
+	private String mensagemDeAcao;
 	
 	@Override
 	public AcaoLogradouroEnum acaoLogradouro(Jogador jogador) throws JogadorComSaldoNegativoException, ValorInvalidoException {
 		for (AcaoLugarEspecial acaoLugarEspecial : listaDeAcoes) {
 			acaoLugarEspecial.executar(jogador);
 		}
-		return AcaoLogradouroEnum.valueOf(tipoDeAcao);
+
+		AcaoLogradouroEnum acaoLogradouro = AcaoLogradouroEnum.valueOf(tipoDeAcao);
+		acaoLogradouro.setMensagem(this.mensagemDeAcao);
+		
+		return acaoLogradouro;
 	}
 
 	@Override

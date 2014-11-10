@@ -20,7 +20,6 @@ import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
 import br.ufc.quixada.pds.bancoimobiliario.model.enumeration.AcaoLogradouroEnum;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ErroArquivoConfiguracoesException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.GameOverJogadorException;
-import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorInvalidoException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.LogradouroIndisponivelCompraException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.SaldoJogadorInsuficienteException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
@@ -157,7 +156,7 @@ public class ControladorTabuleiro implements Observer{
 			try {
 				AcaoLogradouroEnum acaoLogradouro = bancoImobiliario.realizarTurnoJogador(valorDados);
 							
-				//A movimentação dos dados é feita pelo update do observer
+				//A movimentação proveniente do lancamento dos dados dados é feita pelo update do observer
 				// Essa movimentação é proveniente da ação da casa
 				ILogradouro logradouroParada = buscarILogradouro(jogadorDaVez.getPosicao());
 
@@ -188,11 +187,7 @@ public class ControladorTabuleiro implements Observer{
 				JOptionPane.showMessageDialog(guiTabuleiro, "Essa casa está indisponível!");
 			} catch (SaldoJogadorInsuficienteException e1) {
 				JOptionPane.showMessageDialog(guiTabuleiro, "Você não possui dinheiro suficiente!");
-			}catch (JogadorInvalidoException e1) {
-				// Erro de jogador nulo
-				JOptionPane.showMessageDialog(guiTabuleiro, "Ops, ocorreu um erro na exercução do jogo!");
-				e1.printStackTrace();
-			} 
+			}
 			
 			jogadorDaVez = detectarJogadorDaVez();
 			guiTabuleiro.atualizarJogadorDaVez(jogadorDaVez);
@@ -200,19 +195,18 @@ public class ControladorTabuleiro implements Observer{
 
 		}
 		
-		
-		
 	}
 
 	@Override
 	public void update(Observable o, Object mensagem) {
 		atualizarPinoJogador(jogadorDaVez);
 		guiTabuleiro.atualizarPortfolios();	
+		
 		JOptionPane.showMessageDialog(guiTabuleiro, mensagem);
 	}
 
 	public void reiniciarJogo(){
-		int opcao = JOptionPane.showConfirmDialog(guiTabuleiro, "Você reinciar a partida ", null ,JOptionPane.YES_NO_OPTION);
+		int opcao = JOptionPane.showConfirmDialog(guiTabuleiro, "Você deseja reiniciar a partida ", null ,JOptionPane.YES_NO_OPTION);
 		
 		if(opcao == JOptionPane.OK_OPTION){
 			guiTabuleiro.dispose();

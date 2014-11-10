@@ -1,7 +1,6 @@
 package br.ufc.quixada.pds.bancoimobiliario.model;
 
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorComSaldoNegativoException;
-import br.ufc.quixada.pds.bancoimobiliario.model.exception.JogadorInvalidoException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.LogradouroIndisponivelCompraException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.SaldoJogadorInsuficienteException;
 import br.ufc.quixada.pds.bancoimobiliario.model.exception.ValorInvalidoException;
@@ -39,11 +38,7 @@ public abstract class Propriedade extends Logradouro{
 	
 	
 	@Override
-	public void comprarLogradouro(Jogador compradorDaPropriedade) throws SaldoJogadorInsuficienteException, LogradouroIndisponivelCompraException, JogadorInvalidoException, JogadorComSaldoNegativoException, ValorInvalidoException{
-		
-		if(compradorDaPropriedade == null){
-			throw new JogadorInvalidoException();
-		}
+	public void comprarLogradouro(Jogador compradorDaPropriedade) throws SaldoJogadorInsuficienteException, LogradouroIndisponivelCompraException, JogadorComSaldoNegativoException, ValorInvalidoException{
 		
 		if(!propriedadeEstaVendida()){
 			if(compradorDaPropriedade.getSaldo() >= this.valorDaPropriedade){
