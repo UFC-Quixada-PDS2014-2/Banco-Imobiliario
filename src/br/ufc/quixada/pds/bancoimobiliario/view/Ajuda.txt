@@ -1,0 +1,25 @@
+﻿Ajuda
+
+Tipo de Jogo: Banco Imobiliário
+Tema do Jogo: Liga dos Campeões da Europa
+
+O jogo tem 28 casas, onde existem 4 tipos de casas( ponto de partida, lugares especias, imóveis e empresas).
+
+Ponto de Partida: É a casa inicial do tabuleiro, quando um jogador da uma volta no tabuleiro, parando ou passando pelo ponto de partida, seu saldo será incrementando em R$200.
+
+Lugares Especiais: Existem 4 tipos de lugares especiais:
+
+- Lugar Especial Incrementa Saldo: Parando nessa casa o saldo do jogador será incrementado em R$100.
+
+- Lugar Especial Avança Posição: Parando nessa casa o jogador terá de avançar 3 posições no tabuleiro.
+
+- Lugar Especial Decrementa Saldo: Parando nessa casa o jogador terá seu saldo decrementado de R$400.
+
+- Lugar Especial Volta Posição: Parando nessa casa o jogador terá de voltar 2 posições no tabuleiro.
+
+Empresas: São casas que podem ser compradas pelo jogador, todas as empresas tem um valor fixo de R$ 350 e um valor de de taxa de R$50, quando um jogador cai em uma empresa que pertença a outro jogador, o valor que ele pagará será o valor da taxa multiplicado pelo número dos dados.
+
+Imóveis: São casas que os jogadores podem comprar, elas tem um valor de venda que varia de imóvel para imóvel, da mesma forma ocorre com seus alugueis.
+
+O Fim do jogo ocorre quando o saldo de um dos jogadores é negativo ou quando o saldo dele não é suficiente para pagar um aluguel, uma taxa ou uma punição.
+
