@@ -28,7 +28,7 @@ public class TabuleiroDirector {
 		try {
 			this.readerLogradouros.carregarReader();
 			
-			PontoDePartida pontoDePartida = readerLogradouros.pegarPontoDePartida();
+			PontoDePartida pontoDePartida = readerLogradouros.getPontoDePartida();
 			List<Logradouro> listaLogradouros = readerLogradouros.lerLogradouros();
 		
 		

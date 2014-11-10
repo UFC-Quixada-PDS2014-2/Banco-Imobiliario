@@ -20,6 +20,7 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
 public class ConfiguracaoCasasTabuleiroComXStream implements ReaderLogradouros{
+	
 	private XStream stream;
 	private List<Logradouro> listaDeLogradouros; 
 	
@@ -41,6 +42,7 @@ public class ConfiguracaoCasasTabuleiroComXStream implements ReaderLogradouros{
 	}
 	
 	private void carregarElementosXMLLista() throws ErroNaLeituraDoXMLException{
+	
 		File file = new File(ConfiguracaoCasasTabuleiroComXStream.class.getResource("configuracao_tabuleiro.xml").getPath());
 		
 		if(!file.exists()){
@@ -55,7 +57,7 @@ public class ConfiguracaoCasasTabuleiroComXStream implements ReaderLogradouros{
 	}
 	
 	@Override
-	public PontoDePartida pegarPontoDePartida() {
+	public PontoDePartida getPontoDePartida() {
 		PontoDePartida pontoDePartida = (PontoDePartida) this.listaDeLogradouros.get(0);
 		return pontoDePartida;
 	}
@@ -72,6 +74,4 @@ public class ConfiguracaoCasasTabuleiroComXStream implements ReaderLogradouros{
 		configurarClassesParaAlias();
 		carregarElementosXMLLista();
 	}
-
-	
 }
