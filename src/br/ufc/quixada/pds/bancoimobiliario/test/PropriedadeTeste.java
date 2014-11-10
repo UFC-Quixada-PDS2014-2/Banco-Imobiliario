@@ -1,4 +1,4 @@
-package br.ufc.quixada.pds.bancoimobiliario.teste;
+package br.ufc.quixada.pds.bancoimobiliario.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
