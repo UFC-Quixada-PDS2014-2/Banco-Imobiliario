@@ -6,14 +6,17 @@ import java.util.List;
 
 import javax.swing.Icon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 
 public class ActionListenerAlterarTecnico implements ActionListener{
 	private JButton tecnicoSelecionadoAtualmente;
 	private List<JButton> tecnicos;
+	private JLabel nomeAtual;
 	
-	public ActionListenerAlterarTecnico(List<JButton> tecnicos, JButton tecnicoAtual){
+	public ActionListenerAlterarTecnico(List<JButton> tecnicos, JButton tecnicoAtual, JLabel nomeAtual){
 		this.tecnicos = tecnicos;
 		this.tecnicoSelecionadoAtualmente = tecnicoAtual;
+		this.nomeAtual = nomeAtual;
 	}
 	
 	@Override
@@ -32,6 +35,7 @@ public class ActionListenerAlterarTecnico implements ActionListener{
 		}
 		
 		tecnicoSelecionadoAtualmente.setIcon(null);
+		nomeAtual.setText("");
 	}
 
 }

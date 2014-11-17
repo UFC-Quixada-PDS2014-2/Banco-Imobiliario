@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.swing.Icon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -30,14 +31,14 @@ import com.google.inject.Injector;
 
 public class ActionListenerIniciarJogo implements ActionListener{
 	private JButton botaoInicial;
-	private List<JTextField> nomeJogadores;
+	private List<JLabel> nomeJogadores;
 	private GUITelaInicial guiTelaInicial;
 	private List<IJogador> iJogadores;
 	private List<Jogador> jogadores;
 	private List<JButton> tecnicosDosJogadores;
 	private ControladorRestartGame restartGame;
 	
-	public ActionListenerIniciarJogo(JButton botaoInicial, List<JTextField> nomeJogadores, GUITelaInicial guiTelaInicial, List<JButton> tecnicosDosJogadores, ControladorRestartGame restartGame){
+	public ActionListenerIniciarJogo(JButton botaoInicial, List<JLabel> nomeJogadores, GUITelaInicial guiTelaInicial, List<JButton> tecnicosDosJogadores, ControladorRestartGame restartGame){
 		this.botaoInicial = botaoInicial;
 		this.nomeJogadores = nomeJogadores;
 		this.guiTelaInicial = guiTelaInicial;
@@ -60,7 +61,7 @@ public class ActionListenerIniciarJogo implements ActionListener{
 	
 	private boolean todosOsNomesSetados(){
 		boolean todosOsNomesSetados = true;
-		for(JTextField nomeJogador: this.nomeJogadores){
+		for(JLabel nomeJogador: this.nomeJogadores){
 			String textoNomeJogador = nomeJogador.getText();
 			
 			if(textoNomeJogador.equals(null) || textoNomeJogador.trim().equals("")){
@@ -73,9 +74,9 @@ public class ActionListenerIniciarJogo implements ActionListener{
 	
 	private void criarJogadores(){
 		for(int i=0; i<2; i++){
-			JTextField jogadorTextField = this.nomeJogadores.get(i);
+			JLabel jogadorLabel = this.nomeJogadores.get(i);
 			
-			String nome = jogadorTextField.getText().trim();
+			String nome = jogadorLabel.getText().trim();
 			
 			Jogador jogador = new JogadorImpl(nome, ConfiguracoesEnum.SALDO_INICIAL.getValor());
 			IJogador iJogador = new IJogador(jogador);

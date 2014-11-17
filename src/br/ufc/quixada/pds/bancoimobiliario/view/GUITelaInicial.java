@@ -6,7 +6,9 @@ import java.awt.Font;
 import java.net.URL;
 import java.text.Normalizer;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -20,7 +22,7 @@ import br.ufc.quixada.pds.bancoimobiliario.view.sons.GerenciadorDeAudio;
 
 
 public class GUITelaInicial extends JFrame {
-	private List<JTextField> nomesJogadores; 
+	private List<JLabel> nomesJogadores; 
 	private List<JButton> tecnicos;
 	private JButton bolaInicioJogo;
 	private String[] nomesTecnicos = {"Pep Guardiola", "José Mourinho", "Jürgen Klopp", "Arsene Wenger", "Diego Simeone", "Carlo Ancelotti"};
@@ -28,14 +30,16 @@ public class GUITelaInicial extends JFrame {
 	private List<JButton> botoesAlterar;
 	private GerenciadorDeAudio controladorDeSons;
 	private JButton pararMusica;
+	private Map<JButton, String> mapTecnicos; 
 	
 	public GUITelaInicial(){
 		this.tecnicos = new ArrayList<JButton>();
-		this.nomesJogadores = new ArrayList<JTextField>();
+		this.nomesJogadores = new ArrayList<JLabel>();
 		this.tecnicosDosJogadores = new ArrayList<JButton>();
 		this.botoesAlterar = new ArrayList<JButton>();
 		this.setSize(1150, 700);
 		this.setLocationRelativeTo(null);
+		this.mapTecnicos = new HashMap<JButton, String>();
 	    initComponents();
 	    this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	    getContentPane().setLayout(null);
@@ -52,7 +56,7 @@ public class GUITelaInicial extends JFrame {
 	    Cursor cursor = new Cursor(Cursor.HAND_CURSOR);
 	    
 	    for(int i=0; i<6; i++){
-	    	JButton tecnico = new JButton("");
+	    	JButton tecnico = new JButton();
 	    	tecnico.setBackground(Color.WHITE);
 	    	tecnico.setBounds(64+(i*181),150,117,150);
 	    	tecnico.setToolTipText(this.nomesTecnicos[i]);
@@ -75,13 +79,15 @@ public class GUITelaInicial extends JFrame {
 	    	nomeTecnico.setBounds(64+(i*181), 310, 117, 30);
 	    	nomeTecnico.setForeground(Color.WHITE);
 	    	background.add(nomeTecnico);
+	    	
+	    	this.mapTecnicos.put(tecnico, this.nomesTecnicos[i]);
 	    }
 	    
-	    JTextField nomeJogador1TxtField = new JTextField(null);
-	    nomeJogador1TxtField.setBounds(40, 440, 169, 33);
-	    background.add(nomeJogador1TxtField);
-	    this.nomesJogadores.add(nomeJogador1TxtField);
-	    nomeJogador1TxtField.setColumns(10);
+	    JLabel nomeJogador1JLabel = new JLabel("");
+	    nomeJogador1JLabel.setBounds(40, 440, 169, 33);
+	    nomeJogador1JLabel.setForeground(Color.WHITE);
+	    background.add(nomeJogador1JLabel);
+	    this.nomesJogadores.add(nomeJogador1JLabel);
 	    
 	    JButton jogador1Selecionado = new JButton("");
 	    jogador1Selecionado.setBackground(Color.WHITE);
@@ -89,7 +95,7 @@ public class GUITelaInicial extends JFrame {
 	    this.tecnicosDosJogadores.add(jogador1Selecionado);
 	    background.add(jogador1Selecionado);
 	    
-	    JLabel nomeJogador1Label = new JLabel("Nome jogador 1:");
+	    JLabel nomeJogador1Label = new JLabel("Jogador 1:");
 	    nomeJogador1Label.setFont(new Font("Tahoma", Font.BOLD, 14));
 	    nomeJogador1Label.setForeground(Color.WHITE);
 	    nomeJogador1Label.setBounds(40, 413, 150, 20);
@@ -101,13 +107,13 @@ public class GUITelaInicial extends JFrame {
 	    this.tecnicosDosJogadores.add(jogador2Selecionado);
 	    background.add(jogador2Selecionado);
 	    
-	    JTextField nomeJogador2TxtField = new JTextField(null);
-	    nomeJogador2TxtField.setColumns(10);
-	    nomeJogador2TxtField.setBounds(941, 440, 169, 33);
-	    this.nomesJogadores.add(nomeJogador2TxtField);
-	    background.add(nomeJogador2TxtField);
+	    JLabel nomeJogador2JLabel = new JLabel("", SwingConstants.RIGHT);
+	    nomeJogador2JLabel.setBounds(935, 440, 169, 33);
+	    nomeJogador2JLabel.setForeground(Color.WHITE);
+	    this.nomesJogadores.add(nomeJogador2JLabel);
+	    background.add(nomeJogador2JLabel);
 	    
-	    JLabel nomeJogador2Label = new JLabel("Nome jogador 2:");
+	    JLabel nomeJogador2Label = new JLabel("Jogador 2:");
 	    nomeJogador2Label.setFont(new Font("Tahoma", Font.BOLD, 14));
 	    nomeJogador2Label.setForeground(Color.WHITE);
 	    nomeJogador2Label.setBounds(978, 413, 150, 20);
@@ -165,7 +171,7 @@ public class GUITelaInicial extends JFrame {
 		return this.nomesTecnicos;
 	}
 	
-	public List<JTextField> getTextFielNomeJogadores(){
+	public List<JLabel> getJLabelNomeJogadores(){
 		return this.nomesJogadores;
 	}
 	
@@ -196,5 +202,9 @@ public class GUITelaInicial extends JFrame {
 	public void iniciarMusica(){
 		this.controladorDeSons = new GerenciadorDeAudio(GUITelaInicial.class.getResource("/br/ufc/quixada/pds/bancoimobiliario/view/sons/hino.wav").getPath());
 	    this.controladorDeSons.start();
+	}
+	
+	public Map<JButton, String> getMapTecnicos(){
+		return this.mapTecnicos;
 	}
 }
