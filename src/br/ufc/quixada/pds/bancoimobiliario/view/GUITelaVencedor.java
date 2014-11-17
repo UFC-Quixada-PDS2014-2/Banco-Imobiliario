@@ -22,7 +22,7 @@ public class GUITelaVencedor extends JFrame{
 		
 		JLabel labelBackground = new JLabel();
 		labelBackground.setIcon(new ImageIcon(GUITelaVencedor.class.getResource(CaminhoImagensEnum.PASTA_IMAGENS.getValor()+"telaVencedorBackground.png")));
-		labelBackground.setBounds(0,0,1150, 780);
+		labelBackground.setBounds(0,10,1150, 780);
 		add(labelBackground);
 		
 		JLabel nomeJogador = new JLabel(jogadorVencedor.getNome() + " foi o vencedor!!", SwingConstants.CENTER);
