@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 import br.ufc.quixada.pds.bancoimobiliario.controller.ControladorRestartGame;
+import br.ufc.quixada.pds.bancoimobiliario.controller.telavencedor.ControladorTelaVencedor;
 import br.ufc.quixada.pds.bancoimobiliario.model.BancoImobiliario;
 import br.ufc.quixada.pds.bancoimobiliario.model.Jogador;
 import br.ufc.quixada.pds.bancoimobiliario.model.Logradouro;
@@ -179,9 +180,9 @@ public class ControladorTabuleiro implements Observer{
 				
 			} catch (GameOverJogadorException e1) {
 				Jogador jogadorVencedor = bancoImobiliario.detectarVencedor();
-				JOptionPane.showMessageDialog(guiTabuleiro, jogadorVencedor.getNome() + " ganhou!!!");
-				
-				reiniciarJogo();
+				ControladorTelaVencedor controladorTelaVencedor = new ControladorTelaVencedor(jogadorVencedor,restartGame);
+				controladorTelaVencedor.inicializar();
+				guiTabuleiro.dispose();
 				
 			} catch (ErroArquivoConfiguracoesException e1) {
 				JOptionPane.showMessageDialog(guiTabuleiro, "Erro no arquivo de configuração do jogo!");
@@ -209,17 +210,6 @@ public class ControladorTabuleiro implements Observer{
 		guiTabuleiro.atualizarPortfolios();	
 		
 		JOptionPane.showMessageDialog(guiTabuleiro, mensagem);
-	}
-
-	public void reiniciarJogo(){
-		int opcao = JOptionPane.showConfirmDialog(guiTabuleiro, "Você deseja reiniciar a partida ", null ,JOptionPane.YES_NO_OPTION);
-		
-		if(opcao == JOptionPane.OK_OPTION){
-			guiTabuleiro.dispose();
-			restartGame.reiniciarJogo();
-		}else{
-			guiTabuleiro.dispose();
-		}
 	}
 	
 }
