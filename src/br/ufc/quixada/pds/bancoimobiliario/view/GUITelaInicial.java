@@ -116,7 +116,7 @@ public class GUITelaInicial extends JFrame {
 	    JLabel nomeJogador2Label = new JLabel("Jogador 2:",SwingConstants.RIGHT);
 	    nomeJogador2Label.setFont(new Font("Tahoma", Font.BOLD, 14));
 	    nomeJogador2Label.setForeground(Color.WHITE);
-	    nomeJogador2Label.setBounds(978, 413, 150, 20);
+	    nomeJogador2Label.setBounds(956, 413, 150, 20);
 	    background.add(nomeJogador2Label);
 	    
 	    JButton alterarJogador1 = new JButton("Alterar");
